@@ -12,7 +12,7 @@
       "slug": "home",
       "title": "Home",
       "heading": "Home page",
-      "body": "<p>Welcome to your GitHub Pages CMS.</p><p>Create pages from the left, place them under any page, then publish. test</p>",
+      "body": "<p>Welcome to your GitHub Pages CMS.</p><p>Create pages from the left, place them under any page, then publish.</p>",
       "parentId": null
     },
     {
@@ -59,15 +59,6 @@
       "heading": "Contact",
       "body": "<p>Contact content.</p>",
       "parentId": null
-    },
-    {
-      "id": "p_mvmsljiw_54hp0w",
-      "name": "testlink",
-      "slug": "testlink",
-      "title": "testlink",
-      "heading": "New sublink",
-      "body": "<p> test content Start writing your page here.</p>",
-      "parentId": "home"
     }
   ]
 }
