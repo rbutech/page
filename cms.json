@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "settings": {
+    "siteTitle": "same as all ways",
+    "titleSuffix": "",
+    "headerPadding": "125px"
+  },
+  "pages": [
+    {
+      "id": "home",
+      "name": "Home",
+      "slug": "home",
+      "title": "Home",
+      "heading": "Home page",
+      "body": "<p>Welcome to your GitHub Pages CMS.</p><p>Create pages from the left, place them under any page, then publish. test</p>",
+      "parentId": null
+    },
+    {
+      "id": "about",
+      "name": "About",
+      "slug": "about",
+      "title": "About",
+      "heading": "About us",
+      "body": "<p>This is a main navigation page.</p>",
+      "parentId": null
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "slug": "team",
+      "title": "Team",
+      "heading": "Our team",
+      "body": "<p>This page is a sublink under About.</p>",
+      "parentId": "about"
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "slug": "services",
+      "title": "Services",
+      "heading": "Services",
+      "body": "<p>Services content.</p>",
+      "parentId": null
+    },
+    {
+      "id": "web",
+      "name": "Web Development",
+      "slug": "web-development",
+      "title": "Web Development",
+      "heading": "Web Development",
+      "body": "<p>A child page under Services.</p>",
+      "parentId": "services"
+    },
+    {
+      "id": "contact",
+      "name": "Contact",
+      "slug": "contact",
+      "title": "Contact",
+      "heading": "Contact",
+      "body": "<p>Contact content.</p>",
+      "parentId": null
+    }
+  ]
+}
