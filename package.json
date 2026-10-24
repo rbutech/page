@@ -1,0 +1,7 @@
+{
+  "name": "github-pages-multipage-cms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser-based multipage CMS for GitHub Pages",
+  "scripts": {"serve": "python -m http.server 8080"}
+}
