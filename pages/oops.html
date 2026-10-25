@@ -1,0 +1,3241 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101828"><title>oops</title>
+<style>
+:root{--primary:#5145e5;--primary-dark:#3930b8;--ink:#172033;--muted:#667085;--border:#e6e8ef;--surface:#fff;--background:#f7f8fc;--max:1240px;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #a5a0ff;outline-offset:4px}.site{width:100%;min-height:100vh;overflow:clip}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.header-inner{max-width:var(--max);min-height:80px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#6558f5,#4035bd);color:#fff;font-size:22px;font-weight:800;box-shadow:0 6px 16px rgba(81,69,229,.24)}.site-title{display:block;color:var(--ink);font-size:19px;font-weight:750;line-height:1.3;letter-spacing:-.5px;overflow-wrap:anywhere}.brand-caption{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}.header-actions{display:flex;align-items:center;gap:14px}.main-nav{display:flex;align-items:center;gap:5px;min-width:0}.main-nav a{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;color:#475467;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.main-nav a:hover,.main-nav a[aria-current=page]{background:#f0efff;color:var(--primary)}.main-nav .sep{display:none}.contact-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 17px;border-radius:11px;background:var(--primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.contact-button:hover{background:var(--primary-dark);transform:translateY(-1px)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+.body{display:grid;grid-template-columns:230px minmax(0,1fr);width:100%;max-width:var(--max);margin:0 auto;padding:36px 28px 60px;gap:28px;align-items:start;min-width:0}.body>*{min-width:0}.body.no-sidebar{grid-template-columns:minmax(0,1fr)}.sidebar{position:sticky;top:108px;min-width:0;padding:21px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar:empty{display:none}.sidebar:not(:empty)::before{content:"ON THIS PAGE";display:block;margin:0 10px 13px;color:#98a2b3;font-size:10px;font-weight:800;letter-spacing:1.3px}.sidebar a{display:flex;align-items:center;margin:4px 0;padding:10px 11px;border-radius:10px;color:#475467;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none;overflow-wrap:anywhere;transition:background .2s,color .2s}.sidebar a:hover,.sidebar a[aria-current=page]{background:#f0efff;color:var(--primary)}.content{display:block;width:100%;min-width:0;max-width:100%;padding:clamp(32px,5vw,64px);border:1px solid #e8e5ff;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(170,158,255,.20),transparent 42%),linear-gradient(135deg,#fff 0%,#f7f6ff 100%);box-shadow:var(--shadow);font-size:17px;line-height:1.8;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h1{max-width:100%;margin:0 0 22px;color:#141b34;font-size:clamp(32px,4.5vw,52px);font-weight:780;line-height:1.15;letter-spacing:-1.2px;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h2{max-width:100%;margin:34px 0 14px;color:var(--ink);font-size:clamp(23px,3vw,30px);line-height:1.3;letter-spacing:-.5px;overflow-wrap:break-word;word-break:normal}.content h3{max-width:100%;margin:26px 0 10px;font-size:20px;line-height:1.4;overflow-wrap:break-word;word-break:normal}.content p,.content li{max-width:100%;color:#475467;font-size:17px;line-height:1.85;overflow-wrap:break-word;word-break:normal;white-space:normal}.content a{color:var(--primary);text-underline-offset:3px}.content img{max-width:100%;height:auto;border-radius:12px}.content table{width:100%;max-width:100%;border-collapse:collapse;overflow-wrap:break-word;background:#fff}.content th,.content td{padding:12px;border:1px solid var(--border);text-align:left}.content th{background:#f8f8fc}.content blockquote{margin:20px 0;padding:8px 18px;border-left:4px solid var(--primary);background:#f5f4ff;color:#475467}.content pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#101828;color:#f8fafc}.content code{overflow-wrap:anywhere;word-break:normal}.site-footer{border-top:1px solid var(--border);background:#fff}.footer-inner{max-width:var(--max);margin:0 auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{color:var(--ink);font-size:13px;font-weight:750}.footer-copy{margin-top:3px;color:var(--muted);font-size:12px}.footer-links{display:flex;flex-wrap:wrap;gap:18px}.footer-links a{color:#667085;font-size:12px;text-decoration:none}.footer-links a:hover{color:var(--primary)}
+@media(max-width:980px){.header-inner{padding:12px 20px}.header-actions{gap:8px}.main-nav a{padding:8px 9px;font-size:13px}.body{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:22px 20px 40px}.content{padding:32px}}
+@media(max-width:720px){.header-inner{min-height:70px;padding:11px 16px;gap:10px}.brand-mark{width:39px;height:39px;font-size:19px}.site-title{font-size:16px}.brand-caption{font-size:9px}.header-actions{gap:8px}.contact-button{display:none}.menu-toggle{display:grid;place-items:center;flex-shrink:0}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 16px 17px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--border);background:#fff;box-shadow:0 14px 20px rgba(16,24,40,.06)}.main-nav.is-open{display:flex}.main-nav a{padding:11px 13px;font-size:14px}.body{display:flex;flex-direction:column;gap:16px;padding:16px 14px 30px}.sidebar{position:static;width:100%;padding:12px}.sidebar:not(:empty)::before{margin:0 8px 6px}.sidebar a{display:inline-flex;margin:3px;padding:8px 9px;font-size:12px}.content{width:100%;padding:28px 21px;border-radius:18px}.content h1{font-size:clamp(31px,8vw,42px);letter-spacing:-1.3px}.content p,.content li{font-size:16px}.content table{display:block;overflow-x:auto}.footer-inner{padding:22px 16px;align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><div class="site">
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>oops</h1><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Python Programming Page 3 — Functions, Classes and Object-Oriented Programming">
+<title>Python Programming — Functions, Classes and Object-Oriented Programming</title>
+
+<style>
+/* =========================================================
+   RBUtech Python Page 3
+   All styles use py3- prefix
+   ========================================================= */
+
+:root{
+  --py3-bg:#f5f7fb;
+  --py3-panel:#ffffff;
+  --py3-panel2:#f8fafc;
+  --py3-text:#172033;
+  --py3-muted:#667085;
+  --py3-line:#dbe1ea;
+  --py3-primary:#3047c9;
+  --py3-primary2:#4f46e5;
+  --py3-primary-soft:#eef2ff;
+  --py3-green:#087443;
+  --py3-green-soft:#ecfdf3;
+  --py3-orange:#b54708;
+  --py3-orange-soft:#fff7ed;
+  --py3-red:#b42318;
+  --py3-red-soft:#fef3f2;
+  --py3-purple:#6941c6;
+  --py3-purple-soft:#f4f3ff;
+  --py3-code:#101828;
+  --py3-code-text:#e5e7eb;
+  --py3-radius:16px;
+  --py3-shadow:0 8px 28px rgba(16,24,40,.07);
+}
+
+*{box-sizing:border-box}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  background:var(--py3-bg);
+  color:var(--py3-text);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  line-height:1.65;
+}
+
+.py3-page{
+  width:min(1500px,100%);
+  margin:auto;
+  padding:24px;
+}
+
+.py3-hero{
+  background:
+    radial-gradient(circle at 85% 15%,rgba(79,70,229,.24),transparent 32%),
+    radial-gradient(circle at 10% 80%,rgba(48,71,201,.15),transparent 30%),
+    #111827;
+  color:white;
+  border-radius:24px;
+  padding:48px;
+  position:relative;
+  overflow:hidden;
+  box-shadow:var(--py3-shadow);
+}
+
+.py3-hero-grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.7fr) minmax(280px,.8fr);
+  gap:35px;
+  align-items:center;
+}
+
+.py3-page-label{
+  display:inline-flex;
+  padding:6px 12px;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:999px;
+  font-size:13px;
+  color:#dbeafe;
+  background:rgba(255,255,255,.08);
+  margin-bottom:15px;
+}
+
+.py3-hero h1{
+  font-size:clamp(32px,5vw,58px);
+  line-height:1.08;
+  margin:0 0 20px;
+  letter-spacing:-1.5px;
+}
+
+.py3-hero p{
+  max-width:800px;
+  color:#cbd5e1;
+  font-size:18px;
+  margin:0;
+}
+
+.py3-hero-card{
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.08);
+  border-radius:18px;
+  padding:24px;
+  backdrop-filter:blur(8px);
+}
+
+.py3-hero-card strong{
+  display:block;
+  font-size:30px;
+  margin-bottom:4px;
+}
+
+.py3-progress{
+  height:9px;
+  background:#d0d5dd;
+  border-radius:99px;
+  overflow:hidden;
+  margin-top:12px;
+}
+
+.py3-progress-bar{
+  width:0;
+  height:100%;
+  background:linear-gradient(90deg,#818cf8,#c4b5fd);
+  transition:width .3s ease;
+}
+
+.py3-layout{
+  display:grid;
+  grid-template-columns:250px minmax(0,1fr);
+  gap:24px;
+  margin-top:24px;
+}
+
+.py3-sidebar{
+  position:sticky;
+  top:18px;
+  align-self:start;
+  background:var(--py3-panel);
+  border:1px solid var(--py3-line);
+  border-radius:var(--py3-radius);
+  padding:18px;
+  max-height:calc(100vh - 36px);
+  overflow:auto;
+}
+
+.py3-sidebar-title{
+  font-weight:800;
+  margin-bottom:12px;
+}
+
+.py3-sidebar a{
+  display:block;
+  text-decoration:none;
+  color:var(--py3-muted);
+  font-size:14px;
+  padding:8px 10px;
+  border-radius:9px;
+  margin:2px 0;
+}
+
+.py3-sidebar a:hover{
+  background:var(--py3-primary-soft);
+  color:var(--py3-primary);
+}
+
+.py3-main{
+  min-width:0;
+}
+
+.py3-section{
+  background:var(--py3-panel);
+  border:1px solid var(--py3-line);
+  border-radius:var(--py3-radius);
+  padding:32px;
+  margin-bottom:24px;
+  box-shadow:0 3px 12px rgba(16,24,40,.025);
+}
+
+.py3-section h2{
+  font-size:30px;
+  line-height:1.2;
+  margin:0 0 12px;
+  letter-spacing:-.5px;
+}
+
+.py3-section h3{
+  font-size:21px;
+  margin:28px 0 10px;
+}
+
+.py3-section-intro{
+  color:var(--py3-muted);
+  font-size:16px;
+}
+
+.py3-objectives{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-top:22px;
+}
+
+.py3-objective{
+  padding:15px;
+  background:var(--py3-panel2);
+  border:1px solid var(--py3-line);
+  border-radius:12px;
+  font-size:14px;
+}
+
+.py3-objective input{
+  accent-color:var(--py3-primary);
+  margin-right:8px;
+}
+
+.py3-concept{
+  margin-top:24px;
+  border:1px solid var(--py3-line);
+  border-radius:15px;
+  overflow:hidden;
+}
+
+.py3-concept-head{
+  padding:18px 20px;
+  background:var(--py3-panel2);
+  border-bottom:1px solid var(--py3-line);
+}
+
+.py3-concept-head h3{
+  margin:0;
+}
+
+.py3-concept-body{
+  padding:20px;
+}
+
+.py3-info-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.py3-info{
+  border:1px solid var(--py3-line);
+  border-radius:13px;
+  padding:17px;
+}
+
+.py3-info strong{
+  display:block;
+  margin-bottom:5px;
+}
+
+.py3-why{
+  border-left:4px solid var(--py3-primary);
+  background:var(--py3-primary-soft);
+  padding:14px 17px;
+  border-radius:0 10px 10px 0;
+  margin:16px 0;
+}
+
+.py3-analogy{
+  border-left:4px solid var(--py3-orange);
+  background:var(--py3-orange-soft);
+  padding:14px 17px;
+  border-radius:0 10px 10px 0;
+  margin:16px 0;
+}
+
+.py3-warning{
+  border-left:4px solid var(--py3-red);
+  background:var(--py3-red-soft);
+  padding:14px 17px;
+  border-radius:0 10px 10px 0;
+  margin:16px 0;
+}
+
+.py3-exercise{
+  border-left:4px solid var(--py3-green);
+  background:var(--py3-green-soft);
+  padding:14px 17px;
+  border-radius:0 10px 10px 0;
+  margin:16px 0;
+}
+
+.py3-code-wrap{
+  margin:18px 0;
+  background:var(--py3-code);
+  border-radius:14px;
+  overflow:hidden;
+  border:1px solid #253047;
+}
+
+.py3-code-toolbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 13px;
+  background:#182234;
+  color:#98a2b3;
+  font-size:12px;
+}
+
+.py3-copy{
+  border:1px solid #475467;
+  color:#e5e7eb;
+  background:#1d2939;
+  padding:5px 10px;
+  border-radius:7px;
+  cursor:pointer;
+}
+
+.py3-copy:hover{
+  background:#344054;
+}
+
+.py3-code{
+  padding:18px;
+  margin:0;
+  overflow:auto;
+  color:var(--py3-code-text);
+  font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;
+  font-size:13px;
+  line-height:1.65;
+  white-space:pre;
+}
+
+.py3-output{
+  background:#f8fafc;
+  border:1px dashed #98a2b3;
+  border-radius:11px;
+  padding:13px 16px;
+  font-family:monospace;
+  white-space:pre-wrap;
+  margin:12px 0 18px;
+}
+
+.py3-diagram{
+  background:#fbfcfe;
+  border:1px solid var(--py3-line);
+  border-radius:16px;
+  padding:20px;
+  margin:22px 0;
+  overflow:auto;
+}
+
+.py3-diagram-title{
+  text-align:center;
+  font-weight:800;
+  margin-bottom:18px;
+}
+
+.py3-mindmap{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  align-items:center;
+}
+
+.py3-mm-center{
+  grid-column:2 / 4;
+  grid-row:2;
+  padding:25px;
+  border-radius:50%;
+  background:var(--py3-primary);
+  color:white;
+  text-align:center;
+  font-weight:800;
+  min-height:125px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(48,71,201,.25);
+}
+
+.py3-mm-node{
+  background:white;
+  border:1px solid var(--py3-line);
+  border-radius:10px;
+  padding:10px;
+  text-align:center;
+  font-weight:700;
+  font-size:13px;
+}
+
+.py3-flow{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+}
+
+.py3-flow-box{
+  width:min(500px,90%);
+  text-align:center;
+  border:1px solid var(--py3-line);
+  border-radius:12px;
+  padding:13px;
+  background:white;
+  font-weight:700;
+}
+
+.py3-arrow{
+  font-size:25px;
+  color:var(--py3-primary);
+}
+
+.py3-columns{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+.py3-three{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.py3-class-diagram{
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:15px;
+  align-items:center;
+}
+
+.py3-class-box{
+  border:2px solid var(--py3-primary);
+  border-radius:13px;
+  overflow:hidden;
+  background:white;
+}
+
+.py3-class-title{
+  background:var(--py3-primary);
+  color:white;
+  text-align:center;
+  font-weight:800;
+  padding:10px;
+}
+
+.py3-class-body{
+  padding:14px;
+}
+
+.py3-object{
+  border:1px solid var(--py3-line);
+  background:white;
+  border-radius:12px;
+  padding:14px;
+}
+
+.py3-object strong{
+  color:var(--py3-primary);
+}
+
+.py3-tree{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
+
+.py3-tree-node{
+  border:2px solid var(--py3-primary);
+  background:var(--py3-primary-soft);
+  border-radius:12px;
+  padding:12px 30px;
+  font-weight:800;
+  text-align:center;
+}
+
+.py3-tree-children{
+  display:flex;
+  gap:60px;
+  position:relative;
+}
+
+.py3-tree-children:before{
+  content:"";
+  position:absolute;
+  top:-13px;
+  left:15%;
+  right:15%;
+  border-top:2px solid #98a2b3;
+}
+
+.py3-tree-children .py3-tree-node:before{
+  content:"";
+  position:absolute;
+  margin-top:-14px;
+  margin-left:0;
+  height:14px;
+  border-left:2px solid #98a2b3;
+}
+
+.py3-explorer{
+  border:1px solid var(--py3-line);
+  border-radius:15px;
+  padding:20px;
+  background:#fbfcff;
+}
+
+.py3-explorer-controls{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:18px;
+}
+
+.py3-btn{
+  border:0;
+  border-radius:9px;
+  padding:9px 14px;
+  background:var(--py3-primary);
+  color:white;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.py3-btn.secondary{
+  background:#eef2f6;
+  color:var(--py3-text);
+}
+
+.py3-btn:hover{
+  opacity:.9;
+}
+
+.py3-simulator{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.py3-input{
+  width:100%;
+  padding:11px 12px;
+  border:1px solid var(--py3-line);
+  border-radius:9px;
+  margin:5px 0 12px;
+  font:inherit;
+}
+
+.py3-result{
+  min-height:100px;
+  border-radius:12px;
+  background:#101828;
+  color:#d1fadf;
+  padding:18px;
+  font-family:monospace;
+  white-space:pre-wrap;
+}
+
+.py3-details{
+  border:1px solid var(--py3-line);
+  border-radius:10px;
+  margin:12px 0;
+  overflow:hidden;
+}
+
+.py3-details summary{
+  cursor:pointer;
+  padding:13px 15px;
+  background:#f8fafc;
+  font-weight:700;
+}
+
+.py3-details div{
+  padding:15px;
+}
+
+.py3-quiz-question{
+  border:1px solid var(--py3-line);
+  border-radius:13px;
+  padding:18px;
+  margin:14px 0;
+}
+
+.py3-quiz-option{
+  display:block;
+  padding:9px;
+  margin:5px 0;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.py3-quiz-option:hover{
+  background:#f2f4f7;
+}
+
+.py3-quiz-result{
+  font-weight:800;
+  padding:15px;
+  border-radius:10px;
+  display:none;
+}
+
+.py3-nav{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  margin-top:25px;
+}
+
+.py3-nav a{
+  text-decoration:none;
+  border:1px solid var(--py3-line);
+  border-radius:12px;
+  padding:14px 18px;
+  background:white;
+  color:var(--py3-primary);
+  font-weight:800;
+}
+
+.py3-footer{
+  text-align:center;
+  color:var(--py3-muted);
+  padding:25px;
+  font-size:13px;
+}
+
+.py3-checklist{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:9px;
+}
+
+.py3-check{
+  padding:10px;
+  border:1px solid var(--py3-line);
+  border-radius:9px;
+  background:#fff;
+}
+
+.py3-check input{
+  accent-color:var(--py3-green);
+}
+
+.py3-badge{
+  display:inline-block;
+  padding:3px 8px;
+  border-radius:999px;
+  font-size:11px;
+  background:var(--py3-primary-soft);
+  color:var(--py3-primary);
+  font-weight:800;
+}
+
+.py3-table-wrap{
+  overflow:auto;
+}
+
+.py3-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:650px;
+}
+
+.py3-table th,
+.py3-table td{
+  border:1px solid var(--py3-line);
+  padding:11px;
+  text-align:left;
+  vertical-align:top;
+}
+
+.py3-table th{
+  background:#f8fafc;
+}
+
+.py3-small{
+  font-size:13px;
+  color:var(--py3-muted);
+}
+
+@media(max-width:1000px){
+  .py3-layout{
+    grid-template-columns:1fr;
+  }
+
+  .py3-sidebar{
+    position:relative;
+    top:auto;
+    max-height:none;
+  }
+
+  .py3-sidebar a{
+    display:inline-block;
+  }
+
+  .py3-hero-grid{
+    grid-template-columns:1fr;
+  }
+
+  .py3-objectives,
+  .py3-three{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .py3-mindmap{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .py3-mm-center{
+    grid-column:1 / 3;
+    grid-row:auto;
+  }
+}
+
+@media(max-width:700px){
+  .py3-page{
+    padding:10px;
+  }
+
+  .py3-hero{
+    padding:28px 20px;
+    border-radius:17px;
+  }
+
+  .py3-section{
+    padding:20px;
+  }
+
+  .py3-objectives,
+  .py3-info-grid,
+  .py3-columns,
+  .py3-three,
+  .py3-simulator,
+  .py3-class-diagram,
+  .py3-checklist{
+    grid-template-columns:1fr;
+  }
+
+  .py3-mindmap{
+    grid-template-columns:1fr;
+  }
+
+  .py3-mm-center{
+    grid-column:auto;
+  }
+
+  .py3-tree-children{
+    gap:10px;
+    flex-direction:column;
+  }
+
+  .py3-nav{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="py3-page">
+
+<header class="py3-hero">
+  <div class="py3-hero-grid">
+    <div>
+      <span class="py3-page-label">Python Programming • Page 3 of 5</span>
+      <h1>Functions, Classes and Object-Oriented Programming</h1>
+      <p>
+        Move from writing individual Python statements to designing reusable,
+        maintainable programs with functions, classes, inheritance,
+        polymorphism and composition.
+      </p>
+    </div>
+
+    <div class="py3-hero-card">
+      <span class="py3-small" style="color:#cbd5e1">Learning progress</span>
+      <strong id="py3-progress-text">0%</strong>
+      <div class="py3-progress">
+        <div class="py3-progress-bar" id="py3-progress-bar"></div>
+      </div>
+      <p style="font-size:13px;margin-top:12px">
+        Complete the checklist as you learn.
+      </p>
+    </div>
+  </div>
+</header>
+
+<div class="py3-layout">
+
+<aside class="py3-sidebar">
+  <div class="py3-sidebar-title">Page contents</div>
+  <a href="#py3-intro">Introduction</a>
+  <a href="#py3-mindmap">Mind Map</a>
+  <a href="#py3-functions">Functions</a>
+  <a href="#py3-params">Parameters & Arguments</a>
+  <a href="#py3-return">Return Values</a>
+  <a href="#py3-scope">Scope</a>
+  <a href="#py3-functional">Lambda & Functional Tools</a>
+  <a href="#py3-classes">Classes & Objects</a>
+  <a href="#py3-constructors">Constructors</a>
+  <a href="#py3-encapsulation">Encapsulation</a>
+  <a href="#py3-inheritance">Inheritance</a>
+  <a href="#py3-polymorphism">Polymorphism</a>
+  <a href="#py3-composition">Composition</a>
+  <a href="#py3-project">Student Project</a>
+  <a href="#py3-exercises">Exercises</a>
+  <a href="#py3-quiz">Quiz</a>
+  <a href="#py3-summary">Summary</a>
+</aside>
+
+<main class="py3-main">
+
+<!-- ===================================================== -->
+<!-- INTRODUCTION -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-intro">
+<h2>1. Introduction</h2>
+
+<p class="py3-section-intro">
+In the previous lessons you learned how Python stores data, makes decisions,
+and repeats operations. Now we will learn how to organize larger programs.
+</p>
+
+<div class="py3-info-grid">
+
+<div class="py3-info">
+<strong>Functions</strong>
+Reusable blocks of behavior that can accept input and produce output.
+</div>
+
+<div class="py3-info">
+<strong>Classes</strong>
+Blueprints for creating objects that combine data and behavior.
+</div>
+
+<div class="py3-info">
+<strong>Objects</strong>
+Individual instances created from classes.
+</div>
+
+<div class="py3-info">
+<strong>OOP</strong>
+A programming style that models software around objects and relationships.
+</div>
+
+</div>
+
+<h3>Learning objectives</h3>
+
+<div class="py3-objectives">
+<label class="py3-objective"><input class="py3-progress-check"> Why functions are needed</label>
+<label class="py3-objective"><input class="py3-progress-check"> Define functions with def</label>
+<label class="py3-objective"><input class="py3-progress-check"> Call functions</label>
+<label class="py3-objective"><input class="py3-progress-check"> Parameters and arguments</label>
+<label class="py3-objective"><input class="py3-progress-check"> Return values</label>
+<label class="py3-objective"><input class="py3-progress-check"> Default arguments</label>
+<label class="py3-objective"><input class="py3-progress-check"> Positional arguments</label>
+<label class="py3-objective"><input class="py3-progress-check"> Keyword arguments</label>
+<label class="py3-objective"><input class="py3-progress-check"> *args</label>
+<label class="py3-objective"><input class="py3-progress-check"> **kwargs</label>
+<label class="py3-objective"><input class="py3-progress-check"> Variable scope</label>
+<label class="py3-objective"><input class="py3-progress-check"> Lambda functions</label>
+<label class="py3-objective"><input class="py3-progress-check"> map()</label>
+<label class="py3-objective"><input class="py3-progress-check"> filter()</label>
+<label class="py3-objective"><input class="py3-progress-check"> Classes</label>
+<label class="py3-objective"><input class="py3-progress-check"> Objects</label>
+<label class="py3-objective"><input class="py3-progress-check"> Constructors</label>
+<label class="py3-objective"><input class="py3-progress-check"> Instance attributes</label>
+<label class="py3-objective"><input class="py3-progress-check"> Instance methods</label>
+<label class="py3-objective"><input class="py3-progress-check"> Class attributes</label>
+<label class="py3-objective"><input class="py3-progress-check"> Class methods</label>
+<label class="py3-objective"><input class="py3-progress-check"> Static methods</label>
+<label class="py3-objective"><input class="py3-progress-check"> Encapsulation</label>
+<label class="py3-objective"><input class="py3-progress-check"> Inheritance</label>
+<label class="py3-objective"><input class="py3-progress-check"> Method overriding</label>
+<label class="py3-objective"><input class="py3-progress-check"> Polymorphism</label>
+<label class="py3-objective"><input class="py3-progress-check"> Composition</label>
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- MIND MAP -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-mindmap">
+<h2>2. Functions and OOP Mind Map</h2>
+
+<p class="py3-section-intro">
+The central idea is reusable Python code. Functions reuse behavior;
+classes reuse structure and behavior.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram A — Reusable Python Code</div>
+
+<div class="py3-mindmap">
+
+<div class="py3-mm-node">Functions</div>
+<div class="py3-mm-node">Parameters</div>
+<div class="py3-mm-node">Return Values</div>
+<div class="py3-mm-node">Scope</div>
+
+<div class="py3-mm-node">Lambda</div>
+
+<div class="py3-mm-center">
+REUSABLE<br>PYTHON CODE
+</div>
+
+<div class="py3-mm-node">Classes</div>
+<div class="py3-mm-node">Objects</div>
+<div class="py3-mm-node">Encapsulation</div>
+<div class="py3-mm-node">Inheritance</div>
+<div class="py3-mm-node">Polymorphism</div>
+<div class="py3-mm-node">Composition</div>
+
+</div>
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- FUNCTIONS -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-functions">
+<h2>3. Functions</h2>
+
+<div class="py3-concept">
+
+<div class="py3-concept-head">
+<h3>Why functions are needed</h3>
+</div>
+
+<div class="py3-concept-body">
+
+<p>
+A function is a named, reusable block of code that performs a specific task.
+</p>
+
+<div class="py3-why">
+<strong>Why it matters:</strong>
+Without functions, the same calculation or operation may be copied throughout
+your program. Functions give you one place to maintain the logic.
+</div>
+
+<div class="py3-analogy">
+<strong>Real-world analogy:</strong>
+Think of a coffee machine. You press a button instead of manually performing
+every step required to make coffee.
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>calculator.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def add(a, b):
+    return a + b
+
+result = add(10, 20)
+print(result)</pre>
+</div>
+
+<div class="py3-output">30</div>
+
+<p>
+The <code>def</code> keyword defines the function. The function receives
+<code>a</code> and <code>b</code>, calculates their sum, and returns the result.
+</p>
+
+<div class="py3-warning">
+<strong>Common mistake:</strong>
+Defining a function does not execute it. You must call it:
+<code>add(10, 20)</code>.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a <code>subtract(a, b)</code> function that returns the difference.
+</div>
+
+</div>
+</div>
+
+<h3>Function execution flow</h3>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram B — Function Execution Flow</div>
+
+<div class="py3-flow">
+
+<div class="py3-flow-box">Function call: <code>add(10, 20)</code></div>
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Arguments passed: <code>10</code> and <code>20</code></div>
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Function body executes</div>
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Return value produced: <code>30</code></div>
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Caller receives result</div>
+
+</div>
+</div>
+
+<h3>Calculator functions</h3>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>calculator.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Cannot divide by zero"
+    return a / b
+
+print(add(10, 5))
+print(subtract(10, 5))
+print(multiply(10, 5))
+print(divide(10, 5))</pre>
+</div>
+
+<div class="py3-output">15
+5
+50
+2.0</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- PARAMETERS -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-params">
+<h2>4. Parameters and Arguments</h2>
+
+<p class="py3-section-intro">
+Parameters describe what a function accepts. Arguments are the actual values
+you provide when calling the function.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram C — Parameters versus Arguments</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>Definition</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def greet(name, message="Hello"):
+    return f"{message}, {name}!"</pre>
+</div>
+
+<div class="py3-flow">
+
+<div class="py3-flow-box">
+<strong>name</strong> → parameter
+</div>
+
+<div class="py3-flow-box">
+<strong>message</strong> → parameter with a default value
+</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">
+<code>greet("Asha", "Welcome")</code>
+</div>
+
+<div class="py3-flow-box">
+<strong>"Asha"</strong> → positional argument
+</div>
+
+<div class="py3-flow-box">
+<strong>"Welcome"</strong> → positional argument
+</div>
+
+</div>
+</div>
+
+<h3>Positional arguments</h3>
+
+<p>
+Values are assigned according to their position.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>positional.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def introduce(name, age):
+    print(name, age)
+
+introduce("Asha", 21)</pre>
+</div>
+
+<div class="py3-output">Asha 21</div>
+
+<h3>Keyword arguments</h3>
+
+<p>
+Keyword arguments explicitly identify the parameter being assigned.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>keyword.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def introduce(name, age):
+    print(name, age)
+
+introduce(age=21, name="Asha")</pre>
+</div>
+
+<div class="py3-output">Asha 21</div>
+
+<h3>Default arguments</h3>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>default.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def greet(name, message="Hello"):
+    return f"{message}, {name}"
+
+print(greet("Asha"))
+print(greet("Ravi", "Welcome"))</pre>
+</div>
+
+<div class="py3-output">Hello, Asha
+Welcome, Ravi</div>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+A default argument is like a form field with a pre-filled value. You can
+accept the default or provide a different value.
+</div>
+
+<h3>*args</h3>
+
+<p>
+Use <code>*args</code> when a function should accept any number of positional
+arguments.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>args.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def total(*args):
+    return sum(args)
+
+print(total(10, 20))
+print(total(1, 2, 3, 4, 5))</pre>
+</div>
+
+<div class="py3-output">30
+15</div>
+
+<h3>**kwargs</h3>
+
+<p>
+Use <code>**kwargs</code> when a function should accept any number of keyword
+arguments.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>kwargs.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def show_profile(**kwargs):
+    for key, value in kwargs.items():
+        print(key, "=", value)
+
+show_profile(
+    name="Asha",
+    age=21,
+    course="Python"
+)</pre>
+</div>
+
+<div class="py3-output">name = Asha
+age = 21
+course = Python</div>
+
+<div class="py3-warning">
+<strong>Common mistake:</strong>
+Do not confuse <code>*args</code> with a list. Inside the function,
+<code>args</code> is a tuple.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a function called <code>average(*numbers)</code> that returns the
+average of all supplied numbers.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- RETURN -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-return">
+<h2>5. Return Values</h2>
+
+<p>
+The <code>return</code> statement sends a value back to the code that called
+the function.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>multiple_values.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">def calculate(a, b):
+    total = a + b
+    difference = a - b
+    product = a * b
+
+    return total, difference, product
+
+result = calculate(20, 5)
+
+print(result)
+print(result[0])
+print(result[1])
+print(result[2])</pre>
+</div>
+
+<div class="py3-output">(25, 15, 100)
+25
+15
+100</div>
+
+<p>
+Python can return multiple values. Technically, Python packages them into a
+tuple.
+</p>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+A restaurant can return an entire meal containing several items instead of
+returning only one item.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a function that receives a student's marks and returns:
+total, average, and highest mark.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- SCOPE -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-scope">
+<h2>6. Variable Scope</h2>
+
+<p>
+Scope determines where a variable can be accessed.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram D — Local and Global Scope</div>
+
+<div style="border:2px solid #3047c9;padding:20px;border-radius:15px;background:#eef2ff">
+
+<strong>GLOBAL SCOPE</strong>
+
+<div style="margin-top:12px;padding:15px;border:2px dashed #667085;border-radius:12px;background:white">
+<code>school = "RBUtech"</code>
+
+<div style="margin-top:15px;border:2px solid #087443;border-radius:12px;padding:15px;background:#ecfdf3">
+
+<strong>FUNCTION SCOPE</strong>
+
+<p><code>def student():</code></p>
+
+<p><code>name = "Asha"</code></p>
+<p><code>age = 20</code></p>
+
+<p class="py3-small">
+name and age are local variables.
+They exist inside the function.
+</p>
+
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>scope.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">school = "RBUtech"
+
+def show_student():
+    name = "Asha"
+
+    print(school)
+    print(name)
+
+show_student()
+
+print(school)</pre>
+</div>
+
+<div class="py3-output">RBUtech
+Asha
+RBUtech</div>
+
+<div class="py3-warning">
+<strong>Common mistake:</strong>
+Trying to access a local variable outside the function causes a
+<code>NameError</code>.
+</div>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+A global variable is like a notice board visible to everyone in a building.
+A local variable is like a private note inside one office.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a global variable <code>tax_rate</code> and a function with a local
+variable <code>price</code>. Calculate the final price.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- LAMBDA -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-functional">
+<h2>7. Lambda and Functional Tools</h2>
+
+<h3>Lambda functions</h3>
+
+<p>
+A lambda is a small anonymous function. It is useful when a short function
+is needed only once or as an argument to another function.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>lambda.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">square = lambda x: x * x
+
+print(square(5))</pre>
+</div>
+
+<div class="py3-output">25</div>
+
+<h3>map()</h3>
+
+<p>
+<code>map()</code> applies a function to every item in an iterable.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>map.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">numbers = [1, 2, 3, 4, 5]
+
+squares = list(map(lambda x: x * x, numbers))
+
+print(squares)</pre>
+</div>
+
+<div class="py3-output">[1, 4, 9, 16, 25]</div>
+
+<h3>filter()</h3>
+
+<p>
+<code>filter()</code> keeps items for which a function returns
+<code>True</code>.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>filter.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">numbers = [1, 2, 3, 4, 5, 6]
+
+even_numbers = list(
+    filter(lambda x: x % 2 == 0, numbers)
+)
+
+print(even_numbers)</pre>
+</div>
+
+<div class="py3-output">[2, 4, 6]</div>
+
+<div class="py3-info-grid">
+
+<div class="py3-info">
+<strong>Use lambda when:</strong>
+The operation is tiny and simple.
+</div>
+
+<div class="py3-info">
+<strong>Use map when:</strong>
+Every item needs to be transformed.
+</div>
+
+<div class="py3-info">
+<strong>Use filter when:</strong>
+You need to select matching items.
+</div>
+
+<div class="py3-info">
+<strong>Prefer normal def when:</strong>
+The logic is complex or reused.
+</div>
+
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Use <code>filter()</code> to keep only students whose marks are at least 50.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CLASSES -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-classes">
+<h2>8. Classes and Objects</h2>
+
+<p>
+A class is a blueprint. An object is a concrete instance created from that
+blueprint.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram E — Class and Object Relationship</div>
+
+<div class="py3-class-diagram">
+
+<div class="py3-class-box">
+
+<div class="py3-class-title">Student</div>
+
+<div class="py3-class-body">
+<strong>Attributes</strong>
+<ul>
+<li>name</li>
+<li>age</li>
+<li>marks</li>
+</ul>
+
+<strong>Methods</strong>
+<ul>
+<li>introduce()</li>
+<li>calculate_grade()</li>
+</ul>
+</div>
+
+</div>
+
+<div style="text-align:center;font-size:28px;color:#3047c9">
+→
+</div>
+
+<div>
+
+<div class="py3-object">
+<strong>student1</strong><br>
+Asha<br>
+Age: 20<br>
+Marks: 90
+</div>
+
+<br>
+
+<div class="py3-object">
+<strong>student2</strong><br>
+Ravi<br>
+Age: 21<br>
+Marks: 75
+</div>
+
+<br>
+
+<div class="py3-object">
+<strong>student3</strong><br>
+Sara<br>
+Age: 19<br>
+Marks: 88
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="py3-why">
+<strong>Why it matters:</strong>
+A class lets you model real-world entities while keeping their data and
+behavior together.
+</div>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+A class is an architectural blueprint. Each house built from the blueprint
+is an object.
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>student.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    def introduce(self):
+        print("I am a Python student.")
+
+student1 = Student()
+student2 = Student()
+
+student1.introduce()
+student2.introduce()</pre>
+</div>
+
+<div class="py3-output">I am a Python student.
+I am a Python student.</div>
+
+<h3>Instance attributes and methods</h3>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>student_attributes.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    def introduce(self):
+        print(f"My name is {self.name}")
+
+student = Student()
+
+student.name = "Asha"
+
+student.introduce()</pre>
+</div>
+
+<div class="py3-output">My name is Asha</div>
+
+<p>
+Instance attributes belong to individual objects. Instance methods operate
+on those objects and normally receive <code>self</code>.
+</p>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a <code>Book</code> class with title, author, and a
+<code>describe()</code> method.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CONSTRUCTORS -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-constructors">
+<h2>9. Constructors</h2>
+
+<p>
+Python commonly uses <code>__init__()</code> to initialize an object when it
+is created.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram F — Constructor Execution</div>
+
+<div class="py3-flow">
+
+<div class="py3-flow-box">
+<code>Student("Asha", 90)</code>
+</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">
+<code>__init__()</code> runs
+</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">
+<code>self.name = "Asha"</code>
+</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">
+<code>self.mark = 90</code>
+</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">
+Initialized object
+</div>
+
+</div>
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>constructor.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    def __init__(self, name, mark):
+        self.name = name
+        self.mark = mark
+
+    def show(self):
+        print(self.name, self.mark)
+
+student = Student("Asha", 90)
+
+student.show()</pre>
+</div>
+
+<div class="py3-output">Asha 90</div>
+
+<div class="py3-warning">
+<strong>Common mistake:</strong>
+The constructor is named exactly <code>__init__</code> with two underscores on
+each side.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a <code>Product</code> class whose constructor accepts name and price.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- CLASS ATTRIBUTES -->
+<!-- ===================================================== -->
+
+<section class="py3-section">
+
+<h2>10. Class Attributes, Class Methods and Static Methods</h2>
+
+<h3>Class attributes</h3>
+
+<p>
+A class attribute is shared by objects of the class.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>class_attribute.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    school = "RBUtech"
+
+    def __init__(self, name):
+        self.name = name
+
+a = Student("Asha")
+b = Student("Ravi")
+
+print(a.school)
+print(b.school)</pre>
+</div>
+
+<div class="py3-output">RBUtech
+RBUtech</div>
+
+<h3>Class methods</h3>
+
+<p>
+A class method receives the class itself as <code>cls</code>.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>classmethod.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    school = "RBUtech"
+
+    @classmethod
+    def school_name(cls):
+        return cls.school
+
+print(Student.school_name())</pre>
+</div>
+
+<div class="py3-output">RBUtech</div>
+
+<h3>Static methods</h3>
+
+<p>
+A static method does not require either an instance or class reference.
+It is useful for helper logic related conceptually to the class.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>staticmethod.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    @staticmethod
+    def is_valid_mark(mark):
+        return 0 &lt;= mark &lt;= 100
+
+print(Student.is_valid_mark(90))
+print(Student.is_valid_mark(120))</pre>
+</div>
+
+<div class="py3-output">True
+False</div>
+
+<div class="py3-table-wrap">
+<table class="py3-table">
+<thead>
+<tr>
+<th>Feature</th>
+<th>Receives</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Instance method</td>
+<td>self</td>
+<td>Working with an object's data</td>
+</tr>
+<tr>
+<td>Class method</td>
+<td>cls</td>
+<td>Working with class-level state or alternate constructors</td>
+</tr>
+<tr>
+<td>Static method</td>
+<td>Nothing automatically</td>
+<td>Utility logic related to the class</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- ENCAPSULATION -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-encapsulation">
+<h2>11. Encapsulation</h2>
+
+<p>
+Encapsulation means controlling how an object's internal state is accessed
+or changed.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram H — Encapsulation</div>
+
+<div class="py3-flow">
+
+<div class="py3-flow-box">Application</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Public method: <code>deposit()</code></div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Object validation</div>
+
+<div class="py3-arrow">↓</div>
+
+<div class="py3-flow-box">Internal state update</div>
+
+</div>
+</div>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+An ATM does not let you directly modify the bank's database. You interact
+through controlled operations such as deposit and withdrawal.
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>bank_account.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class BankAccount:
+
+    def __init__(self, balance=0):
+        self._balance = balance
+
+    def deposit(self, amount):
+        if amount &lt;= 0:
+            raise ValueError("Amount must be positive")
+
+        self._balance += amount
+
+    def withdraw(self, amount):
+        if amount &gt; self._balance:
+            raise ValueError("Insufficient funds")
+
+        self._balance -= amount
+
+    def get_balance(self):
+        return self._balance
+
+
+account = BankAccount(100)
+
+account.deposit(50)
+account.withdraw(30)
+
+print(account.get_balance())</pre>
+</div>
+
+<div class="py3-output">120</div>
+
+<div class="py3-warning">
+<strong>Important:</strong>
+Python does not enforce private fields in the same way as some languages.
+A leading underscore is primarily a convention meaning "internal use".
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Add a <code>withdraw()</code> validation rule that rejects negative or zero
+withdrawal amounts.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- INHERITANCE -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-inheritance">
+<h2>12. Inheritance</h2>
+
+<p>
+Inheritance allows a child class to reuse behavior from a parent class.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram G — Inheritance</div>
+
+<div class="py3-tree">
+
+<div class="py3-tree-node">Person</div>
+
+<div style="font-size:28px;color:#3047c9">↓</div>
+
+<div class="py3-tree-children">
+
+<div class="py3-tree-node">Student</div>
+<div class="py3-tree-node">Employee</div>
+
+</div>
+
+</div>
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>inheritance.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Person:
+
+    def __init__(self, name):
+        self.name = name
+
+    def introduce(self):
+        print(f"My name is {self.name}")
+
+
+class Employee(Person):
+
+    def work(self):
+        print(f"{self.name} is working")
+
+
+employee = Employee("Ravi")
+
+employee.introduce()
+employee.work()</pre>
+</div>
+
+<div class="py3-output">My name is Ravi
+Ravi is working</div>
+
+<p>
+The <code>Employee</code> class inherited <code>__init__()</code> and
+<code>introduce()</code> from <code>Person</code>, while adding its own
+<code>work()</code> method.
+</p>
+
+<h3>Method overriding</h3>
+
+<p>
+A child class can replace inherited behavior by defining a method with the
+same name.
+</p>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>override.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Person:
+
+    def introduce(self):
+        print("I am a person")
+
+
+class Student(Person):
+
+    def introduce(self):
+        print("I am a student")
+
+
+person = Person()
+student = Student()
+
+person.introduce()
+student.introduce()</pre>
+</div>
+
+<div class="py3-output">I am a person
+I am a student</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a <code>Manager</code> class that inherits from
+<code>Employee</code> and adds a <code>manage_team()</code> method.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- POLYMORPHISM -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-polymorphism">
+<h2>13. Polymorphism</h2>
+
+<p>
+Polymorphism means that different objects can respond to the same operation
+in their own way.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram I — Polymorphism and Duck Typing</div>
+
+<div class="py3-three">
+
+<div class="py3-object">
+<strong>Dog</strong>
+<p><code>speak()</code></p>
+<p>→ Woof</p>
+</div>
+
+<div class="py3-object">
+<strong>Cat</strong>
+<p><code>speak()</code></p>
+<p>→ Meow</p>
+</div>
+
+<div class="py3-object">
+<strong>Same interface</strong>
+<p><code>animal.speak()</code></p>
+<p>Different behavior</p>
+</div>
+
+</div>
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>polymorphism.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Dog:
+
+    def speak(self):
+        return "Woof"
+
+
+class Cat:
+
+    def speak(self):
+        return "Meow"
+
+
+def make_speak(animal):
+    print(animal.speak())
+
+
+dog = Dog()
+cat = Cat()
+
+make_speak(dog)
+make_speak(cat)</pre>
+</div>
+
+<div class="py3-output">Woof
+Meow</div>
+
+<div class="py3-why">
+<strong>Duck typing:</strong>
+Python generally cares about what an object can do rather than what class it
+belongs to. If an object provides the required <code>speak()</code> behavior,
+the function can use it.
+</div>
+
+<div class="py3-analogy">
+<strong>Analogy:</strong>
+If you ask two people to "speak", you don't care about their job title.
+You care that they can perform the requested action.
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create <code>Circle</code> and <code>Rectangle</code> classes, both with an
+<code>area()</code> method. Write one function that works with both.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- COMPOSITION -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-composition">
+<h2>14. Composition</h2>
+
+<p>
+Composition means building an object by combining other objects.
+It represents a <strong>has-a</strong> relationship.
+</p>
+
+<div class="py3-diagram">
+<div class="py3-diagram-title">Diagram J — Composition</div>
+
+<div class="py3-class-diagram">
+
+<div class="py3-class-box">
+<div class="py3-class-title">Car</div>
+<div class="py3-class-body">
+Has an Engine<br>
+Has Wheels<br>
+Has a Battery
+</div>
+</div>
+
+<div style="text-align:center;font-size:30px;color:#3047c9">HAS-A</div>
+
+<div>
+
+<div class="py3-object"><strong>Engine</strong></div>
+<br>
+<div class="py3-object"><strong>Wheels</strong></div>
+<br>
+<div class="py3-object"><strong>Battery</strong></div>
+
+</div>
+
+</div>
+</div>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>composition.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Engine:
+
+    def start(self):
+        return "Engine started"
+
+
+class Wheels:
+
+    def rotate(self):
+        return "Wheels rotating"
+
+
+class Battery:
+
+    def power(self):
+        return "Battery supplying power"
+
+
+class Car:
+
+    def __init__(self):
+        self.engine = Engine()
+        self.wheels = Wheels()
+        self.battery = Battery()
+
+    def drive(self):
+        print(self.battery.power())
+        print(self.engine.start())
+        print(self.wheels.rotate())
+
+
+car = Car()
+car.drive()</pre>
+</div>
+
+<div class="py3-output">Battery supplying power
+Engine started
+Wheels rotating</div>
+
+<div class="py3-table-wrap">
+<table class="py3-table">
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is-a</td>
+<td>Inheritance</td>
+<td>Student is a Person</td>
+</tr>
+<tr>
+<td>has-a</td>
+<td>Composition</td>
+<td>Car has an Engine</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="py3-exercise">
+<strong>Exercise:</strong>
+Create a <code>Computer</code> class composed of a
+<code>Processor</code> and <code>Storage</code> object.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- INTERACTIVE FUNCTION -->
+<!-- ===================================================== -->
+
+<section class="py3-section">
+<h2>15. Interactive Function Input/Output Simulator</h2>
+
+<p>
+This simulator demonstrates function input and output using JavaScript.
+It does not execute Python.
+</p>
+
+<div class="py3-explorer">
+
+<div class="py3-simulator">
+
+<div>
+
+<label>
+First number
+<input class="py3-input" id="py3-num-a" type="number" value="10">
+</label>
+
+<label>
+Second number
+<input class="py3-input" id="py3-num-b" type="number" value="20">
+</label>
+
+<button class="py3-btn" id="py3-run-add">
+Run add(a, b)
+</button>
+
+</div>
+
+<div class="py3-result" id="py3-function-result">
+Waiting for function call...
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- CLASS EXPLORER -->
+<!-- ===================================================== -->
+
+<section class="py3-section">
+<h2>16. Class-Object Visual Explorer</h2>
+
+<p>
+Select an object to see how every object uses the same class definition while
+maintaining its own instance data.
+</p>
+
+<div class="py3-explorer">
+
+<div class="py3-explorer-controls">
+<button class="py3-btn" data-student="Asha">Asha</button>
+<button class="py3-btn" data-student="Ravi">Ravi</button>
+<button class="py3-btn" data-student="Sara">Sara</button>
+</div>
+
+<div class="py3-result" id="py3-student-output">
+Select a student...
+</div>
+
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- INHERITANCE EXPLORER -->
+<!-- ===================================================== -->
+
+<section class="py3-section">
+<h2>17. Inheritance Tree Explorer</h2>
+
+<div class="py3-explorer">
+
+<div class="py3-explorer-controls">
+<button class="py3-btn" data-inherit="person">Person</button>
+<button class="py3-btn" data-inherit="student">Student</button>
+<button class="py3-btn" data-inherit="employee">Employee</button>
+</div>
+
+<div class="py3-result" id="py3-inheritance-output">
+Choose a class...
+</div>
+
+</div>
+</section>
+
+<!-- ===================================================== -->
+<!-- STUDENT PROJECT -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-project">
+<h2>18. Practical Project — Student Management Program</h2>
+
+<p class="py3-section-intro">
+This project combines classes, constructors, instance attributes, methods,
+validation, lists, input handling and grade calculation.
+</p>
+
+<h3>Project requirements</h3>
+
+<div class="py3-three">
+
+<div class="py3-info">
+<strong>Add student</strong>
+Store a student's name and marks.
+</div>
+
+<div class="py3-info">
+<strong>Average</strong>
+Calculate average marks.
+</div>
+
+<div class="py3-info">
+<strong>Grade</strong>
+Convert average into a grade.
+</div>
+
+<div class="py3-info">
+<strong>Validation</strong>
+Only accept marks from 0 to 100.
+</div>
+
+<div class="py3-info">
+<strong>Display</strong>
+Show complete student information.
+</div>
+
+<div class="py3-info">
+<strong>Error handling</strong>
+Handle invalid terminal input.
+</div>
+
+</div>
+
+<h3>Complete runnable program</h3>
+
+<div class="py3-code-wrap">
+<div class="py3-code-toolbar">
+<span>student_management.py</span>
+<button class="py3-copy">Copy</button>
+</div>
+<pre class="py3-code">class Student:
+
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    def average(self):
+        if not self.marks:
+            return 0
+
+        return sum(self.marks) / len(self.marks)
+
+    def grade(self):
+        avg = self.average()
+
+        if avg >= 90:
+            return "A"
+        elif avg >= 80:
+            return "B"
+        elif avg >= 70:
+            return "C"
+        elif avg >= 60:
+            return "D"
+        else:
+            return "F"
+
+    def display(self):
+        print("\nStudent:", self.name)
+        print("Marks:", self.marks)
+        print("Average:", round(self.average(), 2))
+        print("Grade:", self.grade())
+
+
+def read_mark(subject):
+    while True:
+        try:
+            mark = float(
+                input(f"Enter marks for {subject}: ")
+            )
+
+            if 0 <= mark <= 100:
+                return mark
+
+            print("Marks must be between 0 and 100.")
+
+        except ValueError:
+            print("Please enter a valid number.")
+
+
+students = []
+
+while True:
+
+    print("\n--- Student Management ---")
+    print("1. Add student")
+    print("2. Display students")
+    print("3. Exit")
+
+    choice = input("Choose an option: ")
+
+    if choice == "1":
+
+        name = input("Enter student name: ")
+
+        subjects = ["Python", "Math", "English"]
+        marks = []
+
+        for subject in subjects:
+            marks.append(read_mark(subject))
+
+        student = Student(name, marks)
+        students.append(student)
+
+        print("Student added successfully.")
+
+    elif choice == "2":
+
+        if not students:
+            print("No students available.")
+        else:
+            for student in students:
+                student.display()
+
+    elif choice == "3":
+
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice.")</pre>
+</div>
+
+<h3>Example interaction</h3>
+
+<div class="py3-output">--- Student Management ---
+1. Add student
+2. Display students
+3. Exit
+
+Choose an option: 1
+Enter student name: Asha
+Enter marks for Python: 90
+Enter marks for Math: 85
+Enter marks for English: 95
+Student added successfully.
+
+Choose an option: 2
+
+Student: Asha
+Marks: [90.0, 85.0, 95.0]
+Average: 90.0
+Grade: A</div>
+
+<h3>How the project works</h3>
+
+<details class="py3-details">
+<summary>1. Student class</summary>
+<div>
+The class stores the student's name and marks and provides behavior for
+calculating averages, grades, and displaying information.
+</div>
+</details>
+
+<details class="py3-details">
+<summary>2. Constructor</summary>
+<div>
+<code>__init__()</code> initializes the student's name and marks.
+</div>
+</details>
+
+<details class="py3-details">
+<summary>3. average()</summary>
+<div>
+The method uses <code>sum()</code> and <code>len()</code> to calculate the
+average.
+</div>
+</details>
+
+<details class="py3-details">
+<summary>4. grade()</summary>
+<div>
+Conditional logic converts the average into a letter grade.
+</div>
+</details>
+
+<details class="py3-details">
+<summary>5. read_mark()</summary>
+<div>
+A loop repeatedly asks for input until the user provides a valid number
+between 0 and 100.
+</div>
+</details>
+
+<details class="py3-details">
+<summary>6. Main program</summary>
+<div>
+The program stores Student objects in a list and allows the user to add,
+display, or exit.
+</div>
+</details>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- EXERCISES -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-exercises">
+<h2>19. Exercises</h2>
+
+<div class="py3-three">
+
+<div class="py3-info">
+<span class="py3-badge">Beginner</span>
+<h3>Exercise 1</h3>
+<p>Create a function that accepts a name and returns a greeting.</p>
+</div>
+
+<div class="py3-info">
+<span class="py3-badge">Beginner</span>
+<h3>Exercise 2</h3>
+<p>Create a function accepting any number of numbers using
+<code>*args</code>.</p>
+</div>
+
+<div class="py3-info">
+<span class="py3-badge">Beginner</span>
+<h3>Exercise 3</h3>
+<p>Create a Student class with name and marks.</p>
+</div>
+
+<div class="py3-info">
+<span class="py3-badge">Intermediate</span>
+<h3>Exercise 4</h3>
+<p>Create Person and Student classes using inheritance.</p>
+</div>
+
+<div class="py3-info">
+<span class="py3-badge">Intermediate</span>
+<h3>Exercise 5</h3>
+<p>Demonstrate polymorphism using different payment classes.</p>
+</div>
+
+<div class="py3-info">
+<span class="py3-badge">Intermediate</span>
+<h3>Exercise 6</h3>
+<p>Create a Computer using composition.</p>
+</div>
+
+</div>
+
+<div class="py3-exercise">
+<strong>Challenge:</strong>
+Extend the Student Management project so that it can search for a student
+by name and display the highest-performing student.
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- QUIZ -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-quiz">
+<h2>20. Knowledge Quiz</h2>
+
+<div class="py3-quiz-question">
+<strong>1. Which keyword defines a function?</strong>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q1" value="a"> class
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q1" value="b"> def
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q1" value="c"> function
+</label>
+</div>
+
+<div class="py3-quiz-question">
+<strong>2. What does a function use to send a value back?</strong>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q2" value="a"> return
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q2" value="b"> send
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q2" value="c"> output
+</label>
+</div>
+
+<div class="py3-quiz-question">
+<strong>3. Which syntax accepts arbitrary positional arguments?</strong>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q3" value="a"> **args
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q3" value="b"> *args
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q3" value="c"> args*
+</label>
+</div>
+
+<div class="py3-quiz-question">
+<strong>4. Which method initializes a typical Python object?</strong>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q4" value="a"> start()
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q4" value="b"> constructor()
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q4" value="c"> __init__()
+</label>
+</div>
+
+<div class="py3-quiz-question">
+<strong>5. "Car has an Engine" is an example of:</strong>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q5" value="a"> inheritance
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q5" value="b"> composition
+</label>
+
+<label class="py3-quiz-option">
+<input type="radio" name="q5" value="c"> overriding
+</label>
+</div>
+
+<button class="py3-btn" id="py3-check-quiz">
+Check answers
+</button>
+
+<div class="py3-quiz-result" id="py3-quiz-result"></div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- SUMMARY -->
+<!-- ===================================================== -->
+
+<section class="py3-section" id="py3-summary">
+<h2>21. Summary</h2>
+
+<div class="py3-three">
+
+<div class="py3-info">
+<strong>Functions</strong>
+Package reusable behavior into named blocks.
+</div>
+
+<div class="py3-info">
+<strong>Parameters</strong>
+Define what a function can receive.
+</div>
+
+<div class="py3-info">
+<strong>Return</strong>
+Send calculated values back to the caller.
+</div>
+
+<div class="py3-info">
+<strong>Scope</strong>
+Controls where variables are accessible.
+</div>
+
+<div class="py3-info">
+<strong>Classes</strong>
+Define reusable object blueprints.
+</div>
+
+<div class="py3-info">
+<strong>Objects</strong>
+Store individual instance data.
+</div>
+
+<div class="py3-info">
+<strong>Inheritance</strong>
+Reuse and specialize parent behavior.
+</div>
+
+<div class="py3-info">
+<strong>Polymorphism</strong>
+Allow different objects to share an interface.
+</div>
+
+<div class="py3-info">
+<strong>Composition</strong>
+Build complex objects from smaller objects.
+</div>
+
+</div>
+
+<h3>When should you use each concept?</h3>
+
+<div class="py3-table-wrap">
+<table class="py3-table">
+<thead>
+<tr>
+<th>Concept</th>
+<th>Use it when...</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Function</td>
+<td>You have reusable behavior or a task that deserves a name.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>The behavior needs input.</td>
+</tr>
+<tr>
+<td>Return</td>
+<td>The caller needs a result.</td>
+</tr>
+<tr>
+<td>*args</td>
+<td>The number of positional inputs can vary.</td>
+</tr>
+<tr>
+<td>**kwargs</td>
+<td>The number of named inputs can vary.</td>
+</tr>
+<tr>
+<td>Lambda</td>
+<td>A tiny one-expression function is sufficient.</td>
+</tr>
+<tr>
+<td>Class</td>
+<td>Data and behavior naturally belong together.</td>
+</tr>
+<tr>
+<td>Inheritance</td>
+<td>There is a genuine "is-a" relationship and useful shared behavior.</td>
+</tr>
+<tr>
+<td>Encapsulation</td>
+<td>State needs controlled access or validation.</td>
+</tr>
+<tr>
+<td>Polymorphism</td>
+<td>Different objects should support the same operation.</td>
+</tr>
+<tr>
+<td>Composition</td>
+<td>A larger object is built from smaller cooperating objects.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="py3-why">
+<strong>Architect's rule:</strong>
+Do not use classes simply because Python supports classes. Start with simple
+functions and data structures. Introduce classes when your program contains
+objects with meaningful state, behavior, and relationships.
+</div>
+
+<h3>Page 3 completion checklist</h3>
+
+<div class="py3-checklist">
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I can define and call functions
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand parameters and arguments
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I can return values from functions
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand local and global scope
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand lambda, map and filter
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I can create classes and objects
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand constructors
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand encapsulation
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand inheritance
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand polymorphism
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I understand composition
+</label>
+
+<label class="py3-check">
+<input type="checkbox" class="py3-progress-check">
+I completed the Student Management project
+</label>
+
+</div>
+
+</section>
+
+<!-- ===================================================== -->
+<!-- NAVIGATION -->
+<!-- ===================================================== -->
+
+<div class="py3-nav">
+
+<a href="python-page-2.html">
+← Page 2<br>
+<span class="py3-small">Control Flow & Data Structures</span>
+</a>
+
+<a href="python-page-4.html">
+Page 4 →<br>
+<span class="py3-small">Modules, Files & Exceptions</span>
+</a>
+
+</div>
+
+<div class="py3-footer">
+Python Programming • Page 3 of 5 • RBUtech Learning
+</div>
+
+</main>
+</div>
+</div>
+
+<script>
+/* =========================================================
+   RBUtech Python Page 3 JavaScript
+   No arbitrary Python execution is performed.
+   ========================================================= */
+
+(function(){
+
+  "use strict";
+
+  /* -------------------------------------------------------
+     Copy buttons
+     ------------------------------------------------------- */
+
+  document.querySelectorAll(".py3-copy").forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+      const code =
+        button.closest(".py3-code-wrap")
+        .querySelector(".py3-code")
+        .innerText;
+
+      navigator.clipboard.writeText(code).then(function(){
+
+        const original = button.innerText;
+
+        button.innerText = "Copied!";
+
+        setTimeout(function(){
+          button.innerText = original;
+        },1200);
+
+      }).catch(function(){
+
+        button.innerText = "Select & copy";
+
+        setTimeout(function(){
+          button.innerText = "Copy";
+        },1200);
+
+      });
+
+    });
+
+  });
+
+
+  /* -------------------------------------------------------
+     Progress checklist
+     ------------------------------------------------------- */
+
+  const checks =
+    Array.from(document.querySelectorAll(".py3-progress-check"));
+
+  const progressBar =
+    document.getElementById("py3-progress-bar");
+
+  const progressText =
+    document.getElementById("py3-progress-text");
+
+  function updateProgress(){
+
+    const completed =
+      checks.filter(function(check){
+        return check.checked;
+      }).length;
+
+    const percentage =
+      checks.length
+      ? Math.round((completed / checks.length) * 100)
+      : 0;
+
+    progressBar.style.width = percentage + "%";
+    progressText.innerText = percentage + "%";
+
+    try{
+      localStorage.setItem(
+        "rbu-python-page3-progress",
+        JSON.stringify(
+          checks.map(function(check){
+            return check.checked;
+          })
+        )
+      );
+    }catch(error){}
+
+  }
+
+  try{
+
+    const saved =
+      JSON.parse(
+        localStorage.getItem("rbu-python-page3-progress") || "[]"
+      );
+
+    checks.forEach(function(check,index){
+
+      if(saved[index] === true){
+        check.checked = true;
+      }
+
+    });
+
+  }catch(error){}
+
+  checks.forEach(function(check){
+    check.addEventListener("change",updateProgress);
+  });
+
+  updateProgress();
+
+
+  /* -------------------------------------------------------
+     Function simulator
+     ------------------------------------------------------- */
+
+  const runAdd =
+    document.getElementById("py3-run-add");
+
+  if(runAdd){
+
+    runAdd.addEventListener("click",function(){
+
+      const a =
+        Number(document.getElementById("py3-num-a").value);
+
+      const b =
+        Number(document.getElementById("py3-num-b").value);
+
+      const result =
+        document.getElementById("py3-function-result");
+
+      if(Number.isNaN(a) || Number.isNaN(b)){
+
+        result.textContent =
+          "Please enter valid numbers.";
+
+        return;
+      }
+
+      result.textContent =
+`Calling: add(${a}, ${b})
+
+Arguments passed
+↓
+Function body: return a + b
+↓
+Result: ${a + b}
+
+Caller receives: ${a + b}`;
+
+    });
+
+  }
+
+
+  /* -------------------------------------------------------
+     Class-object explorer
+     ------------------------------------------------------- */
+
+  const studentData = {
+
+    Asha:{
+      age:20,
+      marks:90,
+      grade:"A"
+    },
+
+    Ravi:{
+      age:21,
+      marks:75,
+      grade:"C"
+    },
+
+    Sara:{
+      age:19,
+      marks:88,
+      grade:"B"
+    }
+
+  };
+
+  document.querySelectorAll("[data-student]")
+    .forEach(function(button){
+
+      button.addEventListener("click",function(){
+
+        const name =
+          button.getAttribute("data-student");
+
+        const data =
+          studentData[name];
+
+        document.getElementById("py3-student-output")
+          .textContent =
+`Class: Student
+
+Object: student${name.toLowerCase()}
+
+name = "${name}"
+age = ${data.age}
+marks = ${data.marks}
+grade = "${data.grade}"
+
+Shared class methods:
+- introduce()
+- calculate_grade()
+
+Unique instance data:
+- name
+- age
+- marks`;
+
+      });
+
+    });
+
+
+  /* -------------------------------------------------------
+     Inheritance explorer
+     ------------------------------------------------------- */
+
+  const inheritanceData = {
+
+    person:
+`Class: Person
+
+Methods:
+- introduce()
+
+This is the parent class.
+Its common behavior can be inherited.`,
+
+    student:
+`Class: Student
+inherits from Person
+
+Inherited:
+- introduce()
+
+Student-specific:
+- study()
+
+Relationship:
+Student IS-A Person`,
+
+    employee:
+`Class: Employee
+inherits from Person
+
+Inherited:
+- introduce()
+
+Employee-specific:
+- work()
+
+Relationship:
+Employee IS-A Person`
+
+  };
+
+  document.querySelectorAll("[data-inherit]")
+    .forEach(function(button){
+
+      button.addEventListener("click",function(){
+
+        const type =
+          button.getAttribute("data-inherit");
+
+        document.getElementById("py3-inheritance-output")
+          .textContent =
+            inheritanceData[type];
+
+      });
+
+    });
+
+
+  /* -------------------------------------------------------
+     Quiz
+     ------------------------------------------------------- */
+
+  document.getElementById("py3-check-quiz")
+    .addEventListener("click",function(){
+
+      const answers = {
+        q1:"b",
+        q2:"a",
+        q3:"b",
+        q4:"c",
+        q5:"b"
+      };
+
+      let score = 0;
+
+      Object.keys(answers).forEach(function(question){
+
+        const selected =
+          document.querySelector(
+            'input[name="' + question + '"]:checked'
+          );
+
+        if(selected && selected.value === answers[question]){
+          score++;
+        }
+
+      });
+
+      const result =
+        document.getElementById("py3-quiz-result");
+
+      result.style.display = "block";
+
+      if(score === 5){
+
+        result.style.background = "#ecfdf3";
+        result.style.color = "#087443";
+
+        result.textContent =
+          "Excellent! 5/5 — You have a strong understanding of this page.";
+
+      }else if(score >= 3){
+
+        result.style.background = "#fff7ed";
+        result.style.color = "#b54708";
+
+        result.textContent =
+          "Good work! You scored " + score +
+          "/5. Review the concepts you missed.";
+
+      }else{
+
+        result.style.background = "#fef3f2";
+        result.style.color = "#b42318";
+
+        result.textContent =
+          "You scored " + score +
+          "/5. Review the examples and try again.";
+
+      }
+
+    });
+
+})();
+</script>
+
+</body>
+</html></main></div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
+</div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
+</body></html>
