@@ -1,0 +1,1397 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101828"><title>controlstatements</title>
+<style>
+:root{--primary:#5145e5;--primary-dark:#3930b8;--ink:#172033;--muted:#667085;--border:#e6e8ef;--surface:#fff;--background:#f7f8fc;--max:1240px;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #a5a0ff;outline-offset:4px}.site{width:100%;min-height:100vh;overflow:clip}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.header-inner{max-width:var(--max);min-height:80px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#6558f5,#4035bd);color:#fff;font-size:22px;font-weight:800;box-shadow:0 6px 16px rgba(81,69,229,.24)}.site-title{display:block;color:var(--ink);font-size:19px;font-weight:750;line-height:1.3;letter-spacing:-.5px;overflow-wrap:anywhere}.brand-caption{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}.header-actions{display:flex;align-items:center;gap:14px}.main-nav{display:flex;align-items:center;gap:5px;min-width:0}.main-nav a{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;color:#475467;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.main-nav a:hover,.main-nav a[aria-current=page]{background:#f0efff;color:var(--primary)}.main-nav .sep{display:none}.contact-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 17px;border-radius:11px;background:var(--primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.contact-button:hover{background:var(--primary-dark);transform:translateY(-1px)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+.body{display:grid;grid-template-columns:230px minmax(0,1fr);width:100%;max-width:var(--max);margin:0 auto;padding:36px 28px 60px;gap:28px;align-items:start;min-width:0}.body>*{min-width:0}.body.no-sidebar{grid-template-columns:minmax(0,1fr)}.sidebar{position:sticky;top:108px;min-width:0;padding:21px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar:empty{display:none}.sidebar:not(:empty)::before{content:"ON THIS PAGE";display:block;margin:0 10px 13px;color:#98a2b3;font-size:10px;font-weight:800;letter-spacing:1.3px}.sidebar a{display:flex;align-items:center;margin:4px 0;padding:10px 11px;border-radius:10px;color:#475467;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none;overflow-wrap:anywhere;transition:background .2s,color .2s}.sidebar a:hover,.sidebar a[aria-current=page]{background:#f0efff;color:var(--primary)}.content{display:block;width:100%;min-width:0;max-width:100%;padding:clamp(32px,5vw,64px);border:1px solid #e8e5ff;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(170,158,255,.20),transparent 42%),linear-gradient(135deg,#fff 0%,#f7f6ff 100%);box-shadow:var(--shadow);font-size:17px;line-height:1.8;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h1{max-width:100%;margin:0 0 22px;color:#141b34;font-size:clamp(32px,4.5vw,52px);font-weight:780;line-height:1.15;letter-spacing:-1.2px;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h2{max-width:100%;margin:34px 0 14px;color:var(--ink);font-size:clamp(23px,3vw,30px);line-height:1.3;letter-spacing:-.5px;overflow-wrap:break-word;word-break:normal}.content h3{max-width:100%;margin:26px 0 10px;font-size:20px;line-height:1.4;overflow-wrap:break-word;word-break:normal}.content p,.content li{max-width:100%;color:#475467;font-size:17px;line-height:1.85;overflow-wrap:break-word;word-break:normal;white-space:normal}.content a{color:var(--primary);text-underline-offset:3px}.content img{max-width:100%;height:auto;border-radius:12px}.content table{width:100%;max-width:100%;border-collapse:collapse;overflow-wrap:break-word;background:#fff}.content th,.content td{padding:12px;border:1px solid var(--border);text-align:left}.content th{background:#f8f8fc}.content blockquote{margin:20px 0;padding:8px 18px;border-left:4px solid var(--primary);background:#f5f4ff;color:#475467}.content pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#101828;color:#f8fafc}.content code{overflow-wrap:anywhere;word-break:normal}.site-footer{border-top:1px solid var(--border);background:#fff}.footer-inner{max-width:var(--max);margin:0 auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{color:var(--ink);font-size:13px;font-weight:750}.footer-copy{margin-top:3px;color:var(--muted);font-size:12px}.footer-links{display:flex;flex-wrap:wrap;gap:18px}.footer-links a{color:#667085;font-size:12px;text-decoration:none}.footer-links a:hover{color:var(--primary)}
+@media(max-width:980px){.header-inner{padding:12px 20px}.header-actions{gap:8px}.main-nav a{padding:8px 9px;font-size:13px}.body{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:22px 20px 40px}.content{padding:32px}}
+@media(max-width:720px){.header-inner{min-height:70px;padding:11px 16px;gap:10px}.brand-mark{width:39px;height:39px;font-size:19px}.site-title{font-size:16px}.brand-caption{font-size:9px}.header-actions{gap:8px}.contact-button{display:none}.menu-toggle{display:grid;place-items:center;flex-shrink:0}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 16px 17px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--border);background:#fff;box-shadow:0 14px 20px rgba(16,24,40,.06)}.main-nav.is-open{display:flex}.main-nav a{padding:11px 13px;font-size:14px}.body{display:flex;flex-direction:column;gap:16px;padding:16px 14px 30px}.sidebar{position:static;width:100%;padding:12px}.sidebar:not(:empty)::before{margin:0 8px 6px}.sidebar a{display:inline-flex;margin:3px;padding:8px 9px;font-size:12px}.content{width:100%;padding:28px 21px;border-radius:18px}.content h1{font-size:clamp(31px,8vw,42px);letter-spacing:-1.3px}.content p,.content li{font-size:16px}.content table{display:block;overflow-x:auto}.footer-inner{padding:22px 16px;align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><div class="site">
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>controlstatements</h1><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn Python conditions, loops, strings, lists, tuples, sets, dictionaries, and comprehensions with examples and interactive exercises.">
+<title>Python Programming — Conditions, Loops, Strings and Collections</title>
+<style>
+/* RBUtech Python Page 2 — all styles are scoped with py2- */
+#py2-app {
+  --py2-primary:#4f46e5;
+  --py2-primary-dark:#3730a3;
+  --py2-secondary:#7c3aed;
+  --py2-text:#1e293b;
+  --py2-muted:#64748b;
+  --py2-border:#e2e8f0;
+  --py2-bg:#f8fafc;
+  --py2-card:#ffffff;
+  --py2-green:#15803d;
+  --py2-red:#b91c1c;
+  --py2-orange:#c2410c;
+  color:var(--py2-text);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  line-height:1.7;
+  background:var(--py2-bg);
+  width:100%;
+  box-sizing:border-box;
+}
+#py2-app *,#py2-app *::before,#py2-app *::after{box-sizing:border-box}
+#py2-app h1,#py2-app h2,#py2-app h3,#py2-app h4{line-height:1.3;color:#172554}
+#py2-app h1{font-size:clamp(1.55rem,3vw,2.15rem);margin:8px 0 14px}
+#py2-app h2{font-size:clamp(1.35rem,2.5vw,1.8rem);margin:0 0 18px}
+#py2-app h3{font-size:1.18rem;margin:22px 0 10px}
+#py2-app h4{font-size:1rem;margin:16px 0 8px}
+#py2-app p{margin:10px 0}
+#py2-app a{color:var(--py2-primary-dark)}
+#py2-app code{font-family:Consolas,"Courier New",monospace}
+#py2-app .py2-layout{display:grid;grid-template-columns:245px minmax(0,1fr);gap:22px;align-items:start;max-width:1600px;margin:0 auto;padding:18px}
+#py2-app .py2-sidebar{position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;background:var(--py2-card);border:1px solid var(--py2-border);border-radius:14px;padding:16px}
+#py2-app .py2-brand{font-size:1.12rem;font-weight:800;color:var(--py2-primary-dark);padding-bottom:12px;border-bottom:1px solid var(--py2-border)}
+#py2-app .py2-menu-title{font-size:.76rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--py2-muted);margin:15px 0 8px}
+#py2-app .py2-menu{list-style:none;padding:0;margin:0}
+#py2-app .py2-menu li{margin:3px 0}
+#py2-app .py2-menu a{display:block;text-decoration:none;padding:7px 9px;border-radius:7px;font-size:.88rem;color:#334155;line-height:1.4}
+#py2-app .py2-menu a:hover,#py2-app .py2-menu a.py2-active{background:#eef2ff;color:var(--py2-primary-dark);font-weight:700}
+#py2-app .py2-main{min-width:0}
+#py2-app .py2-mobile-bar{display:none;position:sticky;top:0;z-index:20;background:white;border-bottom:1px solid var(--py2-border);padding:10px}
+#py2-app .py2-btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid #c7d2fe;background:#eef2ff;color:#3730a3;padding:8px 13px;border-radius:8px;font-weight:700;cursor:pointer;font-size:.9rem;text-decoration:none}
+#py2-app .py2-btn:hover{filter:brightness(.97)}
+#py2-app .py2-btn.py2-primary{background:var(--py2-primary);color:#fff;border-color:var(--py2-primary)}
+#py2-app .py2-btn.py2-green{background:#15803d;color:white;border-color:#15803d}
+#py2-app .py2-btn.py2-small{padding:5px 9px;font-size:.8rem}
+#py2-app .py2-intro{background:white;border:1px solid var(--py2-border);border-radius:14px;padding:22px;margin-bottom:18px}
+#py2-app .py2-chapter-banner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin:0 auto 12px;text-align:center}
+#py2-app .py2-chapter-banner h2{margin:0;font-size:1.25rem;color:#312e81}
+#py2-app .py2-rainbow{font-size:30px;display:inline-block;line-height:1}
+#py2-app .py2-progress-wrap{background:#e2e8f0;height:8px;border-radius:99px;overflow:hidden;margin-top:14px}
+#py2-app .py2-progress{height:100%;width:0;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6,#8b5cf6);transition:width .2s}
+#py2-app .py2-card{background:white;border:1px solid var(--py2-border);border-radius:14px;padding:22px;margin:0 0 18px;scroll-margin-top:18px;box-shadow:0 2px 8px rgba(15,23,42,.025)}
+#py2-app .py2-section-tag{display:inline-block;background:#eef2ff;color:#3730a3;border-radius:99px;padding:4px 10px;font-size:.77rem;font-weight:800;margin-bottom:10px}
+#py2-app .py2-muted{color:var(--py2-muted)}
+#py2-app .py2-callout{border-left:4px solid var(--py2-primary);background:#eef2ff;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+#py2-app .py2-success{border-left-color:#16a34a;background:#f0fdf4}
+#py2-app .py2-warning{border-left-color:#ea580c;background:#fff7ed}
+#py2-app .py2-danger{border-left-color:#dc2626;background:#fef2f2}
+#py2-app .py2-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#py2-app .py2-grid.py2-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+#py2-app .py2-mini-card{border:1px solid var(--py2-border);border-radius:10px;padding:14px;background:#fff;min-width:0}
+#py2-app .py2-codebox{position:relative;background:#0f172a;border-radius:10px;margin:12px 0 14px;overflow:hidden}
+#py2-app .py2-codehead{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 12px;color:#cbd5e1;background:#1e293b;font-size:.8rem}
+#py2-app .py2-codehead button{background:#334155;color:#fff;border:1px solid #475569;border-radius:6px;padding:4px 8px;cursor:pointer}
+#py2-app pre{margin:0;padding:15px;overflow-x:auto;color:#e2e8f0;font-size:.9rem;line-height:1.6;tab-size:4;white-space:pre}
+#py2-app .py2-output{background:#f1f5f9;border:1px solid var(--py2-border);border-radius:8px;padding:12px 14px;margin:10px 0;font-family:Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}
+#py2-app .py2-output-label{font-size:.76rem;font-weight:800;color:#475569;margin-bottom:4px;font-family:Arial,sans-serif}
+#py2-app .py2-table-wrap{overflow-x:auto;margin:12px 0}
+#py2-app table{width:100%;border-collapse:collapse;font-size:.9rem}
+#py2-app th,#py2-app td{border:1px solid var(--py2-border);padding:10px;text-align:left;vertical-align:top}
+#py2-app th{background:#eef2ff;color:#312e81}
+#py2-app .py2-diagram{border:1px solid var(--py2-border);border-radius:12px;background:#fbfdff;padding:14px;margin:12px 0;overflow-x:auto}
+#py2-app .py2-flow{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin:12px 0}
+#py2-app .py2-node{padding:10px 14px;border:2px solid #818cf8;border-radius:10px;background:#eef2ff;text-align:center;font-weight:700;min-width:90px}
+#py2-app .py2-node.py2-action{background:#f0fdf4;border-color:#86efac;color:#166534}
+#py2-app .py2-node.py2-exit{background:#fff7ed;border-color:#fdba74;color:#9a3412}
+#py2-app .py2-arrow{font-size:1.3rem;font-weight:800;color:#64748b}
+#py2-app .py2-decision{width:115px;height:85px;display:flex;align-items:center;justify-content:center;text-align:center;transform:rotate(0deg);background:#fef3c7;border:2px solid #f59e0b;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);padding:18px;font-weight:800;font-size:.8rem;flex-shrink:0}
+#py2-app .py2-branch{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+#py2-app .py2-branch>div{padding:12px;border-radius:10px;text-align:center;border:1px solid var(--py2-border)}
+#py2-app .py2-true{background:#f0fdf4;border-color:#86efac!important}
+#py2-app .py2-false{background:#fff7ed;border-color:#fdba74!important}
+#py2-app .py2-collection-cells{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+#py2-app .py2-cell{flex:1;min-width:95px;border:1px solid #a5b4fc;border-radius:8px;background:#eef2ff;padding:10px;text-align:center}
+#py2-app .py2-index{font-size:.75rem;color:#64748b;display:block}
+#py2-app .py2-field{display:block;width:100%;max-width:100%;border:1px solid #cbd5e1;border-radius:8px;padding:10px 11px;font:inherit;background:white;color:#0f172a}
+#py2-app label{font-weight:700;display:block;margin:8px 0 4px}
+#py2-app .py2-control-row{display:flex;gap:8px;flex-wrap:wrap;align-items:end;margin:12px 0}
+#py2-app .py2-control-row>div{flex:1;min-width:140px}
+#py2-app .py2-result{padding:12px;border-radius:8px;background:#f1f5f9;border:1px solid var(--py2-border);margin-top:12px;min-height:42px}
+#py2-app .py2-chip{display:inline-block;background:#f1f5f9;border:1px solid #cbd5e1;padding:3px 8px;border-radius:6px;font-family:Consolas,monospace;font-size:.85rem}
+#py2-app .py2-checklist{list-style:none;padding:0}
+#py2-app .py2-checklist li{margin:7px 0}
+#py2-app .py2-checklist input{margin-right:8px;accent-color:#4f46e5}
+#py2-app details{border:1px solid var(--py2-border);border-radius:8px;padding:10px 12px;margin:10px 0;background:#fff}
+#py2-app summary{cursor:pointer;font-weight:700;color:#3730a3}
+#py2-app .py2-question{border:1px solid var(--py2-border);border-radius:10px;padding:14px;margin:12px 0}
+#py2-app .py2-question label{font-weight:400;display:flex;gap:8px;align-items:flex-start;cursor:pointer}
+#py2-app .py2-question input{margin-top:6px}
+#py2-app .py2-feedback{font-size:.88rem;margin-top:8px;font-weight:700}
+#py2-app .py2-footer-nav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:20px 0}
+#py2-app .py2-inline-note{font-size:.88rem;color:#475569}
+#py2-app .py2-hidden{display:none!important}
+#py2-app svg{max-width:100%;height:auto}
+@media(max-width:980px){
+  #py2-app .py2-layout{grid-template-columns:1fr;padding:10px}
+  #py2-app .py2-mobile-bar{display:flex;justify-content:space-between;align-items:center}
+  #py2-app .py2-sidebar{display:none;position:static;max-height:none}
+  #py2-app .py2-sidebar.py2-open{display:block}
+  #py2-app .py2-grid.py2-three{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px){
+  #py2-app .py2-layout{padding:8px;gap:10px}
+  #py2-app .py2-card,#py2-app .py2-intro{padding:15px;border-radius:10px}
+  #py2-app .py2-grid,#py2-app .py2-grid.py2-three{grid-template-columns:1fr}
+  #py2-app .py2-branch{grid-template-columns:1fr}
+  #py2-app .py2-rainbow{font-size:25px}
+  #py2-app .py2-btn{font-size:.84rem}
+}
+@media(prefers-reduced-motion:reduce){
+  #py2-app *,#py2-app *::before,#py2-app *::after{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div id="py2-app">
+  <div class="py2-mobile-bar">
+    <strong>RBUtech · Python Page 2</strong>
+    <button class="py2-btn" id="py2-menu-toggle" aria-expanded="false" aria-controls="py2-sidebar">☰ Contents</button>
+  </div>
+
+  <div class="py2-layout">
+    <aside class="py2-sidebar" id="py2-sidebar" aria-label="Page contents">
+      <div class="py2-brand">RBUtech · Python Learning</div>
+      <div class="py2-menu-title">Page contents</div>
+      <nav>
+        <ul class="py2-menu">
+          <li><a href="#py2-intro">Introduction</a></li>
+          <li><a href="#py2-objectives">Learning Objectives</a></li>
+          <li><a href="#py2-mindmap">Mind Map</a></li>
+          <li><a href="#py2-conditions">Boolean Expressions</a></li>
+          <li><a href="#py2-ifelse">if and if-else</a></li>
+          <li><a href="#py2-elif">if-elif-else</a></li>
+          <li><a href="#py2-nested">Nested Conditions</a></li>
+          <li><a href="#py2-for">for Loops and range()</a></li>
+          <li><a href="#py2-while">while Loops</a></li>
+          <li><a href="#py2-control">break and continue</a></li>
+          <li><a href="#py2-strings">Strings</a></li>
+          <li><a href="#py2-string-methods">String Methods</a></li>
+          <li><a href="#py2-slicing">Indexing and Slicing</a></li>
+          <li><a href="#py2-lists">Lists</a></li>
+          <li><a href="#py2-tuples">Tuples</a></li>
+          <li><a href="#py2-sets">Sets</a></li>
+          <li><a href="#py2-dictionaries">Dictionaries</a></li>
+          <li><a href="#py2-comprehensions">List Comprehensions</a></li>
+          <li><a href="#py2-nested-collections">Nested Collections</a></li>
+          <li><a href="#py2-comparison">Collection Comparison</a></li>
+          <li><a href="#py2-practical">Practical Examples</a></li>
+          <li><a href="#py2-interactive">Interactive Practice</a></li>
+          <li><a href="#py2-exercises">Exercises</a></li>
+          <li><a href="#py2-quiz">Quiz</a></li>
+          <li><a href="#py2-summary">Summary</a></li>
+        </ul>
+      </nav>
+      <div class="py2-menu-title">Course navigation</div>
+      <ul class="py2-menu">
+        <li><a href="python-page-1.html">← Page 1: Basics</a></li>
+        <li><a href="python-page-3.html">Page 3: Functions →</a></li>
+      </ul>
+      <div class="py2-progress-wrap" aria-label="Reading progress"><div class="py2-progress" id="py2-progress"></div></div>
+      <p class="py2-inline-note"><span id="py2-progress-label">0%</span> page progress</p>
+    </aside>
+
+    <main class="py2-main">
+      <header class="py2-intro" id="py2-intro">
+        <div class="py2-chapter-banner">
+          <span class="py2-rainbow" aria-hidden="true">🌈</span>
+          <h2>Chapter 2</h2>
+          <span class="py2-rainbow" aria-hidden="true" style="transform:rotate(180deg)">🌈</span>
+        </div>
+        <h1>Python Programming — Conditions, Loops, Strings and Collections</h1>
+        <p>Learn how to make decisions, repeat tasks, work with text, and store groups of values in Python. Each topic includes simple explanations, diagrams, code examples, expected output, and practice.</p>
+        <div class="py2-control-row">
+          <span class="py2-chip">Page 2 of 5</span>
+          <span class="py2-chip">Beginner friendly</span>
+          <span class="py2-chip">Interactive learning</span>
+        </div>
+        <div class="py2-callout">
+          <strong>Prerequisite:</strong> Page 1 introduced variables, data types, input/output, and operators. This page uses those basics to build more useful programs.
+        </div>
+      </header>
+
+      <section class="py2-card" id="py2-objectives">
+        <span class="py2-section-tag">01 · Start here</span>
+        <h2>Learning Objectives</h2>
+        <p>After this page, you should be able to:</p>
+        <div class="py2-grid">
+          <div class="py2-mini-card"><h3>Make decisions</h3><p>Use Boolean expressions, <code>if</code>, <code>else</code>, <code>elif</code>, and nested conditions.</p></div>
+          <div class="py2-mini-card"><h3>Repeat tasks</h3><p>Use <code>for</code>, <code>while</code>, <code>range()</code>, <code>break</code>, and <code>continue</code>.</p></div>
+          <div class="py2-mini-card"><h3>Work with text</h3><p>Use strings, indexing, slicing, and common string methods.</p></div>
+          <div class="py2-mini-card"><h3>Store collections</h3><p>Choose lists, tuples, sets, dictionaries, nested collections, and comprehensions.</p></div>
+        </div>
+      </section>
+
+      <section class="py2-card" id="py2-mindmap">
+        <span class="py2-section-tag">02 · Visual overview</span>
+        <h2>Program Flow Mind Map</h2>
+        <p>These concepts help control program execution and organise information.</p>
+        <div class="py2-diagram">
+          <svg viewBox="0 0 720 430" role="img" aria-label="Mind map connecting Python program flow to conditions, loops, strings, lists, tuples, sets, dictionaries, and comprehensions">
+            <defs>
+              <linearGradient id="py2-map-grad" x1="0" x2="1"><stop offset="0" stop-color="#4f46e5"/><stop offset="1" stop-color="#7c3aed"/></linearGradient>
+            </defs>
+            <g fill="none" stroke="#a5b4fc" stroke-width="2.5">
+              <path d="M360 205 L175 75"/><path d="M360 205 L545 75"/>
+              <path d="M360 205 L175 155"/><path d="M360 205 L545 155"/>
+              <path d="M360 225 L175 285"/><path d="M360 225 L545 285"/>
+              <path d="M360 225 L175 365"/><path d="M360 225 L545 365"/>
+            </g>
+            <rect x="230" y="174" width="260" height="72" rx="18" fill="url(#py2-map-grad)"/>
+            <text x="360" y="204" font-size="17" fill="white" font-weight="bold" text-anchor="middle">PYTHON PROGRAM</text>
+            <text x="360" y="226" font-size="17" fill="white" font-weight="bold" text-anchor="middle">FLOW</text>
+            <g font-size="15" font-weight="bold" text-anchor="middle">
+              <rect x="95" y="49" width="160" height="46" rx="12" fill="#dbeafe" stroke="#60a5fa"/><text x="175" y="77" fill="#1e40af">Conditions</text>
+              <rect x="465" y="49" width="160" height="46" rx="12" fill="#dcfce7" stroke="#4ade80"/><text x="545" y="77" fill="#166534">Loops</text>
+              <rect x="95" y="129" width="160" height="46" rx="12" fill="#fef3c7" stroke="#fbbf24"/><text x="175" y="157" fill="#92400e">Strings</text>
+              <rect x="465" y="129" width="160" height="46" rx="12" fill="#f3e8ff" stroke="#c084fc"/><text x="545" y="157" fill="#6b21a8">Lists</text>
+              <rect x="95" y="263" width="160" height="46" rx="12" fill="#fce7f3" stroke="#f472b6"/><text x="175" y="291" fill="#9d174d">Tuples</text>
+              <rect x="465" y="263" width="160" height="46" rx="12" fill="#cffafe" stroke="#22d3ee"/><text x="545" y="291" fill="#155e75">Sets</text>
+              <rect x="95" y="343" width="160" height="46" rx="12" fill="#ffedd5" stroke="#fb923c"/><text x="175" y="371" fill="#9a3412">Dictionaries</text>
+              <rect x="465" y="343" width="160" height="46" rx="12" fill="#e0e7ff" stroke="#818cf8"/><text x="545" y="371" fill="#3730a3">Comprehensions</text>
+            </g>
+          </svg>
+        </div>
+        <div class="py2-callout"><strong>Big picture:</strong> Conditions choose what happens, loops repeat work, strings handle text, and collections organise related values.</div>
+      </section>
+
+      <section class="py2-card" id="py2-conditions">
+        <span class="py2-section-tag">03 · Decisions</span>
+        <h2>Boolean Expressions</h2>
+        <p>A Boolean expression is an expression that evaluates to either <code>True</code> or <code>False</code>. Python uses these results to make decisions.</p>
+        <div class="py2-grid">
+          <div class="py2-mini-card"><strong>Comparison operators</strong><p><code>==</code> equal, <code>!=</code> not equal, <code>&gt;</code> greater, <code>&lt;</code> smaller, <code>&gt;=</code> greater/equal, <code>&lt;=</code> smaller/equal.</p></div>
+          <div class="py2-mini-card"><strong>Logical operators</strong><p><code>and</code> means both conditions are true; <code>or</code> means at least one is true; <code>not</code> reverses a Boolean result.</p></div>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: Boolean expressions</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>age = 20
+has_id = True
+
+print(age >= 18)
+print(age >= 18 and has_id)
+print(age &lt; 18 or has_id)
+print(not has_id)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>True
+True
+True
+False</div>
+        <details><summary>Line-by-line explanation</summary><p><code>age = 20</code> stores an integer. <code>has_id = True</code> stores a Boolean. The first expression checks age. The second requires both conditions to be true. The third needs at least one true condition. The last reverses <code>True</code> to <code>False</code>.</p></details>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> <code>=</code> assigns a value; <code>==</code> compares two values.</div>
+        <p><strong>Real-world example:</strong> A website might check whether a person is old enough and has completed identity verification.</p>
+        <p><strong>Try it:</strong> Predict the result of <code>10 &gt; 5 and 3 == 4</code>. Answer: <code>False</code>, because both conditions must be true.</p>
+      </section>
+
+      <section class="py2-card" id="py2-ifelse">
+        <span class="py2-section-tag">04 · Conditions</span>
+        <h2>if and if-else Statements</h2>
+        <h3>What is an if statement?</h3>
+        <p>An <code>if</code> statement runs a block only when its condition is true.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Syntax and example</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>temperature = 35
+
+if temperature > 30:
+    print("It is hot")</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>It is hot</div>
+        <p>The colon <code>:</code> starts the block. The indented <code>print()</code> belongs to the condition.</p>
+        <h3>if-else flowchart</h3>
+        <p>When the condition is true, Python executes the <code>if</code> block. Otherwise, it executes the <code>else</code> block. Both paths then continue.</p>
+        <div class="py2-diagram">
+          <div class="py2-flow"><div class="py2-node">Start</div><span class="py2-arrow">↓</span><div class="py2-node">Check condition</div><span class="py2-arrow">↓</span><div class="py2-decision">True or False?</div></div>
+          <div class="py2-branch">
+            <div class="py2-true"><strong>True</strong><div class="py2-arrow">↓</div><div class="py2-node py2-action">Execute if block</div></div>
+            <div class="py2-false"><strong>False</strong><div class="py2-arrow">↓</div><div class="py2-node py2-exit">Execute else block</div></div>
+          </div>
+          <div class="py2-flow"><span class="py2-arrow">↘</span><div class="py2-node">Continue program</div><span class="py2-arrow">↙</span></div>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: pass or fail</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>marks = 42
+
+if marks >= 40:
+    print("Pass")
+else:
+    print("Fail")</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Pass</div>
+        <details><summary>Line-by-line explanation</summary><p><code>marks = 42</code> stores the score. <code>marks &gt;= 40</code> checks whether it is at least 40. The condition is true, so Python prints <code>Pass</code> and skips the <code>else</code> block.</p></details>
+        <p><strong>Common mistake:</strong> Forgetting indentation or writing <code>else</code> with a condition. Plain <code>else</code> has no condition.</p>
+        <p><strong>Exercise:</strong> Change the score to 25 and predict the output.</p>
+      </section>
+
+      <section class="py2-card" id="py2-elif">
+        <span class="py2-section-tag">05 · Multiple decisions</span>
+        <h2>if-elif-else</h2>
+        <p>Use <code>elif</code> when you need to check several conditions in order. Python executes the first matching branch and skips the rest.</p>
+        <div class="py2-diagram">
+          <div class="py2-flow"><div class="py2-node">marks ≥ 90?</div><span class="py2-arrow">Yes →</span><div class="py2-node py2-action">Grade A</div></div>
+          <div class="py2-flow"><span class="py2-arrow">No ↓</span><div class="py2-node">marks ≥ 75?</div><span class="py2-arrow">Yes →</span><div class="py2-node py2-action">Grade B</div></div>
+          <div class="py2-flow"><span class="py2-arrow">No ↓</span><div class="py2-node">marks ≥ 50?</div><span class="py2-arrow">Yes →</span><div class="py2-node py2-action">Pass</div></div>
+          <div class="py2-flow"><span class="py2-arrow">No →</span><div class="py2-node py2-exit">Needs Improvement</div></div>
+          <div class="py2-callout py2-success"><strong>Sample mark: 82.</strong> The first condition is false; the second is true. Python prints Grade B and does not check later branches.</div>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: calculate a grade</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>marks = 82
+
+if marks >= 90:
+    grade = "A"
+elif marks >= 75:
+    grade = "B"
+elif marks >= 50:
+    grade = "Pass"
+else:
+    grade = "Needs Improvement"
+
+print("Grade:", grade)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Grade: B</div>
+        <details><summary>Line-by-line explanation</summary><p>Python checks the highest threshold first. Since 82 is less than 90, it moves to the next condition. Because 82 is at least 75, it assigns <code>"B"</code>. The remaining branches are skipped.</p></details>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> Check thresholds from highest to lowest. If you check <code>marks &gt;= 50</code> first, a score of 82 will match that branch and never reach the higher grades.</div>
+        <p><strong>Exercise:</strong> Test scores 95, 70, and 35.</p>
+      </section>
+
+      <section class="py2-card" id="py2-nested">
+        <span class="py2-section-tag">06 · Conditions inside conditions</span>
+        <h2>Nested Conditions</h2>
+        <p>A nested condition is an <code>if</code> statement inside another <code>if</code> statement. Use it when a second check should happen only after the first check succeeds.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: login access</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>username = "naveen"
+password_correct = True
+
+if username == "naveen":
+    if password_correct:
+        print("Login successful")
+    else:
+        print("Incorrect password")
+else:
+    print("Unknown user")</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Login successful</div>
+        <details><summary>Line-by-line explanation</summary><p>First, Python checks the username. Only if it matches does it evaluate <code>password_correct</code>. Both checks are true, so the login-success message appears.</p></details>
+        <p><strong>Common mistake:</strong> Incorrect indentation changes which condition owns a statement. Avoid deeply nested logic when a simpler condition can do the job.</p>
+        <p><strong>Exercise:</strong> Change <code>password_correct</code> to <code>False</code>. Then change the username.</p>
+      </section>
+
+      <section class="py2-card" id="py2-for">
+        <span class="py2-section-tag">07 · Repetition</span>
+        <h2>for Loops and range()</h2>
+        <p>A <code>for</code> loop repeats a block for each item in a sequence. <code>range()</code> generates a sequence of integers.</p>
+        <h3>How range(1, 6) works</h3>
+        <div class="py2-diagram">
+          <div class="py2-flow">
+            <div class="py2-node">Start</div><span class="py2-arrow">→</span>
+            <div class="py2-node">1</div><span class="py2-arrow">→</span>
+            <div class="py2-node">2</div><span class="py2-arrow">→</span>
+            <div class="py2-node">3</div><span class="py2-arrow">→</span>
+            <div class="py2-node">4</div><span class="py2-arrow">→</span>
+            <div class="py2-node">5</div><span class="py2-arrow">→</span>
+            <div class="py2-node py2-exit">Exit</div>
+          </div>
+          <p><code>range(1, 6)</code> starts at 1 and stops before 6. The stop value is excluded, so the values are 1, 2, 3, 4, and 5.</p>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: print numbers</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>for number in range(1, 6):
+    print(number)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>1
+2
+3
+4
+5</div>
+        <h3>range() forms</h3>
+        <div class="py2-table-wrap"><table>
+          <thead><tr><th>Syntax</th><th>Generated values</th><th>Explanation</th></tr></thead>
+          <tbody>
+            <tr><td><code>range(5)</code></td><td>0, 1, 2, 3, 4</td><td>Starts at zero by default.</td></tr>
+            <tr><td><code>range(1, 6)</code></td><td>1, 2, 3, 4, 5</td><td>Start included, stop excluded.</td></tr>
+            <tr><td><code>range(2, 11, 2)</code></td><td>2, 4, 6, 8, 10</td><td>Increases by 2 each time.</td></tr>
+            <tr><td><code>range(5, 0, -1)</code></td><td>5, 4, 3, 2, 1</td><td>Counts backwards by 1.</td></tr>
+          </tbody>
+        </table></div>
+        <h3>Multiplication table</h3>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: table of 3</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>number = 3
+
+for i in range(1, 6):
+    print(number, "x", i, "=", number * i)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>3 x 1 = 3
+3 x 2 = 6
+3 x 3 = 9
+3 x 4 = 12
+3 x 5 = 15</div>
+        <details><summary>Line-by-line explanation</summary><p><code>number</code> stores 3. The loop gives <code>i</code> the values 1 through 5. Each repetition calculates <code>number * i</code> and prints one line.</p></details>
+        <p><strong>Real-world example:</strong> Process every student in a class or every order in a list.</p>
+        <p><strong>Common mistake:</strong> Expecting <code>range(1, 6)</code> to include 6.</p>
+        <p><strong>Exercise:</strong> Print the numbers from 10 down to 1 using <code>range()</code>.</p>
+      </section>
+
+      <section class="py2-card" id="py2-while">
+        <span class="py2-section-tag">08 · Condition-controlled repetition</span>
+        <h2>while Loops</h2>
+        <p>A <code>while</code> loop repeats while its condition remains true. It is useful when the number of repetitions depends on a condition.</p>
+        <div class="py2-diagram">
+          <div class="py2-flow"><div class="py2-node">Initialize counter</div><span class="py2-arrow">↓</span><div class="py2-node">Evaluate condition</div><span class="py2-arrow">↓</span><div class="py2-decision">Condition true?</div></div>
+          <div class="py2-branch">
+            <div class="py2-true"><strong>Yes</strong><div class="py2-arrow">↓</div><div class="py2-node py2-action">Execute body</div><div class="py2-arrow">↓</div><div class="py2-node">Increment counter</div></div>
+            <div class="py2-false"><strong>No</strong><div class="py2-arrow">↓</div><div class="py2-node py2-exit">Exit loop</div></div>
+          </div>
+          <div class="py2-flow"><span class="py2-arrow">↖ Return to condition after increment</span></div>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: count to five</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>counter = 1
+
+while counter <= 5:
+    print(counter)
+    counter += 1</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>1
+2
+3
+4
+5</div>
+        <details><summary>Line-by-line explanation</summary><p>The counter starts at 1. Python checks whether it is at most 5, prints it, and adds 1. When the counter becomes 6, the condition is false and the loop ends.</p></details>
+        <div class="py2-callout py2-danger"><strong>Infinite loop warning:</strong> If the condition never becomes false, the loop may run forever. Make sure the loop body changes the condition or provide a deliberate exit such as <code>break</code>.</div>
+        <p><strong>Common mistake:</strong> Forgetting <code>counter += 1</code> in a counting loop.</p>
+        <p><strong>Exercise:</strong> Modify the loop to print only 2, 4, 6, 8, and 10.</p>
+      </section>
+
+      <section class="py2-card" id="py2-control">
+        <span class="py2-section-tag">09 · Loop control</span>
+        <h2>break and continue</h2>
+        <div class="py2-grid">
+          <div class="py2-mini-card">
+            <h3>break</h3>
+            <p>Stops the current loop immediately.</p>
+            <div class="py2-diagram">
+              <div class="py2-flow"><div class="py2-node">Loop iteration</div><span class="py2-arrow">↓</span><div class="py2-node">break reached</div><span class="py2-arrow">↓</span><div class="py2-node py2-exit">Exit loop</div></div>
+            </div>
+            <div class="py2-codebox"><div class="py2-codehead"><span>Example</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>for n in range(1, 6):
+    if n == 3:
+        break
+    print(n)</code></pre></div>
+            <div class="py2-output"><div class="py2-output-label">Output</div>1
+2</div>
+          </div>
+          <div class="py2-mini-card">
+            <h3>continue</h3>
+            <p>Skips the remaining body for this iteration and moves to the next one.</p>
+            <div class="py2-diagram">
+              <div class="py2-flow"><div class="py2-node">Loop iteration</div><span class="py2-arrow">↓</span><div class="py2-node">continue reached</div><span class="py2-arrow">↓</span><div class="py2-node py2-action">Next iteration</div></div>
+            </div>
+            <div class="py2-codebox"><div class="py2-codehead"><span>Example</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>for n in range(1, 6):
+    if n == 3:
+        continue
+    print(n)</code></pre></div>
+            <div class="py2-output"><div class="py2-output-label">Output</div>1
+2
+4
+5</div>
+          </div>
+        </div>
+        <p><strong>Line-by-line:</strong> Both examples visit numbers 1 to 5. With <code>break</code>, the loop ends when <code>n</code> is 3. With <code>continue</code>, only the print statement for 3 is skipped.</p>
+        <p><strong>Real-world examples:</strong> Use <code>break</code> when a matching record is found. Use <code>continue</code> to skip invalid records and process the rest.</p>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> <code>continue</code> does not exit the loop. In a <code>while</code> loop, ensure any counter update needed for progress still happens.</div>
+      </section>
+
+      <section class="py2-card" id="py2-strings">
+        <span class="py2-section-tag">10 · Text data</span>
+        <h2>Strings</h2>
+        <p>A string is a sequence of characters used to represent text. Python strings can use single quotes, double quotes, or triple quotes.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>String examples</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>name = "Naveen"
+message = 'Welcome to Python'
+description = """Python is easy
+to start learning."""
+
+print(name)
+print(message)
+print(description)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Naveen
+Welcome to Python
+Python is easy
+to start learning.</div>
+        <details><summary>Line-by-line explanation</summary><p>Each variable stores text. Triple-quoted strings can span multiple lines. <code>print()</code> displays the text without showing the quotation marks.</p></details>
+        <div class="py2-callout"><strong>Important:</strong> Strings are immutable. You can create a new string from an existing one, but you cannot change an individual character in place.</div>
+        <p><strong>Real-world example:</strong> Names, email addresses, messages, product codes, and postal addresses are commonly stored as strings.</p>
+        <p><strong>Common mistake:</strong> Treating a number entered with <code>input()</code> as an integer without converting it.</p>
+        <p><strong>Exercise:</strong> Create a variable containing your favourite programming language and print a sentence using it.</p>
+      </section>
+
+      <section class="py2-card" id="py2-string-methods">
+        <span class="py2-section-tag">11 · String tools</span>
+        <h2>String Methods</h2>
+        <p>String methods help transform, inspect, and search text. Most methods return a new string or a result; they do not modify the original string.</p>
+        <div class="py2-table-wrap"><table>
+          <thead><tr><th>Method</th><th>Example</th><th>Result</th></tr></thead>
+          <tbody>
+            <tr><td><code>upper()</code></td><td><code>"hello".upper()</code></td><td><code>"HELLO"</code></td></tr>
+            <tr><td><code>lower()</code></td><td><code>"PYTHON".lower()</code></td><td><code>"python"</code></td></tr>
+            <tr><td><code>strip()</code></td><td><code>" hi ".strip()</code></td><td><code>"hi"</code></td></tr>
+            <tr><td><code>replace()</code></td><td><code>"cat".replace("c","b")</code></td><td><code>"bat"</code></td></tr>
+            <tr><td><code>split()</code></td><td><code>"red blue".split()</code></td><td><code>["red", "blue"]</code></td></tr>
+            <tr><td><code>find()</code></td><td><code>"banana".find("na")</code></td><td><code>2</code></td></tr>
+            <tr><td><code>startswith()</code></td><td><code>"Python".startswith("Py")</code></td><td><code>True</code></td></tr>
+            <tr><td><code>count()</code></td><td><code>"banana".count("a")</code></td><td><code>3</code></td></tr>
+          </tbody>
+        </table></div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Example: clean a name</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>name = "  naveen kumar  "
+clean_name = name.strip().title()
+
+print(clean_name)
+print(clean_name.upper())
+print(clean_name.startswith("Naveen"))</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Naveen Kumar
+NAVEEN KUMAR
+True</div>
+        <details><summary>Line-by-line explanation</summary><p><code>strip()</code> removes surrounding whitespace. <code>title()</code> capitalises the first letter of each word. The result is stored in a new variable. The final line checks the beginning of the cleaned name.</p></details>
+        <p><strong>Common mistake:</strong> Writing <code>name.upper</code> instead of <code>name.upper()</code>. Parentheses call the method.</p>
+        <p><strong>Exercise:</strong> Turn <code>"  learn python  "</code> into <code>"LEARN PYTHON"</code> without changing the original variable.</p>
+      </section>
+
+      <section class="py2-card" id="py2-slicing">
+        <span class="py2-section-tag">12 · String positions</span>
+        <h2>String Indexing and Slicing</h2>
+        <p>Indexing accesses one character. Slicing extracts a section of a string. Python indexes start at zero, and negative indexes count backwards from the end.</p>
+        <div class="py2-diagram">
+          <p><strong>word = "PYTHON"</strong></p>
+          <div class="py2-collection-cells">
+            <div class="py2-cell"><span class="py2-index">Index 0</span>P</div>
+            <div class="py2-cell"><span class="py2-index">Index 1</span>Y</div>
+            <div class="py2-cell"><span class="py2-index">Index 2</span>T</div>
+            <div class="py2-cell"><span class="py2-index">Index 3</span>H</div>
+            <div class="py2-cell"><span class="py2-index">Index 4</span>O</div>
+            <div class="py2-cell"><span class="py2-index">Index 5</span>N</div>
+          </div>
+          <p><code>word[0]</code> gives P · <code>word[-1]</code> gives N · <code>word[1:4]</code> gives YTH.</p>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Indexing and slicing examples</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>word = "PYTHON"
+
+print(word[0])
+print(word[-1])
+print(word[1:4])
+print(word[:3])
+print(word[3:])
+print(word[::-1])</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>P
+N
+YTH
+PYT
+HON
+NOHTYP</div>
+        <details><summary>Line-by-line explanation</summary><p><code>[0]</code> selects the first character. <code>[-1]</code> selects the last. <code>[1:4]</code> includes indexes 1, 2, and 3 but excludes 4. An omitted start or end uses the beginning or end. <code>[::-1]</code> reverses the string.</p></details>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> A slice's ending index is excluded. Accessing an index outside the valid range directly, such as <code>word[10]</code>, raises <code>IndexError</code>.</div>
+        <p><strong>Exercise:</strong> Extract <code>TH</code> from <code>PYTHON</code>.</p>
+      </section>
+
+      <section class="py2-card" id="py2-lists">
+        <span class="py2-section-tag">13 · Collections</span>
+        <h2>Lists</h2>
+        <p>A list stores multiple items in a particular order. Lists are mutable, which means you can update, add, and remove items. Duplicate values are allowed.</p>
+        <div class="py2-diagram">
+          <p><code>fruits = ["Apple", "Mango", "Orange"]</code></p>
+          <div class="py2-collection-cells">
+            <div class="py2-cell"><span class="py2-index">Index 0</span>Apple</div>
+            <div class="py2-cell"><span class="py2-index">Index 1</span>Mango</div>
+            <div class="py2-cell"><span class="py2-index">Index 2</span>Orange</div>
+          </div>
+          <p>Access with an index, update with assignment, add with <code>append()</code>, and remove with <code>remove()</code> or <code>pop()</code>.</p>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>List operations</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>fruits = ["Apple", "Mango", "Orange"]
+
+print(fruits[1])
+
+fruits[1] = "Banana"
+fruits.append("Grapes")
+fruits.remove("Apple")
+
+print(fruits)
+print(len(fruits))</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Mango
+['Banana', 'Orange', 'Grapes']
+3</div>
+        <details><summary>Line-by-line explanation</summary><p><code>fruits[1]</code> retrieves Mango. Assignment replaces it with Banana. <code>append()</code> adds Grapes at the end. <code>remove()</code> removes the first matching Apple. <code>len()</code> returns the number of items.</p></details>
+        <p><strong>Common mistake:</strong> Using an index that does not exist or expecting indexes to begin at 1.</p>
+        <p><strong>Real-world example:</strong> A shopping cart, a list of students, or a collection of product names.</p>
+        <p><strong>Exercise:</strong> Create a list of three favourite foods, add one more, and print the first item.</p>
+      </section>
+
+      <section class="py2-card" id="py2-tuples">
+        <span class="py2-section-tag">14 · Fixed collections</span>
+        <h2>Tuples</h2>
+        <p>A tuple is an ordered collection that cannot be changed after creation. Tuples allow duplicate values and are useful for fixed groups of related values.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Tuple example</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>location = (25.32, 55.41)
+
+print(location[0])
+print(location[1])
+print(len(location))</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>25.32
+55.41
+2</div>
+        <details><summary>Line-by-line explanation</summary><p>The tuple stores two coordinates. Index zero retrieves the first value and index one retrieves the second. <code>len()</code> reports two items.</p></details>
+        <div class="py2-callout"><strong>Single-item tuple:</strong> Use a trailing comma: <code>one_item = (5,)</code>. Without the comma, <code>(5)</code> is simply an integer in parentheses.</div>
+        <p><strong>Common mistake:</strong> Trying to assign to <code>location[0]</code>. Tuples do not support item assignment.</p>
+        <p><strong>Exercise:</strong> Create a tuple containing your birth year, month, and day.</p>
+      </section>
+
+      <section class="py2-card" id="py2-sets">
+        <span class="py2-section-tag">15 · Unique values</span>
+        <h2>Sets</h2>
+        <p>A set stores unique values. It is mutable, but it is not an indexed sequence and does not provide a guaranteed display order. Sets are useful for removing duplicates and checking membership.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Remove duplicate values</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>numbers = [1, 2, 2, 3, 3, 3]
+unique_numbers = set(numbers)
+
+print(unique_numbers)
+print(2 in unique_numbers)
+
+unique_numbers.add(4)
+unique_numbers.discard(1)
+print(sorted(unique_numbers))</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>{1, 2, 3}  (display order may vary)
+True
+[2, 3, 4]</div>
+        <details><summary>Line-by-line explanation</summary><p><code>set(numbers)</code> removes duplicate values. The membership expression checks whether 2 exists. <code>add()</code> inserts 4, and <code>discard()</code> removes 1 if present. <code>sorted()</code> creates a sorted list for predictable output.</p></details>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> Sets do not support <code>my_set[0]</code>. An empty set is <code>set()</code>, not <code>{}</code>; empty curly braces create a dictionary.</div>
+        <p><strong>Real-world example:</strong> Unique email addresses, distinct tags, or finding common interests between two groups.</p>
+        <p><strong>Exercise:</strong> Find the unique values in <code>[5, 5, 8, 9, 8]</code>.</p>
+      </section>
+
+      <section class="py2-card" id="py2-dictionaries">
+        <span class="py2-section-tag">16 · Key-value data</span>
+        <h2>Dictionaries</h2>
+        <p>A dictionary stores key-value pairs. Each key identifies a value. Dictionaries preserve insertion order in modern Python, are mutable, and require unique keys.</p>
+        <div class="py2-diagram">
+          <div style="text-align:center;font-weight:800;font-size:1.15rem;margin-bottom:12px">Student</div>
+          <div class="py2-grid">
+            <div class="py2-mini-card"><strong>name</strong> → Naveen</div>
+            <div class="py2-mini-card"><strong>age</strong> → 37</div>
+            <div class="py2-mini-card"><strong>city</strong> → Sharjah</div>
+            <div class="py2-mini-card"><strong>skill</strong> → Python</div>
+          </div>
+        </div>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Create and update a dictionary</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>student = {
+    "name": "Naveen",
+    "age": 37,
+    "city": "Sharjah",
+    "skill": "Python"
+}
+
+print(student["name"])
+print(student.get("city"))
+
+student["skill"] = "Java and Python"
+student["country"] = "UAE"
+
+print(student["skill"])
+print(student["country"])</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Naveen
+Sharjah
+Java and Python
+UAE</div>
+        <details><summary>Line-by-line explanation</summary><p>The dictionary uses strings as keys and different types of values. Square brackets retrieve a value by key. <code>get()</code> can safely retrieve a missing key by returning <code>None</code> by default. Assignment updates an existing key or adds a new key.</p></details>
+        <p><strong>Common mistake:</strong> Trying to access a dictionary using a numeric list-style index when the intended key is a string.</p>
+        <p><strong>Real-world example:</strong> A student record, product details, or an API response.</p>
+        <p><strong>Exercise:</strong> Create a dictionary for a book with title, author, and year.</p>
+      </section>
+
+      <section class="py2-card" id="py2-comprehensions">
+        <span class="py2-section-tag">17 · Compact collection creation</span>
+        <h2>List Comprehensions</h2>
+        <p>A list comprehension creates a list from an iterable in one concise expression. It can also include a condition to filter values.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>Normal loop and comprehension</span><button type="button" class="py2-copy">Copy code</button></div><pre><code># Using a normal loop
+squares = []
+for n in range(1, 6):
+    squares.append(n * n)
+
+print(squares)
+
+# Using a list comprehension
+squares = [n * n for n in range(1, 6)]
+print(squares)
+
+# Include only even numbers
+evens = [n for n in range(1, 11) if n % 2 == 0]
+print(evens)</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>[1, 4, 9, 16, 25]
+[1, 4, 9, 16, 25]
+[2, 4, 6, 8, 10]</div>
+        <details><summary>Line-by-line explanation</summary><p>The first loop appends each square to an initially empty list. The comprehension expresses the same transformation as <code>[expression for item in iterable]</code>. The last example adds <code>if</code> to keep only even values.</p></details>
+        <div class="py2-callout py2-warning"><strong>Common mistake:</strong> Making a comprehension so complicated that it becomes difficult to read. A normal loop is often clearer for several steps or nested logic.</div>
+        <p><strong>Exercise:</strong> Create a list containing the cubes of numbers from 1 to 5.</p>
+      </section>
+
+      <section class="py2-card" id="py2-nested-collections">
+        <span class="py2-section-tag">18 · Collections inside collections</span>
+        <h2>Nested Collections</h2>
+        <p>A nested collection contains another collection. This is useful for representing tables, structured records, groups, and data returned by APIs.</p>
+        <div class="py2-codebox"><div class="py2-codehead"><span>List of dictionaries</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>students = [
+    {"name": "Asha", "marks": 85},
+    {"name": "Ravi", "marks": 92},
+    {"name": "Mina", "marks": 78}
+]
+
+print(students[0]["name"])
+print(students[1]["marks"])
+
+for student in students:
+    print(student["name"], student["marks"])</code></pre></div>
+        <div class="py2-output"><div class="py2-output-label">Expected output</div>Asha
+92
+Asha 85
+Ravi 92
+Mina 78</div>
+        <details><summary>Line-by-line explanation</summary><p><code>students</code> is a list whose items are dictionaries. <code>students[0]</code> retrieves the first dictionary, and <code>["name"]</code> retrieves that dictionary's name. The loop visits each student record.</p></details>
+        <p><strong>Common mistake:</strong> Confusing a list index with a dictionary key. Use the index first, then the key in this example.</p>
+        <p><strong>Exercise:</strong> Add a fourth student and print their name and marks.</p>
+      </section>
+
+      <section class="py2-card" id="py2-comparison">
+        <span class="py2-section-tag">19 · Choose the right tool</span>
+        <h2>Python Collections Comparison</h2>
+        <p>Choose a collection based on whether you need order, modification, uniqueness, and lookup by key.</p>
+        <div class="py2-table-wrap"><table>
+          <thead><tr><th>Feature</th><th>List</th><th>Tuple</th><th>Set</th><th>Dictionary</th></tr></thead>
+          <tbody>
+            <tr><th>Ordered?</th><td>Yes</td><td>Yes</td><td>No guaranteed order</td><td>Yes, insertion order</td></tr>
+            <tr><th>Mutable?</th><td>Yes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
+            <tr><th>Duplicates?</th><td>Yes</td><td>Yes</td><td>Values are unique</td><td>Keys must be unique; values may repeat</td></tr>
+            <tr><th>Access method</th><td>Index</td><td>Index</td><td>Membership / iteration</td><td>Key</td></tr>
+            <tr><th>Best use case</th><td>Changeable sequence</td><td>Fixed record</td><td>Unique values</td><td>Named fields / lookup</td></tr>
+            <tr><th>Example</th><td><code>[1, 2]</code></td><td><code>(1, 2)</code></td><td><code>{1, 2}</code></td><td><code>{"id": 1}</code></td></tr>
+          </tbody>
+        </table></div>
+        <h3>Visual collection guide</h3>
+        <div class="py2-grid py2-three">
+          <div class="py2-mini-card"><h3>📋 List</h3><p>Ordered and editable. Use when the number or content of items can change.</p><code>tasks = ["read", "code"]</code></div>
+          <div class="py2-mini-card"><h3>🔒 Tuple</h3><p>Ordered and fixed. Use for values that belong together and should not be reassigned.</p><code>point = (4, 7)</code></div>
+          <div class="py2-mini-card"><h3>✨ Set</h3><p>Unique values. Use to remove duplicates or test membership.</p><code>tags = {"python", "web"}</code></div>
+          <div class="py2-mini-card"><h3>🗂️ Dictionary</h3><p>Key-value pairs. Use for records with named fields.</p><code>user = {"name": "Asha"}</code></div>
+        </div>
+        <h3>Try the collection selector</h3>
+        <label for="py2-collection-select">Choose a collection</label>
+        <select id="py2-collection-select" class="py2-field">
+          <option value="list">List</option><option value="tuple">Tuple</option><option value="set">Set</option><option value="dict">Dictionary</option>
+        </select>
+        <div class="py2-result" id="py2-collection-result" aria-live="polite"></div>
+      </section>
+
+      <section class="py2-card" id="py2-practical">
+        <span class="py2-section-tag">20 · Real code examples</span>
+        <h2>Practical Examples</h2>
+        <p>Study these complete examples. Each includes the expected output and an explanation of the important lines.</p>
+
+        <details open>
+          <summary>Example 1 — Positive, negative, or zero</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>number_check.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>number = -5
+
+if number > 0:
+    print("Positive")
+elif number < 0:
+    print("Negative")
+else:
+    print("Zero")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>Negative</div>
+          <p><strong>Explanation:</strong> The first condition checks numbers above zero. The second checks numbers below zero. If neither condition is true, the number must be zero.</p>
+          <p><strong>Common mistake:</strong> Leaving out the zero case.</p>
+        </details>
+
+        <details>
+          <summary>Example 2 — Odd or even</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>odd_even.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>number = 7
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>Odd</div>
+          <p><strong>Explanation:</strong> The modulo operator <code>%</code> returns the remainder. Even integers have remainder zero when divided by two.</p>
+          <p><strong>Common mistake:</strong> Using <code>/</code> instead of <code>%</code> for this remainder check.</p>
+        </details>
+
+        <details>
+          <summary>Example 3 — Grade calculation</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>grade.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>marks = 67
+
+if not 0 <= marks <= 100:
+    print("Invalid marks")
+elif marks >= 90:
+    print("Grade A")
+elif marks >= 75:
+    print("Grade B")
+elif marks >= 50:
+    print("Pass")
+else:
+    print("Needs Improvement")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>Pass</div>
+          <p><strong>Explanation:</strong> The first condition validates the score. Python then checks grade thresholds from highest to lowest and prints the first matching result.</p>
+          <p><strong>Common mistake:</strong> Forgetting to validate values outside the expected range.</p>
+        </details>
+
+        <details>
+          <summary>Example 4 — Multiplication table</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>multiplication.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>number = 5
+
+for i in range(1, 11):
+    print(f"{number} x {i} = {number * i}")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>5 x 1 = 5
+5 x 2 = 10
+5 x 3 = 15
+5 x 4 = 20
+5 x 5 = 25
+5 x 6 = 30
+5 x 7 = 35
+5 x 8 = 40
+5 x 9 = 45
+5 x 10 = 50</div>
+          <p><strong>Explanation:</strong> <code>range(1, 11)</code> supplies 1 through 10. The f-string inserts variable values and the multiplication result into each line.</p>
+          <p><strong>Common mistake:</strong> Using <code>range(1, 10)</code> when you want the table through 10.</p>
+        </details>
+
+        <details>
+          <summary>Example 5 — Factorial</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>factorial.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>number = 5
+factorial = 1
+
+for i in range(1, number + 1):
+    factorial *= i
+
+print(factorial)</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>120</div>
+          <p><strong>Explanation:</strong> Factorial multiplies the positive integers from 1 through the given number. The accumulator starts at 1 because multiplying by 1 does not change the result. For this loop, 1 × 2 × 3 × 4 × 5 = 120.</p>
+          <p><strong>Common mistake:</strong> Starting the accumulator at zero, which would keep the result at zero. The factorial of zero is also 1, so this initialised loop correctly produces 1 when the number is zero.</p>
+        </details>
+
+        <details>
+          <summary>Example 6 — Find prime numbers</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>primes.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>for number in range(2, 21):
+    is_prime = True
+
+    for divisor in range(2, number):
+        if number % divisor == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print(number, end=" ")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>2 3 5 7 11 13 17 19</div>
+          <p><strong>Explanation:</strong> The outer loop examines each number. The inner loop tries possible divisors. If any divisor leaves a remainder of zero, the number is not prime and the inner loop stops. Otherwise, the number is printed.</p>
+          <p><strong>Common mistake:</strong> Treating 1 as a prime number. Prime numbers are integers greater than 1 with exactly two positive divisors.</p>
+        </details>
+
+        <details>
+          <summary>Example 7 — Iterate through a string</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>characters.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>word = "CODE"
+
+for character in word:
+    print(character)</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>C
+O
+D
+E</div>
+          <p><strong>Explanation:</strong> A string is iterable. Each loop iteration assigns the next character to <code>character</code>.</p>
+          <p><strong>Common mistake:</strong> Trying to change the string by assigning to a character index. Strings are immutable.</p>
+        </details>
+
+        <details>
+          <summary>Example 8 — Search a list</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>search_list.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>names = ["Asha", "Ravi", "Mina"]
+target = "Ravi"
+
+found = False
+
+for name in names:
+    if name == target:
+        found = True
+        break
+
+if found:
+    print("Found")
+else:
+    print("Not found")</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>Found</div>
+          <p><strong>Explanation:</strong> The loop compares each name with the target. A match changes <code>found</code> to <code>True</code> and stops the loop.</p>
+          <p><strong>Common mistake:</strong> Printing “Not found” inside the loop after the first non-matching item.</p>
+        </details>
+
+        <details>
+          <summary>Example 9 — Remove duplicates with a set</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>unique_values.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>values = [3, 1, 3, 2, 1, 4]
+unique_values = sorted(set(values))
+
+print(unique_values)</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>[1, 2, 3, 4]</div>
+          <p><strong>Explanation:</strong> <code>set()</code> removes duplicate values. <code>sorted()</code> returns a list in ascending order, making the output predictable.</p>
+          <p><strong>Common mistake:</strong> Assuming a set retains the original list order.</p>
+        </details>
+
+        <details>
+          <summary>Example 10 — Create a dictionary</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>product.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>product = {
+    "name": "Keyboard",
+    "price": 75,
+    "in_stock": True
+}
+
+print(product["name"])
+print(product["price"])
+print(product["in_stock"])</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>Keyboard
+75
+True</div>
+          <p><strong>Explanation:</strong> The dictionary groups a product's name, price, and availability. Each value is retrieved through its key.</p>
+          <p><strong>Common mistake:</strong> Requesting a key that does not exist using square brackets, which raises <code>KeyError</code>.</p>
+        </details>
+
+        <details>
+          <summary>Example 11 — Count word frequency</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>word_frequency.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>text = "python is easy and python is useful"
+words = text.split()
+frequency = {}
+
+for word in words:
+    frequency[word] = frequency.get(word, 0) + 1
+
+print(frequency["python"])
+print(frequency["is"])</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>2
+2</div>
+          <p><strong>Explanation:</strong> <code>split()</code> creates a list of words. <code>get(word, 0)</code> returns the current count or zero if the word has not appeared. The count is incremented for each word.</p>
+          <p><strong>Common mistake:</strong> Ignoring punctuation or capitalisation when analysing real text. This simple example assumes lowercase words without punctuation.</p>
+        </details>
+
+        <details>
+          <summary>Example 12 — List comprehension</summary>
+          <div class="py2-codebox"><div class="py2-codehead"><span>filter_even.py</span><button type="button" class="py2-copy">Copy code</button></div><pre><code>numbers = range(1, 11)
+even_squares = [n * n for n in numbers if n % 2 == 0]
+
+print(even_squares)</code></pre></div>
+          <div class="py2-output"><div class="py2-output-label">Expected output</div>[4, 16, 36, 64, 100]</div>
+          <p><strong>Explanation:</strong> The expression squares each selected number. The <code>if</code> clause keeps only even numbers before adding their squares to the list.</p>
+          <p><strong>Common mistake:</strong> Putting the filter in the wrong place or forgetting that the comprehension returns a new list.</p>
+        </details>
+      </section>
+
+      <section class="py2-card" id="py2-interactive">
+        <span class="py2-section-tag">21 · Try it yourself</span>
+        <h2>Interactive Visual Learning</h2>
+
+        <h3>Interactive if-else simulator</h3>
+        <p>Enter a number. The simulator checks whether it is positive, negative, or zero. This demonstrates the decision logic; it does not execute Python code.</p>
+        <div class="py2-control-row">
+          <div><label for="py2-number-input">Enter a number</label><input class="py2-field" id="py2-number-input" type="number" step="any" value="-3"></div>
+          <button type="button" class="py2-btn py2-primary" id="py2-check-number">Check number</button>
+        </div>
+        <div class="py2-result" id="py2-number-result" aria-live="polite">Choose a number and press Check number.</div>
+
+        <h3>Loop simulator</h3>
+        <p>Choose a small loop limit. The simulator shows each iteration and stops at a maximum of 20 iterations. It never runs arbitrary Python code.</p>
+        <div class="py2-control-row">
+          <div><label for="py2-loop-limit">Count from 1 to</label><input class="py2-field" id="py2-loop-limit" type="number" min="1" max="20" step="1" value="5"></div>
+          <button type="button" class="py2-btn py2-primary" id="py2-run-loop">Run loop</button>
+        </div>
+        <div class="py2-result" id="py2-loop-result" aria-live="polite">The loop output will appear here.</div>
+
+        <h3>List editor</h3>
+        <p>Add or remove values to see how a mutable list changes.</p>
+        <div class="py2-control-row">
+          <div><label for="py2-list-input">New item</label><input class="py2-field" id="py2-list-input" maxlength="50" value="Grapes" placeholder="Enter an item"></div>
+          <button type="button" class="py2-btn py2-primary" id="py2-add-item">Add item</button>
+          <button type="button" class="py2-btn" id="py2-remove-item">Remove last</button>
+          <button type="button" class="py2-btn" id="py2-reset-list">Reset list</button>
+        </div>
+        <div class="py2-result" id="py2-list-result" aria-live="polite"></div>
+
+        <h3>Collection comparison selector</h3>
+        <p>Choose a collection to see when it is most useful.</p>
+        <label for="py2-collection-select-2">Collection type</label>
+        <select class="py2-field" id="py2-collection-select-2">
+          <option value="list">List</option><option value="tuple">Tuple</option><option value="set">Set</option><option value="dict">Dictionary</option>
+        </select>
+        <div class="py2-result" id="py2-collection-result-2" aria-live="polite"></div>
+      </section>
+
+      <section class="py2-card" id="py2-exercises">
+        <span class="py2-section-tag">22 · Independent practice</span>
+        <h2>Practice Exercises</h2>
+        <p>Try writing these programs before checking the suggested hints.</p>
+        <ol>
+          <li>Check whether a number is divisible by both 3 and 5.</li>
+          <li>Read a person's age and print whether they are a child, teenager, or adult.</li>
+          <li>Print all even numbers between 1 and 50.</li>
+          <li>Calculate the sum of numbers from 1 to 100.</li>
+          <li>Print a string one character at a time in reverse order.</li>
+          <li>Count how many vowels appear in a word.</li>
+          <li>Create a shopping list and let the user add three items.</li>
+          <li>Remove duplicate values from a list and display them in sorted order.</li>
+          <li>Create a dictionary containing a student's name, age, and subjects.</li>
+          <li>Use a list comprehension to create cubes of all odd numbers from 1 to 15.</li>
+          <li>Use a loop to find the largest number in a list without using <code>max()</code>.</li>
+          <li>Create a word-frequency dictionary for a sentence.</li>
+        </ol>
+        <details><summary>Hints for exercises</summary>
+          <ol>
+            <li>Use <code>number % 3 == 0 and number % 5 == 0</code>.</li>
+            <li>Use an <code>if-elif-else</code> chain with age ranges.</li>
+            <li>Use <code>range(2, 51, 2)</code>.</li>
+            <li>Use an accumulator initialised to zero.</li>
+            <li>Try slicing with <code>[::-1]</code> or use a reversed iteration.</li>
+            <li>Use <code>character.lower() in "aeiou"</code>.</li>
+            <li>Use <code>append()</code> to add values to a list.</li>
+            <li>Combine <code>set()</code> and <code>sorted()</code>.</li>
+            <li>Use keys such as <code>"name"</code>, <code>"age"</code>, and <code>"subjects"</code>.</li>
+            <li>Try <code>[n ** 3 for n in range(1, 16) if n % 2 != 0]</code>.</li>
+            <li>Keep a variable for the largest value seen so far.</li>
+            <li>Use <code>split()</code>, a dictionary, and <code>get()</code>.</li>
+          </ol>
+        </details>
+      </section>
+
+      <section class="py2-card" id="py2-quiz">
+        <span class="py2-section-tag">23 · Check your understanding</span>
+        <h2>Python Page 2 Quiz</h2>
+        <p>Choose one answer for each question, then press <strong>Check answers</strong> for instant feedback.</p>
+        <form id="py2-quiz-form">
+          <div class="py2-question" data-answer="b" data-explanation="range(1, 5) includes 1, 2, 3, and 4. The stop value 5 is excluded.">
+            <strong>1. What values does <code>range(1, 5)</code> produce?</strong>
+            <label><input type="radio" name="py2-q1" value="a"> 1, 2, 3, 4, 5</label>
+            <label><input type="radio" name="py2-q1" value="b"> 1, 2, 3, 4</label>
+            <label><input type="radio" name="py2-q1" value="c"> 0, 1, 2, 3, 4</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="c" data-explanation="The modulo operator gives the remainder. 8 divided by 2 leaves remainder zero.">
+            <strong>2. What is <code>8 % 2</code>?</strong>
+            <label><input type="radio" name="py2-q2" value="a"> 4</label>
+            <label><input type="radio" name="py2-q2" value="b"> 2</label>
+            <label><input type="radio" name="py2-q2" value="c"> 0</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="a" data-explanation="break exits the current loop immediately.">
+            <strong>3. Which keyword immediately exits a loop?</strong>
+            <label><input type="radio" name="py2-q3" value="a"> break</label>
+            <label><input type="radio" name="py2-q3" value="b"> continue</label>
+            <label><input type="radio" name="py2-q3" value="c"> elif</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="b" data-explanation="continue skips the remaining body of the current iteration and proceeds to the next iteration.">
+            <strong>4. What does <code>continue</code> do?</strong>
+            <label><input type="radio" name="py2-q4" value="a"> Exits the entire program</label>
+            <label><input type="radio" name="py2-q4" value="b"> Skips to the next iteration</label>
+            <label><input type="radio" name="py2-q4" value="c"> Restarts Python</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="c" data-explanation="Lists are ordered and mutable, so you can update, append, and remove elements.">
+            <strong>5. Which collection is ordered and mutable?</strong>
+            <label><input type="radio" name="py2-q5" value="a"> Tuple</label>
+            <label><input type="radio" name="py2-q5" value="b"> Set</label>
+            <label><input type="radio" name="py2-q5" value="c"> List</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="a" data-explanation="A tuple is immutable, so its items cannot be reassigned after creation.">
+            <strong>6. Which collection is immutable?</strong>
+            <label><input type="radio" name="py2-q6" value="a"> Tuple</label>
+            <label><input type="radio" name="py2-q6" value="b"> List</label>
+            <label><input type="radio" name="py2-q6" value="c"> Dictionary</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="b" data-explanation="A set stores unique elements, making it useful for removing duplicates.">
+            <strong>7. Which collection is useful for removing duplicate values?</strong>
+            <label><input type="radio" name="py2-q7" value="a"> List</label>
+            <label><input type="radio" name="py2-q7" value="b"> Set</label>
+            <label><input type="radio" name="py2-q7" value="c"> String</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="c" data-explanation="Dictionaries store key-value pairs, allowing values to be retrieved by key.">
+            <strong>8. Which collection stores key-value pairs?</strong>
+            <label><input type="radio" name="py2-q8" value="a"> Tuple</label>
+            <label><input type="radio" name="py2-q8" value="b"> Set</label>
+            <label><input type="radio" name="py2-q8" value="c"> Dictionary</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="a" data-explanation="word[1:4] includes indexes 1, 2, and 3, excluding index 4.">
+            <strong>9. What does <code>"PYTHON"[1:4]</code> return?</strong>
+            <label><input type="radio" name="py2-q9" value="a"> YTH</label>
+            <label><input type="radio" name="py2-q9" value="b"> PYTH</label>
+            <label><input type="radio" name="py2-q9" value="c"> YTHO</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="b" data-explanation="The list comprehension squares the numbers 1, 2, and 3, producing 1, 4, and 9.">
+            <strong>10. What is <code>[n*n for n in range(1, 4)]</code>?</strong>
+            <label><input type="radio" name="py2-q10" value="a"> [1, 2, 3]</label>
+            <label><input type="radio" name="py2-q10" value="b"> [1, 4, 9]</label>
+            <label><input type="radio" name="py2-q10" value="c"> [1, 4, 9, 16]</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="c" data-explanation="A while loop continues while its condition is true, so the condition must eventually become false or the loop must exit deliberately.">
+            <strong>11. What can cause an infinite while loop?</strong>
+            <label><input type="radio" name="py2-q11" value="a"> Using print()</label>
+            <label><input type="radio" name="py2-q11" value="b"> Using a string</label>
+            <label><input type="radio" name="py2-q11" value="c"> Never making the condition false or exiting</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-question" data-answer="a" data-explanation="upper() returns a new uppercase string and does not modify the original string.">
+            <strong>12. What does <code>"python".upper()</code> return?</strong>
+            <label><input type="radio" name="py2-q12" value="a"> PYTHON</label>
+            <label><input type="radio" name="py2-q12" value="b"> python</label>
+            <label><input type="radio" name="py2-q12" value="c"> Python</label>
+            <div class="py2-feedback" aria-live="polite"></div>
+          </div>
+          <div class="py2-control-row">
+            <button class="py2-btn py2-primary" type="submit">Check answers</button>
+            <button class="py2-btn" type="button" id="py2-reset-quiz">Reset quiz</button>
+          </div>
+        </form>
+        <div class="py2-result" id="py2-quiz-score" aria-live="polite">Your score will appear here.</div>
+      </section>
+
+      <section class="py2-card" id="py2-summary">
+        <span class="py2-section-tag">24 · Review</span>
+        <h2>Summary and Progress Checklist</h2>
+        <p>Use this checklist to track your learning. Your selections remain available while this page stays open.</p>
+        <ul class="py2-checklist" id="py2-checklist">
+          <li><label><input type="checkbox"> I understand Boolean expressions and comparison operators.</label></li>
+          <li><label><input type="checkbox"> I can write if, if-else, if-elif-else, and nested conditions.</label></li>
+          <li><label><input type="checkbox"> I can use for loops and range().</label></li>
+          <li><label><input type="checkbox"> I can write a while loop that terminates correctly.</label></li>
+          <li><label><input type="checkbox"> I understand break and continue.</label></li>
+          <li><label><input type="checkbox"> I can use string methods, indexing, and slicing.</label></li>
+          <li><label><input type="checkbox"> I can create and modify lists, and use tuples and sets.</label></li>
+          <li><label><input type="checkbox"> I can create dictionaries and access key-value pairs.</label></li>
+          <li><label><input type="checkbox"> I can use list comprehensions and nested collections.</label></li>
+          <li><label><input type="checkbox"> I completed the quiz and reviewed incorrect answers.</label></li>
+        </ul>
+        <div class="py2-progress-wrap"><div class="py2-progress" id="py2-checklist-progress"></div></div>
+        <p id="py2-checklist-label" class="py2-muted">0 of 10 topics completed.</p>
+        <div class="py2-callout py2-success">
+          <strong>Key takeaway:</strong> Conditions make decisions, loops repeat tasks, strings represent text, and collections store related values. Choose the simplest structure that clearly expresses your problem.
+        </div>
+        <h3>Next: Page 3 — Functions and Reusable Code</h3>
+        <p>Continue learning how to create functions, pass arguments, return values, and organise Python programs into reusable components.</p>
+        <div class="py2-footer-nav">
+          <a class="py2-btn" href="python-page-1.html">← Previous: Page 1</a>
+          <a class="py2-btn py2-primary" href="python-page-3.html">Next: Page 3 →</a>
+        </div>
+        <p class="py2-inline-note">RBUtech · Python Programming Course · Page 2 of 5</p>
+      </section>
+    </main>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  const root = document.getElementById("py2-app");
+  if (!root) return;
+
+  const $ = (selector) => root.querySelector(selector);
+  const $$ = (selector) => Array.from(root.querySelectorAll(selector));
+
+  // Mobile contents menu
+  const menuToggle = $("#py2-menu-toggle");
+  const sidebar = $("#py2-sidebar");
+  if (menuToggle && sidebar) {
+    menuToggle.addEventListener("click", function () {
+      const open = sidebar.classList.toggle("py2-open");
+      menuToggle.setAttribute("aria-expanded", String(open));
+    });
+    $$(".py2-menu a[href^='#']").forEach(function (link) {
+      link.addEventListener("click", function () {
+        if (window.matchMedia("(max-width: 980px)").matches) {
+          sidebar.classList.remove("py2-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  }
+
+  // Copy code buttons
+  $$(".py2-copy").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      const code = button.closest(".py2-codebox")?.querySelector("pre code");
+      if (!code) return;
+      const text = code.innerText;
+      try {
+        await navigator.clipboard.writeText(text);
+        button.textContent = "Copied!";
+      } catch (error) {
+        const temporary = document.createElement("textarea");
+        temporary.value = text;
+        temporary.setAttribute("readonly", "");
+        temporary.style.position = "absolute";
+        temporary.style.left = "-9999px";
+        root.appendChild(temporary);
+        temporary.select();
+        const copied = document.execCommand("copy");
+        temporary.remove();
+        button.textContent = copied ? "Copied!" : "Select code to copy";
+      }
+      window.setTimeout(function () {
+        button.textContent = "Copy code";
+      }, 1500);
+    });
+  });
+
+  // Reading progress and active navigation
+  const sections = $$(".py2-main section[id], .py2-main header[id]");
+  const menuLinks = $$(".py2-menu a[href^='#']");
+  function updateReadingProgress() {
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - window.innerHeight;
+    const percent = scrollable > 0 ? Math.round((window.scrollY / scrollable) * 100) : 0;
+    const progress = $("#py2-progress");
+    const label = $("#py2-progress-label");
+    if (progress) progress.style.width = percent + "%";
+    if (label) label.textContent = percent + "%";
+  }
+  window.addEventListener("scroll", updateReadingProgress, { passive: true });
+  updateReadingProgress();
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        menuLinks.forEach(function (link) {
+          const active = link.getAttribute("href") === "#" + entry.target.id;
+          link.classList.toggle("py2-active", active);
+          if (active) link.setAttribute("aria-current", "location");
+          else link.removeAttribute("aria-current");
+        });
+      });
+    }, { rootMargin: "-15% 0px -75% 0px" });
+    sections.forEach(function (section) { observer.observe(section); });
+  }
+
+  // Interactive number decision simulator
+  $("#py2-check-number").addEventListener("click", function () {
+    const input = $("#py2-number-input");
+    const result = $("#py2-number-result");
+    if (input.value.trim() === "" || !Number.isFinite(Number(input.value))) {
+      result.textContent = "Please enter a valid number.";
+      return;
+    }
+    const number = Number(input.value);
+    let branch;
+    if (number > 0) branch = "Positive";
+    else if (number < 0) branch = "Negative";
+    else branch = "Zero";
+    result.textContent = "number = " + number + "\nCondition selected: " + branch;
+  });
+
+  // Bounded loop simulator: does not evaluate Python or arbitrary user code.
+  $("#py2-run-loop").addEventListener("click", function () {
+    const input = $("#py2-loop-limit");
+    const result = $("#py2-loop-result");
+    const limit = Number(input.value);
+    if (!Number.isInteger(limit) || limit < 1 || limit > 20) {
+      result.textContent = "Enter a whole number from 1 to 20.";
+      return;
+    }
+    const lines = [];
+    for (let counter = 1; counter <= limit; counter += 1) {
+      lines.push("Iteration " + counter + ": counter = " + counter);
+    }
+    lines.push("Condition becomes false. Loop exits.");
+    result.textContent = lines.join("\n");
+  });
+
+  // List editor
+  const initialItems = ["Apple", "Mango", "Orange"];
+  let listItems = initialItems.slice();
+  function renderList() {
+    const result = $("#py2-list-result");
+    result.textContent = "fruits = " + JSON.stringify(listItems) +
+      "\nNumber of items: " + listItems.length;
+  }
+  renderList();
+  $("#py2-add-item").addEventListener("click", function () {
+    const input = $("#py2-list-input");
+    const item = input.value.trim();
+    if (!item) {
+      $("#py2-list-result").textContent = "Enter a non-empty item before adding it.";
+      return;
+    }
+    if (listItems.length >= 50) {
+      $("#py2-list-result").textContent = "Limit reached: keep the example list to 50 items or fewer.";
+      return;
+    }
+    listItems.push(item);
+    renderList();
+    input.value = "";
+    input.focus();
+  });
+  $("#py2-remove-item").addEventListener("click", function () {
+    if (!listItems.length) {
+      $("#py2-list-result").textContent = "The list is already empty.";
+      return;
+    }
+    const removed = listItems.pop();
+    renderList();
+    $("#py2-list-result").textContent += "\nRemoved item: " + removed;
+  });
+  $("#py2-reset-list").addEventListener("click", function () {
+    listItems = initialItems.slice();
+    renderList();
+  });
+
+  // Collection comparison selector
+  const collectionInfo = {
+    list: "List — Ordered, mutable, and allows duplicates. Access items by index. Example: tasks = ['read', 'code'].",
+    tuple: "Tuple — Ordered and immutable. Access items by index. Example: point = (4, 7).",
+    set: "Set — Stores unique elements without a guaranteed display order. Use membership checks and duplicate removal. Example: tags = {'python', 'web'}.",
+    dict: "Dictionary — Mutable key-value pairs with unique keys and insertion order. Retrieve values by key. Example: user = {'name': 'Asha'}."
+  };
+  function updateCollection(selectId, resultId) {
+    const select = $("#" + selectId);
+    const result = $("#" + resultId);
+    if (select && result) result.textContent = collectionInfo[select.value] || "";
+  }
+  $("#py2-collection-select").addEventListener("change", function () {
+    updateCollection("py2-collection-select", "py2-collection-result");
+  });
+  $("#py2-collection-select-2").addEventListener("change", function () {
+    updateCollection("py2-collection-select-2", "py2-collection-result-2");
+  });
+  updateCollection("py2-collection-select", "py2-collection-result");
+  updateCollection("py2-collection-select-2", "py2-collection-result-2");
+
+  // Quiz with instant feedback and score
+  const quizForm = $("#py2-quiz-form");
+  const scoreBox = $("#py2-quiz-score");
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let score = 0;
+    const questions = $$(".py2-question");
+    questions.forEach(function (question) {
+      const selected = question.querySelector("input[type='radio']:checked");
+      const feedback = question.querySelector(".py2-feedback");
+      const correct = question.dataset.answer;
+      if (selected && selected.value === correct) {
+        score += 1;
+        feedback.textContent = "Correct! " + question.dataset.explanation;
+        feedback.style.color = "#15803d";
+      } else {
+        feedback.textContent = (selected ? "Not quite. " : "Unanswered. ") +
+          "Correct answer: " + correct.toUpperCase() + ". " + question.dataset.explanation;
+        feedback.style.color = "#b91c1c";
+      }
+    });
+    const total = questions.length;
+    const percent = Math.round(score / total * 100);
+    let message = "";
+    if (percent >= 90) message = " Excellent work!";
+    else if (percent >= 70) message = " Good progress — review any missed questions.";
+    else message = " Review the explanations and try again.";
+    scoreBox.textContent = "Your score: " + score + " / " + total + " (" + percent + "%)." + message;
+  });
+
+  $("#py2-reset-quiz").addEventListener("click", function () {
+    quizForm.reset();
+    $$(".py2-feedback").forEach(function (feedback) {
+      feedback.textContent = "";
+      feedback.style.color = "";
+    });
+    scoreBox.textContent = "Your score will appear here.";
+  });
+
+  // Progress checklist
+  const checklistItems = $$("#py2-checklist input[type='checkbox']");
+  function updateChecklist() {
+    const checked = checklistItems.filter(function (item) { return item.checked; }).length;
+    const total = checklistItems.length;
+    const percent = total ? Math.round(checked / total * 100) : 0;
+    $("#py2-checklist-progress").style.width = percent + "%";
+    $("#py2-checklist-label").textContent = checked + " of " + total + " topics completed (" + percent + "%).";
+  }
+  checklistItems.forEach(function (item) {
+    item.addEventListener("change", updateChecklist);
+  });
+  updateChecklist();
+})();
+</script>
+</body>
+</html></main></div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
+</div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
+</body></html>
