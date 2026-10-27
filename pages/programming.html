@@ -10,3424 +10,1169 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style></head><body><div class="site">
 <header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
-<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>programming</h1><!DOCTYPE html>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>programming</h1>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Python Programming — From Installation to Your First Program">
-<title style="color: white;">Python Programming — From Installation to Your First Program</title>
-
+<meta name="description" content="Learn Python installation, syntax, variables, data types, operators, input and output through examples, diagrams, exercises and quizzes.">
+<title>Python Programming — Installation and Programming Basics</title>
 <style>
-/* =========================================================
-   RBUtech Python Learning Page 1
-   Unique CSS Prefix: py1-
-   ========================================================= */
-
-.py1-page,
-.py1-page * {
-    box-sizing: border-box;
-}
-
-.py1-page {
-    --py1-bg: #f5f7fb;
-    --py1-panel: #ffffff;
-    --py1-panel-soft: #f8fafc;
-    --py1-text: #172033;
-    --py1-muted: #64748b;
-    --py1-line: #e2e8f0;
-    --py1-primary: #4f46e5;
-    --py1-primary-dark: #3730a3;
-    --py1-secondary: #06b6d4;
-    --py1-success: #059669;
-    --py1-warning: #d97706;
-    --py1-danger: #dc2626;
-    --py1-purple: #7c3aed;
-    --py1-pink: #db2777;
-    --py1-code: #111827;
-    --py1-code-text: #e5e7eb;
-    --py1-radius: 18px;
-    --py1-shadow: 0 12px 35px rgba(15,23,42,.08);
-
-    width: 100%;
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at 10% 0%, rgba(79,70,229,.08), transparent 28rem),
-        radial-gradient(circle at 90% 10%, rgba(6,182,212,.07), transparent 26rem),
-        var(--py1-bg);
-    color: var(--py1-text);
-    font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-    line-height: 1.65;
-}
-
-.py1-container {
-    width: min(1180px, calc(100% - 32px));
-    margin: auto;
-}
-
-.py1-hero {
-    position: relative;
-    overflow: hidden;
-    padding: 64px 0 46px;
-    background:
-        linear-gradient(135deg, #111827 0%, #1e1b4b 48%, #312e81 100%);
-    color: #fff;
-}
-
-.py1-hero::before,
-.py1-hero::after {
-    content: "";
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(2px);
-    opacity: .18;
-}
-
-.py1-hero::before {
-    width: 320px;
-    height: 320px;
-    background: #22d3ee;
-    top: -150px;
-    right: 5%;
-}
-
-.py1-hero::after {
-    width: 260px;
-    height: 260px;
-    background: #a78bfa;
-    bottom: -160px;
-    left: 5%;
-}
-
-.py1-hero-inner {
-    position: relative;
-    z-index: 2;
-}
-
-.py1-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 7px 13px;
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 999px;
-    background: rgba(255,255,255,.08);
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: .04em;
-    text-transform: uppercase;
-}
-
-.py1-python-mark {
-    width: 38px;
-    height: 38px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 11px;
-    background: linear-gradient(135deg,#3776ab,#ffd343);
-    font-weight: 900;
-    color: white;
-}
-
-.py1-hero h1 {
-    max-width: 850px;
-    margin: 22px 0 14px;
-    font-size: clamp(34px, 5vw, 62px);
-    line-height: 1.06;
-    letter-spacing: -.045em;
-}
-
-.py1-hero p {
-    max-width: 800px;
-    color: #cbd5e1;
-    font-size: clamp(16px, 2vw, 20px);
-}
-
-.py1-hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 26px;
-}
-
-.py1-meta-chip {
-    padding: 8px 13px;
-    border-radius: 10px;
-    background: rgba(255,255,255,.09);
-    border: 1px solid rgba(255,255,255,.12);
-    color: #e2e8f0;
-    font-size: 14px;
-}
-
-.py1-progress-wrap {
-    margin-top: 34px;
-    max-width: 700px;
-}
-
-.py1-progress-top {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: #cbd5e1;
-}
-
-.py1-progress {
-    height: 10px;
-    border-radius: 999px;
-    overflow: hidden;
-    background: rgba(255,255,255,.12);
-}
-
-.py1-progress-bar {
-    width: 20%;
-    height: 100%;
-    border-radius: inherit;
-    background: linear-gradient(90deg,#22d3ee,#818cf8);
-    transition: width .35s ease;
-}
-
-/* General sections */
-
-.py1-section {
-    padding: 58px 0;
-}
-
-.py1-section-alt {
-    background: rgba(255,255,255,.62);
-    border-top: 1px solid rgba(226,232,240,.7);
-    border-bottom: 1px solid rgba(226,232,240,.7);
-}
-
-.py1-section-heading {
-    margin-bottom: 28px;
-}
-
-.py1-eyebrow {
-    display: inline-block;
-    margin-bottom: 8px;
-    color: var(--py1-primary);
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-}
-
-.py1-section-heading h2 {
-    margin: 0 0 8px;
-    font-size: clamp(27px, 4vw, 40px);
-    line-height: 1.15;
-    letter-spacing: -.035em;
-}
-
-.py1-section-heading p {
-    max-width: 760px;
-    margin: 0;
-    color: var(--py1-muted);
-}
-
-/* Cards */
-
-.py1-grid {
-    display: grid;
-    gap: 18px;
-}
-
-.py1-grid-2 {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-}
-
-.py1-grid-3 {
-    grid-template-columns: repeat(3,minmax(0,1fr));
-}
-
-.py1-card {
-    background: var(--py1-panel);
-    border: 1px solid var(--py1-line);
-    border-radius: var(--py1-radius);
-    padding: 23px;
-    box-shadow: var(--py1-shadow);
-}
-
-.py1-card h3 {
-    margin: 0 0 8px;
-    font-size: 19px;
-}
-
-.py1-card p {
-    color: var(--py1-muted);
-}
-
-.py1-icon-card {
-    position: relative;
-    overflow: hidden;
-}
-
-.py1-icon-card::after {
-    content: "";
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    background: rgba(79,70,229,.06);
-    right: -25px;
-    bottom: -30px;
-}
-
-.py1-icon {
-    width: 44px;
-    height: 44px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 13px;
-    margin-bottom: 13px;
-    color: white;
-    font-weight: 900;
-    background: linear-gradient(135deg,#4f46e5,#06b6d4);
-}
-
-/* Objectives */
-
-.py1-objectives {
-    display: grid;
-    grid-template-columns: repeat(2,minmax(0,1fr));
-    gap: 12px;
-}
-
-.py1-objective {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    padding: 15px;
-    background: #fff;
-    border: 1px solid var(--py1-line);
-    border-radius: 14px;
-}
-
-.py1-check {
-    flex: 0 0 auto;
-    width: 25px;
-    height: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #ecfdf5;
-    color: var(--py1-success);
-    font-weight: 900;
-}
-
-/* Mind map */
-
-.py1-mindmap {
-    position: relative;
-    min-height: 610px;
-    overflow: hidden;
-    padding: 30px;
-    border-radius: 24px;
-    border: 1px solid var(--py1-line);
-    background:
-        radial-gradient(circle at center,rgba(79,70,229,.08),transparent 25%),
-        #fff;
-    box-shadow: var(--py1-shadow);
-}
-
-.py1-mindmap-center {
-    position: absolute;
-    z-index: 3;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    width: 190px;
-    min-height: 90px;
-    padding: 18px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    border-radius: 22px;
-    background: linear-gradient(135deg,#4f46e5,#7c3aed);
-    color: white;
-    box-shadow: 0 18px 45px rgba(79,70,229,.28);
-    font-weight: 900;
-}
-
-.py1-mindmap-center small {
-    margin-top: 4px;
-    color: #ddd6fe;
-    font-weight: 600;
-}
-
-.py1-mind-node {
-    position: absolute;
-    z-index: 3;
-    width: 145px;
-    padding: 13px 10px;
-    text-align: center;
-    border-radius: 14px;
-    border: 1px solid var(--py1-line);
-    background: white;
-    box-shadow: 0 8px 22px rgba(15,23,42,.08);
-    font-weight: 800;
-    font-size: 14px;
-}
-
-.py1-node-line {
-    position: absolute;
-    z-index: 1;
-    height: 2px;
-    transform-origin: left center;
-    background: linear-gradient(90deg,#a5b4fc,#cbd5e1);
-}
-
-.py1-node-1 { left: 5%; top: 11%; }
-.py1-node-2 { left: 41%; top: 5%; }
-.py1-node-3 { right: 5%; top: 12%; }
-.py1-node-4 { left: 3%; top: 45%; }
-.py1-node-5 { right: 3%; top: 45%; }
-.py1-node-6 { left: 8%; bottom: 9%; }
-.py1-node-7 { left: 41%; bottom: 4%; }
-.py1-node-8 { right: 8%; bottom: 9%; }
-.py1-node-9 { right: 2%; bottom: 39%; }
-
-.py1-node-line.l1 { width: 245px; left: 48%; top: 48%; transform: rotate(-140deg); }
-.py1-node-line.l2 { width: 205px; left: 50%; top: 48%; transform: rotate(-105deg); }
-.py1-node-line.l3 { width: 250px; left: 52%; top: 48%; transform: rotate(-42deg); }
-.py1-node-line.l4 { width: 205px; left: 48%; top: 50%; transform: rotate(174deg); }
-.py1-node-line.l5 { width: 205px; left: 52%; top: 50%; transform: rotate(6deg); }
-.py1-node-line.l6 { width: 220px; left: 47%; top: 53%; transform: rotate(137deg); }
-.py1-node-line.l7 { width: 190px; left: 50%; top: 53%; transform: rotate(78deg); }
-.py1-node-line.l8 { width: 220px; left: 53%; top: 53%; transform: rotate(43deg); }
-.py1-node-line.l9 { width: 205px; left: 52%; top: 50%; transform: rotate(-3deg); }
-
-/* Teaching pattern */
-
-.py1-concept-box {
-    margin-top: 25px;
-    padding: 22px;
-    border-radius: 16px;
-    background: linear-gradient(135deg,#f8fafc,#eef2ff);
-    border: 1px solid #e0e7ff;
-}
-
-.py1-concept-box strong {
-    color: var(--py1-primary-dark);
-}
-
-.py1-real {
-    margin-top: 13px;
-    padding: 13px 15px;
-    border-left: 4px solid var(--py1-secondary);
-    border-radius: 8px;
-    background: #ecfeff;
-}
-
-.py1-mistake {
-    margin-top: 13px;
-    padding: 13px 15px;
-    border-left: 4px solid var(--py1-warning);
-    border-radius: 8px;
-    background: #fffbeb;
-}
-
-.py1-practice {
-    margin-top: 13px;
-    padding: 13px 15px;
-    border-left: 4px solid var(--py1-purple);
-    border-radius: 8px;
-    background: #f5f3ff;
-}
-
-/* Flow diagrams */
-
-.py1-flow {
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-    gap: 0;
-    margin: 25px 0;
-    overflow-x: auto;
-    padding: 12px 5px 25px;
-}
-
-.py1-flow-step {
-    position: relative;
-    flex: 0 0 145px;
-    min-height: 125px;
-    padding: 17px 12px;
-    text-align: center;
-    border: 1px solid var(--py1-line);
-    border-radius: 16px;
-    background: white;
-    box-shadow: 0 8px 22px rgba(15,23,42,.07);
-}
-
-.py1-flow-step strong {
-    display: block;
-    margin-bottom: 7px;
-    color: var(--py1-primary-dark);
-}
-
-.py1-flow-step span {
-    display: block;
-    color: var(--py1-muted);
-    font-size: 12px;
-}
-
-.py1-flow-arrow {
-    flex: 0 0 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--py1-primary);
-    font-size: 25px;
-    font-weight: 900;
-}
-
-/* Installation */
-
-.py1-install-step {
-    display: flex;
-    gap: 16px;
-    padding: 18px 0;
-    border-bottom: 1px solid var(--py1-line);
-}
-
-.py1-install-step:last-child {
-    border-bottom: 0;
-}
-
-.py1-step-number {
-    flex: 0 0 38px;
-    height: 38px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 11px;
-    background: linear-gradient(135deg,#4f46e5,#06b6d4);
-    color: white;
-    font-weight: 900;
-}
-
-.py1-install-step h3 {
-    margin: 0 0 5px;
-}
-
-.py1-install-step p {
-    margin: 0;
-    color: var(--py1-muted);
-}
-
-.py1-terminal {
-    margin-top: 18px;
-    padding: 18px;
-    overflow-x: auto;
-    border-radius: 14px;
-    background: #0b1220;
-    color: #d1fae5;
-    font-family: "Cascadia Code","Consolas",monospace;
-    font-size: 14px;
-}
-
-/* Code */
-
-.py1-code-card {
-    margin: 20px 0;
-    overflow: hidden;
-    border: 1px solid #1f2937;
-    border-radius: 16px;
-    background: var(--py1-code);
-    box-shadow: 0 12px 30px rgba(15,23,42,.12);
-}
-
-.py1-code-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 10px 14px;
-    background: #1f2937;
-    color: #cbd5e1;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.py1-copy {
-    border: 1px solid #475569;
-    border-radius: 7px;
-    padding: 5px 9px;
-    background: #334155;
-    color: white;
-    cursor: pointer;
-    font-size: 11px;
-}
-
-.py1-copy:hover {
-    background: #475569;
-}
-
-.py1-code-card pre {
-    margin: 0;
-    padding: 20px;
-    overflow-x: auto;
-    color: var(--py1-code-text);
-    font-family: "Cascadia Code","Fira Code","Consolas",monospace;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-.py1-k { color: #c084fc; }
-.py1-s { color: #86efac; }
-.py1-f { color: #67e8f9; }
-.py1-n { color: #fbbf24; }
-.py1-c { color: #94a3b8; }
-
-/* Output */
-
-.py1-output {
-    margin: -10px 0 20px;
-    padding: 14px 17px;
-    border-radius: 10px;
-    background: #ecfdf5;
-    border: 1px solid #bbf7d0;
-    color: #166534;
-    font-family: monospace;
-}
-
-.py1-output strong {
-    font-family: inherit;
-}
-
-/* Tables */
-
-.py1-table-wrap {
-    overflow-x: auto;
-    margin: 20px 0;
-}
-
-.py1-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 14px;
-    overflow: hidden;
-    border: 1px solid var(--py1-line);
-}
-
-.py1-table th,
-.py1-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--py1-line);
-    text-align: left;
-}
-
-.py1-table th {
-    background: #f1f5f9;
-    color: #334155;
-}
-
-.py1-table code {
-    padding: 3px 6px;
-    border-radius: 5px;
-    background: #eef2ff;
-    color: #3730a3;
-}
-
-/* Variable diagram */
-
-.py1-memory {
-    display: grid;
-    grid-template-columns: 1fr 70px 1fr;
-    gap: 15px;
-    align-items: center;
-    margin: 25px 0;
-}
-
-.py1-memory-names,
-.py1-memory-values {
-    display: grid;
-    gap: 12px;
-}
-
-.py1-memory-item {
-    padding: 14px;
-    border-radius: 13px;
-    border: 1px solid var(--py1-line);
-    background: white;
-    box-shadow: 0 5px 15px rgba(15,23,42,.05);
-}
-
-.py1-memory-name {
-    color: var(--py1-primary-dark);
-    font-family: monospace;
-    font-weight: 800;
-}
-
-.py1-memory-value {
-    color: #047857;
-    font-family: monospace;
-    font-weight: 800;
-}
-
-.py1-memory-arrow {
-    display: grid;
-    gap: 31px;
-    text-align: center;
-    color: var(--py1-primary);
-    font-size: 25px;
-}
-
-/* Data types */
-
-.py1-type-tree {
-    display: grid;
-    gap: 15px;
-    margin-top: 25px;
-}
-
-.py1-type-root {
-    margin: auto;
-    padding: 15px 24px;
-    border-radius: 14px;
-    background: linear-gradient(135deg,#4f46e5,#7c3aed);
-    color: white;
-    font-weight: 900;
-}
-
-.py1-type-branches {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 12px;
-}
-
-.py1-type {
-    padding: 16px;
-    border-radius: 14px;
-    border: 1px solid var(--py1-line);
-    background: white;
-}
-
-.py1-type code {
-    display: inline-block;
-    margin-bottom: 5px;
-    padding: 4px 8px;
-    border-radius: 7px;
-    background: #eef2ff;
-    color: var(--py1-primary-dark);
-    font-weight: 800;
-}
-
-.py1-type small {
-    display: block;
-    color: var(--py1-muted);
-}
-
-/* Operators */
-
-.py1-operator-card {
-    border-top: 4px solid var(--py1-primary);
-}
-
-.py1-operator-list {
-    display: grid;
-    gap: 7px;
-    margin-top: 15px;
-}
-
-.py1-operator-item {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding: 9px 11px;
-    border-radius: 8px;
-    background: #f8fafc;
-}
-
-.py1-operator-item code {
-    color: var(--py1-primary-dark);
-    font-weight: 800;
-}
-
-/* Error cards */
-
-.py1-error {
-    border-left: 4px solid var(--py1-danger);
-}
-
-.py1-error h3 {
-    color: #b91c1c;
-}
-
-.py1-error code {
-    color: #b91c1c;
-}
-
-/* Interactive */
-
-.py1-interactive {
-    padding: 24px;
-    border-radius: 18px;
-    border: 1px solid #c7d2fe;
-    background: linear-gradient(135deg,#eef2ff,#ecfeff);
-}
-
-.py1-button {
-    border: 0;
-    border-radius: 10px;
-    padding: 10px 15px;
-    background: var(--py1-primary);
-    color: white;
-    font-weight: 800;
-    cursor: pointer;
-    transition: transform .15s ease, background .15s ease;
-}
-
-.py1-button:hover {
-    background: var(--py1-primary-dark);
-    transform: translateY(-1px);
-}
-
-.py1-button.secondary {
-    background: #334155;
-}
-
-.py1-answer {
-    display: none;
-    margin-top: 13px;
-    padding: 14px;
-    border-radius: 10px;
-    background: #ecfdf5;
-    border: 1px solid #a7f3d0;
-    color: #065f46;
-}
-
-.py1-answer.show {
-    display: block;
-}
-
-/* Quiz */
-
-.py1-quiz-question {
-    margin-bottom: 25px;
-    padding: 20px;
-    border: 1px solid var(--py1-line);
-    border-radius: 15px;
-    background: white;
-}
-
-.py1-quiz-question h3 {
-    margin-top: 0;
-}
-
-.py1-option {
-    display: block;
-    margin: 8px 0;
-    padding: 11px 13px;
-    border-radius: 9px;
-    background: #f8fafc;
-    border: 1px solid var(--py1-line);
-    cursor: pointer;
-}
-
-.py1-option:hover {
-    background: #eef2ff;
-}
-
-.py1-option input {
-    margin-right: 8px;
-}
-
-.py1-feedback {
-    margin-top: 10px;
-    font-weight: 800;
-}
-
-.py1-correct {
-    color: var(--py1-success);
-}
-
-.py1-wrong {
-    color: var(--py1-danger);
-}
-
-/* Checklist */
-
-.py1-checklist {
-    display: grid;
-    gap: 10px;
-}
-
-.py1-check-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 13px;
-    border: 1px solid var(--py1-line);
-    border-radius: 11px;
-    background: white;
-}
-
-.py1-check-row input {
-    width: 18px;
-    height: 18px;
-    accent-color: var(--py1-primary);
-}
-
-.py1-completion {
-    display: none;
-    margin-top: 18px;
-    padding: 17px;
-    border-radius: 13px;
-    background: #ecfdf5;
-    border: 1px solid #86efac;
-    color: #166534;
-    font-weight: 700;
-}
-
-.py1-completion.show {
-    display: block;
-}
-
-/* Summary */
-
-.py1-summary {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 15px;
-}
-
-.py1-summary-item {
-    padding: 18px;
-    border-radius: 15px;
-    background: white;
-    border: 1px solid var(--py1-line);
-}
-
-.py1-summary-item strong {
-    display: block;
-    margin-bottom: 6px;
-    color: var(--py1-primary-dark);
-}
-
-/* Navigation */
-
-.py1-navigation {
-    display: flex;
-    justify-content: space-between;
-    gap: 18px;
-    align-items: center;
-    padding: 28px;
-    border-radius: 22px;
-    background: linear-gradient(135deg,#111827,#312e81);
-    color: white;
-}
-
-.py1-navigation p {
-    margin: 5px 0 0;
-    color: #cbd5e1;
-}
-
-.py1-next {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 18px;
-    border-radius: 11px;
-    background: white;
-    color: #312e81;
-    font-weight: 900;
-    text-decoration: none;
-}
-
-.py1-footer {
-    padding: 35px 0;
-    text-align: center;
-    color: var(--py1-muted);
-    font-size: 13px;
-}
-
-/* Responsive */
-
-@media (max-width: 850px) {
-    .py1-grid-3,
-    .py1-summary {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .py1-type-branches {
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .py1-mindmap {
-        min-height: 780px;
-    }
-
-    .py1-node-1 { left: 2%; top: 8%; }
-    .py1-node-2 { left: 37%; top: 3%; }
-    .py1-node-3 { right: 2%; top: 8%; }
-    .py1-node-4 { left: 1%; top: 39%; }
-    .py1-node-5 { right: 1%; top: 39%; }
-    .py1-node-6 { left: 3%; bottom: 8%; }
-    .py1-node-7 { left: 37%; bottom: 3%; }
-    .py1-node-8 { right: 3%; bottom: 8%; }
-    .py1-node-9 { right: 0%; bottom: 37%; }
-}
-
-@media (max-width: 650px) {
-    .py1-container {
-        width: min(100% - 22px,1180px);
-    }
-
-    .py1-hero {
-        padding: 42px 0 34px;
-    }
-
-    .py1-section {
-        padding: 40px 0;
-    }
-
-    .py1-grid-2,
-    .py1-grid-3,
-    .py1-objectives,
-    .py1-summary {
-        grid-template-columns: 1fr;
-    }
-
-    .py1-memory {
-        grid-template-columns: 1fr;
-    }
-
-    .py1-memory-arrow {
-        display: flex;
-        justify-content: center;
-        gap: 25px;
-    }
-
-    .py1-type-branches {
-        grid-template-columns: 1fr;
-    }
-
-    .py1-flow {
-        justify-content: flex-start;
-    }
-
-    .py1-navigation {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .py1-mindmap {
-        min-height: 900px;
-    }
-
-    .py1-mindmap-center {
-        width: 150px;
-    }
-
-    .py1-mind-node {
-        width: 125px;
-        font-size: 12px;
-    }
-
-    .py1-node-1 { left: 3%; top: 5%; }
-    .py1-node-2 { left: 50%; transform: translateX(-50%); top: 14%; }
-    .py1-node-3 { right: 3%; top: 5%; }
-    .py1-node-4 { left: 2%; top: 31%; }
-    .py1-node-5 { right: 2%; top: 31%; }
-    .py1-node-6 { left: 2%; bottom: 26%; }
-    .py1-node-7 { left: 50%; transform: translateX(-50%); bottom: 14%; }
-    .py1-node-8 { right: 2%; bottom: 26%; }
-    .py1-node-9 { right: 2%; top: 53%; }
-
-    .py1-node-line {
-        display: none;
-    }
+#py1-page {
+  --py1-primary:#315bea;
+  --py1-primary-dark:#2346bd;
+  --py1-purple:#7047d8;
+  --py1-text:#263247;
+  --py1-muted:#64748b;
+  --py1-border:#e2e8f0;
+  --py1-surface:#f8fafc;
+  --py1-code:#172033;
+  color:var(--py1-text);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  font-size:15px;
+  line-height:1.75;
+  max-width:1440px;
+  margin:0 auto;
+  padding:16px;
+  overflow-wrap:anywhere;
+}
+#py1-page * {box-sizing:border-box}
+#py1-page h1,#py1-page h2,#py1-page h3,#py1-page h4 {
+  line-height:1.35;
+  color:#172554;
+  margin-top:0;
+}
+#py1-page h1 {font-size:clamp(24px,3vw,32px);margin-bottom:8px}
+#py1-page h2 {font-size:24px;margin-bottom:14px}
+#py1-page h3 {font-size:18px;margin-bottom:10px}
+#py1-page h4 {font-size:15px;margin-bottom:8px}
+#py1-page p {margin:8px 0 14px}
+#py1-page a {color:var(--py1-primary);text-decoration:none}
+#py1-page a:hover {text-decoration:underline}
+#py1-page code,#py1-page pre {font-family:Consolas,"Courier New",monospace}
+#py1-page code {font-size:.94em}
+#py1-page ul,#py1-page ol {padding-left:24px}
+#py1-page li {margin-bottom:5px}
+#py1-page .py1-intro-text {color:var(--py1-muted);max-width:850px}
+#py1-page .py1-layout {display:grid;grid-template-columns:240px minmax(0,1fr);gap:26px;align-items:start;margin-top:18px}
+#py1-page .py1-sidebar {position:sticky;top:12px;max-height:calc(100vh - 24px);overflow-y:auto;border:1px solid var(--py1-border);border-radius:12px;background:#fff;padding:15px}
+#py1-page .py1-sidebar-title {font-weight:750;font-size:16px;color:#172554;margin:0 0 12px}
+#py1-page .py1-nav {display:flex;flex-direction:column;gap:3px}
+#py1-page .py1-nav a {display:block;padding:6px 9px;border-radius:7px;color:#475569;font-size:13px;line-height:1.45}
+#py1-page .py1-nav a:hover,#py1-page .py1-nav a.py1-active {background:#edf2ff;color:#2346bd;font-weight:650}
+#py1-page .py1-mobile-nav {display:none;width:100%;padding:10px;border:1px solid var(--py1-border);border-radius:8px;background:white;color:var(--py1-text);font:inherit}
+#py1-page .py1-content {min-width:0}
+#py1-page .py1-section {margin-bottom:30px;scroll-margin-top:20px}
+#py1-page .py1-section-head {display:flex;align-items:center;gap:10px;margin-bottom:12px}
+#py1-page .py1-section-number {display:inline-flex;align-items:center;justify-content:center;min-width:32px;height:32px;border-radius:9px;background:#edf2ff;color:#2346bd;font-weight:750;font-size:13px}
+#py1-page .py1-card {background:white;border:1px solid var(--py1-border);border-radius:12px;padding:18px;margin:12px 0}
+#py1-page .py1-grid {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+#py1-page .py1-grid-3 {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+#py1-page .py1-mini-card {border:1px solid var(--py1-border);border-radius:10px;padding:14px;background:#fff;min-width:0}
+#py1-page .py1-mini-card p {font-size:14px;color:var(--py1-muted);margin-bottom:0}
+#py1-page .py1-tag {display:inline-block;border-radius:20px;background:#eef2ff;color:#3730a3;padding:2px 9px;font-size:12px;font-weight:650}
+#py1-page .py1-note {border-left:4px solid var(--py1-primary);background:#eff6ff;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+#py1-page .py1-warning {border-left:4px solid #d97706;background:#fffbeb;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+#py1-page .py1-success {border-left:4px solid #16a34a;background:#f0fdf4;padding:12px 15px;border-radius:0 8px 8px 0;margin:14px 0}
+#py1-page .py1-code-wrap {border-radius:10px;overflow:hidden;border:1px solid #29364d;margin:12px 0 16px;background:var(--py1-code)}
+#py1-page .py1-code-head {display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 12px;background:#222d42;color:#dbeafe;font-size:12px}
+#py1-page .py1-copy {border:1px solid #64748b;border-radius:6px;padding:4px 10px;background:#334155;color:#fff;cursor:pointer;font-size:12px}
+#py1-page .py1-copy:hover {background:#475569}
+#py1-page pre {margin:0;padding:15px;color:#e2e8f0;overflow-x:auto;white-space:pre;line-height:1.65;font-size:13px;tab-size:4}
+#py1-page .py1-output {border-top:1px solid #334155;padding:10px 14px;background:#111827;color:#86efac;font-family:Consolas,monospace;font-size:13px;white-space:pre-wrap}
+#py1-page .py1-output-label {display:block;color:#94a3b8;font-family:Arial,sans-serif;font-size:11px;margin-bottom:5px}
+#py1-page .py1-table-wrap {overflow-x:auto;margin:12px 0}
+#py1-page table {width:100%;border-collapse:collapse;font-size:14px}
+#py1-page th,#py1-page td {border:1px solid var(--py1-border);padding:9px 11px;text-align:left;vertical-align:top}
+#py1-page th {background:#f1f5f9;color:#172554}
+#py1-page .py1-diagram {border:1px solid var(--py1-border);border-radius:12px;background:linear-gradient(180deg,#fff,#f8faff);padding:18px;margin:14px 0;overflow:hidden}
+#py1-page .py1-diagram-title {font-weight:750;text-align:center;color:#334155;margin-bottom:14px}
+#py1-page .py1-flow {display:flex;align-items:stretch;justify-content:center;gap:8px;flex-wrap:wrap}
+#py1-page .py1-node {display:flex;flex-direction:column;justify-content:center;text-align:center;min-width:100px;flex:1;border:1px solid #bfccff;border-radius:9px;background:#eef2ff;padding:12px;font-weight:700;color:#263b80;font-size:13px}
+#py1-page .py1-node small {font-weight:400;color:#475569;margin-top:4px;font-size:11px}
+#py1-page .py1-node.py1-purple {background:#f3e8ff;border-color:#d8b4fe;color:#6b21a8}
+#py1-page .py1-node.py1-green {background:#dcfce7;border-color:#86efac;color:#166534}
+#py1-page .py1-node.py1-orange {background:#fff7ed;border-color:#fdba74;color:#9a3412}
+#py1-page .py1-arrow {align-self:center;color:var(--py1-primary);font-size:23px;font-weight:bold}
+#py1-page .py1-branch {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+#py1-page .py1-branch>div {border:1px dashed #a5b4fc;border-radius:8px;padding:12px;text-align:center;background:white}
+#py1-page .py1-svg {display:block;width:100%;height:auto;max-height:260px;margin:5px auto}
+#py1-page .py1-checklist {list-style:none;padding:0}
+#py1-page .py1-checklist li {display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid #f1f5f9}
+#py1-page .py1-checklist input {margin-top:6px;accent-color:var(--py1-primary);width:17px;height:17px;flex-shrink:0}
+#py1-page .py1-progress-track {height:9px;background:#e2e8f0;border-radius:20px;overflow:hidden}
+#py1-page .py1-progress-bar {height:100%;width:0;background:linear-gradient(90deg,var(--py1-primary),var(--py1-purple));transition:width .2s}
+#py1-page .py1-progress-label {font-size:13px;color:var(--py1-muted);margin:7px 0}
+#py1-page .py1-exercise {border:1px solid var(--py1-border);border-radius:10px;padding:14px;margin:12px 0}
+#py1-page .py1-exercise summary {cursor:pointer;font-weight:650;color:#1e3a8a}
+#py1-page .py1-answer {background:#f8fafc;border-radius:8px;padding:12px;margin-top:12px}
+#py1-page .py1-question {padding:15px 0;border-bottom:1px solid var(--py1-border)}
+#py1-page .py1-question legend {font-weight:700;margin-bottom:8px}
+#py1-page .py1-option {display:flex;gap:8px;align-items:flex-start;margin:8px 0;padding:9px 10px;border:1px solid var(--py1-border);border-radius:8px;cursor:pointer}
+#py1-page .py1-option:hover {background:#f8fafc}
+#py1-page .py1-option input {margin-top:5px;accent-color:var(--py1-primary)}
+#py1-page .py1-option.py1-correct {background:#f0fdf4;border-color:#22c55e}
+#py1-page .py1-option.py1-incorrect {background:#fef2f2;border-color:#f87171}
+#py1-page .py1-quiz-actions {display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+#py1-page .py1-btn {border:1px solid var(--py1-primary);border-radius:8px;padding:9px 15px;background:var(--py1-primary);color:white;font:inherit;font-size:14px;font-weight:650;cursor:pointer}
+#py1-page .py1-btn:hover {background:var(--py1-primary-dark)}
+#py1-page .py1-btn.py1-secondary {background:white;color:var(--py1-primary)}
+#py1-page .py1-score {border-radius:10px;padding:16px;background:#eff6ff;margin:12px 0;color:#1e3a8a}
+#py1-page .py1-score strong {font-size:24px}
+#py1-page .py1-muted {color:var(--py1-muted)}
+#py1-page .py1-inline-code {background:#eef2ff;color:#3730a3;padding:2px 5px;border-radius:4px}
+#py1-page .py1-mobile-only {display:none}
+#py1-page :focus-visible {outline:3px solid #93c5fd;outline-offset:3px}
+@media(max-width:850px) {
+ #py1-page .py1-layout {grid-template-columns:1fr;gap:14px}
+ #py1-page .py1-sidebar {position:static;max-height:none;padding:10px}
+ #py1-page .py1-sidebar-title {margin-bottom:8px}
+ #py1-page .py1-mobile-nav {display:block}
+ #py1-page .py1-nav {display:none;max-height:300px;overflow-y:auto;margin-top:8px}
+ #py1-page .py1-sidebar.py1-menu-open .py1-nav {display:flex}
+ #py1-page .py1-grid-3 {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:560px) {
+ #py1-page {padding:10px;font-size:14px}
+ #py1-page h1 {font-size:25px}
+ #py1-page h2 {font-size:21px}
+ #py1-page .py1-grid,#py1-page .py1-grid-3 {grid-template-columns:1fr}
+ #py1-page .py1-card {padding:13px}
+ #py1-page .py1-diagram {padding:10px}
+ #py1-page .py1-node {min-width:75px;padding:9px 6px;font-size:12px}
+ #py1-page .py1-arrow {font-size:17px}
+ #py1-page pre {font-size:12px;padding:12px}
+ #py1-page .py1-branch {grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce) {
+ #py1-page {scroll-behavior:auto}
+ #py1-page * {transition:none!important}
 }
 </style>
 </head>
-
 <body>
+<div id="py1-page">
+  <header>
+    <h1>Python Programming — Installation and Programming Basics</h1>
+    <p class="py1-intro-text">Learn Python from the beginning: install it on Windows, write your first program, understand variables and data types, work with input and output, and practise with examples and quizzes.</p>
+    <div class="py1-grid-3">
+      <div class="py1-mini-card"><span class="py1-tag">Level 1</span><h3 style="margin-top:10px">Beginner friendly</h3><p>No previous Python knowledge required.</p></div>
+      <div class="py1-mini-card"><span class="py1-tag">Hands-on</span><h3 style="margin-top:10px">Practical examples</h3><p>Code, expected output and explanations.</p></div>
+      <div class="py1-mini-card"><span class="py1-tag">Self-assessment</span><h3 style="margin-top:10px">Practise and review</h3><p>Exercises, a progress checklist and a scored quiz.</p></div>
+    </div>
+  </header>
 
-<div class="py1-page">
+  <div class="py1-layout">
+    <aside class="py1-sidebar" id="py1-sidebar" aria-label="Page navigation">
+      <div class="py1-sidebar-title">Page Contents</div>
+      <button class="py1-mobile-nav" id="py1-menu-toggle" type="button" aria-expanded="false" aria-controls="py1-nav">☰ Page Contents</button>
+      <nav class="py1-nav" id="py1-nav">
+        <a href="#py1-intro">Introduction</a>
+        <a href="#py1-mindmap">Mind Map</a>
+        <a href="#py1-what">What Is Python?</a>
+        <a href="#py1-applications">Python Applications</a>
+        <a href="#py1-install">Install Python on Windows</a>
+        <a href="#py1-verify">Verify Installation</a>
+        <a href="#py1-first">Your First Program</a>
+        <a href="#py1-syntax">Python Syntax</a>
+        <a href="#py1-variables">Variables</a>
+        <a href="#py1-datatypes">Data Types</a>
+        <a href="#py1-conversion">Type Conversion</a>
+        <a href="#py1-io">Input and Output</a>
+        <a href="#py1-operators">Operators</a>
+        <a href="#py1-comments">Comments and Indentation</a>
+        <a href="#py1-errors">Common Errors</a>
+        <a href="#py1-exercises">Practice Exercises</a>
+        <a href="#py1-quiz">Quiz</a>
+        <a href="#py1-summary">Summary</a>
+      </nav>
+    </aside>
 
-<!-- =========================================================
-     HERO
-     ========================================================= -->
-
-<header class="py1-hero">
-    <div class="py1-container py1-hero-inner">
-
-        <div class="py1-badge">
-            <span class="py1-python-mark">Py</span>
-            Python Course • Page 1 of 5
+    <main class="py1-content">
+      <section class="py1-section" id="py1-intro">
+        <div class="py1-section-head"><span class="py1-section-number">01</span><h2>Introduction</h2></div>
+        <p>Python is a programming language that allows us to give instructions to a computer. We can use it to automate repetitive work, develop websites and APIs, analyse data, build AI applications and test software.</p>
+        <p>In this lesson, you will set up Python on Windows and learn the building blocks needed to write useful programs.</p>
+        <div class="py1-note"><strong>Learning objective:</strong> By the end of this page, you should be able to run a Python program, store values in variables, convert data types, accept keyboard input, perform calculations and identify common errors.</div>
+        <h3>Python code, interpreter and output</h3>
+        <div class="py1-grid">
+          <div class="py1-mini-card"><h4>Python code</h4><p>The instructions written by a programmer, such as <code>print("Hello")</code>.</p></div>
+          <div class="py1-mini-card"><h4>Python interpreter</h4><p>The software that reads and executes Python instructions.</p></div>
+          <div class="py1-mini-card"><h4>Program output</h4><p>The result produced by the program, such as the text <code>Hello</code>.</p></div>
+          <div class="py1-mini-card"><h4>Source file</h4><p>A file such as <code>hello.py</code> that stores Python code.</p></div>
         </div>
+      </section>
 
-        <h1>Python Programming — From Installation to Your First Program</h1>
-
-        <p>
-            Start your Python journey from absolute zero. Install Python,
-            understand how programs execute, learn variables and data types,
-            work with input and output, and build your first small programs.
-        </p>
-
-        <div class="py1-hero-meta">
-            <span class="py1-meta-chip">Beginner Friendly</span>
-            <span class="py1-meta-chip">Practical Examples</span>
-            <span class="py1-meta-chip">Interactive Exercises</span>
-            <span class="py1-meta-chip">No Previous Python Required</span>
+      <section class="py1-section" id="py1-mindmap">
+        <div class="py1-section-head"><span class="py1-section-number">02</span><h2>Mind Map</h2></div>
+        <p>Use this roadmap to understand how the topics in this lesson fit together.</p>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Python Learning Roadmap</div>
+          <svg class="py1-svg" viewBox="0 0 680 350" role="img" aria-label="Python learning roadmap from installation through programming basics to practice">
+            <defs><marker id="py1-road-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#818cf8"/></marker></defs>
+            <rect x="235" y="10" width="210" height="44" rx="10" fill="#315bea"/>
+            <text x="340" y="37" fill="#fff" font-size="15" font-weight="700" text-anchor="middle">Python Fundamentals</text>
+            <path d="M340 54 V75 H110 V96 M340 75 V96 M340 75 H570 V96" stroke="#818cf8" stroke-width="2" fill="none" marker-end="url(#py1-road-arrow)"/>
+            <rect x="20" y="98" width="180" height="60" rx="9" fill="#eef2ff" stroke="#a5b4fc"/>
+            <text x="110" y="121" text-anchor="middle" fill="#263b80" font-size="13" font-weight="700">1. Setup</text><text x="110" y="140" text-anchor="middle" fill="#475569" font-size="11">Install and verify</text>
+            <rect x="250" y="98" width="180" height="60" rx="9" fill="#f3e8ff" stroke="#d8b4fe"/>
+            <text x="340" y="121" text-anchor="middle" fill="#6b21a8" font-size="13" font-weight="700">2. Core concepts</text><text x="340" y="140" text-anchor="middle" fill="#475569" font-size="11">Syntax, values, variables</text>
+            <rect x="480" y="98" width="180" height="60" rx="9" fill="#dcfce7" stroke="#86efac"/>
+            <text x="570" y="121" text-anchor="middle" fill="#166534" font-size="13" font-weight="700">3. Operations</text><text x="570" y="140" text-anchor="middle" fill="#475569" font-size="11">Input, output, operators</text>
+            <path d="M110 158 V184 H340 V205 M340 158 V205 M570 158 V184 H340" stroke="#818cf8" stroke-width="2" fill="none" marker-end="url(#py1-road-arrow)"/>
+            <rect x="205" y="207" width="270" height="55" rx="10" fill="#fff7ed" stroke="#fdba74"/>
+            <text x="340" y="230" text-anchor="middle" fill="#9a3412" font-size="13" font-weight="700">4. Debug and understand errors</text>
+            <text x="340" y="247" text-anchor="middle" fill="#475569" font-size="11">Comments, indentation, correction</text>
+            <path d="M340 262 V290" stroke="#818cf8" stroke-width="2" marker-end="url(#py1-road-arrow)"/>
+            <rect x="205" y="292" width="270" height="45" rx="10" fill="#315bea"/>
+            <text x="340" y="319" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">5. Practise, review and build</text>
+          </svg>
         </div>
+        <p>Recommended order: install Python, run a simple program, understand variables and data types, practise input and operators, then solve exercises and review mistakes.</p>
+      </section>
 
-        <div class="py1-progress-wrap">
-            <div class="py1-progress-top">
-                <span>Course progress</span>
-                <strong>Page 1 of 5</strong>
-            </div>
-            <div class="py1-progress">
-                <div class="py1-progress-bar" id="py1-progress-bar"></div>
-            </div>
+      <section class="py1-section" id="py1-what">
+        <div class="py1-section-head"><span class="py1-section-number">03</span><h2>What Is Python?</h2></div>
+        <p>Python is a high-level, general-purpose programming language. Its syntax is designed to be readable, so beginners can focus on solving problems instead of learning complicated punctuation.</p>
+        <div class="py1-grid">
+          <div class="py1-mini-card"><h4>Readable</h4><p>Many instructions look similar to everyday English.</p></div>
+          <div class="py1-mini-card"><h4>Interpreted</h4><p>Python programs are commonly run using the Python interpreter, which handles execution for you.</p></div>
+          <div class="py1-mini-card"><h4>Cross-platform</h4><p>Python is available on Windows, macOS and Linux.</p></div>
+          <div class="py1-mini-card"><h4>Rich ecosystem</h4><p>Libraries provide ready-made tools for web development, data, AI and testing.</p></div>
         </div>
-
-    </div>
-</header>
-
-
-<!-- =========================================================
-     INTRODUCTION
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">01 • Start Here</span>
-    <h2>What exactly is Python?</h2>
-    <p>
-        Python is a high-level, general-purpose programming language designed
-        to make software easier for humans to read and write.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-    <article class="py1-card">
-        <div class="py1-icon">01</div>
-        <h3>What is Python?</h3>
-        <p>
-            Python is a programming language. You write instructions using
-            Python syntax and the Python interpreter reads and executes those
-            instructions.
-        </p>
-
-        <div class="py1-concept-box">
-            <strong>Simple idea:</strong>
-            Python lets you describe what you want a computer to do using
-            readable instructions.
+        <h3>How Python code executes</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">From Source Code to Output</div>
+          <div class="py1-flow">
+            <div class="py1-node">Python code<small>print(2 + 3)</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-purple">Interpreter<small>Reads and executes</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-green">Output<small>5</small></div>
+          </div>
+          <p class="py1-muted" style="text-align:center;font-size:13px;margin-top:12px">The interpreter may compile source into bytecode internally before execution. Beginners can think of it as the software that runs their Python instructions.</p>
         </div>
-
-        <div class="py1-real">
-            <strong>Real-world application:</strong>
-            Python is used to automate repetitive tasks, build websites,
-            analyze data, create AI systems, test software and communicate
-            with databases.
+        <h3>Example: printing text</h3>
+        <p><strong>Purpose:</strong> Display a message in the terminal.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>hello.py — Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>print("Hello, Python!")</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>Hello, Python!</div>
         </div>
+        <p><strong>Explanation:</strong> <code>print()</code> is a built-in function. The text inside quotation marks is a string, and the function displays it.</p>
+      </section>
 
-        <div class="py1-mistake">
-            <strong>Common mistake:</strong>
-            Python is not an operating system. It is a programming language
-            and its interpreter is the software that executes Python code.
+      <section class="py1-section" id="py1-applications">
+        <div class="py1-section-head"><span class="py1-section-number">04</span><h2>Python Applications</h2></div>
+        <div class="py1-grid">
+          <div class="py1-mini-card"><h4>Web development</h4><p>Build web applications and backend services using frameworks such as Django and Flask.</p></div>
+          <div class="py1-mini-card"><h4>Automation</h4><p>Rename files, process spreadsheets, generate reports and automate repetitive tasks.</p></div>
+          <div class="py1-mini-card"><h4>Data analysis</h4><p>Clean, explore and analyse data with tools such as pandas and NumPy.</p></div>
+          <div class="py1-mini-card"><h4>Artificial intelligence</h4><p>Connect applications to AI models and build intelligent workflows.</p></div>
+          <div class="py1-mini-card"><h4>Machine learning</h4><p>Train and evaluate predictive models with libraries such as scikit-learn.</p></div>
+          <div class="py1-mini-card"><h4>API development</h4><p>Create HTTP endpoints and backend APIs with FastAPI, Flask or Django.</p></div>
+          <div class="py1-mini-card"><h4>Software testing</h4><p>Write automated tests and validate application behaviour with pytest.</p></div>
         </div>
+        <div class="py1-note"><strong>Real-world example:</strong> A company could use Python to read sales data from a database, calculate monthly totals, generate a report and send the report automatically.</div>
+      </section>
 
-        <div class="py1-practice">
-            <strong>Practice:</strong>
-            In your own words, explain what a programming language does.
+      <section class="py1-section" id="py1-install">
+        <div class="py1-section-head"><span class="py1-section-number">05</span><h2>Install Python on Windows</h2></div>
+        <p>Install the official Python distribution on your Windows computer. You normally need to install Python only once for a given installation, though multiple versions can coexist.</p>
+        <h3>Installation diagram</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Python Installation Workflow</div>
+          <div class="py1-flow">
+            <div class="py1-node">Download<small>Official Python website</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-purple">Run installer<small>Choose options</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-green">Install<small>Wait for completion</small></div>
+          </div>
+          <div style="text-align:center;color:#315bea;font-size:22px;margin:5px">↓</div>
+          <div class="py1-node py1-orange" style="max-width:300px;margin:0 auto">Verify in Command Prompt<small>python --version</small></div>
         </div>
-    </article>
-
-    <article class="py1-card">
-        <div class="py1-icon">★</div>
-        <h3>Why is Python popular?</h3>
-
-        <div class="py1-table-wrap">
-            <table class="py1-table">
-                <thead>
-                    <tr>
-                        <th>Reason</th>
-                        <th>Why it matters</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Readable syntax</td>
-                        <td>Beginners can understand programs more easily.</td>
-                    </tr>
-                    <tr>
-                        <td>Large ecosystem</td>
-                        <td>Thousands of libraries solve common problems.</td>
-                    </tr>
-                    <tr>
-                        <td>Versatile</td>
-                        <td>Useful in web, AI, automation, testing and data.</td>
-                    </tr>
-                    <tr>
-                        <td>Community</td>
-                        <td>Large developer community and learning resources.</td>
-                    </tr>
-                    <tr>
-                        <td>Rapid development</td>
-                        <td>Developers can build useful programs quickly.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <h3>Step-by-step instructions</h3>
+        <ol>
+          <li>Open the official download page: <a href="https://www.python.org/downloads/windows/" target="_blank" rel="noopener noreferrer">Python downloads for Windows</a>.</li>
+          <li>Download a suitable stable Python 3 release for your Windows system.</li>
+          <li>Open the downloaded installer.</li>
+          <li>If the installer offers <strong>Add python.exe to PATH</strong> or <strong>Add Python to PATH</strong>, select it if you want to run Python using the <code>python</code> command from Command Prompt.</li>
+          <li>Choose the standard installation option, or customize the installation if you have a specific requirement.</li>
+          <li>Wait until the installer confirms that the installation is successful.</li>
+          <li>Open a new Command Prompt and verify the installation in the next section.</li>
+        </ol>
+        <div class="py1-warning"><strong>Important:</strong> Installer screens can vary by Python version and installation method. If Python is already installed, check the existing version before installing another copy.</div>
+        <h3>What does “Add Python to PATH” mean?</h3>
+        <p>PATH is a Windows environment variable containing folders where Windows searches for executable programs when you enter a command.</p>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">How PATH helps Windows find Python</div>
+          <div class="py1-flow">
+            <div class="py1-node">You type<small>python hello.py</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-purple">Windows searches PATH<small>Looks in configured folders</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-green">Python starts<small>Runs your file</small></div>
+          </div>
         </div>
+        <ul>
+          <li><strong>With PATH configured:</strong> You can usually type <code>python</code> directly in Command Prompt.</li>
+          <li><strong>Without PATH configured:</strong> The Python installation may still exist, but Windows might not find it using that command.</li>
+          <li><strong>Alternative:</strong> On many Windows installations, the Python launcher command <code>py</code> works even when <code>python</code> is not recognized.</li>
+        </ul>
+      </section>
 
-        <div class="py1-real">
-            <strong>Real-world application:</strong>
-            A company might use Python for a web backend, an automated report,
-            an AI model and automated software tests within the same
-            organization.
+      <section class="py1-section" id="py1-verify">
+        <div class="py1-section-head"><span class="py1-section-number">06</span><h2>Verify Installation</h2></div>
+        <p>Command Prompt is a Windows tool that lets you enter commands. Use it to confirm that Python is installed and accessible.</p>
+        <h3>Open Command Prompt</h3>
+        <ol>
+          <li>Press <strong>Windows + R</strong>.</li>
+          <li>Type <code>cmd</code>.</li>
+          <li>Press Enter.</li>
+        </ol>
+        <h3>Check the Python version</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Command Prompt</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>python --version</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Example output — your version may differ</span>Python 3.13.7</div>
         </div>
-    </article>
-
-</div>
-
-<div class="py1-grid py1-grid-3" style="margin-top:18px">
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">WEB</div>
-        <h3>Web Development</h3>
-        <p>
-            Python can power server-side applications, APIs and web services.
-        </p>
-    </article>
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">AI</div>
-        <h3>AI & Data</h3>
-        <p>
-            Python is widely used for machine learning, data analysis and AI.
-        </p>
-    </article>
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">AUT</div>
-        <h3>Automation</h3>
-        <p>
-            Python can automate files, reports, emails, browser tasks and more.
-        </p>
-    </article>
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">TST</div>
-        <h3>Testing</h3>
-        <p>
-            Python can automatically test applications and APIs.
-        </p>
-    </article>
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">DB</div>
-        <h3>Databases</h3>
-        <p>
-            Python applications can read, write and process database data.
-        </p>
-    </article>
-
-    <article class="py1-card py1-icon-card">
-        <div class="py1-icon">+</div>
-        <h3>Much More</h3>
-        <p>
-            Python is also used in scripting, cybersecurity, scientific
-            computing and education.
-        </p>
-    </article>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     OBJECTIVES
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">02 • Learning Objectives</span>
-    <h2>By the end of this page, you will be able to...</h2>
-</div>
-
-<div class="py1-objectives">
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Explain what Python is and where it is used.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Install Python on a Windows computer.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Verify your Python installation from a terminal.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Understand the Python interpreter.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Create a Python project folder and file.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Write and execute your first Python program.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Understand syntax, indentation and comments.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Use variables and common Python data types.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Read input and display output.</span>
-    </div>
-
-    <div class="py1-objective">
-        <span class="py1-check">✓</span>
-        <span>Use arithmetic, comparison and logical operators.</span>
-    </div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     MIND MAP
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">03 • Big Picture</span>
-    <h2>Python Basics Learning Map</h2>
-    <p>
-        This map shows how the major ideas in this lesson connect together.
-    </p>
-</div>
-
-<div class="py1-mindmap">
-
-    <div class="py1-mindmap-center">
-        PYTHON BASICS
-        <small>From installation to programs</small>
-    </div>
-
-    <div class="py1-node-line l1"></div>
-    <div class="py1-node-line l2"></div>
-    <div class="py1-node-line l3"></div>
-    <div class="py1-node-line l4"></div>
-    <div class="py1-node-line l5"></div>
-    <div class="py1-node-line l6"></div>
-    <div class="py1-node-line l7"></div>
-    <div class="py1-node-line l8"></div>
-    <div class="py1-node-line l9"></div>
-
-    <div class="py1-mind-node py1-node-1">Installation</div>
-    <div class="py1-mind-node py1-node-2">Interpreter</div>
-    <div class="py1-mind-node py1-node-3">Editor</div>
-    <div class="py1-mind-node py1-node-4">Syntax</div>
-    <div class="py1-mind-node py1-node-5">Variables</div>
-    <div class="py1-mind-node py1-node-6">Data Types</div>
-    <div class="py1-mind-node py1-node-7">Input / Output</div>
-    <div class="py1-mind-node py1-node-8">Operators</div>
-    <div class="py1-mind-node py1-node-9">First Program</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     INSTALLATION
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">04 • Installation</span>
-    <h2>Install Python on Windows</h2>
-    <p>
-        Installing Python is the first practical step. The process is simple:
-        download Python, install it, verify it and then create your project.
-    </p>
-</div>
-
-<div class="py1-card">
-
-    <div class="py1-install-step">
-        <div class="py1-step-number">1</div>
-        <div>
-            <h3>Download Python</h3>
-            <p>
-                Visit the official Python website and download the current
-                Python 3 release for Windows.
-            </p>
+        <p>You can also try the Windows Python launcher:</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Command Prompt</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>py --version</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Example output</span>Python 3.13.7</div>
         </div>
-    </div>
-
-    <div class="py1-install-step">
-        <div class="py1-step-number">2</div>
-        <div>
-            <h3>Run the installer</h3>
-            <p>
-                Start the installer and follow the installation wizard.
-                On Windows, pay attention to the option that adds Python
-                to your PATH.
-            </p>
+        <p>The version shown on your computer depends on the release you installed.</p>
+        <h3>Open Python interactively</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Command Prompt</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>python</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Example interpreter prompt</span>>>> print("Hello")
+Hello
+>>> 10 + 5
+15
+>>></div>
         </div>
-    </div>
+        <p>The <code>&gt;&gt;&gt;</code> prompt indicates that Python is ready for an instruction. Enter one expression at a time. To leave the interactive interpreter, type <code>exit()</code> or press Ctrl+Z and then Enter on Windows.</p>
+        <div class="py1-warning"><strong>If Python is not recognized:</strong> Try <code>py --version</code>. If that works, use <code>py</code> to run programs. Otherwise, check whether Python is installed, review the installer's PATH option, and reopen Command Prompt after making changes.</div>
+      </section>
 
-    <div class="py1-install-step">
-        <div class="py1-step-number">3</div>
-        <div>
-            <h3>Configure PATH</h3>
-            <p>
-                Enabling the PATH option allows commands such as
-                <code>python</code> to be recognized from a terminal.
-            </p>
+      <section class="py1-section" id="py1-first">
+        <div class="py1-section-head"><span class="py1-section-number">07</span><h2>Your First Program</h2></div>
+        <p>You can write Python in interactive mode or save it in a file ending in <code>.py</code>. A file is more useful when you want to save, reuse and share a program.</p>
+        <h3>Interpreter versus .py file execution</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Two Ways to Run Python</div>
+          <div class="py1-branch">
+            <div><strong>Interactive mode</strong><p>Type <code>python</code></p><p>Enter expressions at <code>&gt;&gt;&gt;</code></p><p>See each result immediately</p></div>
+            <div><strong>File execution</strong><p>Create <code>hello.py</code></p><p>Save several instructions</p><p>Run the file from Command Prompt</p></div>
+          </div>
         </div>
-    </div>
-
-    <div class="py1-install-step">
-        <div class="py1-step-number">4</div>
-        <div>
-            <h3>Open a terminal</h3>
-            <p>
-                Open Windows Terminal, PowerShell or Command Prompt.
-            </p>
+        <h3>Step 1: Create a file</h3>
+        <ol>
+          <li>Open Notepad or a code editor.</li>
+          <li>Type the code below.</li>
+          <li>Save the file as <code>hello.py</code>. In Notepad, choose “All files” as the file type if needed to avoid saving it as <code>hello.py.txt</code>.</li>
+        </ol>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>hello.py</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>print("Hello, Python!")
+print("I am learning programming.")
+print(10 + 20)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>Hello, Python!
+I am learning programming.
+30</div>
         </div>
-    </div>
-
-    <div class="py1-install-step">
-        <div class="py1-step-number">5</div>
-        <div>
-            <h3>Verify Python</h3>
-            <p>
-                Ask Python for its version to confirm that the installation
-                is available.
-            </p>
+        <h3>Step 2: Run the file</h3>
+        <p>Open Command Prompt and navigate to the folder containing your file. For example, if it is in <code>C:\PythonLessons</code>, run:</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Command Prompt</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>cd C:\PythonLessons
+python hello.py</code></pre>
         </div>
-    </div>
+        <p>If the <code>python</code> command does not work but the Python launcher is available, use <code>py hello.py</code> instead.</p>
+        <div class="py1-note"><strong>Remember:</strong> Python source code is what you write. The interpreter runs that code. The output is what you see after the instructions execute. The output is not the same thing as the source code.</div>
+      </section>
 
-    <div class="py1-terminal">
-        C:\Users\Student&gt; python --version<br>
-        Python 3.x.x
-    </div>
-
-</div>
-
-<h3 style="margin-top:35px">Installation Flow</h3>
-
-<div class="py1-flow">
-
-    <div class="py1-flow-step">
-        <strong>Download</strong>
-        <span>Get Python installer.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Install</strong>
-        <span>Run the setup wizard.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>PATH</strong>
-        <span>Make Python available in terminal.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Terminal</strong>
-        <span>Open a command shell.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Verify</strong>
-        <span>Check Python version.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>First File</strong>
-        <span>Create hello.py.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Run</strong>
-        <span>Execute your program.</span>
-    </div>
-
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-    <article class="py1-card py1-error">
-        <h3>Problem: "python is not recognized"</h3>
-        <p>
-            Windows cannot find the Python command. Check that Python was
-            installed correctly and that the installer added Python to PATH.
-        </p>
-    </article>
-
-    <article class="py1-card py1-error">
-        <h3>Problem: Wrong Python command</h3>
-        <p>
-            Some Windows installations use the <code>py</code> launcher.
-            Try <code>py --version</code> to check whether it is available.
-        </p>
-    </article>
-
-</div>
-
-<div class="py1-concept-box">
-    <strong>What is the interpreter?</strong>
-    <p>
-        The Python interpreter is the program that reads Python code and
-        executes it. Your <code>.py</code> file contains instructions; the
-        interpreter is the software that makes those instructions run.
-    </p>
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     EDITOR
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">05 • Your Workspace</span>
-    <h2>VS Code or IDLE?</h2>
-    <p>
-        You can write Python with a full code editor such as VS Code or use
-        IDLE, which is included with many Python installations.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-    <article class="py1-card">
-        <h3>VS Code</h3>
-        <p>
-            Visual Studio Code is a powerful general-purpose editor. With the
-            Python extension, it provides syntax highlighting, debugging,
-            code navigation and many developer conveniences.
-        </p>
-
-        <div class="py1-concept-box">
-            <strong>Recommended for:</strong>
-            learners who want to continue from beginner Python into
-            professional development.
+      <section class="py1-section" id="py1-syntax">
+        <div class="py1-section-head"><span class="py1-section-number">08</span><h2>Python Syntax</h2></div>
+        <p>Syntax means the rules used to write valid instructions in a programming language.</p>
+        <h3>Important rules</h3>
+        <ul>
+          <li>Text values normally appear inside single or double quotes.</li>
+          <li>Python is case-sensitive: <code>name</code> and <code>Name</code> are different variables.</li>
+          <li>Parentheses are used when calling functions, such as <code>print()</code>.</li>
+          <li>Use a colon (<code>:</code>) after statements that begin an indented block, such as <code>if</code> and <code>for</code>.</li>
+          <li>Indentation matters. Python uses indentation to define code blocks.</li>
+          <li>Python generally uses a new line for each statement.</li>
+        </ul>
+        <h3>Example: a simple calculation</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>print(10 + 5)
+print("10 + 5")</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>15
+10 + 5</div>
         </div>
-    </article>
+        <p><strong>Explanation:</strong> In the first statement, Python calculates the expression. In the second, the expression is inside quotation marks, so Python prints it as text.</p>
+      </section>
 
-    <article class="py1-card">
-        <h3>IDLE</h3>
-        <p>
-            IDLE is a lightweight Python development environment. It is useful
-            for learning basic Python without configuring a larger editor.
-        </p>
-
-        <div class="py1-concept-box">
-            <strong>Recommended for:</strong>
-            beginners who want a simple Python-focused environment.
+      <section class="py1-section" id="py1-variables">
+        <div class="py1-section-head"><span class="py1-section-number">09</span><h2>Variables</h2></div>
+        <p>A variable is a name that refers to a value. You can use it to store information and reuse that information later in your program.</p>
+        <h3>Variable-to-value relationship</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">A Variable Refers to a Value</div>
+          <svg class="py1-svg" viewBox="0 0 560 165" role="img" aria-label="The variable name age refers to the integer value 25">
+            <rect x="20" y="38" width="150" height="65" rx="10" fill="#eef2ff" stroke="#a5b4fc"/>
+            <text x="95" y="63" fill="#263b80" font-size="12" text-anchor="middle">Variable name</text>
+            <text x="95" y="85" fill="#263b80" font-size="19" font-weight="700" text-anchor="middle">age</text>
+            <path d="M170 70 H275" stroke="#315bea" stroke-width="3" fill="none"/>
+            <path d="M265 62 L278 70 L265 78" stroke="#315bea" stroke-width="3" fill="none"/>
+            <rect x="285" y="38" width="250" height="65" rx="10" fill="#dcfce7" stroke="#86efac"/>
+            <text x="410" y="63" fill="#166534" font-size="12" text-anchor="middle">Integer value</text>
+            <text x="410" y="85" fill="#166534" font-size="19" font-weight="700" text-anchor="middle">25</text>
+            <text x="280" y="135" fill="#64748b" font-size="12" text-anchor="middle">age = 25</text>
+          </svg>
         </div>
-    </article>
-
-</div>
-
-<div class="py1-card" style="margin-top:18px">
-
-<h3>Create your first project folder</h3>
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>Recommended project structure</span>
-        <button class="py1-copy" data-copy="python-project/
-├── hello.py
-├── variables.py
-└── practice.py">Copy</button>
-    </div>
-<pre>python-project/
-├── hello.py
-├── variables.py
-└── practice.py</pre>
-</div>
-
-<p>
-    Keeping related Python files inside a project folder makes your work
-    easier to organize as your programs become larger.
-</p>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     FIRST PROGRAM
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">06 • First Program</span>
-    <h2>Write your first Python program</h2>
-    <p>
-        The traditional first Python program is a simple message printed to
-        the terminal.
-    </p>
-</div>
-
-<div class="py1-flow">
-
-    <div class="py1-flow-step">
-        <strong>Developer</strong>
-        <span>Writes Python code.</span>
-    </div>
-
-    <div class="py1-flow-arrow">↓</div>
-
-    <div class="py1-flow-step">
-        <strong>hello.py</strong>
-        <span>Python source file.</span>
-    </div>
-
-    <div class="py1-flow-arrow">↓</div>
-
-    <div class="py1-flow-step">
-        <strong>Interpreter</strong>
-        <span>Reads and executes code.</span>
-    </div>
-
-    <div class="py1-flow-arrow">↓</div>
-
-    <div class="py1-flow-step">
-        <strong>Execution</strong>
-        <span>Instructions are performed.</span>
-    </div>
-
-    <div class="py1-flow-arrow">↓</div>
-
-    <div class="py1-flow-step">
-        <strong>Terminal</strong>
-        <span>Result appears.</span>
-    </div>
-
-</div>
-
-<div class="py1-card">
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>hello.py</span>
-        <button class="py1-copy" data-copy='print("Hello, Python!")'>Copy</button>
-    </div>
-<pre><span class="py1-f">print</span>(<span class="py1-s">"Hello, Python!"</span>)</pre>
-</div>
-
-<div class="py1-output">
-    <strong>Expected output</strong><br>
-    Hello, Python!
-</div>
-
-<div class="py1-concept-box">
-    <strong>How does it work?</strong>
-    <p>
-        <code>print()</code> is a built-in Python function that sends text
-        to the program's standard output, usually the terminal.
-    </p>
-</div>
-
-<div class="py1-real">
-    <strong>Real-world application:</strong>
-    Output is how programs communicate information to users, logs, terminals,
-    files and other systems.
-</div>
-
-<div class="py1-mistake">
-    <strong>Common mistake:</strong>
-    Forgetting quotation marks around text:
-    <code>print(Hello)</code> is not the same as
-    <code>print("Hello")</code>.
-</div>
-
-<div class="py1-practice">
-    <strong>Practice:</strong>
-    Change the program so that it prints your name.
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     SYNTAX
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">07 • Syntax</span>
-    <h2>Python syntax and indentation</h2>
-    <p>
-        Syntax describes the rules used to write valid Python code.
-        Indentation is especially important because Python uses indentation
-        to define blocks of code.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-<article class="py1-card">
-
-<h3>Comments</h3>
-
-<p>
-    Comments are notes for humans. Python ignores text after a
-    <code>#</code> when it is used as a comment.
-</p>
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>comments.py</span>
-        <button class="py1-copy" data-copy='# This is a comment
-name = "Naveen"  # Store a name'>Copy</button>
-    </div>
-<pre><span class="py1-c"># This is a comment</span>
-name = <span class="py1-s">"Naveen"</span>  <span class="py1-c"># Store a name</span></pre>
-</div>
-
-<div class="py1-mistake">
-    <strong>Common mistake:</strong>
-    Do not use comments as a substitute for understanding the code.
-</div>
-
-</article>
-
-<article class="py1-card">
-
-<h3>Indentation</h3>
-
-<p>
-    Python uses indentation to indicate that statements belong to the same
-    block.
-</p>
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>indentation.py</span>
-        <button class="py1-copy" data-copy='age = 20
-
-if age >= 18:
-    print("Adult")'>Copy</button>
-    </div>
-<pre>age = <span class="py1-n">20</span>
-
-<span class="py1-k">if</span> age &gt;= <span class="py1-n">18</span>:
-    <span class="py1-f">print</span>(<span class="py1-s">"Adult"</span>)</pre>
-</div>
-
-<div class="py1-mistake">
-    <strong>Common mistake:</strong>
-    Mixing inconsistent indentation can cause an
-    <code>IndentationError</code>.
-</div>
-
-</article>
-
-</div>
-
-<div class="py1-concept-box">
-    <strong>Good habit:</strong>
-    Use consistent indentation. The standard style for Python code is
-    commonly four spaces per indentation level.
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     VARIABLES
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">08 • Variables</span>
-    <h2>Variables and memory</h2>
-    <p>
-        A variable name is a name bound to a Python object. Thinking of a
-        variable as a label pointing to an object is more accurate than
-        thinking of it as a permanently allocated box.
-    </p>
-</div>
-
-<div class="py1-card">
-
-<div class="py1-memory">
-
-    <div class="py1-memory-names">
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-name">name</span>
-        </div>
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-name">age</span>
-        </div>
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-name">salary</span>
-        </div>
-
-    </div>
-
-    <div class="py1-memory-arrow">
-        <span>→</span>
-        <span>→</span>
-        <span>→</span>
-    </div>
-
-    <div class="py1-memory-values">
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-value">"Naveen"</span>
-        </div>
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-value">37</span>
-        </div>
-
-        <div class="py1-memory-item">
-            <span class="py1-memory-value">19000</span>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>variables.py</span>
-        <button class="py1-copy" data-copy='name = "Naveen"
-age = 37
-salary = 19000
+        <h3>Example: creating variables</h3>
+        <p><strong>Purpose:</strong> Store a name, age and salary.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>name = "Ravi"
+age = 25
+salary = 3500.50
 
 print(name)
 print(age)
-print(salary)'>Copy</button>
-    </div>
-<pre>name = <span class="py1-s">"Naveen"</span>
-age = <span class="py1-n">37</span>
-salary = <span class="py1-n">19000</span>
-
-<span class="py1-f">print</span>(name)
-<span class="py1-f">print</span>(age)
-<span class="py1-f">print</span>(salary)</pre>
-</div>
-
-<div class="py1-output">
-<strong>Expected output</strong><br>
-Naveen<br>
-37<br>
-19000
-</div>
-
-<div class="py1-real">
-    <strong>Real-world application:</strong>
-    Variables can represent customer names, prices, product quantities,
-    account balances, configuration values and many other pieces of data.
-</div>
-
-<div class="py1-mistake">
-    <strong>Common mistake:</strong>
-    Python variable names are case-sensitive.
-    <code>name</code> and <code>Name</code> are different names.
-</div>
-
-</div>
-
-<h3 style="margin-top:35px">Variable naming conventions</h3>
-
-<div class="py1-table-wrap">
-
-<table class="py1-table">
-<thead>
-<tr>
-<th>Style</th>
-<th>Example</th>
-<th>Recommendation</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>snake_case</td>
-<td><code>first_name</code></td>
-<td>Preferred for ordinary Python variables.</td>
-</tr>
-<tr>
-<td>UPPER_CASE</td>
-<td><code>MAX_SIZE</code></td>
-<td>Commonly used for constants.</td>
-</tr>
-<tr>
-<td>camelCase</td>
-<td><code>firstName</code></td>
-<td>Common elsewhere, but not normal Python style.</td>
-</tr>
-<tr>
-<td>PascalCase</td>
-<td><code>StudentRecord</code></td>
-<td>Commonly used for classes.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     DATA TYPES
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">09 • Data</span>
-    <h2>Python data types</h2>
-    <p>
-        A data type describes what kind of object you are working with and
-        what operations make sense for that object.
-    </p>
-</div>
-
-<div class="py1-card">
-
-<div class="py1-type-tree">
-
-    <div class="py1-type-root">Python Data Types</div>
-
-    <div class="py1-type-branches">
-
-        <div class="py1-type">
-            <code>int</code>
-            <small>Whole numbers — 10, 37, -5</small>
-            <small>Use: counts, ages, quantities.</small>
+print(salary)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>Ravi
+25
+3500.5</div>
         </div>
-
-        <div class="py1-type">
-            <code>float</code>
-            <small>Decimal numbers — 19.5</small>
-            <small>Use: measurements, prices.</small>
+        <p><strong>Explanation:</strong> The <code>=</code> symbol assigns a value to a variable. Python determines the type from the assigned value. The final output displays the values referenced by the variables.</p>
+        <h3>Variable naming rules</h3>
+        <ul>
+          <li>Names can contain letters, digits and underscores.</li>
+          <li>A name cannot start with a digit.</li>
+          <li>Spaces are not allowed in variable names.</li>
+          <li>Names are case-sensitive.</li>
+          <li>Python keywords such as <code>if</code>, <code>class</code> and <code>for</code> cannot be used as ordinary variable names.</li>
+          <li>Prefer descriptive names such as <code>total_price</code> and <code>student_name</code>.</li>
+        </ul>
+        <div class="py1-grid">
+          <div class="py1-mini-card"><h4>Valid names</h4><code>student_name</code><br><code>age2</code><br><code>total_price</code></div>
+          <div class="py1-mini-card"><h4>Invalid names</h4><code>2age</code> — starts with a digit<br><code>student name</code> — contains a space<br><code>class</code> — reserved keyword</div>
         </div>
+      </section>
 
-        <div class="py1-type">
-            <code>str</code>
-            <small>Text — "Python"</small>
-            <small>Use: names, messages.</small>
+      <section class="py1-section" id="py1-datatypes">
+        <div class="py1-section-head"><span class="py1-section-number">10</span><h2>Data Types</h2></div>
+        <p>A data type describes the kind of value a variable refers to. Python provides several built-in types.</p>
+        <h3>Python data type overview</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Common Built-in Data Types</div>
+          <div class="py1-node" style="max-width:300px;margin:0 auto 12px">Python values<small>Built-in types</small></div>
+          <div style="text-align:center;color:#818cf8;font-size:20px">↓</div>
+          <div class="py1-grid-3">
+            <div class="py1-node">str<small>"Hello"<br>Text</small></div>
+            <div class="py1-node py1-purple">int<small>25<br>Whole number</small></div>
+            <div class="py1-node py1-green">float<small>3.14<br>Decimal number</small></div>
+            <div class="py1-node py1-orange">bool<small>True / False<br>Logical value</small></div>
+            <div class="py1-node">NoneType<small>None<br>No value</small></div>
+            <div class="py1-node py1-purple">Collections<small>list, tuple, dict, set</small></div>
+          </div>
         </div>
-
-        <div class="py1-type">
-            <code>bool</code>
-            <small>True or False</small>
-            <small>Use: decisions and conditions.</small>
+        <div class="py1-table-wrap">
+          <table>
+            <thead><tr><th>Type</th><th>Example</th><th>Meaning</th></tr></thead>
+            <tbody>
+              <tr><td><code>str</code></td><td><code>"Python"</code></td><td>Text or a sequence of characters.</td></tr>
+              <tr><td><code>int</code></td><td><code>25</code></td><td>Integer; a whole number.</td></tr>
+              <tr><td><code>float</code></td><td><code>3.14</code></td><td>A floating-point number.</td></tr>
+              <tr><td><code>bool</code></td><td><code>True</code>, <code>False</code></td><td>A Boolean value.</td></tr>
+              <tr><td><code>NoneType</code></td><td><code>None</code></td><td>Represents the absence of a value.</td></tr>
+              <tr><td><code>list</code></td><td><code>[1, 2, 3]</code></td><td>An ordered, changeable collection.</td></tr>
+              <tr><td><code>tuple</code></td><td><code>(1, 2, 3)</code></td><td>An ordered, unchangeable collection.</td></tr>
+              <tr><td><code>dict</code></td><td><code>{"name": "Ravi"}</code></td><td>A mapping of keys to values.</td></tr>
+              <tr><td><code>set</code></td><td><code>{1, 2, 3}</code></td><td>A collection of unique elements.</td></tr>
+            </tbody>
+          </table>
         </div>
+        <h3>Example: check data types using type()</h3>
+        <p><strong>Purpose:</strong> Find the type of each value.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>name = "Ravi"
+age = 25
+price = 19.99
+is_student = True
+result = None
 
-        <div class="py1-type">
-            <code>NoneType</code>
-            <small>Represents absence of a value.</small>
-            <small>Example: None</small>
-        </div>
-
-        <div class="py1-type">
-            <code>list</code>
-            <small>Ordered, mutable collection.</small>
-            <small>Example: [10, 20, 30]</small>
-        </div>
-
-        <div class="py1-type">
-            <code>tuple</code>
-            <small>Ordered, immutable collection.</small>
-            <small>Example: (10, 20)</small>
-        </div>
-
-        <div class="py1-type">
-            <code>set</code>
-            <small>Collection of unique elements.</small>
-            <small>Example: {"red", "blue"}</small>
-        </div>
-
-        <div class="py1-type">
-            <code>dict</code>
-            <small>Key-value mapping.</small>
-            <small>Example: {"name": "Naveen"}</small>
-        </div>
-
-    </div>
-</div>
-
-</div>
-
-<div class="py1-card" style="margin-top:18px">
-
-<h3>Using type()</h3>
-
-<div class="py1-code-card">
-    <div class="py1-code-header">
-        <span>types.py</span>
-        <button class="py1-copy" data-copy='age = 37
-price = 19.5
-name = "Naveen"
-active = True
-
+print(type(name))
 print(type(age))
 print(type(price))
-print(type(name))
-print(type(active))'>Copy</button>
-    </div>
-<pre>age = <span class="py1-n">37</span>
-price = <span class="py1-n">19.5</span>
-name = <span class="py1-s">"Naveen"</span>
-active = <span class="py1-k">True</span>
-
-<span class="py1-f">print</span>(<span class="py1-f">type</span>(age))
-<span class="py1-f">print</span>(<span class="py1-f">type</span>(price))
-<span class="py1-f">print</span>(<span class="py1-f">type</span>(name))
-<span class="py1-f">print</span>(<span class="py1-f">type</span>(active))</pre>
-</div>
-
-<div class="py1-output">
-<strong>Expected output</strong><br>
-&lt;class 'int'&gt;<br>
-&lt;class 'float'&gt;<br>
-&lt;class 'str'&gt;<br>
-&lt;class 'bool'&gt;
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     TYPE CONVERSION
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">10 • Conversion</span>
-    <h2>Converting between data types</h2>
-    <p>
-        Input from users commonly arrives as text. Conversion functions allow
-        you to turn that text into numbers or other appropriate types.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-<article class="py1-card">
-<h3><code>int()</code></h3>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>int_conversion.py</span>
-<button class="py1-copy" data-copy='age_text = "37"
-age = int(age_text)
-
-print(age)
-print(type(age))'>Copy</button>
-</div>
-<pre>age_text = <span class="py1-s">"37"</span>
-age = <span class="py1-f">int</span>(age_text)
-
-<span class="py1-f">print</span>(age)
-<span class="py1-f">print</span>(<span class="py1-f">type</span>(age))</pre>
-</div>
-
-<div class="py1-output">
-37<br>
+print(type(is_student))
+print(type(result))</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>&lt;class 'str'&gt;
 &lt;class 'int'&gt;
-</div>
-</article>
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+&lt;class 'NoneType'&gt;</div>
+        </div>
+        <p><strong>Explanation:</strong> The built-in <code>type()</code> function returns the type of an object. <code>True</code> and <code>False</code> must be capitalized. <code>None</code> is a special value, not the text <code>"None"</code>.</p>
+      </section>
 
-<article class="py1-card">
-<h3><code>float()</code></h3>
+      <section class="py1-section" id="py1-conversion">
+        <div class="py1-section-head"><span class="py1-section-number">11</span><h2>Type Conversion</h2></div>
+        <p>Type conversion changes a value from one type to another. Python provides functions such as <code>int()</code>, <code>float()</code> and <code>str()</code>.</p>
+        <div class="py1-table-wrap">
+          <table>
+            <thead><tr><th>Function</th><th>Example</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td><code>int()</code></td><td><code>int("25")</code></td><td><code>25</code></td></tr>
+              <tr><td><code>float()</code></td><td><code>float("3.5")</code></td><td><code>3.5</code></td></tr>
+              <tr><td><code>str()</code></td><td><code>str(100)</code></td><td><code>"100"</code></td></tr>
+              <tr><td><code>bool()</code></td><td><code>bool(0)</code></td><td><code>False</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Example: convert a string to an integer</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>number_text = "100"
+number = int(number_text)
 
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>float_conversion.py</span>
-<button class="py1-copy" data-copy='price_text = "19.50"
-price = float(price_text)
+print(number)
+print(number + 50)
+print(type(number))</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>100
+150
+&lt;class 'int'&gt;</div>
+        </div>
+        <p><strong>Explanation:</strong> Initially, <code>number_text</code> is a string. The <code>int()</code> function converts the numeric text to an integer, allowing arithmetic addition.</p>
+        <div class="py1-warning"><strong>Common mistake:</strong> <code>int("hello")</code> raises a <code>ValueError</code> because "hello" is not a valid integer representation. Converting a floating-point value such as <code>int(3.9)</code> produces <code>3</code>; it truncates the fractional part rather than rounding.</div>
+      </section>
 
-print(price)'>Copy</button>
-</div>
-<pre>price_text = <span class="py1-s">"19.50"</span>
-price = <span class="py1-f">float</span>(price_text)
+      <section class="py1-section" id="py1-io">
+        <div class="py1-section-head"><span class="py1-section-number">12</span><h2>Input and Output</h2></div>
+        <p><strong>Input</strong> is information received by a program. <strong>Processing</strong> means performing calculations or making decisions. <strong>Output</strong> is the result presented to the user.</p>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Input → Processing → Output</div>
+          <div class="py1-flow">
+            <div class="py1-node">Input<small>Enter two numbers</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-purple">Processing<small>Add the numbers</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-green">Output<small>Display the total</small></div>
+          </div>
+        </div>
+        <h3>Using input()</h3>
+        <p>The <code>input()</code> function displays an optional prompt and waits for the user to enter text. It returns a string, even if the user enters digits.</p>
+        <h3>Example: read user input</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>name = input("Enter your name: ")
+print("Hello,", name)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Example interaction</span>Enter your name: Ravi
+Hello, Ravi</div>
+        </div>
+        <p><strong>Explanation:</strong> Python waits for the user to enter a name. The returned string is stored in <code>name</code> and displayed using <code>print()</code>.</p>
+        <h3>Example: format output using an f-string</h3>
+        <p>An f-string lets you place variable values or expressions inside curly braces.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>name = "Ravi"
+age = 25
+print(f"My name is {name} and I am {age} years old.")</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>My name is Ravi and I am 25 years old.</div>
+        </div>
+        <p><strong>Explanation:</strong> The letter <code>f</code> before the opening quotation mark enables expression substitution. Python replaces <code>{name}</code> and <code>{age}</code> with their current values.</p>
+        <h3>Example: read numbers and calculate</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>first = int(input("Enter first number: "))
+second = int(input("Enter second number: "))
 
-<span class="py1-f">print</span>(price)</pre>
-</div>
+total = first + second
+print(f"Total = {total}")</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Example interaction</span>Enter first number: 10
+Enter second number: 20
+Total = 30</div>
+        </div>
+        <p><strong>Explanation:</strong> Each call to <code>input()</code> returns a string. <code>int()</code> converts that string into an integer before addition.</p>
+        <div class="py1-warning"><strong>Common mistake:</strong> <code>input()</code> returns strings. For example, <code>"10" + "20"</code> produces <code>"1020"</code>, not <code>30</code>. Convert the input to a number when you need arithmetic.</div>
+      </section>
 
-<div class="py1-output">
-19.5
-</div>
-</article>
-
-<article class="py1-card">
-<h3><code>str()</code></h3>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>str_conversion.py</span>
-<button class="py1-copy" data-copy='age = 37
-message = "Age: " + str(age)
-
-print(message)'>Copy</button>
-</div>
-<pre>age = <span class="py1-n">37</span>
-message = <span class="py1-s">"Age: "</span> + <span class="py1-f">str</span>(age)
-
-<span class="py1-f">print</span>(message)</pre>
-</div>
-
-<div class="py1-output">
-Age: 37
-</div>
-</article>
-
-<article class="py1-card">
-<h3>f-strings</h3>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>fstring.py</span>
-<button class="py1-copy" data-copy='name = "Naveen"
-age = 37
-
-print(f"My name is {name} and I am {age} years old.")'>Copy</button>
-</div>
-<pre>name = <span class="py1-s">"Naveen"</span>
-age = <span class="py1-n">37</span>
-
-<span class="py1-f">print</span>(
-    <span class="py1-s">f"My name is {name} and I am {age} years old."</span>
-)</pre>
-</div>
-
-<div class="py1-output">
-My name is Naveen and I am 37 years old.
-</div>
-</article>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     INPUT OUTPUT
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">11 • Interaction</span>
-    <h2>Input and output</h2>
-    <p>
-        Most useful programs interact with information. Python provides
-        <code>input()</code> for reading text from the user and
-        <code>print()</code> for displaying information.
-    </p>
-</div>
-
-<div class="py1-flow">
-
-    <div class="py1-flow-step">
-        <strong>User</strong>
-        <span>Enters information.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>input()</strong>
-        <span>Reads text.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Conversion</strong>
-        <span>Turn text into needed type.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>Processing</strong>
-        <span>Program performs work.</span>
-    </div>
-
-    <div class="py1-flow-arrow">→</div>
-
-    <div class="py1-flow-step">
-        <strong>print()</strong>
-        <span>Displays result.</span>
-    </div>
-
-</div>
-
-<div class="py1-card">
-
-<h3>Interactive example</h3>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>profile.py</span>
-<button class="py1-copy" data-copy='name = input("What is your name? ")
-age = int(input("How old are you? "))
-
-print(f"Hello {name}!")
-print(f"Next year you will be {age + 1}.")'>Copy</button>
-</div>
-<pre>name = <span class="py1-f">input</span>(<span class="py1-s">"What is your name? "</span>)
-age = <span class="py1-f">int</span>(<span class="py1-f">input</span>(<span class="py1-s">"How old are you? "</span>))
-
-<span class="py1-f">print</span>(<span class="py1-s">f"Hello {name}!"</span>)
-<span class="py1-f">print</span>(<span class="py1-s">f"Next year you will be {age + 1}."</span>)</pre>
-</div>
-
-<div class="py1-output">
-<strong>Example interaction</strong><br>
-What is your name? Naveen<br>
-How old are you? 37<br>
-Hello Naveen!<br>
-Next year you will be 38.
-</div>
-
-<div class="py1-mistake">
-    <strong>Common mistake:</strong>
-    <code>input()</code> returns a string. If you need a number, convert it
-    using <code>int()</code> or <code>float()</code>.
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     OPERATORS
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">12 • Operators</span>
-    <h2>Python operators</h2>
-    <p>
-        Operators allow programs to calculate values, compare values,
-        combine conditions and update variables.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-<article class="py1-card py1-operator-card">
-<h3>Arithmetic Operators</h3>
-
-<div class="py1-operator-list">
-<div class="py1-operator-item"><code>+</code><span>Addition</span></div>
-<div class="py1-operator-item"><code>-</code><span>Subtraction</span></div>
-<div class="py1-operator-item"><code>*</code><span>Multiplication</span></div>
-<div class="py1-operator-item"><code>/</code><span>Division</span></div>
-<div class="py1-operator-item"><code>//</code><span>Floor division</span></div>
-<div class="py1-operator-item"><code>%</code><span>Remainder</span></div>
-<div class="py1-operator-item"><code>**</code><span>Power</span></div>
-</div>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>arithmetic.py</span>
-<button class="py1-copy" data-copy='a = 10
+      <section class="py1-section" id="py1-operators">
+        <div class="py1-section-head"><span class="py1-section-number">13</span><h2>Operators</h2></div>
+        <p>Operators perform calculations, compare values, combine conditions or update variables.</p>
+        <h3>Operator categories</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Python Operator Categories</div>
+          <div class="py1-grid-3">
+            <div class="py1-node">Arithmetic<small>+ − * / // % **</small></div>
+            <div class="py1-node py1-purple">Comparison<small>== != &gt; &lt; &gt;= &lt;=</small></div>
+            <div class="py1-node py1-green">Logical<small>and, or, not</small></div>
+            <div class="py1-node py1-orange">Assignment<small>=, +=, -=, *=</small></div>
+            <div class="py1-node">Membership<small>in, not in</small></div>
+            <div class="py1-node py1-purple">Identity<small>is, is not</small></div>
+          </div>
+        </div>
+        <h3>Arithmetic operators</h3>
+        <div class="py1-table-wrap">
+          <table>
+            <thead><tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td><code>+</code></td><td>Addition</td><td><code>10 + 3</code></td><td>13</td></tr>
+              <tr><td><code>-</code></td><td>Subtraction</td><td><code>10 - 3</code></td><td>7</td></tr>
+              <tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 3</code></td><td>30</td></tr>
+              <tr><td><code>/</code></td><td>Division</td><td><code>10 / 3</code></td><td>3.333...</td></tr>
+              <tr><td><code>//</code></td><td>Floor division</td><td><code>10 // 3</code></td><td>3</td></tr>
+              <tr><td><code>%</code></td><td>Remainder</td><td><code>10 % 3</code></td><td>1</td></tr>
+              <tr><td><code>**</code></td><td>Exponentiation</td><td><code>2 ** 3</code></td><td>8</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Example: arithmetic calculations</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>a = 10
 b = 3
 
 print(a + b)
 print(a - b)
 print(a * b)
 print(a / b)
-print(a % b)'>Copy</button>
-</div>
-<pre>a = <span class="py1-n">10</span>
-b = <span class="py1-n">3</span>
+print(a // b)
+print(a % b)
+print(2 ** 3)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>13
+7
+30
+3.3333333333333335
+3
+1
+8</div>
+        </div>
+        <h3>Comparison operators</h3>
+        <p>Comparison operators compare two values and produce a Boolean result: <code>True</code> or <code>False</code>.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>age = 20
 
-<span class="py1-f">print</span>(a + b)
-<span class="py1-f">print</span>(a - b)
-<span class="py1-f">print</span>(a * b)
-<span class="py1-f">print</span>(a / b)
-<span class="py1-f">print</span>(a % b)</pre>
-</div>
-
-</article>
-
-<article class="py1-card py1-operator-card">
-<h3>Comparison Operators</h3>
-
-<div class="py1-operator-list">
-<div class="py1-operator-item"><code>==</code><span>Equal</span></div>
-<div class="py1-operator-item"><code>!=</code><span>Not equal</span></div>
-<div class="py1-operator-item"><code>&gt;</code><span>Greater than</span></div>
-<div class="py1-operator-item"><code>&lt;</code><span>Less than</span></div>
-<div class="py1-operator-item"><code>&gt;=</code><span>Greater/equal</span></div>
-<div class="py1-operator-item"><code>&lt;=</code><span>Less/equal</span></div>
-</div>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>comparison.py</span>
-<button class="py1-copy" data-copy='age = 20
-
-print(age >= 18)
+print(age > 18)
 print(age == 20)
-print(age < 18)'>Copy</button>
-</div>
-<pre>age = <span class="py1-n">20</span>
-
-<span class="py1-f">print</span>(age &gt;= <span class="py1-n">18</span>)
-<span class="py1-f">print</span>(age == <span class="py1-n">20</span>)
-<span class="py1-f">print</span>(age &lt; <span class="py1-n">18</span>)</pre>
-</div>
-
-<div class="py1-output">
-True<br>
-True<br>
-False
-</div>
-
-</article>
-
-<article class="py1-card py1-operator-card">
-<h3>Logical Operators</h3>
-
-<div class="py1-operator-list">
-<div class="py1-operator-item"><code>and</code><span>Both conditions true</span></div>
-<div class="py1-operator-item"><code>or</code><span>At least one true</span></div>
-<div class="py1-operator-item"><code>not</code><span>Reverses truth value</span></div>
-</div>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>logical.py</span>
-<button class="py1-copy" data-copy='age = 25
+print(age != 25)
+print(age < 18)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>True
+True
+True
+False</div>
+        </div>
+        <h3>Logical operators</h3>
+        <p><code>and</code> is true when both conditions are true. <code>or</code> is true when at least one condition is true. <code>not</code> reverses a Boolean result.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>age = 25
 has_id = True
 
 print(age >= 18 and has_id)
 print(age < 18 or has_id)
-print(not has_id)'>Copy</button>
-</div>
-<pre>age = <span class="py1-n">25</span>
-has_id = <span class="py1-k">True</span>
-
-<span class="py1-f">print</span>(age &gt;= <span class="py1-n">18</span> <span class="py1-k">and</span> has_id)
-<span class="py1-f">print</span>(age &lt; <span class="py1-n">18</span> <span class="py1-k">or</span> has_id)
-<span class="py1-f">print</span>(<span class="py1-k">not</span> has_id)</pre>
-</div>
-
-</article>
-
-<article class="py1-card py1-operator-card">
-<h3>Assignment Operators</h3>
-
-<div class="py1-operator-list">
-<div class="py1-operator-item"><code>=</code><span>Assign</span></div>
-<div class="py1-operator-item"><code>+=</code><span>Add and assign</span></div>
-<div class="py1-operator-item"><code>-=</code><span>Subtract and assign</span></div>
-<div class="py1-operator-item"><code>*=</code><span>Multiply and assign</span></div>
-<div class="py1-operator-item"><code>/=</code><span>Divide and assign</span></div>
-</div>
-
-<div class="py1-code-card">
-<div class="py1-code-header">
-<span>assignment.py</span>
-<button class="py1-copy" data-copy='score = 10
+print(not has_id)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>True
+True
+False</div>
+        </div>
+        <h3>Assignment operators</h3>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>score = 10
 score += 5
-score *= 2
+print(score)
 
-print(score)'>Copy</button>
+score -= 3
+print(score)</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>15
+12</div>
+        </div>
+        <p><strong>Explanation:</strong> <code>score += 5</code> updates the current value by adding five. It is equivalent to <code>score = score + 5</code>.</p>
+        <div class="py1-warning"><strong>Remember:</strong> <code>=</code> assigns a value, while <code>==</code> checks whether two values are equal.</div>
+      </section>
+
+      <section class="py1-section" id="py1-comments">
+        <div class="py1-section-head"><span class="py1-section-number">14</span><h2>Comments and Indentation</h2></div>
+        <h3>Comments</h3>
+        <p>A comment explains the code to a person reading it. Python ignores the part of a line that follows a comment marker outside a string.</p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code># Calculate the total price
+price = 100
+tax = 5
+total = price + tax
+
+print(total)  # Display the result</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>105</div>
+        </div>
+        <h3>Indentation</h3>
+        <p>Indentation means the spaces at the beginning of a line. Python uses indentation to identify the statements inside a block. Four spaces per indentation level is the common convention.</p>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">Indentation Defines a Code Block</div>
+          <div class="py1-card" style="background:#172033;border-color:#334155">
+            <pre><code>age = 20
+
+if age >= 18:
+    print("Adult")
+    print("Eligible")
+
+print("Program finished")</code></pre>
+          </div>
+          <p>Both indented print statements belong to the <code>if</code> block. The final statement is outside the block because it starts at the left margin.</p>
+        </div>
+        <div class="py1-grid">
+          <div class="py1-mini-card"><h4>Correct</h4><pre><code>if True:
+    print("Hello")</code></pre></div>
+          <div class="py1-mini-card"><h4>Incorrect</h4><pre><code>if True:
+print("Hello")</code></pre><p>This causes an indentation error.</p></div>
+        </div>
+      </section>
+
+      <section class="py1-section" id="py1-errors">
+        <div class="py1-section-head"><span class="py1-section-number">15</span><h2>Common Errors</h2></div>
+        <p>Errors are part of learning to program. Read the error message, locate the relevant line and check the syntax, data types and values.</p>
+        <h3>Error identification and correction</h3>
+        <div class="py1-diagram">
+          <div class="py1-diagram-title">A Simple Debugging Process</div>
+          <div class="py1-flow">
+            <div class="py1-node py1-orange">Error occurs<small>Program fails or behaves unexpectedly</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node">Inspect message<small>Find the line and error type</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-purple">Correct code<small>Fix syntax, type or value</small></div><span class="py1-arrow">→</span>
+            <div class="py1-node py1-green">Run again<small>Check expected output</small></div>
+          </div>
+        </div>
+        <div class="py1-table-wrap">
+          <table>
+            <thead><tr><th>Error</th><th>Example problem</th><th>How to correct it</th></tr></thead>
+            <tbody>
+              <tr><td><code>SyntaxError</code></td><td><code>print("Hello)</code></td><td>Close the quotation marks.</td></tr>
+              <tr><td><code>NameError</code></td><td><code>print(username)</code> when it was never defined</td><td>Define the variable or correct its name.</td></tr>
+              <tr><td><code>TypeError</code></td><td><code>"Age: " + 20</code></td><td>Convert the number to a string or use an f-string.</td></tr>
+              <tr><td><code>ValueError</code></td><td><code>int("hello")</code></td><td>Validate the text before conversion.</td></tr>
+              <tr><td><code>IndentationError</code></td><td>Missing indentation inside a block</td><td>Indent block statements consistently.</td></tr>
+              <tr><td><code>ZeroDivisionError</code></td><td><code>10 / 0</code></td><td>Check that the divisor is not zero.</td></tr>
+              <tr><td><code>FileNotFoundError</code></td><td>Opening a file at a nonexistent path</td><td>Check the filename and path.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h3>Example: correcting a TypeError</h3>
+        <p><strong>Incorrect code:</strong></p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Incorrect Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>age = 20
+print("Age: " + age)</code></pre>
+        </div>
+        <p>The string and integer cannot be concatenated directly with <code>+</code>.</p>
+        <p><strong>Corrected code:</strong></p>
+        <div class="py1-code-wrap">
+          <div class="py1-code-head"><span>Correct Python</span><button class="py1-copy" type="button">Copy code</button></div>
+          <pre><code>age = 20
+print(f"Age: {age}")</code></pre>
+          <div class="py1-output"><span class="py1-output-label">Expected output</span>Age: 20</div>
+        </div>
+        <p><strong>Explanation:</strong> The f-string automatically converts the value into its text representation for display.</p>
+      </section>
+
+      <section class="py1-section" id="py1-exercises">
+        <div class="py1-section-head"><span class="py1-section-number">16</span><h2>Practice Exercises</h2></div>
+        <p>Try solving each exercise yourself before opening the solution. You can use the Python interpreter or a <code>.py</code> file to test your answers.</p>
+        <div class="py1-exercise"><details><summary>Exercise 1: Print your introduction</summary><p>Print your name, country and learning goal on separate lines.</p><div class="py1-answer"><strong>Sample solution</strong><pre><code>print("My name is Ravi")
+print("I live in the UAE")
+print("I am learning Python")</code></pre></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 2: Create three variables</summary><p>Create variables for your name, age and city. Display each value.</p><div class="py1-answer"><pre><code>name = "Ravi"
+age = 25
+city = "Sharjah"
+
+print(name)
+print(age)
+print(city)</code></pre></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 3: Identify data types</summary><p>Create one string, one integer, one float and one Boolean. Print their types.</p><div class="py1-answer"><pre><code>name = "Ravi"
+age = 25
+height = 1.75
+is_student = True
+
+print(type(name))
+print(type(age))
+print(type(height))
+print(type(is_student))</code></pre></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 4: Convert a string into a number</summary><p>Convert <code>"250"</code> to an integer and add 50.</p><div class="py1-answer"><pre><code>amount_text = "250"
+amount = int(amount_text)
+print(amount + 50)</code></pre><p>Output: <code>300</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 5: Calculate the total</summary><p>Store the prices of two products and print their total.</p><div class="py1-answer"><pre><code>price1 = 25
+price2 = 40
+total = price1 + price2
+print(f"Total = {total}")</code></pre><p>Output: <code>Total = 65</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 6: Read input from the user</summary><p>Ask the user for their name and greet them.</p><div class="py1-answer"><pre><code>name = input("Enter your name: ")
+print(f"Welcome, {name}!")</code></pre></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 7: Check whether someone is an adult</summary><p>Store an age and use a comparison to print the result.</p><div class="py1-answer"><pre><code>age = 22
+print(age >= 18)</code></pre><p>Output: <code>True</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 8: Use logical operators</summary><p>Check whether a person is at least 18 and has an ID.</p><div class="py1-answer"><pre><code>age = 25
+has_id = True
+
+print(age >= 18 and has_id)</code></pre><p>Output: <code>True</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 9: Calculate a rectangle's area</summary><p>Create variables for length and width, multiply them and display the area.</p><div class="py1-answer"><pre><code>length = 10
+width = 5
+area = length * width
+print(f"Area = {area}")</code></pre><p>Output: <code>Area = 50</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 10: Fix the error</summary><p>Correct the code so it prints the total of two numbers.</p><pre><code>first = "10"
+second = "20"
+print(first + second)</code></pre><div class="py1-answer"><pre><code>first = int("10")
+second = int("20")
+print(first + second)</code></pre><p>Output: <code>30</code>. Alternatively, use numeric literals: <code>first = 10</code> and <code>second = 20</code>.</p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 11: Use an f-string</summary><p>Display a product name and price using an f-string.</p><div class="py1-answer"><pre><code>product = "Notebook"
+price = 12.5
+print(f"{product} costs {price}")</code></pre><p>Output: <code>Notebook costs 12.5</code></p></div></details></div>
+        <div class="py1-exercise"><details><summary>Exercise 12: Calculate a remainder</summary><p>Find the remainder when 17 is divided by 5.</p><div class="py1-answer"><pre><code>print(17 % 5)</code></pre><p>Output: <code>2</code></p></div></details></div>
+      </section>
+
+      <section class="py1-section" id="py1-quiz">
+        <div class="py1-section-head"><span class="py1-section-number">17</span><h2>Quiz</h2></div>
+        <p>Choose one answer for each question. Select <strong>Check Answers</strong> to see your score and explanations. This quiz runs in JavaScript; it does not execute Python code.</p>
+        <form id="py1-quiz-form">
+          <fieldset class="py1-question" data-answer="1" data-explanation="Python files conventionally use the .py extension.">
+            <legend>1. Which extension is normally used for Python source files?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q1" value="0"> .html</label>
+            <label class="py1-option"><input type="radio" name="py1-q1" value="1"> .py</label>
+            <label class="py1-option"><input type="radio" name="py1-q1" value="2"> .java</label>
+            <label class="py1-option"><input type="radio" name="py1-q1" value="3"> .css</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="2" data-explanation="The print() function displays values.">
+            <legend>2. Which function displays text in Python?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q2" value="0"> show()</label>
+            <label class="py1-option"><input type="radio" name="py1-q2" value="1"> displayText()</label>
+            <label class="py1-option"><input type="radio" name="py1-q2" value="2"> print()</label>
+            <label class="py1-option"><input type="radio" name="py1-q2" value="3"> echoText()</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="0" data-explanation="input() returns a string, even when the user enters digits.">
+            <legend>3. What type of value does input() return?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q3" value="0"> str</label>
+            <label class="py1-option"><input type="radio" name="py1-q3" value="1"> int</label>
+            <label class="py1-option"><input type="radio" name="py1-q3" value="2"> bool</label>
+            <label class="py1-option"><input type="radio" name="py1-q3" value="3"> float</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="3" data-explanation="int('25') converts valid numeric text to the integer 25.">
+            <legend>4. How do you convert the string "25" to an integer?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q4" value="0"> str("25")</label>
+            <label class="py1-option"><input type="radio" name="py1-q4" value="1"> float("hello")</label>
+            <label class="py1-option"><input type="radio" name="py1-q4" value="2"> number("25")</label>
+            <label class="py1-option"><input type="radio" name="py1-q4" value="3"> int("25")</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="1" data-explanation="The type of 3.14 is float.">
+            <legend>5. What is the type of 3.14?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q5" value="0"> int</label>
+            <label class="py1-option"><input type="radio" name="py1-q5" value="1"> float</label>
+            <label class="py1-option"><input type="radio" name="py1-q5" value="2"> str</label>
+            <label class="py1-option"><input type="radio" name="py1-q5" value="3"> bool</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="2" data-explanation="The modulo operator % returns the remainder. 10 divided by 3 leaves a remainder of 1.">
+            <legend>6. What is the result of 10 % 3?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q6" value="0"> 3</label>
+            <label class="py1-option"><input type="radio" name="py1-q6" value="1"> 0</label>
+            <label class="py1-option"><input type="radio" name="py1-q6" value="2"> 1</label>
+            <label class="py1-option"><input type="radio" name="py1-q6" value="3"> 10</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="0" data-explanation="The == operator compares values. A single = is used for assignment.">
+            <legend>7. Which operator checks whether two values are equal?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q7" value="0"> ==</label>
+            <label class="py1-option"><input type="radio" name="py1-q7" value="1"> =</label>
+            <label class="py1-option"><input type="radio" name="py1-q7" value="2"> +=</label>
+            <label class="py1-option"><input type="radio" name="py1-q7" value="3"> !=</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="3" data-explanation="Python uses indentation to define blocks of code. Four spaces per level is conventional.">
+            <legend>8. What does indentation help define in Python?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q8" value="0"> Variable types</label>
+            <label class="py1-option"><input type="radio" name="py1-q8" value="1"> File extensions</label>
+            <label class="py1-option"><input type="radio" name="py1-q8" value="2"> The operating system</label>
+            <label class="py1-option"><input type="radio" name="py1-q8" value="3"> Code blocks</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="1" data-explanation="The f-string inserts the values of name and age into the text.">
+            <legend>9. What is the purpose of an f-string?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q9" value="0"> Install Python</label>
+            <label class="py1-option"><input type="radio" name="py1-q9" value="1"> Insert values or expressions into formatted text</label>
+            <label class="py1-option"><input type="radio" name="py1-q9" value="2"> Convert every value to an integer</label>
+            <label class="py1-option"><input type="radio" name="py1-q9" value="3"> Add comments</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="2" data-explanation="A NameError often occurs when a name is used before it has been defined or when its spelling is incorrect.">
+            <legend>10. What commonly causes a NameError?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q10" value="0"> Using print()</label>
+            <label class="py1-option"><input type="radio" name="py1-q10" value="1"> Adding two integers</label>
+            <label class="py1-option"><input type="radio" name="py1-q10" value="2"> Using an undefined or misspelled variable name</label>
+            <label class="py1-option"><input type="radio" name="py1-q10" value="3"> Printing a string</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="0" data-explanation="The and operator returns True when both conditions are true.">
+            <legend>11. When does the logical and operator return True?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q11" value="0"> When both conditions are true</label>
+            <label class="py1-option"><input type="radio" name="py1-q11" value="1"> Only when both conditions are false</label>
+            <label class="py1-option"><input type="radio" name="py1-q11" value="2"> Whenever one condition is false</label>
+            <label class="py1-option"><input type="radio" name="py1-q11" value="3"> Never</label>
+          </fieldset>
+          <fieldset class="py1-question" data-answer="3" data-explanation="The Python launcher is commonly available as py on Windows and can launch an installed Python version.">
+            <legend>12. Which command can often be used as an alternative to python on Windows?</legend>
+            <label class="py1-option"><input type="radio" name="py1-q12" value="0"> runpythonn</label>
+            <label class="py1-option"><input type="radio" name="py1-q12" value="1"> start.html</label>
+            <label class="py1-option"><input type="radio" name="py1-q12" value="2"> compilejava</label>
+            <label class="py1-option"><input type="radio" name="py1-q12" value="3"> py</label>
+          </fieldset>
+          <div class="py1-quiz-actions">
+            <button class="py1-btn" type="submit">Check Answers</button>
+            <button class="py1-btn py1-secondary" type="button" id="py1-quiz-reset">Reset Quiz</button>
+          </div>
+          <div id="py1-quiz-result" class="py1-score" role="status" aria-live="polite" hidden></div>
+        </form>
+      </section>
+
+      <section class="py1-section" id="py1-summary">
+        <div class="py1-section-head"><span class="py1-section-number">18</span><h2>Summary</h2></div>
+        <p>You have covered the essential building blocks of Python programming. Use this checklist to track what you have learned.</p>
+        <div class="py1-card">
+          <h3>Beginner progress checklist</h3>
+          <div class="py1-progress-label" id="py1-progress-label">0 of 10 learning goals completed</div>
+          <div class="py1-progress-track" role="progressbar" aria-label="Learning progress" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" id="py1-progress-track"><div class="py1-progress-bar" id="py1-progress-bar"></div></div>
+          <ul class="py1-checklist" id="py1-checklist">
+            <li><input type="checkbox" id="py1-check1"><label for="py1-check1">I understand what Python is and where it is used.</label></li>
+            <li><input type="checkbox" id="py1-check2"><label for="py1-check2">I can install Python and check its version on Windows.</label></li>
+            <li><input type="checkbox" id="py1-check3"><label for="py1-check3">I understand the difference between source code, interpreter and output.</label></li>
+            <li><input type="checkbox" id="py1-check4"><label for="py1-check4">I can create and run a .py file.</label></li>
+            <li><input type="checkbox" id="py1-check5"><label for="py1-check5">I can use print() and create variables.</label></li>
+            <li><input type="checkbox" id="py1-check6"><label for="py1-check6">I can identify strings, integers, floats, Booleans and None.</label></li>
+            <li><input type="checkbox" id="py1-check7"><label for="py1-check7">I can convert input text into numeric values.</label></li>
+            <li><input type="checkbox" id="py1-check8"><label for="py1-check8">I can accept input and format output using f-strings.</label></li>
+            <li><input type="checkbox" id="py1-check9"><label for="py1-check9">I can use arithmetic, comparison and logical operators.</label></li>
+            <li><input type="checkbox" id="py1-check10"><label for="py1-check10">I can recognise common errors and correct indentation.</label></li>
+          </ul>
+        </div>
+        <h3>Key concepts to remember</h3>
+        <ul>
+          <li><code>print()</code> displays information.</li>
+          <li><code>input()</code> reads text from the user.</li>
+          <li><code>int()</code>, <code>float()</code> and <code>str()</code> help convert values.</li>
+          <li><code>type()</code> identifies an object's type.</li>
+          <li><code>=</code> assigns; <code>==</code> compares.</li>
+          <li>Indentation defines Python code blocks.</li>
+          <li>Read error messages carefully and test your corrections.</li>
+        </ul>
+        <div class="py1-success"><strong>Next step:</strong> Practise these concepts by building a calculator, a student information program and a simple marks calculator. Once you are comfortable with these basics, continue to conditions, loops, functions and collections.</div>
+      </section>
+
+      <footer style="border-top:1px solid var(--py1-border);padding-top:15px;color:var(--py1-muted);font-size:12px">
+        RBUtech · Python Programming Fundamentals · Beginner Learning Resource
+      </footer>
+    </main>
+  </div>
 </div>
-<pre>score = <span class="py1-n">10</span>
-score += <span class="py1-n">5</span>
-score *= <span class="py1-n">2</span>
-
-<span class="py1-f">print</span>(score)</pre>
-</div>
-
-<div class="py1-output">
-30
-</div>
-
-</article>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     OPERATOR VISUAL
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">13 • Operator Map</span>
-    <h2>How operators fit together</h2>
-</div>
-
-<svg viewBox="0 0 1000 420"
-     width="100%"
-     role="img"
-     aria-label="Python operators diagram"
-     style="display:block;background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 12px 35px rgba(15,23,42,.08)">
-
-    <defs>
-        <linearGradient id="py1GradA" x1="0" x2="1">
-            <stop offset="0%" stop-color="#4f46e5"/>
-            <stop offset="100%" stop-color="#06b6d4"/>
-        </linearGradient>
-    </defs>
-
-    <rect x="350" y="155" width="300" height="100" rx="22"
-          fill="url(#py1GradA)"/>
-
-    <text x="500" y="200"
-          text-anchor="middle"
-          fill="white"
-          font-size="27"
-          font-weight="800">
-        OPERATORS
-    </text>
-
-    <text x="500" y="228"
-          text-anchor="middle"
-          fill="#e0e7ff"
-          font-size="15">
-        Perform actions on values
-    </text>
-
-    <line x1="350" y1="205" x2="190" y2="95"
-          stroke="#a5b4fc" stroke-width="3"/>
-
-    <line x1="650" y1="205" x2="810" y2="95"
-          stroke="#a5b4fc" stroke-width="3"/>
-
-    <line x1="350" y1="205" x2="190" y2="325"
-          stroke="#a5b4fc" stroke-width="3"/>
-
-    <line x1="650" y1="205" x2="810" y2="325"
-          stroke="#a5b4fc" stroke-width="3"/>
-
-    <g fill="#f8fafc" stroke="#cbd5e1">
-        <rect x="70" y="45" width="240" height="95" rx="16"/>
-        <rect x="690" y="45" width="240" height="95" rx="16"/>
-        <rect x="70" y="280" width="240" height="95" rx="16"/>
-        <rect x="690" y="280" width="240" height="95" rx="16"/>
-    </g>
-
-    <g fill="#312e81" font-size="18" font-weight="800">
-        <text x="190" y="82" text-anchor="middle">Arithmetic</text>
-        <text x="810" y="82" text-anchor="middle">Comparison</text>
-        <text x="190" y="317" text-anchor="middle">Logical</text>
-        <text x="810" y="317" text-anchor="middle">Assignment</text>
-    </g>
-
-    <g fill="#64748b" font-size="15">
-        <text x="190" y="110" text-anchor="middle">+ − * / % **</text>
-        <text x="810" y="110" text-anchor="middle">== != &gt; &lt; &gt;= &lt;=</text>
-        <text x="190" y="345" text-anchor="middle">and · or · not</text>
-        <text x="810" y="345" text-anchor="middle">= += -= *= /=</text>
-    </g>
-
-</svg>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     COMMON ERRORS
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">14 • Debugging</span>
-    <h2>Common beginner errors</h2>
-    <p>
-        Errors are normal. Learning to read error messages is one of the most
-        important programming skills.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-<article class="py1-card py1-error">
-<h3>SyntaxError</h3>
-<p>
-    Python cannot understand the structure of your code.
-</p>
-<code>print("Hello"</code>
-<p>
-    The closing parenthesis is missing.
-</p>
-</article>
-
-<article class="py1-card py1-error">
-<h3>NameError</h3>
-<p>
-    You tried to use a name that Python does not know.
-</p>
-<code>print(username)</code>
-<p>
-    If <code>username</code> was never defined, Python raises a NameError.
-</p>
-</article>
-
-<article class="py1-card py1-error">
-<h3>TypeError</h3>
-<p>
-    An operation was attempted using incompatible types.
-</p>
-<code>"Age: " + 37</code>
-<p>
-    Convert the number to text or use an f-string.
-</p>
-</article>
-
-<article class="py1-card py1-error">
-<h3>ValueError</h3>
-<p>
-    A value has the right general type but cannot be converted as requested.
-</p>
-<code>int("hello")</code>
-<p>
-    The text does not represent an integer.
-</p>
-</article>
-
-<article class="py1-card py1-error">
-<h3>IndentationError</h3>
-<p>
-    Python found unexpected or inconsistent indentation.
-</p>
-<code>if age &gt;= 18:
-print("Adult")</code>
-<p>
-    The statement belonging to the <code>if</code> block needs indentation.
-</p>
-</article>
-
-<article class="py1-card py1-error">
-<h3>ZeroDivisionError</h3>
-<p>
-    A program attempted to divide by zero.
-</p>
-<code>result = 10 / 0</code>
-<p>
-    Check the divisor before performing the calculation.
-</p>
-</article>
-
-</div>
-
-<div class="py1-concept-box">
-    <strong>Debugging habit:</strong>
-    Read the last line of the traceback first to identify the error type,
-    then inspect the line number and surrounding code.
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     INTERACTIVE EXAMPLES
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">15 • Interactive Learning</span>
-    <h2>Try the examples</h2>
-    <p>
-        Reveal the answer to each mini exercise after you have tried solving
-        it yourself.
-    </p>
-</div>
-
-<div class="py1-grid py1-grid-2">
-
-<article class="py1-interactive">
-
-<h3>Exercise 1 — Variables</h3>
-
-<p>
-    Create a variable called <code>city</code> containing the text
-    <code>"Abu Dhabi"</code> and print it.
-</p>
-
-<button class="py1-button py1-reveal" data-target="py1-answer-1">
-    Reveal answer
-</button>
-
-<div class="py1-answer" id="py1-answer-1">
-<code>city = "Abu Dhabi"</code><br>
-<code>print(city)</code>
-</div>
-
-</article>
-
-<article class="py1-interactive">
-
-<h3>Exercise 2 — Calculation</h3>
-
-<p>
-    Create <code>price = 100</code> and <code>quantity = 3</code>.
-    Calculate the total.
-</p>
-
-<button class="py1-button py1-reveal" data-target="py1-answer-2">
-    Reveal answer
-</button>
-
-<div class="py1-answer" id="py1-answer-2">
-<code>price = 100</code><br>
-<code>quantity = 3</code><br>
-<code>total = price * quantity</code><br>
-<code>print(total)</code>
-</div>
-
-</article>
-
-<article class="py1-interactive">
-
-<h3>Exercise 3 — Input</h3>
-
-<p>
-    Ask the user for their age and convert the answer to an integer.
-</p>
-
-<button class="py1-button py1-reveal" data-target="py1-answer-3">
-    Reveal answer
-</button>
-
-<div class="py1-answer" id="py1-answer-3">
-<code>age = int(input("Enter your age: "))</code>
-</div>
-
-</article>
-
-<article class="py1-interactive">
-
-<h3>Exercise 4 — f-string</h3>
-
-<p>
-    Given <code>name = "Sara"</code>, display:
-    <strong>Hello Sara!</strong>
-</p>
-
-<button class="py1-button py1-reveal" data-target="py1-answer-4">
-    Reveal answer
-</button>
-
-<div class="py1-answer" id="py1-answer-4">
-<code>name = "Sara"</code><br>
-<code>print(f"Hello {name}!")</code>
-</div>
-
-</article>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     QUIZ
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">16 • Knowledge Check</span>
-    <h2>Quick Python quiz</h2>
-    <p>
-        Select one answer for each question and check your score.
-    </p>
-</div>
-
-<div class="py1-card">
-
-<form id="py1-quiz">
-
-<div class="py1-quiz-question">
-<h3>1. Which function displays output?</h3>
-
-<label class="py1-option">
-<input type="radio" name="q1" value="a">
-input()
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q1" value="b">
-print()
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q1" value="c">
-type()
-</label>
-
-<div id="py1-feedback-1" class="py1-feedback"></div>
-</div>
-
-
-<div class="py1-quiz-question">
-<h3>2. What type does input() normally return?</h3>
-
-<label class="py1-option">
-<input type="radio" name="q2" value="a">
-int
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q2" value="b">
-float
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q2" value="c">
-str
-</label>
-
-<div id="py1-feedback-2" class="py1-feedback"></div>
-</div>
-
-
-<div class="py1-quiz-question">
-<h3>3. Which operator checks equality?</h3>
-
-<label class="py1-option">
-<input type="radio" name="q3" value="a">
-=
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q3" value="b">
-==
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q3" value="c">
-!=
-</label>
-
-<div id="py1-feedback-3" class="py1-feedback"></div>
-</div>
-
-
-<div class="py1-quiz-question">
-<h3>4. Which is a valid Python variable name?</h3>
-
-<label class="py1-option">
-<input type="radio" name="q4" value="a">
-first-name
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q4" value="b">
-2name
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q4" value="c">
-first_name
-</label>
-
-<div id="py1-feedback-4" class="py1-feedback"></div>
-</div>
-
-
-<div class="py1-quiz-question">
-<h3>5. What does int("25") produce?</h3>
-
-<label class="py1-option">
-<input type="radio" name="q5" value="a">
-The integer 25
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q5" value="b">
-The string "25"
-</label>
-
-<label class="py1-option">
-<input type="radio" name="q5" value="c">
-The float 25.0
-</label>
-
-<div id="py1-feedback-5" class="py1-feedback"></div>
-</div>
-
-<button type="button" class="py1-button" id="py1-check-quiz">
-    Check my answers
-</button>
-
-<div id="py1-quiz-result"
-     style="margin-top:18px;font-size:18px;font-weight:800"></div>
-
-</form>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     PROGRESS CHECKLIST
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">17 • Progress</span>
-    <h2>Page 1 completion checklist</h2>
-    <p>
-        Tick the concepts you understand. Your progress is saved for this
-        page while this browser tab remains available.
-    </p>
-</div>
-
-<div class="py1-card">
-
-<div class="py1-checklist" id="py1-checklist">
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="installation">
-<span>I understand how Python is installed and verified.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="interpreter">
-<span>I understand what the Python interpreter does.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="program">
-<span>I can create and run a .py file.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="syntax">
-<span>I understand comments and indentation.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="variables">
-<span>I understand variables and naming conventions.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="types">
-<span>I can identify common Python data types.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="input">
-<span>I understand input(), print() and type conversion.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="operators">
-<span>I understand basic Python operators.</span>
-</label>
-
-<label class="py1-check-row">
-<input type="checkbox" data-check="errors">
-<span>I can recognize common beginner errors.</span>
-</label>
-
-</div>
-
-<div class="py1-completion" id="py1-completion">
-    🎉 Excellent! You completed the Page 1 learning checklist.
-    You are ready to continue to functions and reusable code in Page 2.
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     SUMMARY
-     ========================================================= -->
-
-<section class="py1-section py1-section-alt">
-<div class="py1-container">
-
-<div class="py1-section-heading">
-    <span class="py1-eyebrow">18 • Summary</span>
-    <h2>What you learned</h2>
-</div>
-
-<div class="py1-summary">
-
-<div class="py1-summary-item">
-<strong>Python</strong>
-A readable, general-purpose programming language used across many fields.
-</div>
-
-<div class="py1-summary-item">
-<strong>Interpreter</strong>
-The software that reads and executes Python instructions.
-</div>
-
-<div class="py1-summary-item">
-<strong>Programs</strong>
-Python source code is commonly stored in .py files.
-</div>
-
-<div class="py1-summary-item">
-<strong>Syntax</strong>
-Python follows rules for valid code and uses indentation for blocks.
-</div>
-
-<div class="py1-summary-item">
-<strong>Variables</strong>
-Names can be bound to Python objects such as numbers and strings.
-</div>
-
-<div class="py1-summary-item">
-<strong>Data Types</strong>
-Python provides integers, floats, strings, booleans and collections.
-</div>
-
-<div class="py1-summary-item">
-<strong>Input / Output</strong>
-input() reads user input while print() displays information.
-</div>
-
-<div class="py1-summary-item">
-<strong>Conversion</strong>
-int(), float() and str() convert values between useful representations.
-</div>
-
-<div class="py1-summary-item">
-<strong>Operators</strong>
-Arithmetic, comparison, logical and assignment operators perform operations.
-</div>
-
-</div>
-
-</div>
-</section>
-
-
-<!-- =========================================================
-     NEXT PAGE
-     ========================================================= -->
-
-<section class="py1-section">
-<div class="py1-container">
-
-<div class="py1-navigation">
-
-<div>
-    <div class="py1-eyebrow" style="color:#a5b4fc">
-        Page 1 completed
-    </div>
-
-    <h2 style="margin:0">
-        Ready for Python Functions?
-    </h2>
-
-    <p>
-        Page 2 will introduce functions, parameters, return values,
-        scope and reusable Python code.
-    </p>
-</div>
-
-<a href="python-functions.html" class="py1-next">
-    Continue to Page 2 →
-</a>
-
-</div>
-
-</div>
-</section>
-
-
-<footer class="py1-footer">
-    <div class="py1-container">
-        Python Programming Learning Path • Page 1 of 5
-        <br>
-        Built for RBUtech learning content
-    </div>
-</footer>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
 
 <script>
 (function () {
-    "use strict";
+  "use strict";
 
-    /* ---------------------------------------------------------
-       Copy buttons
-       --------------------------------------------------------- */
+  var root = document.getElementById("py1-page");
+  if (!root) return;
 
-    document.querySelectorAll(".py1-copy").forEach(function (button) {
+  // Copy the source code from the corresponding code block.
+  root.querySelectorAll(".py1-copy").forEach(function (button) {
+    button.addEventListener("click", async function () {
+      var code = button.closest(".py1-code-wrap");
+      var pre = code ? code.querySelector("pre") : null;
+      if (!pre) return;
 
-        button.addEventListener("click", function () {
+      var original = button.textContent;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(pre.innerText);
+        } else {
+          var temporary = document.createElement("textarea");
+          temporary.value = pre.innerText;
+          temporary.setAttribute("readonly", "");
+          temporary.style.position = "absolute";
+          temporary.style.left = "-9999px";
+          root.appendChild(temporary);
+          temporary.select();
+          var copied = document.execCommand("copy");
+          temporary.remove();
+          if (!copied) throw new Error("Copy unavailable");
+        }
+        button.textContent = "Copied!";
+      } catch (error) {
+        button.textContent = "Copy unavailable";
+      }
 
-            var text = button.getAttribute("data-copy") || "";
+      window.setTimeout(function () {
+        button.textContent = original;
+      }, 1500);
+    });
+  });
 
-            if (navigator.clipboard && window.isSecureContext) {
+  // Accessible mobile navigation.
+  var sidebar = document.getElementById("py1-sidebar");
+  var menuButton = document.getElementById("py1-menu-toggle");
+  var nav = document.getElementById("py1-nav");
 
-                navigator.clipboard.writeText(text).then(function () {
+  menuButton.addEventListener("click", function () {
+    var open = sidebar.classList.toggle("py1-menu-open");
+    menuButton.setAttribute("aria-expanded", String(open));
+  });
 
-                    var original = button.textContent;
-                    button.textContent = "Copied!";
+  nav.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (window.matchMedia("(max-width: 850px)").matches) {
+        sidebar.classList.remove("py1-menu-open");
+        menuButton.setAttribute("aria-expanded", "false");
+      }
+    });
+  });
 
-                    setTimeout(function () {
-                        button.textContent = original;
-                    }, 1400);
+  // Highlight the active section while scrolling.
+  var sectionLinks = Array.from(nav.querySelectorAll("a"));
+  var pageSections = sectionLinks.map(function (link) {
+    return document.getElementById(link.getAttribute("href").slice(1));
+  }).filter(Boolean);
 
-                }).catch(function () {
-                    py1FallbackCopy(text, button);
-                });
+  function setActiveSection(id) {
+    sectionLinks.forEach(function (link) {
+      var active = link.getAttribute("href") === "#" + id;
+      if (active) {
+        link.classList.add("py1-active");
+        link.setAttribute("aria-current", "location");
+      } else {
+        link.classList.remove("py1-active");
+        link.removeAttribute("aria-current");
+      }
+    });
+  }
 
-            } else {
-                py1FallbackCopy(text, button);
-            }
-        });
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      var visible = entries.filter(function (entry) {
+        return entry.isIntersecting;
+      }).sort(function (a, b) {
+        return a.boundingClientRect.top - b.boundingClientRect.top;
+      });
+      if (visible.length) setActiveSection(visible[0].target.id);
+    }, { rootMargin: "-8% 0px -75% 0px", threshold: 0 });
 
+    pageSections.forEach(function (section) {
+      observer.observe(section);
+    });
+  } else {
+    window.addEventListener("scroll", function () {
+      var nearest = pageSections.reduce(function (best, section) {
+        var top = Math.abs(section.getBoundingClientRect().top);
+        return top < best.top ? { id: section.id, top: top } : best;
+      }, { id: pageSections[0] ? pageSections[0].id : "", top: Infinity });
+      if (nearest.id) setActiveSection(nearest.id);
+    }, { passive: true });
+  }
+
+  // Learning progress checklist.
+  var checkboxes = Array.from(root.querySelectorAll("#py1-checklist input[type='checkbox']"));
+  var progressBar = document.getElementById("py1-progress-bar");
+  var progressLabel = document.getElementById("py1-progress-label");
+  var progressTrack = document.getElementById("py1-progress-track");
+
+  function updateProgress() {
+    var complete = checkboxes.filter(function (checkbox) {
+      return checkbox.checked;
+    }).length;
+    var percent = checkboxes.length ? complete / checkboxes.length * 100 : 0;
+    progressBar.style.width = percent + "%";
+    progressLabel.textContent = complete + " of " + checkboxes.length + " learning goals completed";
+    progressTrack.setAttribute("aria-valuenow", String(complete));
+  }
+
+  checkboxes.forEach(function (checkbox) {
+    checkbox.addEventListener("change", updateProgress);
+  });
+  updateProgress();
+
+  // Quiz scoring is performed locally in JavaScript. No Python is executed.
+  var quizForm = document.getElementById("py1-quiz-form");
+  var quizResult = document.getElementById("py1-quiz-result");
+  var resetButton = document.getElementById("py1-quiz-reset");
+
+  quizForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var questions = Array.from(quizForm.querySelectorAll(".py1-question"));
+    var score = 0;
+    var unanswered = 0;
+
+    questions.forEach(function (question) {
+      var correctAnswer = question.dataset.answer;
+      var explanation = question.dataset.explanation;
+      var selected = question.querySelector("input[type='radio']:checked");
+      var options = Array.from(question.querySelectorAll(".py1-option"));
+
+      options.forEach(function (option) {
+        option.classList.remove("py1-correct", "py1-incorrect");
+        var input = option.querySelector("input");
+        if (input.value === correctAnswer) {
+          option.classList.add("py1-correct");
+        }
+        if (selected && input === selected && input.value !== correctAnswer) {
+          option.classList.add("py1-incorrect");
+        }
+      });
+
+      var oldExplanation = question.querySelector(".py1-explanation");
+      if (oldExplanation) oldExplanation.remove();
+
+      if (!selected) {
+        unanswered++;
+      } else if (selected.value === correctAnswer) {
+        score++;
+      }
+
+      var explanationNode = document.createElement("p");
+      explanationNode.className = "py1-explanation";
+      explanationNode.style.fontSize = "13px";
+      explanationNode.style.marginTop = "9px";
+      explanationNode.textContent = (selected && selected.value === correctAnswer ? "Correct. " : "Explanation: ") + explanation;
+      question.appendChild(explanationNode);
     });
 
+    quizResult.hidden = false;
+    quizResult.replaceChildren();
 
-    function py1FallbackCopy(text, button) {
+    var title = document.createElement("div");
+    title.textContent = "Your score";
+    title.style.fontWeight = "700";
 
-        var area = document.createElement("textarea");
+    var scoreText = document.createElement("strong");
+    scoreText.textContent = score + " / " + questions.length;
 
-        area.value = text;
-        area.style.position = "fixed";
-        area.style.left = "-9999px";
+    var percentage = Math.round(score / questions.length * 100);
+    var details = document.createElement("p");
+    details.textContent = percentage + "% correct." +
+      (unanswered ? " You left " + unanswered + " question(s) unanswered." : "") +
+      (percentage === 100 ? " Excellent work!" : percentage >= 70 ? " Good work! Review any incorrect answers." : " Review the lesson and try again.");
 
-        document.body.appendChild(area);
+    quizResult.appendChild(title);
+    quizResult.appendChild(scoreText);
+    quizResult.appendChild(details);
+    quizResult.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
 
-        area.focus();
-        area.select();
+  resetButton.addEventListener("click", function () {
+    quizForm.reset();
+    quizResult.hidden = true;
+    quizResult.replaceChildren();
 
-        try {
-            document.execCommand("copy");
-
-            var original = button.textContent;
-            button.textContent = "Copied!";
-
-            setTimeout(function () {
-                button.textContent = original;
-            }, 1400);
-
-        } catch (error) {
-            button.textContent = "Copy failed";
-
-            setTimeout(function () {
-                button.textContent = "Copy";
-            }, 1400);
-        }
-
-        document.body.removeChild(area);
-    }
-
-
-    /* ---------------------------------------------------------
-       Reveal exercise answers
-       --------------------------------------------------------- */
-
-    document.querySelectorAll(".py1-reveal").forEach(function (button) {
-
-        button.addEventListener("click", function () {
-
-            var targetId = button.getAttribute("data-target");
-            var target = document.getElementById(targetId);
-
-            if (!target) {
-                return;
-            }
-
-            target.classList.toggle("show");
-
-            if (target.classList.contains("show")) {
-                button.textContent = "Hide answer";
-            } else {
-                button.textContent = "Reveal answer";
-            }
-        });
-
+    quizForm.querySelectorAll(".py1-option").forEach(function (option) {
+      option.classList.remove("py1-correct", "py1-incorrect");
     });
 
-
-    /* ---------------------------------------------------------
-       Quiz
-       --------------------------------------------------------- */
-
-    var quizButton = document.getElementById("py1-check-quiz");
-
-    if (quizButton) {
-
-        quizButton.addEventListener("click", function () {
-
-            var answers = {
-                q1: "b",
-                q2: "c",
-                q3: "b",
-                q4: "c",
-                q5: "a"
-            };
-
-            var score = 0;
-            var total = Object.keys(answers).length;
-
-            Object.keys(answers).forEach(function (question, index) {
-
-                var selected =
-                    document.querySelector(
-                        'input[name="' + question + '"]:checked'
-                    );
-
-                var feedback =
-                    document.getElementById(
-                        "py1-feedback-" + (index + 1)
-                    );
-
-                if (!selected) {
-
-                    feedback.textContent =
-                        "Please select an answer.";
-
-                    feedback.className =
-                        "py1-feedback py1-wrong";
-
-                    return;
-                }
-
-                if (selected.value === answers[question]) {
-
-                    score++;
-
-                    feedback.textContent =
-                        "✓ Correct!";
-
-                    feedback.className =
-                        "py1-feedback py1-correct";
-
-                } else {
-
-                    feedback.textContent =
-                        "✗ Not quite. Review this concept and try again.";
-
-                    feedback.className =
-                        "py1-feedback py1-wrong";
-                }
-
-            });
-
-            var result =
-                document.getElementById("py1-quiz-result");
-
-            var percentage =
-                Math.round((score / total) * 100);
-
-            if (score === total) {
-
-                result.textContent =
-                    "🎉 Perfect score! " +
-                    score + "/" + total +
-                    " (" + percentage + "%).";
-
-                result.style.color = "#059669";
-
-            } else if (score >= 3) {
-
-                result.textContent =
-                    "Good work! You scored " +
-                    score + "/" + total +
-                    " (" + percentage + "%). Review the missed concepts.";
-
-                result.style.color = "#d97706";
-
-            } else {
-
-                result.textContent =
-                    "You scored " +
-                    score + "/" + total +
-                    " (" + percentage + "%). Review the lesson and try again.";
-
-                result.style.color = "#dc2626";
-            }
-
-        });
-
-    }
-
-
-    /* ---------------------------------------------------------
-       Checklist
-       --------------------------------------------------------- */
-
-    var checklist =
-        document.querySelectorAll(
-            '#py1-checklist input[type="checkbox"]'
-        );
-
-    var completion =
-        document.getElementById("py1-completion");
-
-    var progressBar =
-        document.getElementById("py1-progress-bar");
-
-
-    function updateProgress() {
-
-        var completed = 0;
-
-        checklist.forEach(function (item) {
-
-            if (item.checked) {
-                completed++;
-            }
-
-        });
-
-        var percent =
-            Math.round(
-                (completed / checklist.length) * 100
-            );
-
-        if (progressBar) {
-
-            /*
-             * Page 1 represents 20% of the five-page course.
-             * Checklist completion moves the page progress from
-             * 20% toward 40%.
-             */
-            var courseProgress =
-                20 + (percent * 0.2);
-
-            progressBar.style.width =
-                courseProgress + "%";
-        }
-
-        if (completion) {
-
-            if (completed === checklist.length) {
-                completion.classList.add("show");
-            } else {
-                completion.classList.remove("show");
-            }
-        }
-
-        try {
-
-            var state = {};
-
-            checklist.forEach(function (item) {
-
-                var key =
-                    item.getAttribute("data-check");
-
-                state[key] = item.checked;
-
-            });
-
-            localStorage.setItem(
-                "py1-checklist",
-                JSON.stringify(state)
-            );
-
-        } catch (error) {
-            /* Storage may be unavailable in some CMS environments. */
-        }
-    }
-
-
-    function loadProgress() {
-
-        try {
-
-            var saved =
-                localStorage.getItem("py1-checklist");
-
-            if (!saved) {
-                updateProgress();
-                return;
-            }
-
-            var state =
-                JSON.parse(saved);
-
-            checklist.forEach(function (item) {
-
-                var key =
-                    item.getAttribute("data-check");
-
-                if (state[key] === true) {
-                    item.checked = true;
-                }
-
-            });
-
-        } catch (error) {
-            /* Ignore storage errors. */
-        }
-
-        updateProgress();
-    }
-
-
-    checklist.forEach(function (item) {
-
-        item.addEventListener(
-            "change",
-            updateProgress
-        );
-
+    quizForm.querySelectorAll(".py1-explanation").forEach(function (explanation) {
+      explanation.remove();
     });
-
-
-    loadProgress();
-
-
-    /* ---------------------------------------------------------
-       Smooth internal navigation
-       --------------------------------------------------------- */
-
-    document.querySelectorAll(
-        '.py1-page a[href^="#"]'
-    ).forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            var id =
-                link.getAttribute("href");
-
-            var target =
-                document.querySelector(id);
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
-
-        });
-
-    });
-
+  });
 })();
 </script>
-
-</div>
 </body>
-</html></main></div>
+</html>
+</main></div>
 <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
 </div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
 </body></html>
