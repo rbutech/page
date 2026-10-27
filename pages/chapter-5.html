@@ -1,0 +1,903 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101828"><title>chapter-5</title>
+<style>
+:root{--primary:#5145e5;--primary-dark:#3930b8;--ink:#172033;--muted:#667085;--border:#e6e8ef;--surface:#fff;--background:#f7f8fc;--max:1240px;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #a5a0ff;outline-offset:4px}.site{width:100%;min-height:100vh;overflow:clip}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.header-inner{max-width:var(--max);min-height:80px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#6558f5,#4035bd);color:#fff;font-size:22px;font-weight:800;box-shadow:0 6px 16px rgba(81,69,229,.24)}.site-title{display:block;color:var(--ink);font-size:19px;font-weight:750;line-height:1.3;letter-spacing:-.5px;overflow-wrap:anywhere}.brand-caption{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}.header-actions{display:flex;align-items:center;gap:14px}.main-nav{display:flex;align-items:center;gap:5px;min-width:0}.main-nav a{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;color:#475467;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.main-nav a:hover,.main-nav a[aria-current=page]{background:#f0efff;color:var(--primary)}.main-nav .sep{display:none}.contact-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 17px;border-radius:11px;background:var(--primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.contact-button:hover{background:var(--primary-dark);transform:translateY(-1px)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+.body{display:grid;grid-template-columns:230px minmax(0,1fr);width:100%;max-width:var(--max);margin:0 auto;padding:36px 28px 60px;gap:28px;align-items:start;min-width:0}.body>*{min-width:0}.body.no-sidebar{grid-template-columns:minmax(0,1fr)}.sidebar{position:sticky;top:108px;min-width:0;padding:21px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar:empty{display:none}.sidebar:not(:empty)::before{content:"ON THIS PAGE";display:block;margin:0 10px 13px;color:#98a2b3;font-size:10px;font-weight:800;letter-spacing:1.3px}.sidebar a{display:flex;align-items:center;margin:4px 0;padding:10px 11px;border-radius:10px;color:#475467;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none;overflow-wrap:anywhere;transition:background .2s,color .2s}.sidebar a:hover,.sidebar a[aria-current=page]{background:#f0efff;color:var(--primary)}.content{display:block;width:100%;min-width:0;max-width:100%;padding:clamp(32px,5vw,64px);border:1px solid #e8e5ff;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(170,158,255,.20),transparent 42%),linear-gradient(135deg,#fff 0%,#f7f6ff 100%);box-shadow:var(--shadow);font-size:17px;line-height:1.8;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h1{max-width:100%;margin:0 0 22px;color:#141b34;font-size:clamp(32px,4.5vw,52px);font-weight:780;line-height:1.15;letter-spacing:-1.2px;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h2{max-width:100%;margin:34px 0 14px;color:var(--ink);font-size:clamp(23px,3vw,30px);line-height:1.3;letter-spacing:-.5px;overflow-wrap:break-word;word-break:normal}.content h3{max-width:100%;margin:26px 0 10px;font-size:20px;line-height:1.4;overflow-wrap:break-word;word-break:normal}.content p,.content li{max-width:100%;color:#475467;font-size:17px;line-height:1.85;overflow-wrap:break-word;word-break:normal;white-space:normal}.content a{color:var(--primary);text-underline-offset:3px}.content img{max-width:100%;height:auto;border-radius:12px}.content table{width:100%;max-width:100%;border-collapse:collapse;overflow-wrap:break-word;background:#fff}.content th,.content td{padding:12px;border:1px solid var(--border);text-align:left}.content th{background:#f8f8fc}.content blockquote{margin:20px 0;padding:8px 18px;border-left:4px solid var(--primary);background:#f5f4ff;color:#475467}.content pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#101828;color:#f8fafc}.content code{overflow-wrap:anywhere;word-break:normal}.site-footer{border-top:1px solid var(--border);background:#fff}.footer-inner{max-width:var(--max);margin:0 auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{color:var(--ink);font-size:13px;font-weight:750}.footer-copy{margin-top:3px;color:var(--muted);font-size:12px}.footer-links{display:flex;flex-wrap:wrap;gap:18px}.footer-links a{color:#667085;font-size:12px;text-decoration:none}.footer-links a:hover{color:var(--primary)}
+@media(max-width:980px){.header-inner{padding:12px 20px}.header-actions{gap:8px}.main-nav a{padding:8px 9px;font-size:13px}.body{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:22px 20px 40px}.content{padding:32px}}
+@media(max-width:720px){.header-inner{min-height:70px;padding:11px 16px;gap:10px}.brand-mark{width:39px;height:39px;font-size:19px}.site-title{font-size:16px}.brand-caption{font-size:9px}.header-actions{gap:8px}.contact-button{display:none}.menu-toggle{display:grid;place-items:center;flex-shrink:0}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 16px 17px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--border);background:#fff;box-shadow:0 14px 20px rgba(16,24,40,.06)}.main-nav.is-open{display:flex}.main-nav a{padding:11px 13px;font-size:14px}.body{display:flex;flex-direction:column;gap:16px;padding:16px 14px 30px}.sidebar{position:static;width:100%;padding:12px}.sidebar:not(:empty)::before{margin:0 8px 6px}.sidebar a{display:inline-flex;margin:3px;padding:8px 9px;font-size:12px}.content{width:100%;padding:28px 21px;border-radius:18px}.content h1{font-size:clamp(31px,8vw,42px);letter-spacing:-1.3px}.content p,.content li{font-size:16px}.content table{display:block;overflow-x:auto}.footer-inner{padding:22px 16px;align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><div class="site">
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>chapter-5</h1><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="RBUtech beginner-friendly guide to Python, MySQL, SQL, CRUD, transactions, security and FastAPI.">
+<title>Python Programming — MySQL Database Connectivity, SQL and CRUD Operations</title>
+<style>
+:root{--py5-ink:#182338;--py5-muted:#5b6880;--py5-bg:#f4f7fb;--py5-card:#fff;--py5-primary:#2457c5;--py5-secondary:#0e9384;--py5-border:#dce4ef;--py5-code:#111827;--py5-warn:#fff4d7;--py5-good:#e4f8ee;--py5-radius:16px;--py5-shadow:0 8px 26px rgba(24,35,56,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:18px}body{margin:0;background:var(--py5-bg);color:var(--py5-ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}a{color:var(--py5-primary)}button,input,select{font:inherit}button{cursor:pointer}.py5-shell{max-width:1500px;margin:auto;display:grid;grid-template-columns:275px minmax(0,1fr);gap:24px;padding:22px}.py5-sidebar{align-self:start;position:sticky;top:14px;max-height:calc(100vh - 28px);overflow:auto;background:#fff;border:1px solid var(--py5-border);border-radius:var(--py5-radius);padding:18px;box-shadow:var(--py5-shadow)}.py5-brand{font-weight:900;font-size:1.2rem;color:var(--py5-primary);margin-bottom:4px}.py5-side-sub{font-size:.82rem;color:var(--py5-muted);margin-bottom:14px}.py5-nav{display:grid;gap:4px}.py5-nav a{text-decoration:none;padding:7px 10px;border-radius:9px;color:#39465c;font-size:.9rem}.py5-nav a:hover,.py5-nav a.py5-active{background:#eaf0ff;color:#1747b0;font-weight:700}.py5-progress-wrap{margin:14px 0 4px}.py5-progress-top{display:flex;justify-content:space-between;font-size:.82rem;color:var(--py5-muted)}.py5-progress{height:8px;background:#e7edf5;border-radius:99px;overflow:hidden}.py5-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--py5-primary),var(--py5-secondary));transition:width .2s}.py5-main{min-width:0}.py5-hero{background:linear-gradient(130deg,#172b58,#2457c5 65%,#0e9384);color:#fff;border-radius:22px;padding:clamp(24px,5vw,52px);box-shadow:var(--py5-shadow);margin-bottom:20px}.py5-kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:800;opacity:.86}.py5-hero h1{line-height:1.13;font-size:clamp(2rem,4vw,3.25rem);margin:12px 0}.py5-hero p{max-width:850px;color:#eaf1ff;font-size:1.08rem}.py5-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.py5-badge{display:inline-flex;align-items:center;border:1px solid #ffffff55;background:#ffffff15;border-radius:99px;padding:5px 11px;font-size:.82rem}.py5-section{background:var(--py5-card);border:1px solid var(--py5-border);border-radius:var(--py5-radius);padding:clamp(18px,3vw,30px);margin:18px 0;box-shadow:var(--py5-shadow)}.py5-section h2{font-size:clamp(1.45rem,2.5vw,2rem);line-height:1.25;margin:0 0 14px}.py5-section h3{margin:22px 0 8px;line-height:1.3}.py5-lead{font-size:1.05rem;color:#43516a}.py5-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.py5-grid.py5-three{grid-template-columns:repeat(3,minmax(0,1fr))}.py5-card{border:1px solid var(--py5-border);border-radius:13px;padding:16px;background:#fff;min-width:0}.py5-card h3{margin:0 0 8px}.py5-callout{padding:14px 16px;border-left:4px solid var(--py5-primary);background:#eef4ff;border-radius:9px;margin:14px 0}.py5-warning{background:var(--py5-warn);border-left-color:#d38a00}.py5-success{background:var(--py5-good);border-left-color:#15945e}.py5-muted{color:var(--py5-muted)}.py5-tag{display:inline-block;background:#edf2ff;color:#204eae;border-radius:7px;padding:2px 8px;font-size:.8rem;font-weight:750}.py5-diagram{border:1px solid var(--py5-border);background:linear-gradient(180deg,#fbfdff,#f2f6fc);border-radius:14px;padding:18px;margin:14px 0;overflow:auto}.py5-flow{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:220px}.py5-node{border:1px solid #a9bee9;background:#fff;border-radius:10px;padding:10px 16px;text-align:center;font-weight:700;min-width:160px;max-width:100%;box-shadow:0 3px 8px #172b580d}.py5-node.py5-blue{background:#eaf0ff;border-color:#9ab2f1}.py5-node.py5-green{background:#e4f8ee;border-color:#91d9b1}.py5-node.py5-orange{background:#fff4d7;border-color:#e7c56d}.py5-arrow{font-size:1.3rem;font-weight:900;color:var(--py5-primary);line-height:1}.py5-branches{display:grid;grid-template-columns:repeat(5,minmax(110px,1fr));gap:8px;width:100%}.py5-branches .py5-node{min-width:0;font-size:.9rem}.py5-mind-center{font-weight:900;text-align:center;background:#172b58;color:white;padding:14px;border-radius:12px;margin:0 auto 14px;max-width:360px}.py5-tree{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#111827;color:#e5edff;padding:18px;border-radius:12px;overflow:auto;white-space:pre;line-height:1.7}.py5-codewrap{position:relative;margin:12px 0}.py5-code{display:block;background:var(--py5-code);color:#e5edff;border-radius:12px;padding:18px;overflow:auto;white-space:pre;font: .88rem/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:4}.py5-copy{position:absolute;right:8px;top:8px;border:1px solid #ffffff55;background:#28364c;color:#fff;border-radius:7px;padding:5px 9px;font-size:.78rem}.py5-output{background:#f0f4f8;border:1px dashed #c4d0df;border-radius:9px;padding:12px;margin:8px 0;color:#27364b;font: .9rem/1.6 ui-monospace,monospace;white-space:pre-wrap}.py5-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.93rem}.py5-table th,.py5-table td{border:1px solid var(--py5-border);padding:10px;text-align:left;vertical-align:top}.py5-table th{background:#edf2fb}.py5-table code{overflow-wrap:anywhere}.py5-crud{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.py5-crud button{border:1px solid var(--py5-border);background:#fff;border-radius:14px;padding:18px 10px;text-align:center;color:var(--py5-ink)}.py5-crud button:hover,.py5-crud button[aria-pressed=true]{border-color:var(--py5-primary);background:#edf3ff;transform:translateY(-1px)}.py5-crud strong{display:block;font-size:1.15rem}.py5-crud span{display:block;font-size:1.65rem;font-weight:900;color:var(--py5-primary)}.py5-detail{background:#f5f8ff;border:1px solid #d5e0f7;border-radius:12px;padding:16px;margin-top:12px;min-height:78px}.py5-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0}.py5-btn{border:0;border-radius:9px;background:var(--py5-primary);color:#fff;font-weight:750;padding:9px 14px}.py5-btn.py5-light{background:#eaf0ff;color:#1b4db4}.py5-btn.py5-danger{background:#a83232}.py5-select,.py5-input{border:1px solid #b9c7da;border-radius:8px;padding:9px;background:#fff;color:var(--py5-ink);max-width:100%}.py5-checklist{display:grid;gap:9px}.py5-check{display:flex;gap:10px;align-items:flex-start;background:#f8faff;border:1px solid var(--py5-border);border-radius:10px;padding:10px}.py5-check input{margin-top:6px;accent-color:var(--py5-primary)}details.py5-details{border:1px solid var(--py5-border);border-radius:10px;padding:11px 14px;margin:10px 0}details.py5-details summary{cursor:pointer;font-weight:750}.py5-quiz-q{border:1px solid var(--py5-border);border-radius:12px;padding:15px;margin:12px 0}.py5-quiz-q label{display:block;padding:6px 0;cursor:pointer}.py5-feedback{font-weight:750;margin-top:8px}.py5-good-text{color:#087443}.py5-bad-text{color:#a12a2a}.py5-footer{color:var(--py5-muted);text-align:center;padding:22px}.py5-anchor{scroll-margin-top:15px}.py5-mini{font-size:.88rem}.py5-pillrow{display:flex;gap:8px;flex-wrap:wrap}.py5-pill{padding:6px 10px;background:#edf4f9;border-radius:99px;font-size:.83rem}.py5-two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}.py5-hidden{display:none!important}
+@media(max-width:1000px){.py5-shell{grid-template-columns:1fr;padding:12px}.py5-sidebar{position:relative;top:auto;max-height:none}.py5-nav{grid-template-columns:repeat(2,minmax(0,1fr))}.py5-grid.py5-three{grid-template-columns:repeat(2,minmax(0,1fr))}.py5-branches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.py5-grid,.py5-grid.py5-three,.py5-two-col{grid-template-columns:1fr}.py5-crud{grid-template-columns:repeat(2,minmax(0,1fr))}.py5-nav{grid-template-columns:1fr 1fr}.py5-section{padding:16px}.py5-code{font-size:.8rem;padding:15px}.py5-branches{grid-template-columns:1fr 1fr}.py5-table{font-size:.82rem}.py5-table th,.py5-table td{padding:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="py5-shell">
+<aside class="py5-sidebar" aria-label="Page navigation">
+  <div class="py5-brand">RBUtech · Python</div>
+  <div class="py5-side-sub">Backend development learning path</div>
+  <div class="py5-progress-wrap"><div class="py5-progress-top"><span>Page progress</span><strong id="py5-progress-text">0%</strong></div><div class="py5-progress" role="progressbar" aria-label="Page reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="py5-progress"><span id="py5-progress-bar"></span></div></div>
+  <nav class="py5-nav" id="py5-nav">
+    <a href="#py5-intro">Introduction</a><a href="#py5-objectives">Objectives</a><a href="#py5-mindmap">Mind map</a><a href="#py5-fundamentals">Database basics</a><a href="#py5-install">Install MySQL</a><a href="#py5-schema">Database & table</a><a href="#py5-sql">SQL fundamentals</a><a href="#py5-driver">Python driver</a><a href="#py5-architecture">Architecture</a><a href="#py5-read">READ</a><a href="#py5-create">CREATE</a><a href="#py5-update">UPDATE</a><a href="#py5-delete">DELETE</a><a href="#py5-reusable">Reusable CRUD</a><a href="#py5-transactions">Transactions</a><a href="#py5-security">Security</a><a href="#py5-fastapi">FastAPI</a><a href="#py5-exercises">Exercises</a><a href="#py5-quiz">Quiz</a><a href="#py5-final-project">Final project</a><a href="#py5-summary">Summary</a>
+  </nav>
+</aside>
+<main class="py5-main">
+<header class="py5-hero" id="py5-intro">
+  <div class="py5-kicker">Python learning path · Page 5 of 5</div>
+  <h1>Python Programming — MySQL Database Connectivity, SQL and CRUD Operations</h1>
+  <p>Learn how a Python application stores, retrieves, updates and deletes data in MySQL. Build a Student Management System using safe SQL parameters, transactions and reusable functions, then connect the same ideas to FastAPI.</p>
+  <div class="py5-badges"><span class="py5-badge">Beginner friendly</span><span class="py5-badge">Python + MySQL</span><span class="py5-badge">Hands-on examples</span><span class="py5-badge">Security first</span></div>
+</header>
+
+<section class="py5-section">
+  <h2>Welcome: what you will build</h2>
+  <p class="py5-lead">A database is persistent storage: information remains available after your Python program closes. In this page, the browser-based diagrams are safe simulations; the actual SQL and Python examples run on your own computer, not inside this webpage.</p>
+  <div class="py5-grid py5-three">
+    <div class="py5-card"><h3>🗃️ Store</h3><p>Save student records in a MySQL table.</p></div>
+    <div class="py5-card"><h3>🔎 Retrieve</h3><p>List all students or find one by ID.</p></div>
+    <div class="py5-card"><h3>🛡️ Protect</h3><p>Use parameterized SQL, limited permissions and private credentials.</p></div>
+  </div>
+  <div class="py5-callout py5-warning"><strong>Important:</strong> do not paste real database passwords into HTML, GitHub, screenshots or public repositories. Keep secrets in environment variables or a secret manager. Never expose a MySQL server directly to the public internet for a normal web application.</div>
+</section>
+
+<section class="py5-section" id="py5-objectives">
+<h2>1. Learning objectives</h2>
+<p>By the end, you should be able to explain the database layers, create a schema, write basic SQL, connect Python to MySQL, implement CRUD, manage transactions and prepare a backend for API integration.</p>
+<div class="py5-grid">
+<div class="py5-card"><h3>Database and SQL</h3><ul><li>Database, table, row, column and primary key</li><li>MySQL data types and constraints</li><li>CREATE, INSERT, SELECT, WHERE, ORDER BY</li><li>UPDATE, DELETE and aggregate functions</li></ul></div>
+<div class="py5-card"><h3>Python connectivity</h3><ul><li>MySQL Connector/Python, connections and cursors</li><li>Parameterized queries and resource cleanup</li><li>Commit, rollback and transaction handling</li><li>Reusable CRUD functions and error handling</li></ul></div>
+<div class="py5-card"><h3>Professional practices</h3><ul><li>Environment variables and least privilege</li><li>Connection timeouts and pooling concepts</li><li>FastAPI request validation and HTTP methods</li><li>Logging, backups and safe network configuration</li></ul></div>
+</div>
+</section>
+
+<section class="py5-section" id="py5-mindmap">
+<h2>2. Database development mind map</h2>
+<div class="py5-diagram" role="img" aria-label="Mind map showing SQL, MySQL, drivers, connections, cursors, CRUD, transactions, security, APIs and pooling around Python database development">
+<div class="py5-mind-center">PYTHON DATABASE DEVELOPMENT</div>
+<div class="py5-branches">
+<div class="py5-node py5-blue">SQL<br><small>Queries & constraints</small></div><div class="py5-node">MySQL<br><small>Database server</small></div><div class="py5-node">Database Drivers<br><small>Python connector</small></div><div class="py5-node">Connections<br><small>Sessions</small></div><div class="py5-node">Cursors<br><small>Execute SQL</small></div>
+<div class="py5-node py5-green">CRUD<br><small>Create, Read, Update, Delete</small></div><div class="py5-node">Transactions<br><small>Commit / rollback</small></div><div class="py5-node py5-orange">Security<br><small>Least privilege</small></div><div class="py5-node">APIs<br><small>FastAPI</small></div><div class="py5-node">Connection Pooling<br><small>Reuse connections</small></div>
+</div></div>
+<p>These topics work together: SQL describes the data operation, the driver carries it from Python to MySQL, a connection represents a session, and a cursor executes statements and exposes results.</p>
+</section>
+
+<section class="py5-section" id="py5-fundamentals">
+<h2>3. Database fundamentals</h2>
+<p><strong>Definition:</strong> a relational database stores related data in tables. A table has columns (fields) and rows (records). A primary key uniquely identifies each row.</p>
+<div class="py5-grid">
+<div class="py5-card"><h3>Server → database → table</h3><div class="py5-tree">MySQL Server
+└── python_school (database)
+    └── students (table)
+        ├── id (primary key)
+        ├── name
+        ├── email
+        └── age</div></div>
+<div class="py5-card"><h3>Example table rows</h3><table class="py5-table"><thead><tr><th>id 🔑</th><th>name</th><th>email</th><th>age</th></tr></thead><tbody><tr><td>1</td><td>Asha</td><td>asha@example.com</td><td>20</td></tr><tr><td>2</td><td>Ravi</td><td>ravi@example.com</td><td>22</td></tr><tr><td>3</td><td>Mina</td><td>mina@example.com</td><td>19</td></tr></tbody></table><p class="py5-mini py5-muted">IDs uniquely identify records. Email is also unique in our schema.</p></div>
+</div>
+<h3>Common MySQL data types</h3>
+<table class="py5-table"><thead><tr><th>Type</th><th>Use</th><th>Example</th></tr></thead><tbody><tr><td><code>INT</code></td><td>Whole numbers</td><td>age, id</td></tr><tr><td><code>VARCHAR(n)</code></td><td>Text up to a chosen length</td><td>name, email</td></tr><tr><td><code>TEXT</code></td><td>Longer text</td><td>description</td></tr><tr><td><code>DECIMAL(p,s)</code></td><td>Exact decimal values, often money</td><td>DECIMAL(10,2)</td></tr><tr><td><code>DATE</code> / <code>DATETIME</code></td><td>Date or date and time</td><td>birth_date</td></tr><tr><td><code>TIMESTAMP</code></td><td>Timestamp values</td><td>created_at</td></tr><tr><td><code>BOOLEAN</code></td><td>True/false concept (stored as a tiny integer)</td><td>is_active</td></tr></tbody></table>
+<div class="py5-callout"><strong>Why it matters:</strong> constraints such as <code>NOT NULL</code>, <code>UNIQUE</code> and primary keys help the database protect data consistency, even if an application has a bug.</div>
+<h3>Foreign keys</h3><p>A foreign key in one table points to a key in another table. For example, an <code>enrollments.student_id</code> column can reference <code>students.id</code>. This helps prevent an enrollment from referring to a student that does not exist.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>CREATE TABLE enrollments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT NOT NULL,
+    course_name VARCHAR(100) NOT NULL,
+    CONSTRAINT fk_enrollment_student
+      FOREIGN KEY (student_id) REFERENCES students(id)
+);</code></pre></div>
+<p class="py5-mini"><strong>Common mistake:</strong> treating an ID as the row number. IDs identify records; gaps can appear after deletions and are normal.</p>
+<p><strong>Exercise:</strong> design a table for books with an ID, title, author, and publication year. Which field should be the primary key?</p>
+</section>
+
+<section class="py5-section" id="py5-install">
+<h2>4. Install MySQL on Windows</h2>
+<p>Install a local MySQL Server, configure a strong administrator password, then use a dedicated application user for your Python program. MySQL Workbench is an optional graphical client; the server itself is the database service.</p>
+<ol>
+<li>Open the official <a href="https://dev.mysql.com/doc/mysql-installation-excerpt/8.0/en/" target="_blank" rel="noopener noreferrer">MySQL installation guide</a> and follow the Windows installer instructions.</li>
+<li>Choose MySQL Server and configure it as a Windows service. Keep the server on localhost for local practice.</li>
+<li>Set a strong root/admin password and store it securely. Do not use the administrator account in your application.</li>
+<li>Open MySQL Workbench or the MySQL command-line client and connect to your local server.</li>
+<li>Create the practice database and a dedicated user using the SQL shown below.</li>
+</ol>
+<h3>Install the Python driver</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>py -m pip install mysql-connector-python</code></pre></div>
+<p>Verify that Python can import the driver:</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>py -c "import mysql.connector; print(mysql.connector.__version__)"</code></pre></div>
+<div class="py5-output">Expected output: a version number, for example 9.x.x. The exact version may differ.</div>
+<p><strong>Common mistakes:</strong> installing the package into a different Python environment, forgetting to start the MySQL service, using the wrong port, or confusing the MySQL server package with the Python connector.</p>
+</section>
+
+<section class="py5-section" id="py5-schema">
+<h2>5. Create the database and students table</h2>
+<p>Run these statements in MySQL Workbench or a MySQL SQL console. SQL is sent to the database server; Python will send similar statements later through the connector.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>CREATE DATABASE IF NOT EXISTS python_school;
+USE python_school;
+
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    age INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO students (name, email, age)
+VALUES
+    ('Asha', 'asha@example.com', 20),
+    ('Ravi', 'ravi@example.com', 22),
+    ('Mina', 'mina@example.com', 19);
+
+SELECT id, name, email, age, created_at
+FROM students
+ORDER BY id;</code></pre></div>
+<h3>What each part means</h3>
+<table class="py5-table"><thead><tr><th>SQL element</th><th>Meaning</th></tr></thead><tbody><tr><td><code>CREATE DATABASE IF NOT EXISTS</code></td><td>Create the database only if it is not already present.</td></tr><tr><td><code>USE</code></td><td>Choose the database for subsequent statements in this SQL session.</td></tr><tr><td><code>AUTO_INCREMENT</code></td><td>MySQL assigns the next ID when a row is inserted.</td></tr><tr><td><code>PRIMARY KEY</code></td><td>Unique, non-null identifier for each row.</td></tr><tr><td><code>NOT NULL</code></td><td>The column must have a value.</td></tr><tr><td><code>UNIQUE</code></td><td>Prevent duplicate email values.</td></tr><tr><td><code>DEFAULT CURRENT_TIMESTAMP</code></td><td>Set creation time automatically if omitted.</td></tr><tr><td><code>ORDER BY id</code></td><td>Sort results by ID, ascending by default.</td></tr></tbody></table>
+<div class="py5-output">Expected: the query returns three rows for Asha, Ravi and Mina. If you run the INSERT again, the unique email constraint will reject duplicate emails. For repeatable practice, insert sample rows only once or handle duplicate-key errors.</div>
+<h3>Create a dedicated application user</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>CREATE USER 'student_app'@'localhost'
+IDENTIFIED BY 'REPLACE_WITH_A_STRONG_PASSWORD';
+
+GRANT SELECT, INSERT, UPDATE, DELETE
+ON python_school.*
+TO 'student_app'@'localhost';</code></pre></div>
+<div class="py5-callout py5-warning">Replace the example password before running. Do not use this literal string as a real password. Grant only the permissions your application needs; run user-management SQL with an authorized administrator account.</div>
+</section>
+
+<section class="py5-section" id="py5-sql">
+<h2>6. SQL fundamentals</h2>
+<p>SQL describes what data operation you want the server to perform. A cursor sends SQL to MySQL and can retrieve the result set or report how many rows were affected.</p>
+<table class="py5-table"><thead><tr><th>Goal</th><th>SQL pattern</th><th>What it does</th></tr></thead><tbody><tr><td>Create schema</td><td><code>CREATE DATABASE ...</code></td><td>Creates a database.</td></tr><tr><td>Add record</td><td><code>INSERT INTO students (...) VALUES (...)</code></td><td>Adds a row.</td></tr><tr><td>Read records</td><td><code>SELECT name, age FROM students</code></td><td>Returns selected columns.</td></tr><tr><td>Filter</td><td><code>WHERE age &gt;= 20</code></td><td>Keeps rows matching a condition.</td></tr><tr><td>Sort</td><td><code>ORDER BY name ASC</code></td><td>Sorts results alphabetically.</td></tr><tr><td>Update</td><td><code>UPDATE students SET age = 21 WHERE id = 1</code></td><td>Changes matching rows.</td></tr><tr><td>Delete</td><td><code>DELETE FROM students WHERE id = 1</code></td><td>Removes matching rows.</td></tr></tbody></table>
+<h3>Filtering, sorting and aggregates</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>SELECT name, age
+FROM students
+WHERE age >= 20
+ORDER BY age DESC;
+
+SELECT COUNT(*) AS student_count,
+       AVG(age) AS average_age,
+       MIN(age) AS youngest,
+       MAX(age) AS oldest
+FROM students;</code></pre></div>
+<p><strong>Expected:</strong> the first query returns students aged 20 or above, oldest first. The second returns one summary row with count, average, minimum and maximum age. Aggregate functions include <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code> and <code>MAX</code>.</p>
+<div class="py5-callout py5-warning"><strong>Common mistake:</strong> running UPDATE or DELETE without a WHERE clause can affect every row in the table. First test the matching rows with a SELECT query, then run the change deliberately.</div>
+</section>
+
+<section class="py5-section" id="py5-driver">
+<h2>7. Python database driver: connection and cursor</h2>
+<p><strong>Definition:</strong> MySQL Connector/Python is a driver that lets Python open a MySQL connection and send SQL. A connection represents a session with the server; a cursor executes statements and reads results.</p>
+<h3>Set environment variables on Windows PowerShell</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>$env:DB_HOST = "127.0.0.1"
+$env:DB_PORT = "3306"
+$env:DB_NAME = "python_school"
+$env:DB_USER = "student_app"
+$env:DB_PASSWORD = "YOUR_LOCAL_PASSWORD"</code></pre></div>
+<p>These commands set variables for the current PowerShell session. For long-term or production use, use a protected local environment file excluded from version control, the operating system's secret facilities, or a managed secret manager.</p>
+<h3>Connection architecture</h3>
+<div class="py5-diagram"><div class="py5-flow"><div class="py5-node py5-blue">User / CLI</div><div class="py5-arrow">↓</div><div class="py5-node">Python Application</div><div class="py5-arrow">↓</div><div class="py5-node">Database Driver<br><small>mysql-connector-python</small></div><div class="py5-arrow">↓</div><div class="py5-node">MySQL Connection</div><div class="py5-arrow">↓</div><div class="py5-node">SQL Query</div><div class="py5-arrow">↓</div><div class="py5-node py5-green">MySQL Server → Database</div><div class="py5-arrow">↓</div><div class="py5-node py5-orange">Result returned to Python</div></div></div>
+<p class="py5-mini">Responsibilities: the application validates user intent; the driver implements the protocol; the connection manages the session; SQL specifies the operation; MySQL checks permissions, executes it and returns rows or an affected-row count.</p>
+<h3>Minimal safe connection example</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>import os
+import mysql.connector
+from mysql.connector import Error
+
+def get_connection():
+    return mysql.connector.connect(
+        host=os.getenv("DB_HOST", "127.0.0.1"),
+        port=int(os.getenv("DB_PORT", "3306")),
+        database=os.getenv("DB_NAME", "python_school"),
+        user=os.getenv("DB_USER", "student_app"),
+        password=os.getenv("DB_PASSWORD", ""),
+        connection_timeout=5,
+    )
+
+def main():
+    connection = None
+    cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute("SELECT id, name, email, age FROM students ORDER BY id")
+        for row in cursor.fetchall():
+            print(row)
+    except Error:
+        # Log a safe message; don't print passwords or connection secrets.
+        print("Database operation failed. Check configuration and server status.")
+    finally:
+        if cursor is not None:
+            cursor.close()
+        if connection is not None and connection.is_connected():
+            connection.close()
+
+if __name__ == "__main__":
+    main()</code></pre></div>
+<div class="py5-output">Expected: tuples such as (1, 'Asha', 'asha@example.com', 20), one per saved student. Your IDs and data may differ.</div>
+<details class="py5-details"><summary>Why use finally?</summary><p>The <code>finally</code> block runs whether the operation succeeds or raises an exception. It is a useful place to close a cursor and connection. In larger programs, a context manager or a carefully designed repository layer can centralize cleanup.</p></details>
+</section>
+
+<section class="py5-section" id="py5-architecture">
+<h2>8. SQL execution flow</h2>
+<div class="py5-diagram"><div class="py5-flow"><div class="py5-node">Python function</div><div class="py5-arrow">↓</div><div class="py5-node">SQL statement</div><div class="py5-arrow">↓</div><div class="py5-node py5-green">Parameterized values</div><div class="py5-arrow">↓</div><div class="py5-node">MySQL server executes query</div><div class="py5-arrow">↓</div><div class="py5-node py5-blue">Rows returned or affected-row count</div><div class="py5-arrow">↓</div><div class="py5-node">Python application handles result</div></div></div>
+<h3>SQL injection: unsafe versus safe</h3>
+<div class="py5-grid">
+<div class="py5-card"><h3>❌ Unsafe pattern</h3><p>Do not build a SQL statement by inserting user-provided text into the SQL string.</p><pre class="py5-code"><code># Do not do this:
+sql = "SELECT * FROM students WHERE name = '" + name + "'"</code></pre><p class="py5-mini">This mixes query structure with data and can change the meaning of the statement.</p></div>
+<div class="py5-card"><h3>✅ Safe pattern</h3><p>Keep SQL structure fixed and pass values separately using the connector's <code>%s</code> placeholders.</p><pre class="py5-code"><code>sql = "SELECT id, name FROM students WHERE name = %s"
+cursor.execute(sql, (name,))</code></pre><p class="py5-mini">The comma makes <code>(name,)</code> a one-item tuple. Never use Python string formatting to insert values into SQL.</p></div>
+</div>
+<div class="py5-callout py5-success"><strong>Rule:</strong> use parameterized queries for values in INSERT, SELECT, UPDATE and DELETE. SQL identifiers such as table names cannot generally be passed as ordinary value placeholders; keep identifiers fixed or validate them against a strict allowlist.</div>
+</section>
+
+<section class="py5-section" id="py5-read">
+<h2>9. READ: retrieve students</h2>
+<div class="py5-crud" aria-label="CRUD operation selector">
+<button type="button" data-crud="create" aria-pressed="false"><span>＋</span><strong>CREATE</strong><small>INSERT</small></button>
+<button type="button" data-crud="read" aria-pressed="true"><span>⌕</span><strong>READ</strong><small>SELECT</small></button>
+<button type="button" data-crud="update" aria-pressed="false"><span>✎</span><strong>UPDATE</strong><small>UPDATE</small></button>
+<button type="button" data-crud="delete" aria-pressed="false"><span>×</span><strong>DELETE</strong><small>DELETE</small></button>
+</div>
+<div class="py5-detail" id="py5-crud-detail" aria-live="polite"><strong>READ — SELECT</strong><p>Retrieve records without changing them. Use fetchall() for all matching rows or fetchone() for one row.</p><code>SELECT id, name, email, age FROM students ORDER BY id</code></div>
+<h3>Read all students</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>def get_students():
+    connection = get_connection()
+    cursor = None
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT id, name, email, age, created_at "
+            "FROM students ORDER BY id"
+        )
+        return cursor.fetchall()
+    finally:
+        if cursor is not None:
+            cursor.close()
+        connection.close()
+
+for student in get_students():
+    print(student)</code></pre></div>
+<div class="py5-output">Expected: a list of dictionaries, for example {'id': 1, 'name': 'Asha', 'email': 'asha@example.com', 'age': 20, ...}.</div>
+<h3>Read one student by ID</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>def get_student_by_id(student_id):
+    connection = get_connection()
+    cursor = None
+    try:
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT id, name, email, age FROM students WHERE id = %s",
+            (student_id,)
+        )
+        return cursor.fetchone()  # None if not found
+    finally:
+        if cursor is not None:
+            cursor.close()
+        connection.close()
+
+print(get_student_by_id(1))</code></pre></div>
+<p><strong>Expected:</strong> the record for ID 1, or <code>None</code> if no matching student exists. <strong>Common mistake:</strong> forgetting the comma in a single-value tuple: use <code>(student_id,)</code>.</p>
+<p><strong>Exercise:</strong> retrieve students whose age is greater than 20 and order them by name.</p>
+</section>
+
+<section class="py5-section" id="py5-create">
+<h2>10. CREATE: insert a student</h2>
+<p><strong>Purpose:</strong> INSERT adds a new record. MySQL generates the ID because the schema defines <code>AUTO_INCREMENT</code>.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>def create_student(name, email, age):
+    name = name.strip()
+    email = email.strip().lower()
+    if not name:
+        raise ValueError("Name is required")
+    if "@" not in email:
+        raise ValueError("Enter a valid email")
+    if age is not None and not 1 <= age <= 120:
+        raise ValueError("Age must be between 1 and 120")
+
+    connection = get_connection()
+    cursor = None
+    try:
+        cursor = connection.cursor()
+        cursor.execute(
+            "INSERT INTO students (name, email, age) VALUES (%s, %s, %s)",
+            (name, email, age)
+        )
+        connection.commit()
+        return cursor.lastrowid
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        if cursor is not None:
+            cursor.close()
+        connection.close()
+
+new_id = create_student("Leena", "leena@example.com", 21)
+print("Created student ID:", new_id)</code></pre></div>
+<div class="py5-output">Expected: Created student ID: 4 (the actual ID depends on the rows already stored).</div>
+<p><strong>Explanation:</strong> input validation catches obvious errors before sending data to the database. The SQL placeholders keep user values separate from SQL structure. <code>commit()</code> makes the insert permanent. If an error occurs before commit, <code>rollback()</code> cancels the transaction.</p>
+<p><strong>Common mistakes:</strong> inserting a duplicate email, omitting the tuple around parameter values, or forgetting to commit. <strong>Security:</strong> never concatenate a name or email into SQL.</p>
+</section>
+
+<section class="py5-section" id="py5-update">
+<h2>11. UPDATE: modify an existing student</h2>
+<p>UPDATE changes the columns of rows matching a condition. The ID should be validated, and the WHERE clause should be intentional.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>def update_student(student_id, age):
+    if not isinstance(student_id, int) or student_id <= 0:
+        raise ValueError("Student ID must be a positive integer")
+    if not isinstance(age, int) or not 1 <= age <= 120:
+        raise ValueError("Age must be between 1 and 120")
+
+    connection = get_connection()
+    cursor = None
+    try:
+        cursor = connection.cursor()
+        cursor.execute(
+            "UPDATE students SET age = %s WHERE id = %s",
+            (age, student_id)
+        )
+        connection.commit()
+        return cursor.rowcount
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        if cursor is not None:
+            cursor.close()
+        connection.close()
+
+print("Rows matched/changed:", update_student(1, 21))</code></pre></div>
+<div class="py5-output">Expected: Rows matched/changed: 1 when one row is updated. If the ID does not exist, the count is 0. Connector/MySQL settings can affect whether unchanged values count as changed rows.</div>
+<p><strong>Common mistake:</strong> omitting <code>WHERE id = %s</code> and unintentionally updating every student. Always check the target ID and consider reporting a not-found result when the row count is zero.</p>
+<p><strong>Exercise:</strong> change the age of student 2 to 23 and verify it with SELECT.</p>
+</section>
+
+<section class="py5-section" id="py5-delete">
+<h2>12. DELETE: remove a student</h2>
+<p>DELETE removes rows. In a real system, deletion may need authorization, confirmation, audit logging or a soft-delete design.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>def delete_student(student_id):
+    if not isinstance(student_id, int) or student_id <= 0:
+        raise ValueError("Student ID must be a positive integer")
+
+    connection = get_connection()
+    cursor = None
+    try:
+        cursor = connection.cursor()
+        cursor.execute(
+            "DELETE FROM students WHERE id = %s",
+            (student_id,)
+        )
+        connection.commit()
+        return cursor.rowcount
+    except Exception:
+        connection.rollback()
+        raise
+    finally:
+        if cursor is not None:
+            cursor.close()
+        connection.close()
+
+deleted = delete_student(3)
+print("Rows deleted:", deleted)</code></pre></div>
+<div class="py5-output">Expected: Rows deleted: 1 if ID 3 existed; otherwise 0.</div>
+<div class="py5-callout py5-warning"><strong>Safety habit:</strong> before a real DELETE, run a SELECT with the same WHERE condition and verify the target. Never use a broad DELETE statement casually.</div>
+<p><strong>Common mistake:</strong> confusing deleting a row with dropping a table. <code>DELETE</code> removes matching rows; <code>DROP TABLE</code> removes the table definition and its data.</p>
+</section>
+
+<section class="py5-section" id="py5-reusable">
+<h2>13. Reusable Student CRUD application</h2>
+<p>This example is organized into small functions so the terminal interface and a future API can reuse the same database operations. Save as <code>student_app.py</code>. First install the connector and set the environment variables described earlier.</p>
+<details class="py5-details"><summary>View complete reusable database module</summary>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>import os
+import logging
+import mysql.connector
+from mysql.connector import Error, IntegrityError
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s"
+)
+logger = logging.getLogger("student_app")
+
+
+def get_connection():
+    """Open a short-lived connection using environment configuration."""
+    return mysql.connector.connect(
+        host=os.getenv("DB_HOST", "127.0.0.1"),
+        port=int(os.getenv("DB_PORT", "3306")),
+        database=os.getenv("DB_NAME", "python_school"),
+        user=os.getenv("DB_USER", "student_app"),
+        password=os.getenv("DB_PASSWORD", ""),
+        connection_timeout=5,
+    )
+
+
+def _validate_student(name, email, age):
+    name = name.strip()
+    email = email.strip().lower()
+    if not name:
+        raise ValueError("Name is required.")
+    if "@" not in email or email.startswith("@") or email.endswith("@"):
+        raise ValueError("Enter a valid email address.")
+    if age is not None and not 1 <= age <= 120:
+        raise ValueError("Age must be between 1 and 120.")
+    return name, email, age
+
+
+def create_student(name, email, age):
+    name, email, age = _validate_student(name, email, age)
+    connection = cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(
+            "INSERT INTO students (name, email, age) VALUES (%s, %s, %s)",
+            (name, email, age)
+        )
+        connection.commit()
+        logger.info("Created student id=%s", cursor.lastrowid)
+        return cursor.lastrowid
+    except IntegrityError:
+        if connection and connection.is_connected():
+            connection.rollback()
+        logger.warning("Student insert rejected by a database constraint")
+        raise ValueError("That email may already be registered.")
+    except Error:
+        if connection and connection.is_connected():
+            connection.rollback()
+        logger.exception("Database error while creating student")
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+
+
+def get_students():
+    connection = cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT id, name, email, age, created_at "
+            "FROM students ORDER BY id"
+        )
+        return cursor.fetchall()
+    except Error:
+        logger.exception("Database error while listing students")
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+
+
+def get_student_by_id(student_id):
+    if not isinstance(student_id, int) or student_id <= 0:
+        raise ValueError("Student ID must be a positive integer.")
+    connection = cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor(dictionary=True)
+        cursor.execute(
+            "SELECT id, name, email, age, created_at "
+            "FROM students WHERE id = %s",
+            (student_id,)
+        )
+        return cursor.fetchone()
+    except Error:
+        logger.exception("Database error while searching for student")
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+
+
+def update_student(student_id, age):
+    if not isinstance(student_id, int) or student_id <= 0:
+        raise ValueError("Student ID must be a positive integer.")
+    if not isinstance(age, int) or not 1 <= age <= 120:
+        raise ValueError("Age must be between 1 and 120.")
+    connection = cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute(
+            "UPDATE students SET age = %s WHERE id = %s",
+            (age, student_id)
+        )
+        changed = cursor.rowcount
+        connection.commit()
+        logger.info("Update attempted for student id=%s", student_id)
+        return changed
+    except Error:
+        if connection and connection.is_connected():
+            connection.rollback()
+        logger.exception("Database error while updating student")
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+
+
+def delete_student(student_id):
+    if not isinstance(student_id, int) or student_id <= 0:
+        raise ValueError("Student ID must be a positive integer.")
+    connection = cursor = None
+    try:
+        connection = get_connection()
+        cursor = connection.cursor()
+        cursor.execute("DELETE FROM students WHERE id = %s", (student_id,))
+        deleted = cursor.rowcount
+        connection.commit()
+        logger.info("Delete attempted for student id=%s", student_id)
+        return deleted
+    except Error:
+        if connection and connection.is_connected():
+            connection.rollback()
+        logger.exception("Database error while deleting student")
+        raise
+    finally:
+        if cursor:
+            cursor.close()
+        if connection and connection.is_connected():
+            connection.close()
+
+
+def read_int(prompt, minimum=1, maximum=120):
+    raw = input(prompt).strip()
+    try:
+        value = int(raw)
+    except ValueError:
+        raise ValueError("Please enter a whole number.")
+    if not minimum <= value <= maximum:
+        raise ValueError(f"Enter a number from {minimum} to {maximum}.")
+    return value
+
+
+def main():
+    menu = (
+        "\\nSTUDENT MANAGEMENT\\n"
+        "1. Add student\\n2. List students\\n3. Search by ID\\n"
+        "4. Update age\\n5. Delete student\\n0. Exit"
+    )
+    while True:
+        print(menu)
+        choice = input("Choose: ").strip()
+        try:
+            if choice == "1":
+                name = input("Name: ")
+                email = input("Email: ")
+                age = read_int("Age (1-120): ")
+                print("Created student ID:", create_student(name, email, age))
+            elif choice == "2":
+                for student in get_students():
+                    print(student)
+            elif choice == "3":
+                student_id = read_int("Student ID: ", 1, 2_147_483_647)
+                print(get_student_by_id(student_id) or "Student not found.")
+            elif choice == "4":
+                student_id = read_int("Student ID: ", 1, 2_147_483_647)
+                age = read_int("New age (1-120): ")
+                count = update_student(student_id, age)
+                print("Updated." if count else "Student not found or unchanged.")
+            elif choice == "5":
+                student_id = read_int("Student ID: ", 1, 2_147_483_647)
+                confirm = input("Type DELETE to confirm: ")
+                if confirm == "DELETE":
+                    count = delete_student(student_id)
+                    print("Deleted." if count else "Student not found.")
+                else:
+                    print("Cancelled.")
+            elif choice == "0":
+                print("Goodbye!")
+                break
+            else:
+                print("Choose one of the listed menu options.")
+        except ValueError as exc:
+            print("Input:", exc)
+        except Error:
+            print("Database unavailable or operation failed. Check configuration and logs.")
+
+
+if __name__ == "__main__":
+    main()</code></pre></div>
+</details>
+<h3>Function responsibilities</h3>
+<table class="py5-table"><thead><tr><th>Function</th><th>Responsibility</th></tr></thead><tbody><tr><td><code>get_connection()</code></td><td>Reads configuration and opens a MySQL connection.</td></tr><tr><td><code>create_student()</code></td><td>Validates fields, inserts a row, commits, and handles duplicate email.</td></tr><tr><td><code>get_students()</code></td><td>Returns all students as dictionaries.</td></tr><tr><td><code>get_student_by_id()</code></td><td>Returns one student or <code>None</code>.</td></tr><tr><td><code>update_student()</code></td><td>Updates age for one ID and returns the affected-row count.</td></tr><tr><td><code>delete_student()</code></td><td>Deletes one ID after confirmation in the CLI.</td></tr></tbody></table>
+<div class="py5-callout py5-warning">This is a teaching example, not a complete production template. Add stronger email validation, authentication/authorization for multi-user access, schema migrations, structured error responses and tests before production. Do not show raw database errors or secrets to end users.</div>
+</section>
+
+<section class="py5-section" id="py5-transactions">
+<h2>14. Transactions, commit and rollback</h2>
+<p>A transaction groups database changes so they can succeed together or be cancelled together. This matters when a business operation changes multiple related records.</p>
+<div class="py5-diagram"><div class="py5-flow"><div class="py5-node">BEGIN TRANSACTION</div><div class="py5-arrow">↓</div><div class="py5-node">Operation A</div><div class="py5-arrow">↓</div><div class="py5-node">Operation B</div><div class="py5-arrow">↓</div><div class="py5-node py5-orange">Did all operations succeed?</div><div class="py5-grid" style="width:100%;grid-template-columns:1fr 1fr"><div class="py5-card" style="text-align:center"><div class="py5-node py5-green">YES → COMMIT</div><p>Save all changes.</p></div><div class="py5-card" style="text-align:center"><div class="py5-node py5-orange">NO → ROLLBACK</div><p>Cancel uncommitted changes.</p></div></div></div></div>
+<div class="py5-controls"><label for="py5-transaction-select"><strong>Simulate transaction result:</strong></label><select class="py5-select" id="py5-transaction-select"><option value="yes">All operations succeed</option><option value="no">Operation B fails</option></select><button class="py5-btn" id="py5-transaction-run" type="button">Run simulation</button></div>
+<div class="py5-detail" id="py5-transaction-result" aria-live="polite">Choose a scenario and run the safe visual simulation. No database is contacted.</div>
+<h3>Python transaction pattern</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>connection = get_connection()
+cursor = None
+try:
+    cursor = connection.cursor()
+    cursor.execute(
+        "UPDATE students SET age = %s WHERE id = %s",
+        (21, 1)
+    )
+    # Additional related SQL statements could run here.
+    connection.commit()
+except Exception:
+    connection.rollback()
+    raise
+finally:
+    if cursor:
+        cursor.close()
+    connection.close()</code></pre></div>
+<p><strong>Commit:</strong> make the transaction's changes permanent. <strong>Rollback:</strong> cancel uncommitted changes after failure. A successful SELECT normally does not need a commit. In MySQL, transactional guarantees depend on using a transactional storage engine such as InnoDB.</p>
+</section>
+
+<section class="py5-section" id="py5-security">
+<h2>15. Database security checklist</h2>
+<div class="py5-grid">
+<div class="py5-card"><h3>Access and secrets</h3><ul><li>Use a dedicated application database user.</li><li>Grant least privilege; avoid root/admin for the app.</li><li>Use environment variables or a secret manager.</li><li>Never commit passwords, tokens or private keys.</li><li>Rotate credentials when exposed.</li></ul></div>
+<div class="py5-card"><h3>Queries and operations</h3><ul><li>Use parameterized SQL for all user values.</li><li>Validate inputs and enforce database constraints.</li><li>Set connection timeouts and handle errors safely.</li><li>Log operation context without logging passwords.</li><li>Back up data and test restoration.</li></ul></div>
+<div class="py5-card"><h3>Network and deployment</h3><ul><li>Keep MySQL on a private network or localhost for development.</li><li>Do not expose MySQL directly to the public internet.</li><li>Use TLS where connections cross untrusted networks.</li><li>Restrict firewall rules and database host access.</li><li>Use pooling carefully in multi-request applications.</li></ul></div>
+<div class="py5-card"><h3>Configuration diagram</h3><div class="py5-flow"><div class="py5-node">Application</div><div class="py5-arrow">↓</div><div class="py5-node">Environment configuration</div><div class="py5-arrow">↓</div><div class="py5-node py5-green">Validated settings</div><div class="py5-arrow">↓</div><div class="py5-node">Database / API connections</div></div></div>
+</div>
+<h3>Environment variables example</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>import os
+
+db_host = os.getenv("DB_HOST", "127.0.0.1")
+db_port = int(os.getenv("DB_PORT", "3306"))
+db_name = os.getenv("DB_NAME", "python_school")
+db_user = os.getenv("DB_USER", "student_app")
+db_password = os.getenv("DB_PASSWORD")
+
+if not db_password:
+    raise RuntimeError("DB_PASSWORD is not configured")</code></pre></div>
+<p>In production, validate all configuration at startup and fail clearly if required values are missing. Keep any local <code>.env</code> file out of source control; commit only a safe <code>.env.example</code> containing placeholder values.</p>
+<h3>Connection pooling concepts</h3>
+<p>A connection pool maintains a limited set of open connections and lends them to operations as needed. It reduces repeated connection setup overhead and helps cap concurrent connections. Pools must be sized for the server and application, and borrowed connections must be returned reliably. For a small command-line script, opening and closing one connection per operation can be simpler; for a web application, a well-managed pool or framework-supported lifecycle is often appropriate.</p>
+<h3>Logging example</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s"
+)
+logger = logging.getLogger(__name__)
+
+logger.info("Student list requested")
+logger.warning("Student not found")
+logger.exception("Database operation failed")</code></pre></div>
+<p>Use <code>logger.exception()</code> inside an exception handler when a traceback is useful for operators. Avoid logging credentials, full payment data, or sensitive personal information.</p>
+</section>
+
+<section class="py5-section" id="py5-fastapi">
+<h2>16. FastAPI integration: the next step</h2>
+<p>A web client should call a protected backend API; the backend validates input, applies business rules and talks to MySQL. The browser should never connect directly to MySQL or receive database credentials.</p>
+<div class="py5-diagram"><div class="py5-flow"><div class="py5-node">Browser / client</div><div class="py5-arrow">↓ HTTP request</div><div class="py5-node py5-blue">FastAPI endpoint</div><div class="py5-arrow">↓</div><div class="py5-node">Pydantic validation</div><div class="py5-arrow">↓</div><div class="py5-node">CRUD service</div><div class="py5-arrow">↓</div><div class="py5-node">Database access layer</div><div class="py5-arrow">↓</div><div class="py5-node py5-green">MySQL</div><div class="py5-arrow">↓ JSON response</div><div class="py5-node">Browser / client</div></div></div>
+<table class="py5-table"><thead><tr><th>HTTP method</th><th>CRUD meaning</th><th>Example endpoint</th></tr></thead><tbody><tr><td><code>POST</code></td><td>Create</td><td><code>/students</code></td></tr><tr><td><code>GET</code></td><td>Read</td><td><code>/students</code>, <code>/students/{id}</code></td></tr><tr><td><code>PUT</code> / <code>PATCH</code></td><td>Update</td><td><code>/students/{id}</code></td></tr><tr><td><code>DELETE</code></td><td>Delete</td><td><code>/students/{id}</code></td></tr></tbody></table>
+<h3>Small FastAPI example</h3>
+<p>Install FastAPI and an ASGI server with <code>py -m pip install fastapi uvicorn</code>. This example demonstrates validation and calling the reusable functions from a module named <code>student_app.py</code>. It assumes that module contains the CRUD functions from the previous section.</p>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>from fastapi import FastAPI, HTTPException, status
+from pydantic import BaseModel, Field, EmailStr
+from mysql.connector import Error
+import student_app
+
+app = FastAPI(title="Student API")
+
+class StudentCreate(BaseModel):
+    name: str = Field(min_length=1, max_length=100)
+    email: EmailStr
+    age: int = Field(ge=1, le=120)
+
+@app.get("/students")
+def list_students():
+    try:
+        return student_app.get_students()
+    except Error:
+        raise HTTPException(
+            status_code=503, detail="Student service temporarily unavailable"
+        )
+
+@app.get("/students/{student_id}")
+def read_student(student_id: int):
+    if student_id <= 0:
+        raise HTTPException(status_code=422, detail="ID must be positive")
+    try:
+        student = student_app.get_student_by_id(student_id)
+    except Error:
+        raise HTTPException(status_code=503, detail="Database unavailable")
+    if student is None:
+        raise HTTPException(status_code=404, detail="Student not found")
+    return student
+
+@app.post("/students", status_code=status.HTTP_201_CREATED)
+def add_student(payload: StudentCreate):
+    try:
+        student_id = student_app.create_student(
+            payload.name, payload.email, payload.age
+        )
+        return {"id": student_id, "message": "Student created"}
+    except ValueError as exc:
+        raise HTTPException(status_code=409, detail=str(exc))
+    except Error:
+        raise HTTPException(status_code=503, detail="Database unavailable")</code></pre></div>
+<div class="py5-callout py5-warning">This is an introductory slice, not the entire production API. Add update and delete endpoints, authentication, authorization, rate limiting, appropriate status codes, tests and a carefully managed connection lifecycle. A synchronous MySQL connector is fine for a beginner synchronous route; do not block async routes with synchronous database calls without considering the execution model.</div>
+<h3>Run the API</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>py -m uvicorn api:app --reload</code></pre></div>
+<p>Save the FastAPI code as <code>api.py</code>. Once running locally, the interactive API docs are typically at <code>/docs</code> on the local server. Do not expose a development server or database publicly without appropriate deployment controls.</p>
+</section>
+
+<section class="py5-section" id="py5-exercises">
+<h2>17. Exercises</h2>
+<div class="py5-grid">
+<div class="py5-card"><h3>Beginner</h3><ol><li>Create the database and table.</li><li>Insert two students with unique emails.</li><li>List students ordered by name.</li><li>Find a student by ID.</li></ol></div>
+<div class="py5-card"><h3>Intermediate</h3><ol><li>Write a function to search by email.</li><li>Update a student's name and age.</li><li>Handle duplicate email errors.</li><li>Use a transaction for two related inserts.</li></ol></div>
+<div class="py5-card"><h3>Security challenge</h3><ol><li>Replace every concatenated SQL value with a parameter.</li><li>Use a dedicated DB account with limited permissions.</li><li>Move credentials to environment variables.</li><li>Ensure logs never contain passwords.</li></ol></div>
+<div class="py5-card"><h3>Design challenge</h3><p>Add a <code>courses</code> table and an <code>enrollments</code> table with foreign keys. Explain how to prevent an enrollment for a nonexistent student.</p></div>
+</div>
+</section>
+
+<section class="py5-section" id="py5-quiz">
+<h2>18. Knowledge quiz</h2>
+<p>Choose one answer for each question, then select <strong>Check answers</strong>. Feedback is calculated locally from fixed choices; no code or SQL is executed.</p>
+<form id="py5-quiz-form">
+<div class="py5-quiz-q" data-answer="b"><strong>1. What uniquely identifies a row in a table?</strong><label><input type="radio" name="py5-q1" value="a"> A table name</label><label><input type="radio" name="py5-q1" value="b"> A primary key</label><label><input type="radio" name="py5-q1" value="c"> A SQL comment</label><div class="py5-feedback"></div></div>
+<div class="py5-quiz-q" data-answer="c"><strong>2. How should a Python value be passed to MySQL Connector/Python?</strong><label><input type="radio" name="py5-q2" value="a"> Concatenate it into the SQL string</label><label><input type="radio" name="py5-q2" value="b"> Put it in a comment</label><label><input type="radio" name="py5-q2" value="c"> Use a %s placeholder and a parameter tuple</label><div class="py5-feedback"></div></div>
+<div class="py5-quiz-q" data-answer="a"><strong>3. What does commit() do?</strong><label><input type="radio" name="py5-q3" value="a"> Makes transaction changes permanent</label><label><input type="radio" name="py5-q3" value="b"> Closes the database server</label><label><input type="radio" name="py5-q3" value="c"> Creates a Python variable</label><div class="py5-feedback"></div></div>
+<div class="py5-quiz-q" data-answer="b"><strong>4. Which HTTP method usually creates a resource?</strong><label><input type="radio" name="py5-q4" value="a"> GET</label><label><input type="radio" name="py5-q4" value="b"> POST</label><label><input type="radio" name="py5-q4" value="c"> DELETE</label><div class="py5-feedback"></div></div>
+<div class="py5-quiz-q" data-answer="c"><strong>5. Where should production database passwords be stored?</strong><label><input type="radio" name="py5-q5" value="a"> In a public HTML page</label><label><input type="radio" name="py5-q5" value="b"> In committed source code</label><label><input type="radio" name="py5-q5" value="c"> In a protected configuration or secret manager</label><div class="py5-feedback"></div></div>
+<div class="py5-quiz-q" data-answer="a"><strong>6. What is rollback() for?</strong><label><input type="radio" name="py5-q6" value="a"> Cancel uncommitted transaction changes</label><label><input type="radio" name="py5-q6" value="b"> Sort query results</label><label><input type="radio" name="py5-q6" value="c"> Install MySQL</label><div class="py5-feedback"></div></div>
+<div class="py5-controls"><button class="py5-btn" type="submit">Check answers</button><button class="py5-btn py5-light" type="reset">Reset quiz</button><strong id="py5-quiz-score" aria-live="polite"></strong></div>
+</form>
+</section>
+
+<section class="py5-section" id="py5-final-project">
+<h2>19. Final project: Student Management System</h2>
+<p>Build a terminal program with add, list, search by ID, update age and delete options. Use the SQL schema above and the reusable code in Section 13 as the foundation.</p>
+<h3>Suggested directory layout</h3>
+<div class="py5-tree">student-management/
+├── student_app.py       # Reusable CRUD functions and CLI
+├── api.py               # Optional FastAPI endpoints
+├── requirements.txt     # Python dependencies
+├── .env.example         # Safe placeholder configuration only
+└── README.md            # Setup and run instructions</div>
+<h3>requirements.txt</h3>
+<div class="py5-codewrap"><button class="py5-copy" type="button">Copy code</button><pre class="py5-code"><code>mysql-connector-python
+fastapi
+uvicorn</code></pre></div>
+<p>For a team project, pin tested package versions after verifying compatibility. Never add a real <code>.env</code> file to version control. The <code>.env.example</code> file should contain placeholders such as <code>DB_PASSWORD=replace_me</code>, never a real credential.</p>
+<h3>Run from Windows terminal</h3>
+<ol><li>Start MySQL Server and create <code>python_school.students</code>.</li><li>Open PowerShell in the project directory.</li><li>Create a virtual environment: <code>py -m venv .venv</code>.</li><li>Activate it: <code>.\.venv\Scripts\Activate.ps1</code>.</li><li>Install dependencies: <code>py -m pip install -r requirements.txt</code>.</li><li>Set <code>DB_HOST</code>, <code>DB_PORT</code>, <code>DB_NAME</code>, <code>DB_USER</code> and <code>DB_PASSWORD</code> in that terminal session.</li><li>Run <code>py student_app.py</code> and test each menu item.</li></ol>
+<h3>File storage versus database storage</h3>
+<table class="py5-table"><thead><tr><th>File-based JSON</th><th>MySQL database</th></tr></thead><tbody><tr><td>Simple to learn and useful for small local tools.</td><td>Designed for structured queries and concurrent application access.</td></tr><tr><td>Filtering and updates often require application code to load and rewrite data.</td><td>SQL supports filtering, sorting, joins and aggregates.</td></tr><tr><td>Concurrency, consistency and recovery need careful handling.</td><td>Transactions, constraints and access control help manage consistency.</td></tr><tr><td>Good for configuration, exports and small datasets.</td><td>Better for multi-user business applications and growing structured data.</td></tr></tbody></table>
+</section>
+
+<section class="py5-section" id="py5-summary">
+<h2>20. Course completion summary</h2>
+<p>You have reached <strong>Page 5 of 5</strong>. The key skill is understanding the full path: validate input → call a reusable function → execute parameterized SQL → handle the transaction → return a safe result.</p>
+<div class="py5-checklist" id="py5-checklist">
+<label class="py5-check"><input type="checkbox"> I can explain databases, tables, rows, columns and primary keys.</label>
+<label class="py5-check"><input type="checkbox"> I can create the database and students table in MySQL.</label>
+<label class="py5-check"><input type="checkbox"> I can connect Python using MySQL Connector/Python.</label>
+<label class="py5-check"><input type="checkbox"> I can use parameterized INSERT, SELECT, UPDATE and DELETE statements.</label>
+<label class="py5-check"><input type="checkbox"> I understand commit, rollback and resource cleanup.</label>
+<label class="py5-check"><input type="checkbox"> I can keep credentials out of source control and public HTML.</label>
+<label class="py5-check"><input type="checkbox"> I can explain how FastAPI calls a database layer.</label>
+<label class="py5-check"><input type="checkbox"> I have tested the Student Management System locally.</label>
+</div>
+<div class="py5-controls"><button class="py5-btn" id="py5-save-progress" type="button">Save checklist on this device</button><button class="py5-btn py5-light" id="py5-clear-progress" type="button">Clear checklist</button><span id="py5-checklist-status" class="py5-muted" aria-live="polite"></span></div>
+<div class="py5-callout py5-success"><strong>Next professional step:</strong> add automated tests, authentication and authorization, migrations, structured logging, API error responses, deployment configuration and a managed database connection lifecycle.</div>
+<div class="py5-controls" style="justify-content:space-between"><a class="py5-btn py5-light" href="page4.html">← Page 4: Modules, Files & Exceptions</a><a class="py5-btn" href="#py5-intro">Back to top ↑</a></div>
+</section>
+<footer class="py5-footer">RBUtech · Python Programming Learning Path · Page 5 of 5<br><span class="py5-mini">Educational content. Test database examples only in a local development environment you control.</span></footer>
+</main>
+</div>
+<script>
+(function(){
+"use strict";
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>Array.from(r.querySelectorAll(s));
+// Copy code buttons use the browser clipboard when available; no code is executed.
+$$(".py5-copy").forEach(button=>{
+ button.addEventListener("click",async()=>{
+  const code=$("code",button.parentElement);
+  if(!code)return;
+  const text=code.innerText;
+  try{
+   if(navigator.clipboard && window.isSecureContext){await navigator.clipboard.writeText(text);}
+   else{
+    const area=document.createElement("textarea");area.value=text;area.setAttribute("readonly","");area.style.position="fixed";area.style.opacity="0";document.body.appendChild(area);area.select();
+    const ok=document.execCommand("copy");area.remove();if(!ok)throw new Error("copy unavailable");
+   }
+   button.textContent="Copied!";
+  }catch(e){button.textContent="Select code";const range=document.createRange();range.selectNodeContents(code);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);}
+  setTimeout(()=>button.textContent="Copy code",1400);
+ });
+});
+// CRUD cards display predefined educational descriptions only.
+const crudContent={
+ create:["CREATE — INSERT","Add a new student record. MySQL assigns the ID automatically.","INSERT INTO students (name, email, age) VALUES (%s, %s, %s)"],
+ read:["READ — SELECT","Retrieve records. Use WHERE to filter and ORDER BY to sort.","SELECT id, name, email, age FROM students WHERE id = %s"],
+ update:["UPDATE — UPDATE","Change selected fields for the row matching an ID. Check the WHERE clause carefully.","UPDATE students SET age = %s WHERE id = %s"],
+ delete:["DELETE — DELETE","Remove the row matching an ID. Verify the target and ask for confirmation when appropriate.","DELETE FROM students WHERE id = %s"]
+};
+$$("[data-crud]").forEach(button=>button.addEventListener("click",()=>{
+ $$("[data-crud]").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+ const d=crudContent[button.dataset.crud];const box=$("#py5-crud-detail");
+ box.replaceChildren();
+ const strong=document.createElement("strong");strong.textContent=d[0];
+ const p=document.createElement("p");p.textContent=d[1];
+ const code=document.createElement("code");code.textContent=d[2];
+ box.append(strong,p,code);
+}));
+// Transaction simulator is a visual-only fixed scenario.
+$("#py5-transaction-run").addEventListener("click",()=>{
+ const success=$("#py5-transaction-select").value==="yes";
+ const box=$("#py5-transaction-result");box.replaceChildren();
+ const title=document.createElement("strong");title.textContent=success?"All operations succeeded → COMMIT":"Operation B failed → ROLLBACK";
+ const p=document.createElement("p");p.textContent=success?"The simulation shows that the transaction is committed and its changes are saved. No database was contacted.":"The simulation shows that uncommitted changes are rolled back so the transaction does not leave a partial result. No database was contacted.";
+ box.append(title,p);
+});
+// Quiz checks only predefined radio values.
+$("#py5-quiz-form").addEventListener("submit",e=>{
+ e.preventDefault();let score=0;
+ $$(".py5-quiz-q").forEach((q,i)=>{
+  const selected=$('input[type="radio"]:checked',q);const feedback=$(".py5-feedback",q);
+  if(selected&&selected.value===q.dataset.answer){score++;feedback.textContent="Correct.";feedback.className="py5-feedback py5-good-text";}
+  else{feedback.textContent="Not quite. Review the section and try again.";feedback.className="py5-feedback py5-bad-text";}
+ });
+ $("#py5-quiz-score").textContent=`Score: ${score}/6`;
+});
+$("#py5-quiz-form").addEventListener("reset",()=>{
+ setTimeout(()=>{$$(".py5-feedback").forEach(f=>{f.textContent="";f.className="py5-feedback";});$("#py5-quiz-score").textContent="";},0);
+});
+// Checklist state is saved only when the learner chooses to save; storage is local to this browser.
+const checklist=()=>$$('#py5-checklist input[type="checkbox"]');
+function updateChecklistStatus(){const items=checklist();const done=items.filter(i=>i.checked).length;$("#py5-checklist-status").textContent=`${done} of ${items.length} completed.`;}
+$("#py5-save-progress").addEventListener("click",()=>{
+ try{localStorage.setItem("py5-student-checklist",JSON.stringify(checklist().map(i=>i.checked)));$("#py5-checklist-status").textContent="Checklist saved on this device.";}
+ catch(e){$("#py5-checklist-status").textContent="This browser blocked local storage; checklist remains available until you leave.";}
+});
+$("#py5-clear-progress").addEventListener("click",()=>{
+ checklist().forEach(i=>i.checked=false);try{localStorage.removeItem("py5-student-checklist");}catch(e){}updateChecklistStatus();
+});
+try{const saved=JSON.parse(localStorage.getItem("py5-student-checklist")||"null");if(Array.isArray(saved))checklist().forEach((i,n)=>i.checked=Boolean(saved[n]));}catch(e){}
+checklist().forEach(i=>i.addEventListener("change",updateChecklistStatus));updateChecklistStatus();
+// Reading progress and active section navigation.
+function updateProgress(){
+ const max=document.documentElement.scrollHeight-window.innerHeight;
+ const percent=max>0?Math.round(window.scrollY/max*100):100;
+ $("#py5-progress-bar").style.width=percent+"%";$("#py5-progress-text").textContent=percent+"%";$("#py5-progress").setAttribute("aria-valuenow",String(percent));
+}
+window.addEventListener("scroll",updateProgress,{passive:true});window.addEventListener("resize",updateProgress);updateProgress();
+const navLinks=$$("#py5-nav a");
+if("IntersectionObserver" in window){
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{if(entry.isIntersecting){navLinks.forEach(a=>a.classList.toggle("py5-active",a.hash==="#"+entry.target.id));}});
+ },{rootMargin:"-15% 0px -70% 0px"});
+ $$("main section[id],main header[id]").forEach(s=>observer.observe(s));
+}
+})();
+</script>
+</body>
+</html></main></div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
+</div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
+</body></html>
