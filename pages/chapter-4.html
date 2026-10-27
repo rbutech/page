@@ -1,0 +1,2845 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101828"><title>chapter-4</title>
+<style>
+:root{--primary:#5145e5;--primary-dark:#3930b8;--ink:#172033;--muted:#667085;--border:#e6e8ef;--surface:#fff;--background:#f7f8fc;--max:1240px;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #a5a0ff;outline-offset:4px}.site{width:100%;min-height:100vh;overflow:clip}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.header-inner{max-width:var(--max);min-height:80px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#6558f5,#4035bd);color:#fff;font-size:22px;font-weight:800;box-shadow:0 6px 16px rgba(81,69,229,.24)}.site-title{display:block;color:var(--ink);font-size:19px;font-weight:750;line-height:1.3;letter-spacing:-.5px;overflow-wrap:anywhere}.brand-caption{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}.header-actions{display:flex;align-items:center;gap:14px}.main-nav{display:flex;align-items:center;gap:5px;min-width:0}.main-nav a{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;color:#475467;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.main-nav a:hover,.main-nav a[aria-current=page]{background:#f0efff;color:var(--primary)}.main-nav .sep{display:none}.contact-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 17px;border-radius:11px;background:var(--primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.contact-button:hover{background:var(--primary-dark);transform:translateY(-1px)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+.body{display:grid;grid-template-columns:230px minmax(0,1fr);width:100%;max-width:var(--max);margin:0 auto;padding:36px 28px 60px;gap:28px;align-items:start;min-width:0}.body>*{min-width:0}.body.no-sidebar{grid-template-columns:minmax(0,1fr)}.sidebar{position:sticky;top:108px;min-width:0;padding:21px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar:empty{display:none}.sidebar:not(:empty)::before{content:"ON THIS PAGE";display:block;margin:0 10px 13px;color:#98a2b3;font-size:10px;font-weight:800;letter-spacing:1.3px}.sidebar a{display:flex;align-items:center;margin:4px 0;padding:10px 11px;border-radius:10px;color:#475467;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none;overflow-wrap:anywhere;transition:background .2s,color .2s}.sidebar a:hover,.sidebar a[aria-current=page]{background:#f0efff;color:var(--primary)}.content{display:block;width:100%;min-width:0;max-width:100%;padding:clamp(32px,5vw,64px);border:1px solid #e8e5ff;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(170,158,255,.20),transparent 42%),linear-gradient(135deg,#fff 0%,#f7f6ff 100%);box-shadow:var(--shadow);font-size:17px;line-height:1.8;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h1{max-width:100%;margin:0 0 22px;color:#141b34;font-size:clamp(32px,4.5vw,52px);font-weight:780;line-height:1.15;letter-spacing:-1.2px;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h2{max-width:100%;margin:34px 0 14px;color:var(--ink);font-size:clamp(23px,3vw,30px);line-height:1.3;letter-spacing:-.5px;overflow-wrap:break-word;word-break:normal}.content h3{max-width:100%;margin:26px 0 10px;font-size:20px;line-height:1.4;overflow-wrap:break-word;word-break:normal}.content p,.content li{max-width:100%;color:#475467;font-size:17px;line-height:1.85;overflow-wrap:break-word;word-break:normal;white-space:normal}.content a{color:var(--primary);text-underline-offset:3px}.content img{max-width:100%;height:auto;border-radius:12px}.content table{width:100%;max-width:100%;border-collapse:collapse;overflow-wrap:break-word;background:#fff}.content th,.content td{padding:12px;border:1px solid var(--border);text-align:left}.content th{background:#f8f8fc}.content blockquote{margin:20px 0;padding:8px 18px;border-left:4px solid var(--primary);background:#f5f4ff;color:#475467}.content pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#101828;color:#f8fafc}.content code{overflow-wrap:anywhere;word-break:normal}.site-footer{border-top:1px solid var(--border);background:#fff}.footer-inner{max-width:var(--max);margin:0 auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{color:var(--ink);font-size:13px;font-weight:750}.footer-copy{margin-top:3px;color:var(--muted);font-size:12px}.footer-links{display:flex;flex-wrap:wrap;gap:18px}.footer-links a{color:#667085;font-size:12px;text-decoration:none}.footer-links a:hover{color:var(--primary)}
+@media(max-width:980px){.header-inner{padding:12px 20px}.header-actions{gap:8px}.main-nav a{padding:8px 9px;font-size:13px}.body{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:22px 20px 40px}.content{padding:32px}}
+@media(max-width:720px){.header-inner{min-height:70px;padding:11px 16px;gap:10px}.brand-mark{width:39px;height:39px;font-size:19px}.site-title{font-size:16px}.brand-caption{font-size:9px}.header-actions{gap:8px}.contact-button{display:none}.menu-toggle{display:grid;place-items:center;flex-shrink:0}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 16px 17px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--border);background:#fff;box-shadow:0 14px 20px rgba(16,24,40,.06)}.main-nav.is-open{display:flex}.main-nav a{padding:11px 13px;font-size:14px}.body{display:flex;flex-direction:column;gap:16px;padding:16px 14px 30px}.sidebar{position:static;width:100%;padding:12px}.sidebar:not(:empty)::before{margin:0 8px 6px}.sidebar a{display:inline-flex;margin:3px;padding:8px 9px;font-size:12px}.content{width:100%;padding:28px 21px;border-radius:18px}.content h1{font-size:clamp(31px,8vw,42px);letter-spacing:-1.3px}.content p,.content li{font-size:16px}.content table{display:block;overflow-x:auto}.footer-inner{padding:22px 16px;align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><div class="site">
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>chapter-4</h1><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Learn Python modules, packages, virtual environments, files, JSON, CSV, exception handling, logging, and configuration with interactive examples.">
+<title>Python Programming — Modules, Packages, Files and Exception Handling</title>
+
+<style>
+:root {
+    --py4-primary: #2563eb;
+    --py4-primary-dark: #1d4ed8;
+    --py4-secondary: #7c3aed;
+    --py4-success: #15803d;
+    --py4-warning: #b45309;
+    --py4-danger: #b91c1c;
+    --py4-bg: #f4f7fb;
+    --py4-card: #ffffff;
+    --py4-text: #1e293b;
+    --py4-muted: #64748b;
+    --py4-border: #dbe3ef;
+    --py4-code-bg: #101827;
+    --py4-code-text: #e2e8f0;
+    --py4-radius: 14px;
+    --py4-shadow: 0 5px 20px rgba(15, 23, 42, .07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 24px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--py4-text);
+    background: var(--py4-bg);
+    line-height: 1.7;
+}
+
+.py4-layout {
+    display: grid;
+    grid-template-columns: 265px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.py4-sidebar {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 20px 14px;
+    scrollbar-width: thin;
+}
+
+.py4-brand {
+    padding: 8px 12px 18px;
+    border-bottom: 1px solid #334155;
+    margin-bottom: 16px;
+}
+
+.py4-brand strong {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+}
+
+.py4-brand span {
+    color: #93c5fd;
+    font-size: 12px;
+}
+
+.py4-menu-label {
+    color: #94a3b8;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    padding: 12px;
+}
+
+.py4-nav a {
+    display: block;
+    color: #cbd5e1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 13px;
+    margin: 2px 0;
+    transition: background .2s, color .2s;
+}
+
+.py4-nav a:hover,
+.py4-nav a.py4-active {
+    background: #1d4ed8;
+    color: white;
+}
+
+.py4-main {
+    min-width: 0;
+    padding: 28px;
+}
+
+.py4-content {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.py4-page-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.py4-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.py4-progress-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--py4-muted);
+}
+
+.py4-progress-track {
+    width: 125px;
+    height: 8px;
+    background: #dbe3ef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.py4-progress-bar {
+    width: 0;
+    height: 100%;
+    background: #16a34a;
+    transition: width .3s;
+}
+
+.py4-card,
+.py4-section {
+    background: var(--py4-card);
+    border: 1px solid var(--py4-border);
+    border-radius: var(--py4-radius);
+    box-shadow: var(--py4-shadow);
+}
+
+.py4-section {
+    padding: 25px;
+    margin-bottom: 25px;
+    scroll-margin-top: 20px;
+}
+
+.py4-intro {
+    padding: 34px;
+    background: linear-gradient(135deg, #eff6ff, #f5f3ff);
+    border: 1px solid #c7d2fe;
+    border-radius: 18px;
+    margin-bottom: 26px;
+}
+
+.py4-intro h1 {
+    margin: 0 0 12px;
+    line-height: 1.25;
+    font-size: clamp(27px, 4vw, 42px);
+    color: #172554;
+}
+
+.py4-intro p {
+    max-width: 850px;
+    color: #475569;
+}
+
+.py4-section h2 {
+    margin-top: 0;
+    font-size: clamp(22px, 3vw, 29px);
+    color: #172554;
+}
+
+.py4-section h3 {
+    color: #1e40af;
+    margin-top: 25px;
+}
+
+.py4-section h4 {
+    margin-bottom: 6px;
+}
+
+.py4-muted {
+    color: var(--py4-muted);
+}
+
+.py4-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 18px 0;
+}
+
+.py4-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0;
+}
+
+.py4-card {
+    padding: 17px;
+    box-shadow: none;
+}
+
+.py4-card h3,
+.py4-card h4 {
+    margin-top: 0;
+}
+
+.py4-callout {
+    padding: 14px 17px;
+    border-left: 4px solid var(--py4-primary);
+    background: #eff6ff;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+.py4-warning {
+    border-left-color: #f59e0b;
+    background: #fffbeb;
+}
+
+.py4-success {
+    border-left-color: #16a34a;
+    background: #f0fdf4;
+}
+
+.py4-danger {
+    border-left-color: #dc2626;
+    background: #fef2f2;
+}
+
+.py4-flow {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.py4-flow-box {
+    flex: 1 1 120px;
+    max-width: 200px;
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #bfdbfe;
+    background: #eff6ff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.py4-flow-arrow {
+    display: flex;
+    align-items: center;
+    color: var(--py4-primary);
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.py4-mindmap {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 12px;
+    align-items: stretch;
+    margin: 20px 0;
+}
+
+.py4-mindmap-center {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 18px 25px;
+    border-radius: 12px;
+    background: #1d4ed8;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: min(100%, 350px);
+}
+
+.py4-mindmap-item {
+    position: relative;
+    text-align: center;
+    padding: 15px 8px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.py4-mindmap-item::before {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 13px;
+    background: #93c5fd;
+    margin: -28px auto 15px;
+}
+
+.py4-code-wrap {
+    position: relative;
+    margin: 14px 0;
+}
+
+.py4-code-wrap pre {
+    margin: 0;
+    padding: 19px;
+    padding-top: 45px;
+    overflow-x: auto;
+    border-radius: 11px;
+    background: var(--py4-code-bg);
+    color: var(--py4-code-text);
+    font: 13px/1.7 Consolas, "Courier New", monospace;
+    tab-size: 4;
+}
+
+.py4-copy {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 1;
+    padding: 5px 10px;
+    border: 1px solid #64748b;
+    border-radius: 6px;
+    background: #334155;
+    color: #fff;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.py4-output {
+    background: #f8fafc;
+    border: 1px dashed #94a3b8;
+    border-radius: 9px;
+    padding: 12px 15px;
+    margin: 10px 0 16px;
+    font: 13px/1.6 Consolas, "Courier New", monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.py4-table-wrap {
+    overflow-x: auto;
+    margin: 18px 0;
+}
+
+.py4-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.py4-table th,
+.py4-table td {
+    padding: 11px;
+    border: 1px solid var(--py4-border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.py4-table th {
+    background: #eff6ff;
+    color: #1e3a8a;
+}
+
+.py4-tree {
+    padding: 16px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    font: 13px/1.9 Consolas, "Courier New", monospace;
+    white-space: pre;
+    overflow-x: auto;
+}
+
+.py4-tree-row {
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.py4-tree-row:hover,
+.py4-tree-row.py4-selected {
+    background: #dbeafe;
+}
+
+.py4-explorer-description {
+    padding: 14px;
+    background: #eff6ff;
+    border-radius: 10px;
+    margin-top: 12px;
+    min-height: 80px;
+}
+
+.py4-interactive {
+    border: 1px solid #bfdbfe;
+    background: #f8fbff;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 18px 0;
+}
+
+.py4-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: end;
+    margin: 12px 0;
+}
+
+.py4-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1 1 160px;
+}
+
+.py4-field label,
+.py4-label {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.py4-field input,
+.py4-field select,
+.py4-field textarea,
+.py4-input,
+.py4-select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #0f172a;
+    font: inherit;
+}
+
+.py4-button {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--py4-primary);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.py4-button:hover {
+    background: var(--py4-primary-dark);
+}
+
+.py4-button-secondary {
+    background: #475569;
+}
+
+.py4-button-success {
+    background: #15803d;
+}
+
+.py4-button-danger {
+    background: #b91c1c;
+}
+
+.py4-result {
+    margin-top: 13px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    min-height: 42px;
+    overflow-wrap: anywhere;
+}
+
+.py4-result:empty {
+    display: none;
+}
+
+.py4-error-result {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.py4-note {
+    color: #475569;
+    font-size: 13px;
+}
+
+.py4-details {
+    border: 1px solid var(--py4-border);
+    border-radius: 9px;
+    margin: 13px 0;
+    background: white;
+}
+
+.py4-details summary {
+    padding: 12px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #1e40af;
+}
+
+.py4-details-content {
+    padding: 0 15px 15px;
+}
+
+.py4-checklist {
+    list-style: none;
+    padding: 0;
+}
+
+.py4-checklist li {
+    margin: 9px 0;
+}
+
+.py4-checklist label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.py4-checklist input {
+    margin-top: 7px;
+    accent-color: #16a34a;
+}
+
+.py4-quiz-question {
+    padding: 15px;
+    margin: 15px 0;
+    border: 1px solid var(--py4-border);
+    border-radius: 10px;
+}
+
+.py4-quiz-question p {
+    font-weight: bold;
+}
+
+.py4-quiz-question label {
+    display: block;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.py4-quiz-feedback {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 7px;
+}
+
+.py4-footer-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.py4-footer-nav a {
+    flex: 1 1 200px;
+    text-align: center;
+    padding: 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    background: #1e40af;
+    color: white;
+}
+
+.py4-footer {
+    text-align: center;
+    color: var(--py4-muted);
+    font-size: 12px;
+    padding: 20px;
+}
+
+.py4-hidden {
+    display: none !important;
+}
+
+.py4-bullet-list li {
+    margin: 6px 0;
+}
+
+.py4-inline-code {
+    padding: 2px 5px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    font-family: Consolas, monospace;
+    font-size: .92em;
+}
+
+.py4-level {
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+.py4-level small {
+    display: block;
+    font-weight: normal;
+}
+
+.py4-level-debug { background: #64748b; }
+.py4-level-info { background: #2563eb; }
+.py4-level-warning { background: #b45309; }
+.py4-level-error { background: #b91c1c; }
+.py4-level-critical { background: #581c87; }
+
+.py4-mobile-menu {
+    display: none;
+    margin-bottom: 14px;
+}
+
+.py4-json-tree {
+    padding: 14px;
+    border-radius: 10px;
+    background: #101827;
+    color: #a7f3d0;
+    font: 13px/1.7 Consolas, monospace;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.py4-small {
+    font-size: 12px;
+}
+
+@media (max-width: 1050px) {
+    .py4-mindmap {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .py4-grid-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .py4-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .py4-sidebar {
+        position: relative;
+        height: auto;
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 14px;
+        transition: max-height .25s;
+    }
+
+    .py4-sidebar.py4-sidebar-open {
+        max-height: 75vh;
+        padding: 18px 14px;
+        overflow-y: auto;
+    }
+
+    .py4-mobile-menu {
+        display: inline-block;
+    }
+
+    .py4-main {
+        padding: 15px;
+    }
+
+    .py4-section {
+        padding: 18px;
+    }
+
+    .py4-intro {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 560px) {
+    .py4-grid,
+    .py4-grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .py4-mindmap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .py4-flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .py4-flow {
+        align-items: center;
+    }
+
+    .py4-flow-box {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .py4-footer-nav {
+        flex-direction: column;
+    }
+}
+
+@media print {
+    .py4-sidebar,
+    .py4-mobile-menu,
+    .py4-copy,
+    .py4-button {
+        display: none !important;
+    }
+
+    .py4-layout {
+        display: block;
+    }
+
+    .py4-main {
+        padding: 0;
+    }
+
+    .py4-section {
+        break-inside: avoid;
+        box-shadow: none;
+    }
+}
+</style>
+</head>
+
+<body>
+<div class="py4-layout">
+
+<aside class="py4-sidebar" id="py4-sidebar">
+    <div class="py4-brand">
+        <strong>🐍 Python Learning</strong>
+        <span>RBUtech · Page 4 of 5</span>
+    </div>
+
+    <div class="py4-menu-label">Page contents</div>
+
+    <nav class="py4-nav" id="py4-nav" aria-label="Page contents">
+        <a href="#py4-introduction">Introduction</a>
+        <a href="#py4-mindmap">Mind Map</a>
+        <a href="#py4-modules">Modules</a>
+        <a href="#py4-packages">Packages</a>
+        <a href="#py4-structure">Project Structure</a>
+        <a href="#py4-environments">Virtual Environments</a>
+        <a href="#py4-pip">pip and Dependencies</a>
+        <a href="#py4-files">File Handling</a>
+        <a href="#py4-json">JSON</a>
+        <a href="#py4-csv">CSV</a>
+        <a href="#py4-exceptions">Exception Handling</a>
+        <a href="#py4-custom-exceptions">Custom Exceptions</a>
+        <a href="#py4-logging">Logging</a>
+        <a href="#py4-configuration">Configuration</a>
+        <a href="#py4-student-project">Student Records Project</a>
+        <a href="#py4-exercises">Exercises</a>
+        <a href="#py4-quiz">Quiz</a>
+        <a href="#py4-summary">Summary</a>
+    </nav>
+</aside>
+
+<main class="py4-main">
+<div class="py4-content">
+
+<button class="py4-button py4-mobile-menu" id="py4-menu-toggle" type="button" aria-expanded="false">
+    ☰ Page Contents
+</button>
+
+<div class="py4-page-top">
+    <span class="py4-badge">PYTHON PROGRAMMING · PAGE 4 OF 5</span>
+    <div class="py4-progress-area">
+        <span id="py4-progress-text">0% completed</span>
+        <div class="py4-progress-track" role="progressbar" aria-label="Learning progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="py4-progress-track">
+            <div class="py4-progress-bar" id="py4-progress-bar"></div>
+        </div>
+    </div>
+</div>
+
+<header class="py4-intro" id="py4-introduction">
+    <h1>Python Programming — Modules, Packages, Files and Exception Handling</h1>
+    <p>
+        Learn how real Python applications are organized, how to save information in files,
+        how to handle errors safely, and how to manage application settings.
+        By the end, you will build a small file-based Student Records application.
+    </p>
+    <div class="py4-grid">
+        <div class="py4-card">
+            <strong>📦 Organize code</strong>
+            <p>Modules, packages, pip and virtual environments.</p>
+        </div>
+        <div class="py4-card">
+            <strong>📁 Store information</strong>
+            <p>Text files, JSON, CSV and file paths.</p>
+        </div>
+        <div class="py4-card">
+            <strong>🛡️ Handle problems</strong>
+            <p>Exceptions, validation and custom errors.</p>
+        </div>
+        <div class="py4-card">
+            <strong>⚙️ Build real projects</strong>
+            <p>Logging, configuration and a student-record application.</p>
+        </div>
+    </div>
+    <div class="py4-callout">
+        <strong>Prerequisite:</strong> You should understand Python variables, conditions, loops,
+        functions, lists and dictionaries from the previous pages.
+    </div>
+</header>
+
+<!-- MIND MAP -->
+<section class="py4-section" id="py4-mindmap">
+    <h2>1. Python Project Mind Map</h2>
+    <p><strong>Definition:</strong> A mind map shows how the important parts of a real Python project fit together.</p>
+
+    <div class="py4-mindmap" aria-label="Mind map of a real Python project">
+        <div class="py4-mindmap-center">REAL PYTHON PROJECT</div>
+        <div class="py4-mindmap-item">📦 Modules</div>
+        <div class="py4-mindmap-item">🗂️ Packages</div>
+        <div class="py4-mindmap-item">🌱 Virtual Environments</div>
+        <div class="py4-mindmap-item">⬇️ pip</div>
+        <div class="py4-mindmap-item">📁 Files</div>
+        <div class="py4-mindmap-item">🔤 JSON</div>
+        <div class="py4-mindmap-item">📊 CSV</div>
+        <div class="py4-mindmap-item">🛡️ Exceptions</div>
+        <div class="py4-mindmap-item">📋 Logging</div>
+        <div class="py4-mindmap-item">⚙️ Configuration</div>
+    </div>
+
+    <p><strong>Example:</strong> A student management system can use a module to validate student data,
+        JSON to save student records, exceptions to handle invalid input, and logging to record important events.</p>
+    <p><strong>Real-world use:</strong> These building blocks are used in web applications, APIs,
+        automation scripts, data processing and backend services.</p>
+    <p><strong>Common mistake:</strong> Putting all application logic into one very large Python file.</p>
+    <div class="py4-callout py4-success">
+        <strong>Exercise:</strong> Pick a small application, such as an expense tracker.
+        Identify where you would use modules, files, exceptions and logging.
+    </div>
+</section>
+
+<!-- MODULES -->
+<section class="py4-section" id="py4-modules">
+    <h2>2. Python Modules</h2>
+    <h3>What is a module?</h3>
+    <p>A <strong>module</strong> is a Python file containing reusable code, such as functions,
+        variables and classes. A file named <code>helpers.py</code> is a module named <code>helpers</code>.</p>
+
+    <div class="py4-grid">
+        <div class="py4-card">
+            <h4>Without modules</h4>
+            <p>Every file repeats the same validation, calculation and formatting logic.</p>
+        </div>
+        <div class="py4-card">
+            <h4>With modules</h4>
+            <p>Write reusable logic once and import it wherever it is needed.</p>
+        </div>
+    </div>
+
+    <h3>Diagram C: Module Import Flow</h3>
+    <div class="py4-flow">
+        <div class="py4-flow-box">main.py<br><small>Application entry point</small></div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">import helpers</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">helpers.py<br><small>Reusable functions</small></div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Results returned to main.py</div>
+    </div>
+
+    <h3>2.1 Importing built-in modules</h3>
+    <p>Python includes many modules. The <code>math</code> module provides mathematical functions,
+        while <code>datetime</code> provides date and time functionality.</p>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import math
+import datetime
+
+print(math.sqrt(81))
+print(math.ceil(4.2))
+print(datetime.date(2026, 10, 27))</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+9.0
+5
+2026-10-27</div>
+
+    <h3>Common import styles</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import math
+print(math.pi)
+
+from math import sqrt
+print(sqrt(49))
+
+import datetime as dt
+print(dt.date.today())</code></pre>
+    </div>
+
+    <p><strong>Explanation:</strong> <code>import math</code> imports the module.
+        <code>from math import sqrt</code> imports one named item.
+        <code>as dt</code> creates an alias.</p>
+    <p><strong>Expected output:</strong> The first two calls print pi and <code>7.0</code>.
+        The final call prints today's date when you run the program.</p>
+
+    <div class="py4-callout py4-warning">
+        <strong>Common mistakes:</strong>
+        <ul>
+            <li>Using <code>Math</code> instead of <code>math</code>. Python names are case-sensitive.</li>
+            <li>Naming your own file <code>math.py</code>, <code>json.py</code> or <code>datetime.py</code>,
+                which can shadow a standard-library module.</li>
+            <li>Importing a module that has not been installed or is not available in your Python environment.</li>
+        </ul>
+    </div>
+
+    <h3>2.2 Creating a custom module</h3>
+    <p>Create two files in the same directory: <code>helpers.py</code> and <code>main.py</code>.</p>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># helpers.py
+
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b</code></pre>
+    </div>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># main.py
+
+import helpers
+
+print(helpers.greet("Naveen"))
+print(helpers.add(10, 20))</code></pre>
+    </div>
+
+    <div class="py4-output">Expected output:
+Hello, Naveen!
+30</div>
+
+    <p><strong>How it works:</strong> Python locates <code>helpers.py</code> on its import search path,
+        loads the module and makes its functions available through <code>helpers</code>.</p>
+    <p><strong>Real-world use:</strong> Put common validation, date formatting, calculations or API helpers
+        into separate modules.</p>
+
+    <details class="py4-details">
+        <summary>Expand: Why use if __name__ == "__main__"?</summary>
+        <div class="py4-details-content">
+            <p>This guard runs code only when the file is executed directly, not when it is imported as a module.</p>
+            <div class="py4-code-wrap">
+                <button class="py4-copy" type="button">Copy code</button>
+                <pre><code>def greet():
+    print("Hello from helpers")
+
+if __name__ == "__main__":
+    greet()</code></pre>
+            </div>
+            <p>Use it for simple demonstrations, command-line entry points and local testing.</p>
+        </div>
+    </details>
+
+    <div class="py4-callout py4-success">
+        <strong>Exercise:</strong> Create <code>calculator.py</code> with <code>multiply(a, b)</code>.
+        Import it into <code>main.py</code> and calculate <code>6 × 7</code>.
+    </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="py4-section" id="py4-packages">
+    <h2>3. Python Packages</h2>
+    <p>A <strong>package</strong> groups related Python modules into a directory. This helps organize
+        larger applications by feature or responsibility.</p>
+
+    <div class="py4-tree">shop_app/
+├── main.py
+└── services/
+    ├── __init__.py
+    ├── billing.py
+    └── notifications.py</div>
+
+    <h3>Creating a package</h3>
+    <p>Create a directory named <code>services</code>, then add the following files.</p>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># services/__init__.py
+# This file marks services as a regular package.
+# It may also expose selected package functions.</code></pre>
+    </div>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># services/billing.py
+
+def calculate_total(price, quantity):
+    return price * quantity</code></pre>
+    </div>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># main.py
+
+from services.billing import calculate_total
+
+print(calculate_total(25, 4))</code></pre>
+    </div>
+
+    <div class="py4-output">Expected output:
+100</div>
+
+    <p><strong>Definition:</strong> A package is a way to organize related modules. A package can contain
+        subpackages and more modules.</p>
+    <p><strong>Real-world use:</strong> Organize a backend into <code>users</code>, <code>payments</code>,
+        <code>reports</code> and <code>notifications</code>.</p>
+    <p><strong>Common mistake:</strong> Importing with the wrong path or running a file from a directory
+        where Python cannot locate the package.</p>
+    <div class="py4-callout py4-warning">
+        Modern Python supports namespace packages without <code>__init__.py</code>, but including it is
+        a clear and beginner-friendly choice for a conventional package.
+    </div>
+    <div class="py4-callout py4-success">
+        <strong>Exercise:</strong> Create a package named <code>school</code> with a module
+        <code>students.py</code> containing a function that prints a student's name.
+    </div>
+</section>
+
+<!-- PROJECT STRUCTURE -->
+<section class="py4-section" id="py4-structure">
+    <h2>4. Project Directory Structure</h2>
+    <p>A project directory keeps application code, data, dependencies and tests organized.</p>
+
+    <div class="py4-tree">python_project/
+├── main.py
+├── requirements.txt
+├── .env.example
+├── utils/
+│   ├── __init__.py
+│   └── helpers.py
+├── data/
+│   └── students.json
+└── tests/
+    └── test_helpers.py</div>
+
+    <div class="py4-table-wrap">
+        <table class="py4-table">
+            <thead>
+                <tr><th>File or directory</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+                <tr><td><code>main.py</code></td><td>Starts the application and coordinates its main workflow.</td></tr>
+                <tr><td><code>requirements.txt</code></td><td>Lists external Python dependencies and, optionally, version constraints.</td></tr>
+                <tr><td><code>.env.example</code></td><td>Documents configuration variable names using safe placeholder values. It must not contain real secrets.</td></tr>
+                <tr><td><code>utils/</code></td><td>Groups reusable utility modules.</td></tr>
+                <tr><td><code>utils/__init__.py</code></td><td>Marks the directory as a regular Python package and may define its public interface.</td></tr>
+                <tr><td><code>utils/helpers.py</code></td><td>Contains reusable helper functions.</td></tr>
+                <tr><td><code>data/</code></td><td>Stores application data files, when file-based storage is appropriate.</td></tr>
+                <tr><td><code>data/students.json</code></td><td>Stores student records in JSON format.</td></tr>
+                <tr><td><code>tests/</code></td><td>Contains automated tests.</td></tr>
+                <tr><td><code>tests/test_helpers.py</code></td><td>Tests the behavior of helper functions.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h3>Interactive project-directory explorer</h3>
+    <p>Select a file or directory to see its purpose.</p>
+
+    <div class="py4-grid">
+        <div class="py4-card">
+            <div id="py4-project-tree">
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="root">📁 python_project/</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="main" style="padding-left:24px">📄 main.py</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="requirements" style="padding-left:24px">📄 requirements.txt</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="env" style="padding-left:24px">📄 .env.example</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="utils" style="padding-left:24px">📁 utils/</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="init" style="padding-left:42px">📄 __init__.py</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="helpers" style="padding-left:42px">📄 helpers.py</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="data" style="padding-left:24px">📁 data/</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="students" style="padding-left:42px">📄 students.json</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="tests" style="padding-left:24px">📁 tests/</div>
+                <div class="py4-tree-row" role="button" tabindex="0" data-file="testhelpers" style="padding-left:42px">📄 test_helpers.py</div>
+            </div>
+        </div>
+        <div class="py4-explorer-description" id="py4-project-description" aria-live="polite">
+            Select an item to explore the project structure.
+        </div>
+    </div>
+
+    <div class="py4-callout py4-warning">
+        <strong>Security:</strong> Do not commit real API keys, database passwords or tokens.
+        Keep real environment files out of source control. The example file should contain placeholders only.
+    </div>
+
+    <p><strong>Exercise:</strong> Design a directory structure for an expense tracker with a main file,
+        reusable utilities, expense data and tests.</p>
+</section>
+
+<!-- VIRTUAL ENVIRONMENT -->
+<section class="py4-section" id="py4-environments">
+    <h2>5. Python Virtual Environments</h2>
+    <p>A <strong>virtual environment</strong> is an isolated Python environment for a project.
+        It allows that project to use its own installed packages.</p>
+
+    <h3>Diagram D: Separate environments</h3>
+    <div class="py4-card">
+        <div class="py4-flow">
+            <div class="py4-flow-box">System Python</div>
+        </div>
+        <div class="py4-grid">
+            <div class="py4-card">
+                <h4>Project A</h4>
+                <div class="py4-flow">
+                    <div class="py4-flow-box">Environment A</div>
+                    <div class="py4-flow-arrow">→</div>
+                    <div class="py4-flow-box">Dependencies A</div>
+                </div>
+            </div>
+            <div class="py4-card">
+                <h4>Project B</h4>
+                <div class="py4-flow">
+                    <div class="py4-flow-box">Environment B</div>
+                    <div class="py4-flow-arrow">→</div>
+                    <div class="py4-flow-box">Dependencies B</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <p><strong>Why it matters:</strong> Project A may need one library version while Project B needs another.
+        Separate environments help prevent dependency conflicts.</p>
+
+    <h3>Create and activate a virtual environment on Windows</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># Run inside your project directory
+py -m venv .venv
+
+# Command Prompt
+.venv\Scripts\activate.bat
+
+# PowerShell
+.\.venv\Scripts\Activate.ps1
+
+# Check which Python is active
+python --version</code></pre>
+    </div>
+
+    <h3>macOS or Linux</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>python3 -m venv .venv
+source .venv/bin/activate
+python --version</code></pre>
+    </div>
+
+    <p><strong>Expected result:</strong> The environment is created in the <code>.venv</code> directory.
+        After activation, your shell usually shows <code>(.venv)</code> in its prompt.</p>
+
+    <div class="py4-callout py4-warning">
+        <strong>Common mistakes:</strong>
+        <ul>
+            <li>Installing packages into a different Python installation from the one running the project.</li>
+            <li>Forgetting to activate the environment.</li>
+            <li>Committing the entire <code>.venv</code> directory to Git. Usually, it should be ignored.</li>
+        </ul>
+    </div>
+
+    <p><strong>Real-world use:</strong> Create a separate environment for each application or project.</p>
+    <p><strong>Exercise:</strong> Create a virtual environment called <code>.venv</code>, activate it,
+        and check the Python executable with <code>python -c "import sys; print(sys.executable)"</code>.</p>
+</section>
+
+<!-- PIP -->
+<section class="py4-section" id="py4-pip">
+    <h2>6. pip and requirements.txt</h2>
+    <p><strong>pip</strong> is Python's commonly used package installer. It installs packages from configured
+        package indexes and other supported sources.</p>
+
+    <h3>Install and inspect packages</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>python -m pip --version
+python -m pip install requests
+python -m pip show requests
+python -m pip list</code></pre>
+    </div>
+
+    <p><strong>Expected result:</strong> pip reports its version, installs the requested package when
+        available, and displays package information.</p>
+
+    <h3>Save dependencies</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># Save installed environment packages
+python -m pip freeze > requirements.txt
+
+# Install listed packages in another activated environment
+python -m pip install -r requirements.txt</code></pre>
+    </div>
+
+    <p>Example <code>requirements.txt</code>:</p>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>requests==2.32.3</code></pre>
+    </div>
+
+    <p>The version above is an illustrative example, not a guarantee that it is the latest release.
+        Use versions appropriate for your project and test them.</p>
+
+    <div class="py4-callout">
+        <strong>Important distinction:</strong> The Python standard library includes modules such as
+        <code>math</code>, <code>json</code>, <code>csv</code> and <code>logging</code>.
+        You do not install these separately with pip.
+    </div>
+
+    <p><strong>Real-world use:</strong> Developers use dependency files to help reproduce application
+        environments during development, testing and deployment.</p>
+    <p><strong>Common mistake:</strong> Running <code>pip install</code> against the wrong interpreter.
+        Prefer <code>python -m pip</code> after activating the intended environment.</p>
+    <p><strong>Exercise:</strong> Create a requirements file for a project that uses the external
+        <code>requests</code> library. Install it into a fresh virtual environment.</p>
+</section>
+
+<!-- FILES -->
+<section class="py4-section" id="py4-files">
+    <h2>7. File Handling</h2>
+    <p><strong>Definition:</strong> File handling allows a program to store information outside its running
+        memory and retrieve it later.</p>
+
+    <h3>Diagram E: File operations</h3>
+    <div class="py4-flow">
+        <div class="py4-flow-box">Application</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Open file</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Read / Write / Append</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Process content</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Close file</div>
+    </div>
+
+    <h3>Diagram F: File modes</h3>
+    <div class="py4-grid">
+        <div class="py4-card">
+            <h4><code>r</code> — Read</h4>
+            <p>Reads an existing file. Raises <code>FileNotFoundError</code> if it does not exist.</p>
+            <span class="py4-badge">Creates: No</span>
+            <span class="py4-badge">Replaces: No</span>
+        </div>
+        <div class="py4-card">
+            <h4><code>w</code> — Write</h4>
+            <p>Creates a file if missing. If it exists, its previous contents are truncated.</p>
+            <span class="py4-badge">Creates: Yes</span>
+            <span class="py4-badge">Replaces: Yes</span>
+        </div>
+        <div class="py4-card">
+            <h4><code>a</code> — Append</h4>
+            <p>Creates a file if missing and writes new content at the end of an existing file.</p>
+            <span class="py4-badge">Creates: Yes</span>
+            <span class="py4-badge">Appends: Yes</span>
+        </div>
+        <div class="py4-card">
+            <h4><code>x</code> — Exclusive creation</h4>
+            <p>Creates a new file only if it does not already exist. Otherwise raises <code>FileExistsError</code>.</p>
+            <span class="py4-badge">Creates: Yes</span>
+            <span class="py4-badge">Overwrites: No</span>
+        </div>
+    </div>
+
+    <h3>Interactive file-mode comparison tool</h3>
+    <p>This simulator uses predefined text in the browser. It does not open or modify files on your computer.</p>
+
+    <div class="py4-interactive">
+        <label class="py4-label" for="py4-file-mode">Select a file mode</label>
+        <select class="py4-select" id="py4-file-mode">
+            <option value="r">r — Read</option>
+            <option value="w">w — Write</option>
+            <option value="a">a — Append</option>
+            <option value="x">x — Exclusive create</option>
+        </select>
+        <div class="py4-form-row">
+            <div class="py4-field">
+                <label for="py4-file-exists">Does the file already exist?</label>
+                <select id="py4-file-exists">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            <div class="py4-field">
+                <label for="py4-file-content">New content</label>
+                <input id="py4-file-content" value="New student record">
+            </div>
+        </div>
+        <button class="py4-button" type="button" id="py4-run-file-mode">Simulate operation</button>
+        <div class="py4-result" id="py4-file-mode-result" aria-live="polite"></div>
+    </div>
+
+    <h3>7.1 Reading a text file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>with open("notes.txt", "r", encoding="utf-8") as file:
+    content = file.read()
+
+print(content)</code></pre>
+    </div>
+    <p>If <code>notes.txt</code> contains <code>Learn Python</code>, the output is:</p>
+    <div class="py4-output">Learn Python</div>
+
+    <h3>7.2 Writing a text file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>with open("notes.txt", "w", encoding="utf-8") as file:
+    file.write("Learn Python\n")
+    file.write("Practice daily\n")
+
+print("File written successfully")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+File written successfully</div>
+    <p>The file now contains two lines. Be careful: <code>w</code> replaces the old content.</p>
+
+    <h3>7.3 Appending text</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>with open("notes.txt", "a", encoding="utf-8") as file:
+    file.write("Build a project\n")
+
+print("New line added")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+New line added</div>
+
+    <h3>7.4 Reading line by line</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>with open("notes.txt", "r", encoding="utf-8") as file:
+    for line in file:
+        print(line.strip())</code></pre>
+    </div>
+    <div class="py4-output">If the file contains the three lines from the examples:
+Learn Python
+Practice daily
+Build a project</div>
+
+    <h3>7.5 Why use with open()?</h3>
+    <p>The <code>with</code> statement uses a context manager. When the block ends, Python closes the file
+        even if an exception occurs during the block.</p>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># Recommended
+with open("notes.txt", "r", encoding="utf-8") as file:
+    content = file.read()
+
+# Manual closing is easier to get wrong
+file = open("notes.txt", "r", encoding="utf-8")
+try:
+    content = file.read()
+finally:
+    file.close()</code></pre>
+    </div>
+
+    <h3>7.6 Working with file paths</h3>
+    <p>Use <code>pathlib</code> to represent and work with paths in a readable, cross-platform way.</p>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>from pathlib import Path
+
+data_dir = Path("data")
+data_dir.mkdir(parents=True, exist_ok=True)
+
+file_path = data_dir / "notes.txt"
+file_path.write_text("Hello from pathlib", encoding="utf-8")
+
+print(file_path.exists())
+print(file_path.read_text(encoding="utf-8"))</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+True
+Hello from pathlib</div>
+
+    <div class="py4-callout py4-warning">
+        <strong>Common mistakes:</strong>
+        <ul>
+            <li>Using <code>w</code> when you meant <code>a</code>, thereby losing existing content.</li>
+            <li>Forgetting <code>encoding="utf-8"</code> for text files.</li>
+            <li>Assuming a relative path is always relative to the Python file. It is normally resolved from the current working directory.</li>
+            <li>Using <code>r</code> for a missing file without handling the resulting error.</li>
+        </ul>
+    </div>
+
+    <p><strong>Real-world use:</strong> Read reports, save generated files, process uploaded documents and
+        maintain small local datasets.</p>
+    <p><strong>Exercise:</strong> Write a program that creates <code>diary.txt</code>, appends one line,
+        then reads and prints all its content.</p>
+</section>
+
+<!-- JSON -->
+<section class="py4-section" id="py4-json">
+    <h2>8. JSON</h2>
+    <p><strong>Definition:</strong> JSON (JavaScript Object Notation) is a text format commonly used to
+        exchange structured data between applications and APIs.</p>
+
+    <h3>Diagram G: JSON structure</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>{
+    "name": "Anita",
+    "age": 21,
+    "skills": ["Python", "SQL"],
+    "active": true
+}</code></pre>
+    </div>
+
+    <div class="py4-grid">
+        <div class="py4-card">
+            <h4>Object</h4>
+            <p><code>{}</code> contains key-value pairs, such as <code>"name": "Anita"</code>.</p>
+        </div>
+        <div class="py4-card">
+            <h4>Array</h4>
+            <p><code>[]</code> contains an ordered list of values, such as the skills list.</p>
+        </div>
+        <div class="py4-card">
+            <h4>String and number</h4>
+            <p><code>"Anita"</code> is a string; <code>21</code> is a number.</p>
+        </div>
+        <div class="py4-card">
+            <h4>Boolean and null</h4>
+            <p>JSON uses <code>true</code>, <code>false</code> and <code>null</code>. In Python, they correspond to <code>True</code>, <code>False</code> and <code>None</code>.</p>
+        </div>
+    </div>
+
+    <h3>8.1 Write JSON to a file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import json
+
+student = {
+    "name": "Anita",
+    "age": 21,
+    "skills": ["Python", "SQL"],
+    "active": True
+}
+
+with open("student.json", "w", encoding="utf-8") as file:
+    json.dump(student, file, indent=4)
+
+print("JSON saved")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+JSON saved</div>
+
+    <h3>8.2 Read JSON from a file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import json
+
+with open("student.json", "r", encoding="utf-8") as file:
+    student = json.load(file)
+
+print(student["name"])
+print(student["skills"])</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+Anita
+['Python', 'SQL']</div>
+
+    <h3>8.3 Convert between Python and JSON strings</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import json
+
+student = {"name": "Ravi", "age": 20}
+
+json_text = json.dumps(student)
+print(json_text)
+
+python_data = json.loads(json_text)
+print(python_data["name"])</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+{"name": "Ravi", "age": 20}
+Ravi</div>
+
+    <p><strong>Important difference:</strong> <code>dump()</code> writes JSON to a file-like object;
+        <code>dumps()</code> returns a JSON string. <code>load()</code> reads from a file-like object;
+        <code>loads()</code> parses a JSON string.</p>
+
+    <h3>Interactive JSON viewer</h3>
+    <p>Paste JSON into the editor or use the sample. This tool parses and formats JSON locally in the browser.</p>
+    <div class="py4-interactive">
+        <label class="py4-label" for="py4-json-input">JSON input</label>
+        <textarea class="py4-field" id="py4-json-input" rows="8" style="width:100%;font-family:Consolas,monospace;">{
+  "name": "Anita",
+  "age": 21,
+  "skills": ["Python", "SQL"],
+  "active": true
+}</textarea>
+        <div class="py4-form-row">
+            <button class="py4-button" type="button" id="py4-json-format">Validate and format</button>
+            <button class="py4-button py4-button-secondary" type="button" id="py4-json-sample">Load sample</button>
+        </div>
+        <div class="py4-result" id="py4-json-result" aria-live="polite"></div>
+        <pre class="py4-json-tree" id="py4-json-output" aria-live="polite">Formatted JSON appears here.</pre>
+    </div>
+
+    <div class="py4-callout py4-warning">
+        <strong>Common mistakes:</strong>
+        <ul>
+            <li>Using single quotes around JSON keys or strings. Standard JSON requires double quotes.</li>
+            <li>Writing <code>True</code> or <code>None</code> in JSON. JSON requires <code>true</code> or <code>null</code>.</li>
+            <li>Assuming all Python objects can be serialized automatically. Some types, such as ordinary date objects, need conversion.</li>
+            <li>Trusting malformed or untrusted data without validation.</li>
+        </ul>
+    </div>
+
+    <p><strong>Real-world use:</strong> API requests and responses, application configuration and small structured data files.</p>
+    <p><strong>Exercise:</strong> Save three student dictionaries in a JSON list and load them back into Python.</p>
+</section>
+
+<!-- CSV -->
+<section class="py4-section" id="py4-csv">
+    <h2>9. CSV</h2>
+    <p><strong>Definition:</strong> CSV (Comma-Separated Values) is a text format for tabular data.
+        It is commonly used for spreadsheets, reports and data imports.</p>
+
+    <h3>Example CSV file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>name,age,course
+Anita,21,Python
+Ravi,20,Java</code></pre>
+    </div>
+
+    <h3>9.1 Writing CSV with DictWriter</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import csv
+
+students = [
+    {"name": "Anita", "age": 21, "course": "Python"},
+    {"name": "Ravi", "age": 20, "course": "Java"}
+]
+
+with open("students.csv", "w", newline="", encoding="utf-8") as file:
+    fields = ["name", "age", "course"]
+    writer = csv.DictWriter(file, fieldnames=fields)
+    writer.writeheader()
+    writer.writerows(students)
+
+print("CSV saved")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+CSV saved</div>
+
+    <h3>9.2 Reading CSV with DictReader</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import csv
+
+with open("students.csv", "r", newline="", encoding="utf-8") as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        print(row["name"], row["course"])</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+Anita Python
+Ravi Java</div>
+
+    <p><strong>Why <code>newline=""</code>?</strong> It is the recommended way to open CSV files for reading
+        or writing with Python's <code>csv</code> module, helping avoid extra blank lines on some platforms.</p>
+
+    <div class="py4-table-wrap">
+        <table class="py4-table">
+            <thead><tr><th>JSON</th><th>CSV</th></tr></thead>
+            <tbody>
+                <tr><td>Can represent nested objects and arrays.</td><td>Best suited to rows and columns.</td></tr>
+                <tr><td>Useful for APIs and structured configuration.</td><td>Useful for spreadsheets and tabular imports.</td></tr>
+                <tr><td>Values can have different data types in a structured document.</td><td>Values are typically read as text and may need conversion.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><strong>Common mistake:</strong> Splitting CSV lines manually using <code>split(",")</code>.
+        CSV fields can contain quoted commas and other special cases, so use Python's <code>csv</code> module.</p>
+    <p><strong>Exercise:</strong> Write a CSV file containing product names, quantities and prices, then calculate
+        the total value after reading it back.</p>
+</section>
+
+<!-- EXCEPTIONS -->
+<section class="py4-section" id="py4-exceptions">
+    <h2>10. Exception Handling</h2>
+    <p><strong>Definition:</strong> An exception is an event that interrupts normal program execution.
+        Exception handling lets you respond to expected errors instead of allowing the program to fail unexpectedly.</p>
+
+    <h3>Diagram H: Exception handling flowchart</h3>
+    <svg viewBox="0 0 680 470" role="img" aria-label="Exception handling flowchart: start, risky operation, exception decision, else or except handler, finally, continue or propagate" style="width:100%;height:auto;max-width:680px;display:block;margin:15px auto;">
+        <defs>
+            <marker id="py4-arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L6,3 L0,6 Z" fill="#64748b"></path>
+            </marker>
+        </defs>
+        <rect x="250" y="10" width="180" height="38" rx="19" fill="#dbeafe" stroke="#2563eb"/>
+        <text x="340" y="34" text-anchor="middle" font-size="14" fill="#1e3a8a">Start</text>
+        <path d="M340 48 V75" stroke="#64748b" stroke-width="2" marker-end="url(#py4-arrowhead)"/>
+        <rect x="205" y="80" width="270" height="48" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+        <text x="340" y="99" text-anchor="middle" font-size="13" fill="#1e3a8a">Execute risky operation</text>
+        <text x="340" y="115" text-anchor="middle" font-size="11" fill="#475569">Read a file / convert input</text>
+        <path d="M340 128 V152" stroke="#64748b" stroke-width="2" marker-end="url(#py4-arrowhead)"/>
+        <polygon points="340,155 430,200 340,245 250,200" fill="#fef3c7" stroke="#d97706"/>
+        <text x="340" y="196" text-anchor="middle" font-size="12" fill="#92400e">Exception</text>
+        <text x="340" y="211" text-anchor="middle" font-size="12" fill="#92400e">occurred?</text>
+        <path d="M250 200 H125 V270" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#py4-arrowhead)"/>
+        <text x="170" y="190" font-size="12" fill="#15803d">No</text>
+        <rect x="35" y="275" width="180" height="48" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+        <text x="125" y="295" text-anchor="middle" font-size="12" fill="#166534">Execute else block</text>
+        <text x="125" y="311" text-anchor="middle" font-size="10" fill="#166534">Operation succeeded</text>
+        <path d="M430 200 H550 V270" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#py4-arrowhead)"/>
+        <text x="465" y="190" font-size="12" fill="#b91c1c">Yes</text>
+        <rect x="465" y="275" width="170" height="48" rx="8" fill="#fee2e2" stroke="#dc2626"/>
+        <text x="550" y="294" text-anchor="middle" font-size="12" fill="#991b1b">Match an except</text>
+        <text x="550" y="310" text-anchor="middle" font-size="12" fill="#991b1b">handler</text>
+        <path d="M125 323 V350 H340 V370" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#py4-arrowhead)"/>
+        <path d="M550 323 V350 H340" stroke="#64748b" stroke-width="2" fill="none"/>
+        <rect x="240" y="375" width="200" height="40" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+        <text x="340" y="400" text-anchor="middle" font-size="13" fill="#5b21b6">finally block</text>
+        <path d="M340 415 V438" stroke="#64748b" stroke-width="2" marker-end="url(#py4-arrowhead)"/>
+        <text x="340" y="460" text-anchor="middle" font-size="12" fill="#334155">Continue or propagate the error</text>
+    </svg>
+
+    <p>The diagram simplifies the flow. If an exception occurs and no handler matches, the exception propagates.
+        A <code>finally</code> block normally runs whether the operation succeeds or fails.</p>
+
+    <h3>10.1 try and except</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>try:
+    number = int("abc")
+    print(number)
+except ValueError:
+    print("Please provide a valid integer")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+Please provide a valid integer</div>
+
+    <p><strong>Explanation:</strong> <code>int("abc")</code> raises <code>ValueError</code>.
+        The matching <code>except</code> block handles it.</p>
+
+    <h3>10.2 Catching FileNotFoundError</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>try:
+    with open("missing.txt", "r", encoding="utf-8") as file:
+        content = file.read()
+    print(content)
+except FileNotFoundError:
+    print("The requested file was not found")</code></pre>
+    </div>
+    <div class="py4-output">If missing.txt does not exist:
+The requested file was not found</div>
+
+    <h3>10.3 Using else and finally</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>try:
+    number = int("25")
+except ValueError:
+    print("Invalid number")
+else:
+    print("Conversion successful:", number)
+finally:
+    print("Conversion attempt finished")</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+Conversion successful: 25
+Conversion attempt finished</div>
+
+    <ul class="py4-bullet-list">
+        <li><code>try</code>: contains code that may raise an exception.</li>
+        <li><code>except</code>: handles a matching exception.</li>
+        <li><code>else</code>: runs when the <code>try</code> block completes without an exception.</li>
+        <li><code>finally</code>: normally runs whether an exception occurs or not.</li>
+    </ul>
+
+    <h3>10.4 Interactive exception-flow simulator</h3>
+    <p>Choose a predefined scenario to observe which handler runs. This simulator does not execute Python code.</p>
+
+    <div class="py4-interactive">
+        <label class="py4-label" for="py4-exception-scenario">Choose a scenario</label>
+        <select class="py4-select" id="py4-exception-scenario">
+            <option value="success">Successful conversion</option>
+            <option value="value">Invalid integer</option>
+            <option value="missing">Missing file</option>
+            <option value="unhandled">Unhandled exception type</option>
+        </select>
+        <button class="py4-button" type="button" id="py4-run-exception">Simulate flow</button>
+        <div class="py4-result" id="py4-exception-result" aria-live="polite"></div>
+    </div>
+
+    <div class="py4-callout py4-warning">
+        <strong>Common mistakes:</strong>
+        <ul>
+            <li>Using an empty <code>except:</code> that catches too broadly and hides unexpected problems.</li>
+            <li>Putting success logic in <code>finally</code> rather than <code>else</code>.</li>
+            <li>Displaying an error message but continuing with invalid or incomplete data.</li>
+            <li>Using exceptions for ordinary control flow when a simple condition would be clearer.</li>
+        </ul>
+    </div>
+
+    <p><strong>Real-world use:</strong> Handle invalid input, unavailable files, failed network requests and
+        unexpected data formats.</p>
+    <p><strong>Exercise:</strong> Ask for a number, catch <code>ValueError</code>, and display a friendly
+        message when the user enters text instead of an integer.</p>
+</section>
+
+<!-- CUSTOM EXCEPTIONS -->
+<section class="py4-section" id="py4-custom-exceptions">
+    <h2>11. Raising Exceptions and Custom Exceptions</h2>
+    <p>Use <code>raise</code> when your code detects a situation that should be reported as an error.
+        A custom exception gives your application a meaningful error type.</p>
+
+    <h3>11.1 Using raise</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>def calculate_discount(price):
+    if price < 0:
+        raise ValueError("Price cannot be negative")
+    return price * 0.10
+
+print(calculate_discount(100))</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+10.0</div>
+    <p>If you call <code>calculate_discount(-10)</code>, the function raises a <code>ValueError</code>
+        with the message <code>Price cannot be negative</code>.</p>
+
+    <h3>11.2 Create a custom exception</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>class InvalidAgeError(Exception):
+    """Raised when an age is outside the allowed range."""
+
+
+def register_student(name, age):
+    if age < 5 or age > 100:
+        raise InvalidAgeError("Age must be between 5 and 100")
+    return f"Registered: {name}"
+
+
+try:
+    print(register_student("Anita", 21))
+    print(register_student("Ravi", 2))
+except InvalidAgeError as error:
+    print("Registration failed:", error)</code></pre>
+    </div>
+    <div class="py4-output">Expected output:
+Registered: Anita
+Registration failed: Age must be between 5 and 100</div>
+
+    <p><strong>Explanation:</strong> <code>InvalidAgeError</code> inherits from <code>Exception</code>.
+        The application can catch this specific error separately from unrelated errors.</p>
+
+    <div class="py4-callout py4-success">
+        <strong>Best practice:</strong> Validate values close to where their rules are known. Use built-in
+        exceptions such as <code>ValueError</code> for standard situations and custom exceptions when
+        application-specific meaning is helpful.
+    </div>
+
+    <p><strong>Real-world use:</strong> Invalid orders, insufficient account balance, duplicate registrations
+        or application-specific validation failures.</p>
+    <p><strong>Common mistake:</strong> Catching a custom exception too early and silently ignoring the failure.</p>
+    <p><strong>Exercise:</strong> Create <code>InsufficientBalanceError</code>. Raise it when a withdrawal is
+        greater than the available balance.</p>
+</section>
+
+<!-- LOGGING -->
+<section class="py4-section" id="py4-logging">
+    <h2>12. Logging</h2>
+    <p><strong>Definition:</strong> Logging records events that happen while an application runs.
+        Logs help developers investigate failures and understand application behavior.</p>
+
+    <h3>Diagram I: Logging levels</h3>
+    <div class="py4-level py4-level-debug">DEBUG
+        <small>Detailed diagnostic information useful during development.</small>
+    </div>
+    <div class="py4-level py4-level-info">INFO
+        <small>Normal events, such as an application starting or a record being saved.</small>
+    </div>
+    <div class="py4-level py4-level-warning">WARNING
+        <small>Something unexpected happened, but the application can continue.</small>
+    </div>
+    <div class="py4-level py4-level-error">ERROR
+        <small>An operation failed and requires attention.</small>
+    </div>
+    <div class="py4-level py4-level-critical">CRITICAL
+        <small>A serious failure may prevent the application from continuing normally.</small>
+    </div>
+
+    <h3>Configure logging</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s"
+)
+
+logging.debug("Detailed diagnostic information")
+logging.info("Student application started")
+logging.warning("Student file is empty")
+logging.error("Unable to process student record")
+logging.critical("Application cannot continue")</code></pre>
+    </div>
+
+    <div class="py4-output">Typical output (timestamps vary):
+2026-10-27 10:00:00,000 INFO Student application started
+2026-10-27 10:00:00,001 WARNING Student file is empty
+2026-10-27 10:00:00,002 ERROR Unable to process student record
+2026-10-27 10:00:00,003 CRITICAL Application cannot continue</div>
+
+    <p><code>INFO</code> is the configured threshold, so <code>DEBUG</code> is not displayed.
+        The example timestamps are illustrative.</p>
+
+    <h3>Log an exception</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import logging
+
+logging.basicConfig(level=logging.INFO)
+
+try:
+    number = int("abc")
+except ValueError:
+    logging.exception("Could not convert input to an integer")</code></pre>
+    </div>
+
+    <p><code>logging.exception()</code> is intended for use inside an exception handler and includes
+        exception information in the log.</p>
+
+    <div class="py4-callout py4-warning">
+        <strong>Security warning:</strong> Do not log passwords, API keys, access tokens, session cookies
+        or unnecessary personal information. Logs may be stored and accessed by other systems.
+    </div>
+
+    <p><strong>Real-world use:</strong> Diagnose production failures, monitor scheduled jobs and trace
+        important business operations.</p>
+    <p><strong>Common mistake:</strong> Using <code>print()</code> for every diagnostic event in a production
+        application instead of structured logging.</p>
+    <p><strong>Exercise:</strong> Log an application startup message, a missing-file warning and a failed
+        student registration.</p>
+</section>
+
+<!-- CONFIGURATION -->
+<section class="py4-section" id="py4-configuration">
+    <h2>13. Environment Variables, Configuration and Secrets</h2>
+    <p><strong>Definition:</strong> Configuration controls how an application runs, such as which API endpoint
+        it uses. Environment variables let configuration be supplied separately from application code.</p>
+
+    <h3>Diagram J: Configuration and security</h3>
+    <div class="py4-flow">
+        <div class="py4-flow-box">Application</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Environment configuration</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Validated settings</div>
+        <div class="py4-flow-arrow">→</div>
+        <div class="py4-flow-box">Database / API connections</div>
+    </div>
+
+    <h3>13.1 Read environment variables</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import os
+
+app_env = os.getenv("APP_ENV", "development")
+api_url = os.getenv("API_URL", "https://example.invalid/api")
+
+print("Environment:", app_env)
+print("API URL:", api_url)</code></pre>
+    </div>
+
+    <div class="py4-output">If the variables are not set:
+Environment: development
+API URL: https://example.invalid/api</div>
+
+    <p><code>os.getenv(name, default)</code> returns the environment variable when it exists;
+        otherwise, it returns the provided default. <code>example.invalid</code> is a reserved example domain.</p>
+
+    <h3>Set environment variables on Windows</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># Command Prompt: applies to this terminal session
+set APP_ENV=development
+
+# PowerShell: applies to this PowerShell session
+$env:APP_ENV = "development"
+
+# Then run
+python main.py</code></pre>
+    </div>
+
+    <h3>Set environment variables on macOS or Linux</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>export APP_ENV=development
+python main.py</code></pre>
+    </div>
+
+    <h3>13.2 Validate configuration</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import os
+
+port_text = os.getenv("APP_PORT", "8000")
+
+try:
+    port = int(port_text)
+except ValueError as error:
+    raise ValueError("APP_PORT must be an integer") from error
+
+if not 1 <= port <= 65535:
+    raise ValueError("APP_PORT must be between 1 and 65535")
+
+print("Configured port:", port)</code></pre>
+    </div>
+    <div class="py4-output">Expected output when APP_PORT is not set:
+Configured port: 8000</div>
+
+    <h3>13.3 The .env.example file</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># .env.example
+APP_ENV=development
+APP_PORT=8000
+DATABASE_URL=replace_with_your_database_url
+API_KEY=replace_with_your_api_key</code></pre>
+    </div>
+
+    <p>This is documentation for the required configuration keys. The values are placeholders,
+        not real credentials.</p>
+
+    <div class="py4-callout py4-danger">
+        <strong>Important security rules:</strong>
+        <ul>
+            <li>Never commit actual passwords, tokens, API keys or production connection strings to Git.</li>
+            <li>Keep any real local <code>.env</code> file out of source control.</li>
+            <li>Use your deployment platform's secret manager or protected environment settings in production.</li>
+            <li>Validate configuration values before opening connections.</li>
+            <li>Do not assume an environment variable is secure simply because it is not hard-coded.</li>
+        </ul>
+    </div>
+
+    <h3>What about .env files?</h3>
+    <p>Python's standard library does not automatically load a <code>.env</code> file. A third-party package,
+        commonly <code>python-dotenv</code>, can load one during development.</p>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code># Install inside your virtual environment
+python -m pip install python-dotenv
+
+# Example application code
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+app_env = os.getenv("APP_ENV", "development")
+print(app_env)</code></pre>
+    </div>
+
+    <p><strong>Expected output:</strong> The configured <code>APP_ENV</code> value, or
+        <code>development</code> if it is not set.</p>
+    <p><strong>Real-world use:</strong> Separate development, testing and production settings without
+        changing source code.</p>
+    <p><strong>Common mistake:</strong> Assuming that putting a password in a configuration file automatically
+        protects it. Protection depends on access controls, storage and deployment practices.</p>
+    <p><strong>Exercise:</strong> Read an environment variable called <code>APP_NAME</code>, provide a default,
+        and validate that it is not an empty string.</p>
+</section>
+
+<!-- STUDENT PROJECT -->
+<section class="py4-section" id="py4-student-project">
+    <h2>14. Practical Project — File-Based Student Records</h2>
+    <p>Build a terminal application that can add students, save records to JSON, display records,
+        search by name, handle missing or malformed files, validate input and log important operations.</p>
+
+    <h3>Project requirements</h3>
+    <div class="py4-grid">
+        <div class="py4-card">
+            <h4>Student fields</h4>
+            <ul>
+                <li>Student ID</li>
+                <li>Name</li>
+                <li>Age</li>
+                <li>Course</li>
+            </ul>
+        </div>
+        <div class="py4-card">
+            <h4>Application operations</h4>
+            <ul>
+                <li>Add a student</li>
+                <li>List saved students</li>
+                <li>Search by name</li>
+                <li>Validate input and handle errors</li>
+            </ul>
+        </div>
+    </div>
+
+    <h3>14.1 Complete working Python program</h3>
+    <p>Save the following as <code>main.py</code>. It uses only Python's standard library.</p>
+
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>import json
+import logging
+from pathlib import Path
+
+
+DATA_DIR = Path("data")
+DATA_FILE = DATA_DIR / "students.json"
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s"
+)
+
+
+class StudentDataError(Exception):
+    """Raised when student data cannot be processed safely."""
+
+
+def load_students():
+    """Load student records from JSON."""
+    if not DATA_FILE.exists():
+        logging.info("Student file does not exist yet")
+        return []
+
+    try:
+        with DATA_FILE.open("r", encoding="utf-8") as file:
+            students = json.load(file)
+    except json.JSONDecodeError as error:
+        logging.error("Student JSON is malformed")
+        raise StudentDataError(
+            "Student data is invalid JSON. Back up the file before repairing it."
+        ) from error
+    except OSError as error:
+        logging.error("Unable to read student file")
+        raise StudentDataError("Unable to read student data.") from error
+
+    if not isinstance(students, list):
+        raise StudentDataError("Student data must be a JSON list.")
+
+    for student in students:
+        if not isinstance(student, dict):
+            raise StudentDataError("Every student record must be an object.")
+
+        required = {"id", "name", "age", "course"}
+        if not required.issubset(student):
+            raise StudentDataError("A student record is missing required fields.")
+
+        if not isinstance(student["name"], str):
+            raise StudentDataError("Student names must be strings.")
+
+        if not isinstance(student["age"], int) or isinstance(student["age"], bool):
+            raise StudentDataError("Student ages must be integers.")
+
+    return students
+
+
+def save_students(students):
+    """Save student records to JSON."""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Write to a temporary file before replacing the main file.
+    temporary_file = DATA_FILE.with_suffix(".tmp")
+
+    try:
+        with temporary_file.open("w", encoding="utf-8") as file:
+            json.dump(students, file, indent=4, ensure_ascii=False)
+            file.write("\n")
+
+        temporary_file.replace(DATA_FILE)
+    except OSError as error:
+        logging.error("Unable to save student records")
+        raise StudentDataError("Unable to save student data.") from error
+
+    logging.info("Saved %d student record(s)", len(students))
+
+
+def add_student():
+    """Collect and validate student details."""
+    students = load_students()
+
+    student_id = input("Student ID: ").strip()
+    name = input("Student name: ").strip()
+    age_text = input("Age: ").strip()
+    course = input("Course: ").strip()
+
+    if not student_id or not name or not course:
+        print("ID, name and course are required.")
+        return
+
+    if any(str(item.get("id", "")).casefold() == student_id.casefold()
+           for item in students):
+        print("That student ID already exists.")
+        return
+
+    try:
+        age = int(age_text)
+    except ValueError:
+        print("Age must be a whole number.")
+        return
+
+    if not 5 <= age <= 100:
+        print("Age must be between 5 and 100.")
+        return
+
+    student = {
+        "id": student_id,
+        "name": name,
+        "age": age,
+        "course": course
+    }
+
+    students.append(student)
+    save_students(students)
+    print("Student added successfully.")
+
+
+def list_students():
+    """Display saved student records."""
+    students = load_students()
+
+    if not students:
+        print("No student records found.")
+        return
+
+    for student in students:
+        print(
+            f"ID: {student['id']} | "
+            f"Name: {student['name']} | "
+            f"Age: {student['age']} | "
+            f"Course: {student['course']}"
+        )
+
+
+def search_students():
+    """Search for students by a partial name."""
+    query = input("Enter a name to search: ").strip().casefold()
+
+    if not query:
+        print("Enter a search name.")
+        return
+
+    students = load_students()
+    matches = [
+        student for student in students
+        if query in student["name"].casefold()
+    ]
+
+    if not matches:
+        print("No matching students found.")
+        return
+
+    for student in matches:
+        print(
+            f"ID: {student['id']} | "
+            f"Name: {student['name']} | "
+            f"Age: {student['age']} | "
+            f"Course: {student['course']}"
+        )
+
+
+def main():
+    while True:
+        print("\\n--- Student Records ---")
+        print("1. Add student")
+        print("2. List students")
+        print("3. Search by name")
+        print("4. Exit")
+
+        choice = input("Choose an option: ").strip()
+
+        try:
+            if choice == "1":
+                add_student()
+            elif choice == "2":
+                list_students()
+            elif choice == "3":
+                search_students()
+            elif choice == "4":
+                print("Goodbye!")
+                break
+            else:
+                print("Choose 1, 2, 3 or 4.")
+        except StudentDataError as error:
+            logging.exception("Student operation failed")
+            print("Error:", error)
+
+
+if __name__ == "__main__":
+    main()</code></pre>
+    </div>
+
+    <h3>14.2 Run the application</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>python main.py</code></pre>
+    </div>
+
+    <div class="py4-output">Example terminal session:
+--- Student Records ---
+1. Add student
+2. List students
+3. Search by name
+4. Exit
+Choose an option: 1
+Student ID: S101
+Student name: Anita
+Age: 21
+Course: Python
+Student added successfully.</div>
+
+    <p>The actual output includes timestamps from logging. When you add the first student,
+        the application creates the <code>data</code> directory and writes <code>students.json</code>.</p>
+
+    <h3>14.3 Example students.json</h3>
+    <div class="py4-code-wrap">
+        <button class="py4-copy" type="button">Copy code</button>
+        <pre><code>[
+    {
+        "id": "S101",
+        "name": "Anita",
+        "age": 21,
+        "course": "Python"
+    }
+]</code></pre>
+    </div>
+
+    <h3>14.4 Important implementation details</h3>
+    <ul class="py4-bullet-list">
+        <li><strong>Missing file:</strong> The application treats a missing student file as an empty list.</li>
+        <li><strong>Malformed JSON:</strong> It reports an application error rather than silently replacing the existing data.</li>
+        <li><strong>Validation:</strong> It checks required fields, age format, age range and duplicate student IDs.</li>
+        <li><strong>Logging:</strong> Important save and error events are recorded.</li>
+        <li><strong>Safer saving:</strong> It writes to a temporary file before replacing the data file. This reduces some risks of partial writes but is not a complete transactional or concurrency solution.</li>
+    </ul>
+
+    <div class="py4-callout py4-warning">
+        <strong>Important:</strong> Back up <code>students.json</code> before manual repairs.
+        This beginner project is not a production-grade database. Concurrent writers, crashes and storage
+        failures require additional design and testing.
+    </div>
+
+    <h3>14.5 File-based storage vs database storage</h3>
+    <div class="py4-table-wrap">
+        <table class="py4-table">
+            <thead>
+                <tr><th>Feature</th><th>JSON file</th><th>Database</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Setup</td><td>Very simple</td><td>Requires database setup or a database engine</td></tr>
+                <tr><td>Best suited for</td><td>Small, simple datasets and demonstrations</td><td>Applications requiring structured queries and stronger data management</td></tr>
+                <tr><td>Searching</td><td>Often load records and search in application code</td><td>Can query indexed data efficiently</td></tr>
+                <tr><td>Concurrent updates</td><td>Need careful coordination and locking strategies</td><td>Database transactions and concurrency controls are available</td></tr>
+                <tr><td>Relationships</td><td>Must be managed by application code</td><td>Relational databases can enforce relationships and constraints</td></tr>
+                <tr><td>Growth</td><td>Can become slow or difficult to maintain as data grows</td><td>Usually better suited to growing business datasets</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <p><strong>Real-world use:</strong> A JSON file is useful for a learning project or small local utility.
+        For a multi-user school management system, a database such as SQLite, PostgreSQL or MySQL is generally
+        more appropriate.</p>
+
+    <p><strong>Extension exercise:</strong> Add an update operation, a delete operation and automated tests.
+        Later, replace the JSON repository with a database repository without changing the application's menu logic.</p>
+</section>
+
+<!-- EXERCISES -->
+<section class="py4-section" id="py4-exercises">
+    <h2>15. Exercises</h2>
+    <p>Complete these exercises before moving to the quiz.</p>
+
+    <details class="py4-details">
+        <summary>Exercise 1 — Modules</summary>
+        <div class="py4-details-content">
+            <p>Create <code>calculator.py</code> with functions for addition, subtraction and multiplication.
+                Import the functions into <code>main.py</code>.</p>
+            <p><strong>Expected outcome:</strong> Your main program can call the functions without copying
+                their implementations.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 2 — Packages</summary>
+        <div class="py4-details-content">
+            <p>Create a package named <code>school</code> with modules for students and courses.</p>
+            <p><strong>Expected outcome:</strong> Import a function from one of the package's modules.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 3 — File modes</summary>
+        <div class="py4-details-content">
+            <p>Create a text file, append two lines and read the full file. Repeat using write mode and observe
+                what happens to existing content.</p>
+            <p><strong>Expected outcome:</strong> Understand the difference between <code>w</code> and <code>a</code>.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 4 — JSON and CSV</summary>
+        <div class="py4-details-content">
+            <p>Store three students in JSON, then export their names and courses into CSV.</p>
+            <p><strong>Expected outcome:</strong> A valid JSON file and a CSV file with a header row.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 5 — Exception handling</summary>
+        <div class="py4-details-content">
+            <p>Ask the user for two numbers. Catch invalid input and division by zero. Use a success message
+                in <code>else</code> and a completion message in <code>finally</code>.</p>
+            <p><strong>Expected outcome:</strong> Invalid input produces a helpful message rather than an
+                unhandled traceback.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 6 — Logging and configuration</summary>
+        <div class="py4-details-content">
+            <p>Read <code>APP_ENV</code> from an environment variable and log the application startup event.</p>
+            <p><strong>Expected outcome:</strong> The application uses a default environment when the variable
+                is absent and logs a startup message.</p>
+        </div>
+    </details>
+
+    <details class="py4-details">
+        <summary>Exercise 7 — Student Records extension</summary>
+        <div class="py4-details-content">
+            <p>Add an update-student operation and reject duplicate student IDs. Write tests for valid input,
+                invalid age, a missing file and malformed JSON.</p>
+            <p><strong>Expected outcome:</strong> The application handles common error cases consistently.</p>
+        </div>
+    </details>
+
+    <h3>Learning progress checklist</h3>
+    <p>Check each topic when you can explain it and complete a small example.</p>
+
+    <ul class="py4-checklist" id="py4-checklist">
+        <li><label><input type="checkbox"> I understand modules and imports.</label></li>
+        <li><label><input type="checkbox"> I can create and import a package.</label></li>
+        <li><label><input type="checkbox"> I can create and activate a virtual environment.</label></li>
+        <li><label><input type="checkbox"> I can install dependencies with pip.</label></li>
+        <li><label><input type="checkbox"> I understand file modes and context managers.</label></li>
+        <li><label><input type="checkbox"> I can read and write JSON and CSV.</label></li>
+        <li><label><input type="checkbox"> I can handle exceptions and raise custom errors.</label></li>
+        <li><label><input type="checkbox"> I can configure logging and read environment variables.</label></li>
+        <li><label><input type="checkbox"> I can explain the Student Records project.</label></li>
+    </ul>
+    <div class="py4-result" id="py4-checklist-result" aria-live="polite"></div>
+</section>
+
+<!-- QUIZ -->
+<section class="py4-section" id="py4-quiz">
+    <h2>16. Knowledge Quiz</h2>
+    <p>Select an answer for each question and submit the quiz for feedback.</p>
+
+    <form id="py4-quiz-form">
+        <div class="py4-quiz-question" data-answer="b" data-explanation="A module is a Python file that contains reusable code.">
+            <p>1. What is a Python module?</p>
+            <label><input type="radio" name="py4-q1" value="a"> A database server</label>
+            <label><input type="radio" name="py4-q1" value="b"> A Python file containing reusable code</label>
+            <label><input type="radio" name="py4-q1" value="c"> A type of loop</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="c" data-explanation="A virtual environment isolates project dependencies.">
+            <p>2. Why use a virtual environment?</p>
+            <label><input type="radio" name="py4-q2" value="a"> To convert Python to HTML</label>
+            <label><input type="radio" name="py4-q2" value="b"> To automatically fix all bugs</label>
+            <label><input type="radio" name="py4-q2" value="c"> To isolate project dependencies</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="a" data-explanation="Write mode creates a missing file but truncates an existing file.">
+            <p>3. Which file mode truncates an existing file?</p>
+            <label><input type="radio" name="py4-q3" value="a"> w</label>
+            <label><input type="radio" name="py4-q3" value="b"> a</label>
+            <label><input type="radio" name="py4-q3" value="c"> r</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="b" data-explanation="The json module can serialize Python data to JSON and parse JSON back into Python data.">
+            <p>4. Which standard-library module works with JSON?</p>
+            <label><input type="radio" name="py4-q4" value="a"> logging</label>
+            <label><input type="radio" name="py4-q4" value="b"> json</label>
+            <label><input type="radio" name="py4-q4" value="c"> pathlib</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="c" data-explanation="FileNotFoundError is appropriate when a requested file cannot be found.">
+            <p>5. Which exception is commonly raised when an opened file does not exist?</p>
+            <label><input type="radio" name="py4-q5" value="a"> IndexError</label>
+            <label><input type="radio" name="py4-q5" value="b"> KeyError</label>
+            <label><input type="radio" name="py4-q5" value="c"> FileNotFoundError</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="a" data-explanation="The else block runs when the try block completes without an exception.">
+            <p>6. When does the try-else block execute its else section?</p>
+            <label><input type="radio" name="py4-q6" value="a"> When the try block succeeds without an exception</label>
+            <label><input type="radio" name="py4-q6" value="b"> Only when an exception is raised</label>
+            <label><input type="radio" name="py4-q6" value="c"> Only when the program starts</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="b" data-explanation="A custom exception can represent an application-specific failure.">
+            <p>7. Why create a custom exception?</p>
+            <label><input type="radio" name="py4-q7" value="a"> To install packages</label>
+            <label><input type="radio" name="py4-q7" value="b"> To represent a specific application error</label>
+            <label><input type="radio" name="py4-q7" value="c"> To replace every if statement</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="c" data-explanation="logging.exception records exception information and is intended for use inside an exception handler.">
+            <p>8. Which logging call includes exception information inside an exception handler?</p>
+            <label><input type="radio" name="py4-q8" value="a"> logging.debug only</label>
+            <label><input type="radio" name="py4-q8" value="b"> logging.info only</label>
+            <label><input type="radio" name="py4-q8" value="c"> logging.exception</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="a" data-explanation="Environment variables help keep configuration outside application source code.">
+            <p>9. What is a common purpose of environment variables?</p>
+            <label><input type="radio" name="py4-q9" value="a"> Supply configuration separately from source code</label>
+            <label><input type="radio" name="py4-q9" value="b"> Automatically validate every input</label>
+            <label><input type="radio" name="py4-q9" value="c"> Replace Python modules</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <div class="py4-quiz-question" data-answer="b" data-explanation="Use the csv module because CSV fields can contain quoted delimiters and other special cases.">
+            <p>10. What is the recommended way to parse CSV in Python?</p>
+            <label><input type="radio" name="py4-q10" value="a"> Always split each line on a comma</label>
+            <label><input type="radio" name="py4-q10" value="b"> Use Python's csv module</label>
+            <label><input type="radio" name="py4-q10" value="c"> Import the json module</label>
+            <div class="py4-quiz-feedback"></div>
+        </div>
+
+        <button class="py4-button" type="submit">Check My Answers</button>
+        <button class="py4-button py4-button-secondary" type="button" id="py4-reset-quiz">Reset Quiz</button>
+    </form>
+
+    <div class="py4-result" id="py4-quiz-result" aria-live="polite"></div>
+</section>
+
+<!-- SUMMARY -->
+<section class="py4-section" id="py4-summary">
+    <h2>17. Summary</h2>
+
+    <div class="py4-table-wrap">
+        <table class="py4-table">
+            <thead><tr><th>Concept</th><th>What to remember</th></tr></thead>
+            <tbody>
+                <tr><td>Modules</td><td>Reusable Python files imported into other files.</td></tr>
+                <tr><td>Packages</td><td>Directories that organize related modules.</td></tr>
+                <tr><td>Virtual environments</td><td>Isolate a project's installed dependencies.</td></tr>
+                <tr><td>pip</td><td>Installs third-party packages into the intended Python environment.</td></tr>
+                <tr><td>File handling</td><td>Use appropriate modes and prefer <code>with open()</code>.</td></tr>
+                <tr><td>pathlib</td><td>Provides readable, cross-platform path operations.</td></tr>
+                <tr><td>JSON</td><td>Represents structured data using objects, arrays and primitive values.</td></tr>
+                <tr><td>CSV</td><td>Represents tabular data in rows and columns.</td></tr>
+                <tr><td>Exceptions</td><td>Use targeted handlers to deal with expected failures.</td></tr>
+                <tr><td>Custom exceptions</td><td>Represent application-specific errors clearly.</td></tr>
+                <tr><td>Logging</td><td>Record application events and failures for diagnosis.</td></tr>
+                <tr><td>Environment variables</td><td>Provide configuration separately from application source code.</td></tr>
+                <tr><td>Security</td><td>Keep real secrets out of source control and logs.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="py4-callout py4-success">
+        <strong>Ready for the next page?</strong>
+        Page 5 introduces object-oriented programming, file-handling extensions and practical projects.
+        Use the navigation below to continue.
+    </div>
+</section>
+
+<div class="py4-footer-nav">
+    <a href="python3.html">← Previous: Page 3</a>
+    <a href="python5.html">Next: Page 5 — OOP and Projects →</a>
+</div>
+
+<footer class="py4-footer">
+    RBUtech · Python Programming Learning Series · Page 4 of 5
+</footer>
+
+</div>
+</main>
+</div>
+
+<script>
+(function () {
+    "use strict";
+
+    const py4Sidebar = document.getElementById("py4-sidebar");
+    const py4MenuToggle = document.getElementById("py4-menu-toggle");
+
+    py4MenuToggle.addEventListener("click", function () {
+        const isOpen = py4Sidebar.classList.toggle("py4-sidebar-open");
+        py4MenuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.querySelectorAll("#py4-nav a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            if (window.innerWidth <= 800) {
+                py4Sidebar.classList.remove("py4-sidebar-open");
+                py4MenuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
+
+    // Copy buttons copy only the associated predefined code sample.
+    document.querySelectorAll(".py4-copy").forEach(function (button) {
+        button.addEventListener("click", async function () {
+            const code = button.parentElement.querySelector("code");
+            if (!code) return;
+
+            const originalText = button.textContent;
+
+            try {
+                await navigator.clipboard.writeText(code.innerText);
+                button.textContent = "Copied!";
+            } catch (error) {
+                const range = document.createRange();
+                range.selectNodeContents(code);
+                const selection = window.getSelection();
+                selection.removeAllRanges();
+                selection.addRange(range);
+                button.textContent = "Select and copy";
+            }
+
+            window.setTimeout(function () {
+                button.textContent = originalText;
+            }, 1600);
+        });
+    });
+
+    // Highlight the navigation item for the visible section.
+    const py4Sections = document.querySelectorAll(".py4-section, #py4-introduction");
+    const py4Links = document.querySelectorAll("#py4-nav a");
+
+    if ("IntersectionObserver" in window) {
+        const py4Observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+
+                py4Links.forEach(function (link) {
+                    link.classList.toggle(
+                        "py4-active",
+                        link.getAttribute("href") === "#" + entry.target.id
+                    );
+                });
+            });
+        }, {
+            rootMargin: "-15% 0px -70% 0px"
+        });
+
+        py4Sections.forEach(function (section) {
+            py4Observer.observe(section);
+        });
+    }
+
+    // Project directory explorer.
+    const py4Descriptions = {
+        root: "python_project/ is the root directory that contains the application's code, configuration, data and tests.",
+        main: "main.py starts the application and coordinates the main program workflow.",
+        requirements: "requirements.txt lists third-party packages required by the project. Install them with python -m pip install -r requirements.txt.",
+        env: ".env.example documents configuration names using placeholders. It must never contain real passwords, API keys or tokens.",
+        utils: "utils/ groups reusable helper modules so that other parts of the project can import them.",
+        init: "__init__.py marks utils as a regular package. It may also expose selected functions from the package.",
+        helpers: "helpers.py contains reusable functions such as validation, formatting or calculation logic.",
+        data: "data/ stores the project's local data files when file-based storage is suitable.",
+        students: "students.json stores student records in JSON format. Protect it, validate its contents and back it up as needed.",
+        tests: "tests/ contains automated checks for application behavior.",
+        testhelpers: "test_helpers.py contains tests for the helper functions. Tests help detect regressions when code changes."
+    };
+
+    const py4ProjectTree = document.getElementById("py4-project-tree");
+    const py4ProjectDescription = document.getElementById("py4-project-description");
+
+    function py4SelectTreeRow(row) {
+        py4ProjectTree.querySelectorAll(".py4-tree-row").forEach(function (item) {
+            item.classList.remove("py4-selected");
+        });
+        row.classList.add("py4-selected");
+        py4ProjectDescription.textContent =
+            py4Descriptions[row.dataset.file] || "No description available.";
+    }
+
+    py4ProjectTree.querySelectorAll(".py4-tree-row").forEach(function (row) {
+        row.addEventListener("click", function () {
+            py4SelectTreeRow(row);
+        });
+
+        row.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                py4SelectTreeRow(row);
+            }
+        });
+    });
+
+    // File mode simulator: works only on sample content held in browser memory.
+    const py4FileMode = document.getElementById("py4-file-mode");
+    const py4FileExists = document.getElementById("py4-file-exists");
+    const py4FileContent = document.getElementById("py4-file-content");
+    const py4FileResult = document.getElementById("py4-file-mode-result");
+
+    document.getElementById("py4-run-file-mode").addEventListener("click", function () {
+        const mode = py4FileMode.value;
+        const exists = py4FileExists.value === "yes";
+        const content = py4FileContent.value;
+        let message = "";
+
+        if (mode === "r") {
+            message = exists
+                ? "Success: the existing file can be read. Original content remains unchanged."
+                : "Error: FileNotFoundError. Read mode requires an existing file.";
+        } else if (mode === "w") {
+            message = exists
+                ? "Success: write mode opens the file, truncates its old content, and writes the new content."
+                : "Success: a new file is created and the new content is written.";
+        } else if (mode === "a") {
+            message = exists
+                ? "Success: new content is appended to the end of the existing file."
+                : "Success: a new file is created, then the new content is written.";
+        } else if (mode === "x") {
+            message = exists
+                ? "Error: FileExistsError. Exclusive creation refuses to overwrite an existing file."
+                : "Success: a new file is created only because it does not already exist.";
+        }
+
+        message += "\\n\\nIllustrative content: " + (content || "(empty)");
+        py4FileResult.textContent = message;
+        py4FileResult.classList.toggle("py4-error-result", message.startsWith("Error:"));
+    });
+
+    // JSON viewer: parse and format JSON; never executes code.
+    const py4JsonInput = document.getElementById("py4-json-input");
+    const py4JsonResult = document.getElementById("py4-json-result");
+    const py4JsonOutput = document.getElementById("py4-json-output");
+
+    document.getElementById("py4-json-format").addEventListener("click", function () {
+        try {
+            const value = JSON.parse(py4JsonInput.value);
+            const formatted = JSON.stringify(value, null, 2);
+            py4JsonOutput.textContent = formatted;
+            py4JsonResult.textContent = "Valid JSON. Parsed successfully.";
+            py4JsonResult.classList.remove("py4-error-result");
+        } catch (error) {
+            py4JsonOutput.textContent = "No formatted output.";
+            py4JsonResult.textContent = "Invalid JSON: " + error.message;
+            py4JsonResult.classList.add("py4-error-result");
+        }
+    });
+
+    document.getElementById("py4-json-sample").addEventListener("click", function () {
+        py4JsonInput.value = JSON.stringify({
+            name: "Anita",
+            age: 21,
+            skills: ["Python", "SQL"],
+            active: true
+        }, null, 2);
+
+        py4JsonOutput.textContent = py4JsonInput.value;
+        py4JsonResult.textContent = "Sample loaded.";
+        py4JsonResult.classList.remove("py4-error-result");
+    });
+
+    // Exception simulator uses predefined scenarios and never runs Python code.
+    const py4ExceptionScenario = document.getElementById("py4-exception-scenario");
+    const py4ExceptionResult = document.getElementById("py4-exception-result");
+
+    document.getElementById("py4-run-exception").addEventListener("click", function () {
+        const scenarios = {
+            success: {
+                message: "try: conversion succeeds.\\nexcept: skipped.\\nelse: runs because no exception occurred.\\nfinally: runs.\\nOutcome: continue normally.",
+                error: false
+            },
+            value: {
+                message: "try: int('abc') raises ValueError.\\nexcept ValueError: handles the error.\\nelse: skipped.\\nfinally: runs.\\nOutcome: continue after handling the error.",
+                error: true
+            },
+            missing: {
+                message: "try: opening a missing file raises FileNotFoundError.\\nexcept FileNotFoundError: handles the missing file.\\nelse: skipped.\\nfinally: runs.\\nOutcome: display a helpful message.",
+                error: true
+            },
+            unhandled: {
+                message: "try: a predefined, unhandled error occurs.\\nNo matching except handler is found.\\nelse: skipped.\\nfinally: runs while the exception propagates.\\nOutcome: the error continues to the caller.",
+                error: true
+            }
+        };
+
+        const scenario = scenarios[py4ExceptionScenario.value];
+        py4ExceptionResult.textContent = scenario.message;
+        py4ExceptionResult.classList.toggle("py4-error-result", scenario.error);
+    });
+
+    // Checklist progress.
+    const py4Checklist = document.getElementById("py4-checklist");
+    const py4ProgressBar = document.getElementById("py4-progress-bar");
+    const py4ProgressText = document.getElementById("py4-progress-text");
+    const py4ProgressTrack = document.getElementById("py4-progress-track");
+    const py4ChecklistResult = document.getElementById("py4-checklist-result");
+
+    function py4UpdateProgress() {
+        const boxes = Array.from(py4Checklist.querySelectorAll('input[type="checkbox"]'));
+        const checked = boxes.filter(function (box) {
+            return box.checked;
+        }).length;
+        const percent = Math.round((checked / boxes.length) * 100);
+
+        py4ProgressBar.style.width = percent + "%";
+        py4ProgressText.textContent = percent + "% completed";
+        py4ProgressTrack.setAttribute("aria-valuenow", String(percent));
+        py4ChecklistResult.textContent =
+            checked + " of " + boxes.length + " learning goals completed (" + percent + "%).";
+    }
+
+    py4Checklist.querySelectorAll('input[type="checkbox"]').forEach(function (box) {
+        box.addEventListener("change", py4UpdateProgress);
+    });
+
+    // Quiz: compare predefined answers only.
+    const py4QuizForm = document.getElementById("py4-quiz-form");
+    const py4QuizResult = document.getElementById("py4-quiz-result");
+
+    py4QuizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const questions = Array.from(
+            py4QuizForm.querySelectorAll(".py4-quiz-question")
+        );
+
+        let score = 0;
+
+        questions.forEach(function (question) {
+            const selected = question.querySelector('input[type="radio"]:checked');
+            const feedback = question.querySelector(".py4-quiz-feedback");
+            const correctAnswer = question.dataset.answer;
+            const explanation = question.dataset.explanation;
+
+            if (selected && selected.value === correctAnswer) {
+                score++;
+                feedback.textContent = "Correct! " + explanation;
+                feedback.style.color = "#15803d";
+            } else {
+                feedback.textContent = (selected ? "Not quite. " : "No answer selected. ") +
+                    explanation;
+                feedback.style.color = "#b91c1c";
+            }
+        });
+
+        const percent = Math.round((score / questions.length) * 100);
+        let message = "Your score: " + score + "/" + questions.length + " (" + percent + "%). ";
+
+        if (percent >= 80) {
+            message += "Excellent work! You are ready to practise the project.";
+        } else if (percent >= 50) {
+            message += "Good start. Review the explanations for the questions you missed.";
+        } else {
+            message += "Review the page and try the quiz again.";
+        }
+
+        py4QuizResult.textContent = message;
+        py4QuizResult.classList.toggle("py4-error-result", percent < 50);
+    });
+
+    document.getElementById("py4-reset-quiz").addEventListener("click", function () {
+        py4QuizForm.reset();
+
+        py4QuizForm.querySelectorAll(".py4-quiz-feedback").forEach(function (feedback) {
+            feedback.textContent = "";
+        });
+
+        py4QuizResult.textContent = "";
+        py4QuizResult.classList.remove("py4-error-result");
+    });
+
+    // All browser demonstrations use predefined examples or user-supplied JSON.
+    // No Python interpreter, eval(), or arbitrary code execution is used.
+})();
+</script>
+</body>
+</html></main></div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
+</div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
+</body></html>
