@@ -1,0 +1,1565 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101828"><title>Core Java Programming</title>
+<style>
+:root{--primary:#5145e5;--primary-dark:#3930b8;--ink:#172033;--muted:#667085;--border:#e6e8ef;--surface:#fff;--background:#f7f8fc;--max:1240px;--radius:18px;--shadow:0 12px 36px rgba(16,24,40,.06)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--background);color:var(--ink);font:16px/1.7 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:focus-visible,button:focus-visible{outline:3px solid #a5a0ff;outline-offset:4px}.site{width:100%;min-height:100vh;overflow:clip}
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);border-bottom:1px solid var(--border);backdrop-filter:blur(16px)}.header-inner{max-width:var(--max);min-height:80px;margin:0 auto;padding:12px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;min-width:0}.brand-mark{width:44px;height:44px;display:grid;place-items:center;flex-shrink:0;border-radius:14px;background:linear-gradient(135deg,#6558f5,#4035bd);color:#fff;font-size:22px;font-weight:800;box-shadow:0 6px 16px rgba(81,69,229,.24)}.site-title{display:block;color:var(--ink);font-size:19px;font-weight:750;line-height:1.3;letter-spacing:-.5px;overflow-wrap:anywhere}.brand-caption{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase}.header-actions{display:flex;align-items:center;gap:14px}.main-nav{display:flex;align-items:center;gap:5px;min-width:0}.main-nav a{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;color:#475467;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}.main-nav a:hover,.main-nav a[aria-current=page]{background:#f0efff;color:var(--primary)}.main-nav .sep{display:none}.contact-button{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:43px;padding:10px 17px;border-radius:11px;background:var(--primary);color:#fff;font-size:13px;font-weight:700;text-decoration:none;white-space:nowrap;transition:background .2s,transform .2s}.contact-button:hover{background:var(--primary-dark);transform:translateY(-1px)}.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--border);border-radius:11px;background:#fff;color:var(--ink);font-size:22px;cursor:pointer}
+.body{display:grid;grid-template-columns:230px minmax(0,1fr);width:100%;max-width:var(--max);margin:0 auto;padding:36px 28px 60px;gap:28px;align-items:start;min-width:0}.body>*{min-width:0}.body.no-sidebar{grid-template-columns:minmax(0,1fr)}.sidebar{position:sticky;top:108px;min-width:0;padding:21px 16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow)}.sidebar:empty{display:none}.sidebar:not(:empty)::before{content:"ON THIS PAGE";display:block;margin:0 10px 13px;color:#98a2b3;font-size:10px;font-weight:800;letter-spacing:1.3px}.sidebar a{display:flex;align-items:center;margin:4px 0;padding:10px 11px;border-radius:10px;color:#475467;font-size:13px;font-weight:600;line-height:1.5;text-decoration:none;overflow-wrap:anywhere;transition:background .2s,color .2s}.sidebar a:hover,.sidebar a[aria-current=page]{background:#f0efff;color:var(--primary)}.content{display:block;width:100%;min-width:0;max-width:100%;padding:clamp(32px,5vw,64px);border:1px solid #e8e5ff;border-radius:24px;background:radial-gradient(ellipse at 100% 0%,rgba(170,158,255,.20),transparent 42%),linear-gradient(135deg,#fff 0%,#f7f6ff 100%);box-shadow:var(--shadow);font-size:17px;line-height:1.8;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h1{max-width:100%;margin:0 0 22px;color:#141b34;font-size:clamp(32px,4.5vw,52px);font-weight:780;line-height:1.15;letter-spacing:-1.2px;overflow-wrap:break-word;word-break:normal;white-space:normal}.content h2{max-width:100%;margin:34px 0 14px;color:var(--ink);font-size:clamp(23px,3vw,30px);line-height:1.3;letter-spacing:-.5px;overflow-wrap:break-word;word-break:normal}.content h3{max-width:100%;margin:26px 0 10px;font-size:20px;line-height:1.4;overflow-wrap:break-word;word-break:normal}.content p,.content li{max-width:100%;color:#475467;font-size:17px;line-height:1.85;overflow-wrap:break-word;word-break:normal;white-space:normal}.content a{color:var(--primary);text-underline-offset:3px}.content img{max-width:100%;height:auto;border-radius:12px}.content table{width:100%;max-width:100%;border-collapse:collapse;overflow-wrap:break-word;background:#fff}.content th,.content td{padding:12px;border:1px solid var(--border);text-align:left}.content th{background:#f8f8fc}.content blockquote{margin:20px 0;padding:8px 18px;border-left:4px solid var(--primary);background:#f5f4ff;color:#475467}.content pre{max-width:100%;overflow:auto;padding:16px;border-radius:12px;background:#101828;color:#f8fafc}.content code{overflow-wrap:anywhere;word-break:normal}.site-footer{border-top:1px solid var(--border);background:#fff}.footer-inner{max-width:var(--max);margin:0 auto;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{color:var(--ink);font-size:13px;font-weight:750}.footer-copy{margin-top:3px;color:var(--muted);font-size:12px}.footer-links{display:flex;flex-wrap:wrap;gap:18px}.footer-links a{color:#667085;font-size:12px;text-decoration:none}.footer-links a:hover{color:var(--primary)}
+@media(max-width:980px){.header-inner{padding:12px 20px}.header-actions{gap:8px}.main-nav a{padding:8px 9px;font-size:13px}.body{grid-template-columns:190px minmax(0,1fr);gap:18px;padding:22px 20px 40px}.content{padding:32px}}
+@media(max-width:720px){.header-inner{min-height:70px;padding:11px 16px;gap:10px}.brand-mark{width:39px;height:39px;font-size:19px}.site-title{font-size:16px}.brand-caption{font-size:9px}.header-actions{gap:8px}.contact-button{display:none}.menu-toggle{display:grid;place-items:center;flex-shrink:0}.main-nav{display:none;position:absolute;top:100%;left:0;right:0;padding:12px 16px 17px;flex-direction:column;align-items:stretch;gap:4px;border-bottom:1px solid var(--border);background:#fff;box-shadow:0 14px 20px rgba(16,24,40,.06)}.main-nav.is-open{display:flex}.main-nav a{padding:11px 13px;font-size:14px}.body{display:flex;flex-direction:column;gap:16px;padding:16px 14px 30px}.sidebar{position:static;width:100%;padding:12px}.sidebar:not(:empty)::before{margin:0 8px 6px}.sidebar a{display:inline-flex;margin:3px;padding:8px 9px;font-size:12px}.content{width:100%;padding:28px 21px;border-radius:18px}.content h1{font-size:clamp(31px,8vw,42px);letter-spacing:-1.3px}.content p,.content li{font-size:16px}.content table{display:block;overflow-x:auto}.footer-inner{padding:22px 16px;align-items:flex-start;flex-direction:column}.footer-links{gap:15px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+</style></head><body><div class="site">
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Home"><span class="brand-mark" aria-hidden="true">S</span><span><span class="site-title">same as all ways</span><span class="brand-caption">Ideas. Solutions. Growth.</span></span></a><div class="header-actions"><nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="./python.html">Python</a><a href="./java-tech-stack.html">Java Tech Stack</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav><a class="contact-button" href="./contact.html">Let's Talk ↗</a><button class="menu-toggle" id="menuToggle" type="button" aria-label="Open navigation menu" aria-controls="mainNav" aria-expanded="false"><span id="menuIcon" aria-hidden="true">☰</span></button></div></div></header>
+<div class="body no-sidebar"><aside class="sidebar" aria-label="Child pages"></aside><main class="content"><h1>Core-Java-Programming</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Java Programming - RBUtech</title>
+<style>
+:root {
+  --j1-bg:#f5f7fb;
+  --j1-card:#ffffff;
+  --j1-text:#202b3c;
+  --j1-muted:#617086;
+  --j1-primary:#2457a7;
+  --j1-border:#e1e7ef;
+  --j1-code:#172033;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:18px}
+body{
+  margin:0;background:var(--j1-bg);color:var(--j1-text);
+  font:15px/1.7 "Segoe UI",Arial,sans-serif
+}
+.j1-header{
+  background:#172e4e;color:#fff;padding:10px 20px;
+  display:flex;justify-content:space-between;align-items:center;gap:10px
+}
+.j1-brand{font-weight:800;letter-spacing:.5px}
+.j1-header small{color:#d5dfed}
+.j1-layout{
+  max-width:1500px;margin:auto;padding:16px;
+  display:grid;grid-template-columns:255px minmax(0,1fr);gap:18px;
+  align-items:start
+}
+.j1-sidebar{
+  position:sticky;top:12px;max-height:calc(100vh - 24px);
+  overflow-y:auto;background:var(--j1-card);
+  border:1px solid var(--j1-border);border-radius:10px;
+  padding:13px
+}
+.j1-side-title{
+  font-size:13px;font-weight:800;text-transform:uppercase;
+  letter-spacing:1px;margin:3px 0 10px;color:#34445b
+}
+.j1-progress{height:5px;background:#e8edf4;border-radius:10px;margin-bottom:12px}
+.j1-progress span{display:block;height:100%;width:0;background:var(--j1-primary)}
+.j1-menu{display:flex;flex-direction:column;gap:2px}
+.j1-menu a{
+  display:flex;gap:7px;padding:5px 6px;border-radius:5px;
+  font-size:12px;line-height:1.4;color:#43536a;text-decoration:none
+}
+.j1-menu a span{color:#8996a7;min-width:19px;font-size:10px}
+.j1-menu a:hover,.j1-menu a.active{background:#eaf1ff;color:#174b9a}
+.j1-main{min-width:0}
+.j1-card{
+  background:var(--j1-card);border:1px solid var(--j1-border);
+  border-radius:10px;padding:19px 22px;margin-bottom:14px
+}
+.j1-chapter{
+  color:var(--j1-primary);font-size:12px;font-weight:800;
+  text-transform:uppercase;letter-spacing:1px
+}
+h1{font-size:26px;line-height:1.3;margin:5px 0 8px}
+h2{font-size:20px;margin:0 0 12px}
+h3{font-size:17px;margin:4px 0 8px}
+h4{font-size:14px;margin:0 0 5px}
+p{margin:7px 0 12px}
+.j1-lead{color:var(--j1-muted);max-width:950px}
+.j1-stats{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}
+.j1-stat{
+  background:#f0f4f9;border:1px solid #e4eaf2;
+  border-radius:6px;padding:4px 9px;font-size:12px;color:#43536a
+}
+.j1-topic{
+  background:#fff;border:1px solid var(--j1-border);
+  border-radius:9px;padding:15px 17px;margin:10px 0;
+  scroll-margin-top:14px
+}
+.j1-kicker{
+  color:var(--j1-primary);font-size:10px;font-weight:800;
+  letter-spacing:1px;text-transform:uppercase
+}
+.j1-topic p{color:#4d5c70}
+.j1-example{
+  background:var(--j1-code);color:#e7edf7;border-radius:7px;
+  padding:13px 15px;overflow-x:auto;margin:10px 0
+}
+.j1-example pre{
+  margin:0;white-space:pre;tab-size:4;
+  font:13px/1.65 Consolas,Monaco,monospace
+}
+.j1-note{
+  background:#f0f5fc;border-left:3px solid var(--j1-primary);
+  padding:10px 13px;border-radius:0 6px 6px 0;color:#40516a;
+  margin:10px 0
+}
+.j1-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.j1-mini{
+  background:#f7f9fc;border:1px solid #e8edf3;
+  border-radius:7px;padding:10px 12px
+}
+.j1-mini p{font-size:13px;margin:3px 0;color:#59677a}
+.j1-group{
+  color:#63738a;font-size:12px;font-weight:800;
+  text-transform:uppercase;letter-spacing:1px;
+  border-bottom:1px solid var(--j1-border);
+  padding:12px 0 6px;margin-top:18px
+}
+.j1-checklist li,.j1-questions li{margin:7px 0}
+.j1-footer{text-align:center;color:#778397;font-size:12px;padding:18px}
+.j1-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.j1-actions button{
+  background:#fff;border:1px solid #cbd5e1;border-radius:6px;
+  padding:6px 10px;cursor:pointer;color:#34445b
+}
+.j1-actions button:hover{background:#f0f4f9}
+@media(max-width:850px){
+  .j1-layout{grid-template-columns:215px 1fr;gap:10px;padding:10px}
+}
+@media(max-width:650px){
+  .j1-layout{display:block}
+  .j1-sidebar{position:relative;top:auto;max-height:260px;margin-bottom:12px}
+  .j1-grid{grid-template-columns:1fr}
+  h1{font-size:22px}
+  .j1-card{padding:15px}
+}
+@media print{
+  .j1-sidebar,.j1-header,.j1-actions{display:none}
+  .j1-layout{display:block;padding:0}
+  body{background:white}
+  .j1-card,.j1-topic{box-shadow:none;break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="j1-header">
+  <div class="j1-brand">RBUtech · JAVA LEARNING PATH</div>
+  <small>Chapter 1 of 33</small>
+</header>
+
+<div class="j1-layout">
+
+<aside class="j1-sidebar">
+  <div class="j1-side-title">Page Contents</div>
+  <div class="j1-progress"><span id="j1-progress-bar"></span></div>
+  <nav class="j1-menu" id="j1-menu">
+    <a href="#j1-intro">Introduction</a>
+    <a href="#j1-objectives">Learning Objectives</a>
+    <a href="#j1-foundations">Java Foundations</a>
+    <a href="#j1-data">Data Types and Operators</a>
+    <a href="#j1-control">Control Flow and Arrays</a>
+    <a href="#j1-strings">Strings and Objects</a>
+    <a href="#j1-methods">Methods and Constructors</a>
+    <a href="#j1-oop">Object-Oriented Programming</a>
+    <a href="#j1-classes">Advanced Class Concepts</a>
+    <a href="#j1-exceptions">Exception Handling</a>
+    <a href="#j1-io">I/O and File Handling</a>
+    <a href="#j1-advanced">Advanced Java Fundamentals</a>
+    <a href="#j1-memory">JVM and Memory</a>
+    <a href="#j1-example">Complete Example</a>
+    <a href="#j1-interview">Interview Questions</a>
+    <a href="#j1-exercises">Practice Exercises</a>
+    <a href="#j1-checklist">Completion Checklist</a>
+  </nav>
+  <div class="j1-actions">
+    <button onclick="window.print()">Print / Save PDF</button>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})">Top ↑</button>
+  </div>
+</aside>
+
+<main class="j1-main">
+
+<section class="j1-card" id="j1-intro">
+  <div class="j1-chapter">🌈 Chapter 1 · Core Java Programming 🌈</div>
+  <h1>Core Java Programming — Complete Learning Guide</h1>
+  <p class="j1-lead">
+    Core Java is the foundation of enterprise Java development. Before learning
+    Spring Boot, Microservices, Hibernate or cloud-based Java applications,
+    developers must understand the Java language, object-oriented programming,
+    collections, exception handling, memory management and JVM internals.
+  </p>
+  <div class="j1-stats">
+    <span class="j1-stat">72 roadmap topics</span>
+    <span class="j1-stat">Java fundamentals</span>
+    <span class="j1-stat">Code examples</span>
+    <span class="j1-stat">Senior developer focus</span>
+  </div>
+</section>
+
+<section class="j1-card" id="j1-objectives">
+  <h2>Learning Objectives</h2>
+  <p>After completing this chapter, you should be able to:</p>
+  <ul>
+    <li>Understand how Java source code is compiled and executed.</li>
+    <li>Use Java data types, variables, operators and control statements.</li>
+    <li>Design classes using encapsulation, inheritance and polymorphism.</li>
+    <li>Work with strings, arrays, methods, interfaces and exceptions.</li>
+    <li>Read and write files using Java I/O and NIO APIs.</li>
+    <li>Understand JVM memory areas, garbage collection and class loading.</li>
+    <li>Write maintainable Java code suitable for enterprise applications.</li>
+  </ul>
+</section>
+
+<section class="j1-card" id="j1-foundations">
+<h2>1. Java Foundations</h2>
+
+<article class="j1-topic" id="j1-t1">
+<div class="j1-kicker">Topic 01</div>
+<h3>1. Java Introduction and Evolution</h3>
+<p>Java is a general-purpose, class-based programming language designed to support portability, reliability and object-oriented application development.</p>
+<p>Java source code is compiled into bytecode. The Java Virtual Machine (JVM) executes that bytecode on supported platforms. This architecture allows the same compiled application to run on different operating systems when compatible Java runtimes are available.</p>
+<p>Java is widely used in enterprise applications, banking systems, telecom platforms, e-commerce, cloud services, Android-related development and distributed systems.</p>
+<div class="j1-note"><strong>Important:</strong> Java is not only a programming language. Its ecosystem includes the JVM, standard libraries, development tools, frameworks and runtime technologies.</div>
+<p><strong>Practical example:</strong> A telecom billing platform can use Java services to process customer subscriptions, payments, usage records and account updates.</p>
+</article>
+
+<article class="j1-topic" id="j1-t2">
+<div class="j1-kicker">Topic 02</div>
+<h3>2. JDK, JRE and JVM Architecture</h3>
+<p>These three terms represent different parts of the Java execution environment.</p>
+<div class="j1-grid">
+<div class="j1-mini"><h4>JDK — Java Development Kit</h4><p>Provides development tools such as the Java compiler, launcher, debugger and other utilities, along with the runtime components.</p></div>
+<div class="j1-mini"><h4>JRE — Java Runtime Environment</h4><p>Traditionally refers to the runtime components and libraries required to run Java applications. Modern JDK distributions may not provide a separate JRE installation.</p></div>
+<div class="j1-mini"><h4>JVM — Java Virtual Machine</h4><p>Loads, verifies and executes Java bytecode. It manages runtime memory, garbage collection and execution.</p></div>
+<div class="j1-mini"><h4>Java Class Libraries</h4><p>Provide reusable functionality such as collections, I/O, networking, dates, concurrency and utilities.</p></div>
+</div>
+<div class="j1-note">Remember: JDK is for development; the JVM is the engine that executes bytecode.</div>
+</article>
+
+<article class="j1-topic" id="j1-t3">
+<div class="j1-kicker">Topic 03</div>
+<h3>3. Java Installation and Environment Setup</h3>
+<p>Install a supported JDK distribution and configure your development environment. Common distributions include Eclipse Temurin, Oracle JDK and other OpenJDK-based builds.</p>
+<p>Important setup components:</p>
+<ul>
+<li>Install the JDK.</li>
+<li>Configure JAVA_HOME to point to the JDK installation directory.</li>
+<li>Add the JDK bin directory to the system PATH.</li>
+<li>Install an IDE such as IntelliJ IDEA, Eclipse or Spring Tool Suite.</li>
+<li>Configure Maven or Gradle for project builds.</li>
+</ul>
+<div class="j1-example"><pre>java -version
+javac -version
+echo %JAVA_HOME%</pre></div>
+<p>On Windows, the environment variable can be configured through System Properties. On Linux, it is commonly configured in shell profile files.</p>
+<div class="j1-note">Use the same JDK version in your IDE, terminal and build pipeline to avoid version-related compilation problems.</div>
+</article>
+
+<article class="j1-topic" id="j1-t4">
+<div class="j1-kicker">Topic 04</div>
+<h3>4. Java Compilation and Execution Process</h3>
+<p>Java applications normally pass through these stages:</p>
+<ol>
+<li>Write source code in a .java file.</li>
+<li>Compile source code using javac.</li>
+<li>The compiler generates bytecode in a .class file.</li>
+<li>The class loader loads required classes.</li>
+<li>The JVM verifies and executes bytecode.</li>
+</ol>
+<div class="j1-example"><pre>// HelloWorld.java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello Java");
+    }
+}
+
+// Compile
+javac HelloWorld.java
+
+// Execute
+java HelloWorld</pre></div>
+<p>The JVM may interpret bytecode and use Just-In-Time (JIT) compilation to compile frequently executed code into native machine code.</p>
+</article>
+
+<article class="j1-topic" id="j1-t5">
+<div class="j1-kicker">Topic 05</div>
+<h3>5. Java Features and Platform Independence</h3>
+<p>Java provides several characteristics that make it suitable for large applications:</p>
+<ul>
+<li><strong>Platform independence:</strong> Bytecode can run on compatible JVM implementations.</li>
+<li><strong>Object-oriented:</strong> Supports classes, objects, inheritance and polymorphism.</li>
+<li><strong>Strongly typed:</strong> Variables and expressions have defined types.</li>
+<li><strong>Automatic memory management:</strong> Garbage collection manages many object-lifetime concerns.</li>
+<li><strong>Multithreading:</strong> Provides APIs for concurrent execution.</li>
+<li><strong>Rich libraries:</strong> Includes networking, collections, I/O, security and concurrency APIs.</li>
+<li><strong>JIT optimization:</strong> The runtime can optimize frequently executed code.</li>
+</ul>
+<p><strong>Interview concept:</strong> Java is often described as platform-independent because the compiler produces bytecode for the JVM rather than directly producing a different executable for every operating system.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-data">
+<h2>2. Data Types, Variables and Operators</h2>
+
+<article class="j1-topic" id="j1-t6">
+<div class="j1-kicker">Topic 06</div>
+<h3>6. Java Data Types and Variables</h3>
+<p>A variable is a named storage location used by a program. Every variable has a type that determines the values it can hold and the operations that can be performed on it.</p>
+<div class="j1-example"><pre>int employeeId = 101;
+String employeeName = "Ravi";
+double salary = 19000.50;
+boolean active = true;</pre></div>
+<p>Java variables can be local variables, instance variables or static variables. Their scope and lifetime depend on where they are declared.</p>
+</article>
+
+<article class="j1-topic" id="j1-t7">
+<div class="j1-kicker">Topic 07</div>
+<h3>7. Primitive and Non-Primitive Data Types</h3>
+<p>Java has eight primitive data types:</p>
+<table>
+<tr><th>Type</th><th>Typical use</th></tr>
+<tr><td>byte</td><td>Small integer values</td></tr>
+<tr><td>short</td><td>Short integer values</td></tr>
+<tr><td>int</td><td>Common integer values</td></tr>
+<tr><td>long</td><td>Large integer values</td></tr>
+<tr><td>float</td><td>Single-precision decimal values</td></tr>
+<tr><td>double</td><td>Double-precision decimal values</td></tr>
+<tr><td>char</td><td>Single UTF-16 code unit</td></tr>
+<tr><td>boolean</td><td>True or false</td></tr>
+</table>
+<p>Reference types include classes, interfaces, arrays, enums and records. A reference variable refers to an object; it does not directly contain the entire object.</p>
+<div class="j1-note">Use BigDecimal rather than float or double when exact decimal arithmetic is required, such as financial calculations.</div>
+</article>
+
+<article class="j1-topic" id="j1-t8">
+<div class="j1-kicker">Topic 08</div>
+<h3>8. Type Casting and Type Conversion</h3>
+<p>Type conversion changes a value from one data type to another.</p>
+<p><strong>Widening:</strong> Converting a smaller compatible numeric type into a wider type. This is generally performed automatically.</p>
+<p><strong>Narrowing:</strong> Converting a wider type into a smaller type. It requires an explicit cast and may lose information.</p>
+<div class="j1-example"><pre>int count = 100;
+long total = count;       // Widening
+
+double price = 99.75;
+int roundedDown = (int) price; // Narrowing: 99</pre></div>
+<p>Also understand parsing text into values using methods such as Integer.parseInt() and Double.parseDouble().</p>
+</article>
+
+<article class="j1-topic" id="j1-t9">
+<div class="j1-kicker">Topic 09</div>
+<h3>9. Operators and Expressions</h3>
+<p>Operators perform calculations, comparisons and logical operations.</p>
+<ul>
+<li>Arithmetic: +, -, *, /, %</li>
+<li>Relational: ==, !=, greater than, less than</li>
+<li>Logical: &&, ||, !</li>
+<li>Assignment: =, +=, -=, *=</li>
+<li>Unary: ++, --, +, -, !</li>
+<li>Bitwise: &, |, ^, ~</li>
+<li>Shift: &lt;&lt;, &gt;&gt;, &gt;&gt;&gt;</li>
+<li>Conditional: condition ? value1 : value2</li>
+<li>Type comparison: instanceof</li>
+</ul>
+<div class="j1-example"><pre>int age = 25;
+boolean eligible = age >= 18 && age <= 60;
+
+int result = eligible ? 1 : 0;</pre></div>
+<p>Understand operator precedence and use parentheses when an expression could be confusing.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-control">
+<h2>3. Control Flow and Arrays</h2>
+
+<article class="j1-topic" id="j1-t10">
+<div class="j1-kicker">Topic 10</div>
+<h3>10. Conditional Statements</h3>
+<p>Conditional statements allow a program to execute different blocks depending on conditions.</p>
+<div class="j1-example"><pre>int marks = 82;
+
+if (marks >= 90) {
+    System.out.println("Excellent");
+} else if (marks >= 75) {
+    System.out.println("Good");
+} else {
+    System.out.println("Needs improvement");
+}</pre></div>
+<p>Learn if, if-else, else-if ladder and switch statements. Modern Java also supports switch expressions.</p>
+</article>
+
+<article class="j1-topic" id="j1-t11">
+<div class="j1-kicker">Topic 11</div>
+<h3>11. Loops – for, while, do-while</h3>
+<p>Loops repeat a block of code while a condition is satisfied or while elements remain in a sequence.</p>
+<div class="j1-example"><pre>// for loop
+for (int i = 1; i <= 5; i++) {
+    System.out.println(i);
+}
+
+// while loop
+int count = 1;
+while (count <= 5) {
+    count++;
+}
+
+// do-while: executes at least once
+int value = 1;
+do {
+    System.out.println(value);
+    value++;
+} while (value <= 5);</pre></div>
+<p>Use enhanced for loops to iterate over arrays and collections when an index is not required.</p>
+</article>
+
+<article class="j1-topic" id="j1-t12">
+<div class="j1-kicker">Topic 12</div>
+<h3>12. Break and Continue</h3>
+<p><strong>break</strong> terminates the nearest loop or switch statement. <strong>continue</strong> skips the remaining statements in the current loop iteration and moves to the next iteration.</p>
+<div class="j1-example"><pre>for (int i = 1; i <= 10; i++) {
+    if (i == 3) continue;
+    if (i == 8) break;
+
+    System.out.println(i);
+}</pre></div>
+<p>Java also supports labeled break and continue for nested loops. Use labels sparingly because they can make control flow harder to follow.</p>
+</article>
+
+<article class="j1-topic" id="j1-t13">
+<div class="j1-kicker">Topic 13</div>
+<h3>13. Arrays – Single and Multidimensional</h3>
+<p>An array stores a fixed number of elements of the same component type. Array indexing starts at zero.</p>
+<div class="j1-example"><pre>int[] marks = {80, 90, 75, 88};
+
+for (int mark : marks) {
+    System.out.println(mark);
+}
+
+// Two-dimensional array
+int[][] matrix = {
+    {1, 2},
+    {3, 4}
+};
+
+System.out.println(matrix[1][0]); // 3</pre></div>
+<p>Understand array declaration, initialization, length, traversal, copying, sorting and common exceptions such as ArrayIndexOutOfBoundsException.</p>
+<div class="j1-note">Arrays have fixed length. Use ArrayList when the collection needs to grow or shrink dynamically.</div>
+</article>
+</section>
+
+<section class="j1-card" id="j1-strings">
+<h2>4. Strings and Object Fundamentals</h2>
+
+<article class="j1-topic" id="j1-t14">
+<div class="j1-kicker">Topic 14</div>
+<h3>14. Strings and String Pool</h3>
+<p>String represents text and is immutable. Java maintains a string pool to reuse certain string instances and reduce unnecessary object creation.</p>
+<div class="j1-example"><pre>String first = "Java";
+String second = "Java";
+
+System.out.println(first == second);       // Usually true
+System.out.println(first.equals(second));  // true</pre></div>
+<p>The == operator compares references for objects. equals() compares logical content when correctly implemented by the class.</p>
+<p>String literals are interned. The intern() method can return the canonical pooled representation of a string.</p>
+</article>
+
+<article class="j1-topic" id="j1-t15">
+<div class="j1-kicker">Topic 15</div>
+<h3>15. String vs StringBuilder vs StringBuffer</h3>
+<table>
+<tr><th>Class</th><th>Behavior</th><th>Typical use</th></tr>
+<tr><td>String</td><td>Immutable</td><td>Text values that do not change</td></tr>
+<tr><td>StringBuilder</td><td>Mutable, not synchronized</td><td>Efficient local string construction</td></tr>
+<tr><td>StringBuffer</td><td>Mutable, synchronized methods</td><td>Legacy synchronized string operations</td></tr>
+</table>
+<div class="j1-example"><pre>StringBuilder builder = new StringBuilder();
+
+builder.append("Hello");
+builder.append(" ");
+builder.append("Java");
+
+String result = builder.toString();</pre></div>
+<p>Repeated String concatenation in loops can create many temporary objects. StringBuilder is usually preferred for repeated modifications within one thread.</p>
+</article>
+
+<article class="j1-topic" id="j1-t16">
+<div class="j1-kicker">Topic 16</div>
+<h3>16. Immutable Objects</h3>
+<p>An immutable object cannot change its observable state after construction.</p>
+<p>Typical design practices include:</p>
+<ul>
+<li>Make the class final when inheritance must not alter immutability.</li>
+<li>Keep fields private and final.</li>
+<li>Initialize fields through constructors.</li>
+<li>Do not provide setters.</li>
+<li>Use defensive copies for mutable inputs and outputs.</li>
+</ul>
+<div class="j1-example"><pre>public final class Money {
+    private final BigDecimal amount;
+
+    public Money(BigDecimal amount) {
+        this.amount = Objects.requireNonNull(amount);
+    }
+
+    public BigDecimal getAmount() {
+        return amount;
+    }
+}</pre></div>
+<p>Immutable objects are easier to reason about and are useful in concurrent applications, caching and value-based domain models.</p>
+</article>
+
+<article class="j1-topic" id="j1-t17">
+<div class="j1-kicker">Topic 17</div>
+<h3>17. Wrapper Classes</h3>
+<p>Wrapper classes represent primitive values as objects.</p>
+<table>
+<tr><th>Primitive</th><th>Wrapper</th></tr>
+<tr><td>int</td><td>Integer</td></tr>
+<tr><td>long</td><td>Long</td></tr>
+<tr><td>double</td><td>Double</td></tr>
+<tr><td>float</td><td>Float</td></tr>
+<tr><td>char</td><td>Character</td></tr>
+<tr><td>boolean</td><td>Boolean</td></tr>
+<tr><td>byte</td><td>Byte</td></tr>
+<tr><td>short</td><td>Short</td></tr>
+</table>
+<p>Wrapper classes are required when working with generic collections such as List&lt;Integer&gt;, because Java generics use reference types rather than primitive types.</p>
+</article>
+
+<article class="j1-topic" id="j1-t18">
+<div class="j1-kicker">Topic 18</div>
+<h3>18. Autoboxing and Unboxing</h3>
+<p>Autoboxing automatically converts a primitive value into its corresponding wrapper object. Unboxing converts a wrapper object back into a primitive value.</p>
+<div class="j1-example"><pre>Integer number = 100; // Autoboxing
+int value = number;   // Unboxing
+
+List<Integer> values = new ArrayList<>();
+values.add(10);</pre></div>
+<p>Be careful when unboxing null wrapper references: it causes NullPointerException. Also understand wrapper caching and why object identity should not be used for numeric value comparison.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-methods">
+<h2>5. Methods, Constructors and Keywords</h2>
+
+<article class="j1-topic" id="j1-t19">
+<div class="j1-kicker">Topic 19</div>
+<h3>19. Methods and Method Overloading</h3>
+<p>A method defines a reusable operation. It may accept parameters and return a value.</p>
+<div class="j1-example"><pre>public int add(int a, int b) {
+    return a + b;
+}
+
+public double add(double a, double b) {
+    return a + b;
+}</pre></div>
+<p>Method overloading means defining multiple methods with the same name but different parameter lists. Return type alone cannot distinguish overloaded methods.</p>
+</article>
+
+<article class="j1-topic" id="j1-t20">
+<div class="j1-kicker">Topic 20</div>
+<h3>20. Constructors</h3>
+<p>A constructor initializes a newly created object. Its name matches the class name and it has no return type.</p>
+<div class="j1-example"><pre>public class Employee {
+    private String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+}</pre></div>
+<p>If no constructor is declared, the compiler may provide a default no-argument constructor. Once you declare a constructor, that implicit constructor is not generated.</p>
+</article>
+
+<article class="j1-topic" id="j1-t21">
+<div class="j1-kicker">Topic 21</div>
+<h3>21. Constructor Overloading</h3>
+<p>Constructor overloading allows objects to be initialized in different ways.</p>
+<div class="j1-example"><pre>public class Employee {
+    private String name;
+    private int age;
+
+    public Employee(String name) {
+        this(name, 0);
+    }
+
+    public Employee(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}</pre></div>
+<p>Constructor chaining using this() avoids duplicating initialization logic. A this() call must be the first statement in a constructor.</p>
+</article>
+
+<article class="j1-topic" id="j1-t22">
+<div class="j1-kicker">Topic 22</div>
+<h3>22. Static Variables, Methods and Blocks</h3>
+<p>Static members belong to the class rather than individual object instances.</p>
+<div class="j1-example"><pre>public class Employee {
+    static String company = "RBUtech";
+    static int count = 0;
+
+    static {
+        System.out.println("Class initialized");
+    }
+
+    public Employee() {
+        count++;
+    }
+
+    static int getCount() {
+        return count;
+    }
+}</pre></div>
+<p>Static methods cannot directly access instance members without an object reference. Static initialization occurs as part of class initialization.</p>
+</article>
+
+<article class="j1-topic" id="j1-t23">
+<div class="j1-kicker">Topic 23</div>
+<h3>23. Instance Variables and Methods</h3>
+<p>Instance variables belong to individual objects. Each object has its own instance state. Instance methods operate on the current object's state.</p>
+<div class="j1-example"><pre>class Account {
+    private double balance;
+
+    public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException();
+        }
+        balance += amount;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}</pre></div>
+<p>Instance members are central to object-oriented modeling. Protect state and expose meaningful operations rather than allowing uncontrolled changes.</p>
+</article>
+
+<article class="j1-topic" id="j1-t24">
+<div class="j1-kicker">Topic 24</div>
+<h3>24. This and Super Keywords</h3>
+<p><strong>this</strong> refers to the current object. It can access current instance members and invoke another constructor in the same class.</p>
+<p><strong>super</strong> refers to the superclass portion of the current object. It can invoke superclass constructors and access accessible superclass members.</p>
+<div class="j1-example"><pre>class Person {
+    String name;
+
+    Person(String name) {
+        this.name = name;
+    }
+}
+
+class Employee extends Person {
+    int id;
+
+    Employee(String name, int id) {
+        super(name);
+        this.id = id;
+    }
+}</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t25">
+<div class="j1-kicker">Topic 25</div>
+<h3>25. Final Keyword</h3>
+<p>The final keyword restricts reassignment or overriding depending on where it is used.</p>
+<ul>
+<li>Final variable: can be assigned once.</li>
+<li>Final method: cannot be overridden in a subclass.</li>
+<li>Final class: cannot be subclassed.</li>
+</ul>
+<div class="j1-example"><pre>final int MAX_RETRIES = 3;
+
+final class SecurityPolicy {
+    // This class cannot be extended.
+}</pre></div>
+<p>A final reference cannot point to another object, but the referenced object's internal state may still be mutable.</p>
+</article>
+
+<article class="j1-topic" id="j1-t26">
+<div class="j1-kicker">Topic 26</div>
+<h3>26. Access Modifiers</h3>
+<p>Access modifiers control where classes, constructors, methods and fields can be accessed.</p>
+<table>
+<tr><th>Modifier</th><th>Accessibility</th></tr>
+<tr><td>public</td><td>Accessible from anywhere, subject to module/package visibility rules</td></tr>
+<tr><td>protected</td><td>Same package and qualifying subclass access</td></tr>
+<tr><td>default (package-private)</td><td>Same package</td></tr>
+<tr><td>private</td><td>Declaring class</td></tr>
+</table>
+<p>Use the least permissive access level that satisfies the design. This helps maintain encapsulation and reduces accidental dependencies.</p>
+</article>
+
+<article class="j1-topic" id="j1-t27">
+<div class="j1-kicker">Topic 27</div>
+<h3>27. Packages and Imports</h3>
+<p>Packages organize related classes and help avoid naming conflicts. An import statement allows source code to refer to types by their simple names.</p>
+<div class="j1-example"><pre>package com.rbutech.employee;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class EmployeeService {
+    private final List<String> employees = new ArrayList<>();
+}</pre></div>
+<p>Understand package naming conventions, static imports, fully qualified names and the difference between package organization and the Java module system.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-oop">
+<h2>6. Object-Oriented Programming</h2>
+
+<article class="j1-topic" id="j1-t28">
+<div class="j1-kicker">Topic 28</div>
+<h3>28. Object-Oriented Programming (OOP)</h3>
+<p>Object-oriented programming models software using objects that combine state and behavior.</p>
+<p>The four commonly taught OOP pillars are encapsulation, inheritance, polymorphism and abstraction.</p>
+<p>OOP helps developers organize complex systems into understandable components. In enterprise systems, domain concepts such as Customer, Account, Order and Payment can be represented using suitable classes and interfaces.</p>
+<div class="j1-note">Good object-oriented design is about assigning responsibilities clearly, not creating a class for every small operation.</div>
+</article>
+
+<article class="j1-topic" id="j1-t29">
+<div class="j1-kicker">Topic 29</div>
+<h3>29. Encapsulation</h3>
+<p>Encapsulation combines data and operations inside a class while controlling access to internal state.</p>
+<div class="j1-example"><pre>class BankAccount {
+    private BigDecimal balance = BigDecimal.ZERO;
+
+    public void deposit(BigDecimal amount) {
+        if (amount.signum() <= 0) {
+            throw new IllegalArgumentException("Invalid amount");
+        }
+        balance = balance.add(amount);
+    }
+
+    public BigDecimal getBalance() {
+        return balance;
+    }
+}</pre></div>
+<p>The balance cannot be changed directly from outside the class. Changes must follow the class's validation rules.</p>
+</article>
+
+<article class="j1-topic" id="j1-t30">
+<div class="j1-kicker">Topic 30</div>
+<h3>30. Inheritance</h3>
+<p>Inheritance allows a class to extend another class and reuse or specialize its behavior.</p>
+<div class="j1-example"><pre>class Vehicle {
+    void start() {
+        System.out.println("Vehicle started");
+    }
+}
+
+class Car extends Vehicle {
+    void openBoot() {
+        System.out.println("Boot opened");
+    }
+}</pre></div>
+<p>Java supports single class inheritance: a class can extend only one direct superclass. It can implement multiple interfaces.</p>
+<div class="j1-note">Prefer composition over inheritance when the relationship is not a genuine "is-a" relationship.</div>
+</article>
+
+<article class="j1-topic" id="j1-t31">
+<div class="j1-kicker">Topic 31</div>
+<h3>31. Polymorphism</h3>
+<p>Polymorphism allows a common reference type to represent different concrete implementations.</p>
+<p>Runtime polymorphism is commonly achieved through method overriding and dynamic method dispatch.</p>
+<div class="j1-example"><pre>interface Payment {
+    void pay(BigDecimal amount);
+}
+
+class CardPayment implements Payment {
+    public void pay(BigDecimal amount) {
+        System.out.println("Card payment");
+    }
+}
+
+class UpiPayment implements Payment {
+    public void pay(BigDecimal amount) {
+        System.out.println("UPI payment");
+    }
+}
+
+Payment payment = new CardPayment();
+payment.pay(new BigDecimal("100.00"));</pre></div>
+<p>The implementation selected at runtime depends on the actual object, not merely the reference type.</p>
+</article>
+
+<article class="j1-topic" id="j1-t32">
+<div class="j1-kicker">Topic 32</div>
+<h3>32. Abstraction</h3>
+<p>Abstraction exposes essential operations while hiding implementation details.</p>
+<p>Interfaces and abstract classes are the primary language constructs used to model abstraction.</p>
+<p>For example, a payment service can expose a pay operation without requiring its caller to understand the internal steps of a card, bank or wallet integration.</p>
+</article>
+
+<article class="j1-topic" id="j1-t33">
+<div class="j1-kicker">Topic 33</div>
+<h3>33. Abstract Classes</h3>
+<p>An abstract class cannot be instantiated directly. It can contain abstract methods, concrete methods, fields and constructors.</p>
+<div class="j1-example"><pre>abstract class Report {
+    abstract void generate();
+
+    void printHeader() {
+        System.out.println("Company Report");
+    }
+}
+
+class SalesReport extends Report {
+    @Override
+    void generate() {
+        System.out.println("Generating sales report");
+    }
+}</pre></div>
+<p>Use an abstract class when related subclasses share state or common implementation in addition to requiring specialized behavior.</p>
+</article>
+
+<article class="j1-topic" id="j1-t34">
+<div class="j1-kicker">Topic 34</div>
+<h3>34. Interfaces</h3>
+<p>An interface defines a contract that implementing classes agree to fulfill.</p>
+<div class="j1-example"><pre>interface Notification {
+    void send(String message);
+}
+
+class EmailNotification implements Notification {
+    public void send(String message) {
+        System.out.println("Email: " + message);
+    }
+}</pre></div>
+<p>Interfaces support loose coupling and allow multiple implementations. A class can implement more than one interface.</p>
+</article>
+
+<article class="j1-topic" id="j1-t35">
+<div class="j1-kicker">Topic 35</div>
+<h3>35. Default and Static Interface Methods</h3>
+<p>Default methods provide an implementation inside an interface. Static methods belong to the interface itself and are called using the interface name.</p>
+<div class="j1-example"><pre>interface Logger {
+    default void info(String message) {
+        System.out.println("INFO: " + message);
+    }
+
+    static Logger console() {
+        return new Logger() {};
+    }
+}</pre></div>
+<p>Default methods help evolve interfaces while retaining compatibility for existing implementations. Be aware of conflicts when inherited defaults have the same signature.</p>
+</article>
+
+<article class="j1-topic" id="j1-t36">
+<div class="j1-kicker">Topic 36</div>
+<h3>36. Functional Interfaces</h3>
+<p>A functional interface has exactly one abstract method. It can be implemented using a lambda expression or method reference.</p>
+<div class="j1-example"><pre>@FunctionalInterface
+interface Calculator {
+    int calculate(int a, int b);
+}
+
+Calculator addition = (a, b) -> a + b;
+
+System.out.println(addition.calculate(10, 20));</pre></div>
+<p>Common built-in functional interfaces include Predicate, Function, Consumer and Supplier. They are widely used in the Stream API.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-classes">
+<h2>7. Advanced Class Concepts</h2>
+
+<article class="j1-topic" id="j1-t37">
+<div class="j1-kicker">Topic 37</div>
+<h3>37. Nested and Inner Classes</h3>
+<p>A nested class is declared inside another class. A non-static nested class is commonly called an inner class and has access to the enclosing object's instance members.</p>
+<p>Types include static nested classes, member inner classes, local classes and anonymous classes.</p>
+<div class="j1-example"><pre>class Outer {
+    private String message = "Hello";
+
+    class Inner {
+        void display() {
+            System.out.println(message);
+        }
+    }
+}</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t38">
+<div class="j1-kicker">Topic 38</div>
+<h3>38. Anonymous Classes</h3>
+<p>An anonymous class is a class expression without a declared name. It can extend a class or implement an interface for a one-off implementation.</p>
+<div class="j1-example"><pre>Runnable task = new Runnable() {
+    @Override
+    public void run() {
+        System.out.println("Task running");
+    }
+};
+
+new Thread(task).start();</pre></div>
+<p>For functional interfaces, lambda expressions are generally more concise. Anonymous classes remain useful when multiple methods or additional local behavior are required.</p>
+</article>
+
+<article class="j1-topic" id="j1-t39">
+<div class="j1-kicker">Topic 39</div>
+<h3>39. Enum</h3>
+<p>An enum defines a fixed set of named constants. Enums are type-safe and can contain fields, constructors and methods.</p>
+<div class="j1-example"><pre>enum OrderStatus {
+    NEW,
+    PROCESSING,
+    SHIPPED,
+    DELIVERED,
+    CANCELLED
+}
+
+OrderStatus status = OrderStatus.SHIPPED;</pre></div>
+<p>Use enums instead of arbitrary strings when a value must belong to a known, finite set.</p>
+</article>
+
+<article class="j1-topic" id="j1-t40">
+<div class="j1-kicker">Topic 40</div>
+<h3>40. Object Class Methods</h3>
+<p>Object is the root class of the Java class hierarchy for reference types. Important methods include:</p>
+<ul>
+<li>toString() — textual representation.</li>
+<li>equals() — logical equality.</li>
+<li>hashCode() — hash value used by hash-based structures.</li>
+<li>getClass() — runtime class information.</li>
+<li>clone() — protected cloning mechanism with special considerations.</li>
+<li>wait(), notify(), notifyAll() — intrinsic monitor coordination.</li>
+<li>finalize() — deprecated and subject to removal; do not use for resource management.</li>
+</ul>
+<p>Override methods carefully and follow their documented contracts.</p>
+</article>
+
+<article class="j1-topic" id="j1-t41">
+<div class="j1-kicker">Topic 41</div>
+<h3>41. equals() and hashCode()</h3>
+<p>equals() defines logical equality. hashCode() provides a hash value used by hash-based collections.</p>
+<p>The contract requires that equal objects have equal hash codes. Unequal objects may still have the same hash code.</p>
+<div class="j1-example"><pre>class Employee {
+    private final long id;
+
+    Employee(long id) {
+        this.id = id;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof Employee other)) return false;
+        return id == other.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Long.hashCode(id);
+    }
+}</pre></div>
+<div class="j1-note">Incorrect equals() and hashCode() implementations can cause unexpected behavior in HashMap and HashSet.</div>
+</article>
+
+<article class="j1-topic" id="j1-t42">
+<div class="j1-kicker">Topic 42</div>
+<h3>42. clone() and finalize() Concepts</h3>
+<p>Object.clone() is a legacy mechanism for copying objects. It requires Cloneable support and normally performs a shallow field copy unless additional logic is implemented.</p>
+<p>Shallow copying duplicates references to nested objects; deep copying creates independent copies of mutable nested state.</p>
+<p>finalize() was intended to run before object reclamation, but its timing was never reliable. It is deprecated for removal and should not be used for resource cleanup.</p>
+<div class="j1-note">Prefer copy constructors, factory methods or explicit copy methods. Use try-with-resources and AutoCloseable for resource management.</div>
+</article>
+</section>
+
+<section class="j1-card" id="j1-exceptions">
+<h2>8. Exception Handling</h2>
+
+<article class="j1-topic" id="j1-t43">
+<div class="j1-kicker">Topic 43</div>
+<h3>43. Exception Handling</h3>
+<p>Exception handling allows an application to respond to abnormal conditions without losing control of the entire program unexpectedly.</p>
+<p>Java uses Throwable as the root of the exception and error hierarchy. Exceptions are conditions applications may handle; Errors generally represent serious problems that applications should not normally attempt to recover from.</p>
+</article>
+
+<article class="j1-topic" id="j1-t44">
+<div class="j1-kicker">Topic 44</div>
+<h3>44. Checked and Unchecked Exceptions</h3>
+<p><strong>Checked exceptions</strong> are checked by the compiler and must be caught or declared, subject to the language rules.</p>
+<p><strong>Unchecked exceptions</strong> are RuntimeException subclasses and are not subject to the same catch-or-declare requirement.</p>
+<div class="j1-example"><pre>// Checked exception example
+try {
+    Files.readString(Path.of("data.txt"));
+} catch (IOException ex) {
+    System.err.println("Unable to read file");
+}
+
+// Unchecked exception example
+int result = 10 / 0; // ArithmeticException</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t45">
+<div class="j1-kicker">Topic 45</div>
+<h3>45. Try, Catch and Finally</h3>
+<p>try contains code that may throw an exception. catch handles matching exceptions. finally normally executes during completion of the try statement, whether or not an exception occurred.</p>
+<div class="j1-example"><pre>try {
+    int result = 10 / 2;
+    System.out.println(result);
+} catch (ArithmeticException ex) {
+    System.out.println("Invalid calculation");
+} finally {
+    System.out.println("Operation completed");
+}</pre></div>
+<p>Do not return from finally or use it to hide exceptions. Prefer try-with-resources for closing resources.</p>
+</article>
+
+<article class="j1-topic" id="j1-t46">
+<div class="j1-kicker">Topic 46</div>
+<h3>46. Throw and Throws</h3>
+<p><strong>throw</strong> explicitly throws an exception object. <strong>throws</strong> declares exceptions that a method may propagate to its caller.</p>
+<div class="j1-example"><pre>public void validateAge(int age)
+        throws InvalidAgeException {
+
+    if (age < 18) {
+        throw new InvalidAgeException("Age must be 18+");
+    }
+}</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t47">
+<div class="j1-kicker">Topic 47</div>
+<h3>47. Custom Exceptions</h3>
+<p>Custom exceptions represent application-specific failure conditions and make business errors easier to identify.</p>
+<div class="j1-example"><pre>public class EmployeeNotFoundException
+        extends RuntimeException {
+
+    public EmployeeNotFoundException(long id) {
+        super("Employee not found: " + id);
+    }
+}</pre></div>
+<p>Use meaningful exception names and preserve the original cause when wrapping another exception. Avoid creating excessive custom exception types without a clear benefit.</p>
+</article>
+
+<article class="j1-topic" id="j1-t48">
+<div class="j1-kicker">Topic 48</div>
+<h3>48. Try-with-Resources</h3>
+<p>Try-with-resources automatically closes resources that implement AutoCloseable.</p>
+<div class="j1-example"><pre>try (BufferedReader reader =
+         Files.newBufferedReader(Path.of("input.txt"))) {
+
+    String line;
+    while ((line = reader.readLine()) != null) {
+        System.out.println(line);
+    }
+} catch (IOException ex) {
+    ex.printStackTrace();
+}</pre></div>
+<p>It is preferred for streams, readers, writers, JDBC resources and other closeable objects.</p>
+</article>
+
+<article class="j1-topic" id="j1-t49">
+<div class="j1-kicker">Topic 49</div>
+<h3>49. Exception Propagation</h3>
+<p>When a method does not handle an exception, it may propagate to its caller. The exception continues up the call stack until a matching handler is found or the thread terminates.</p>
+<p>In layered applications, decide which layer can meaningfully handle the exception. Translate low-level failures into meaningful application errors while retaining the original cause.</p>
+</article>
+
+<article class="j1-topic" id="j1-t50">
+<div class="j1-kicker">Topic 50</div>
+<h3>50. Assertions</h3>
+<p>Assertions help developers check assumptions during development and testing.</p>
+<div class="j1-example"><pre>int quantity = 10;
+assert quantity > 0 : "Quantity must be positive";</pre></div>
+<p>Assertions are disabled by default unless enabled at runtime using -ea. Do not use assertions for validating external user input or enforcing business rules that must always execute.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-io">
+<h2>9. Java I/O, Files and NIO</h2>
+
+<article class="j1-topic" id="j1-t51">
+<div class="j1-kicker">Topic 51</div>
+<h3>51. Java I/O Streams</h3>
+<p>Java I/O provides APIs to read and write data from sources such as files, memory, network connections and other streams.</p>
+<p>Important base abstractions include InputStream, OutputStream, Reader and Writer.</p>
+<p>Choose the appropriate stream type based on whether the data is binary or character-oriented.</p>
+</article>
+
+<article class="j1-topic" id="j1-t52">
+<div class="j1-kicker">Topic 52</div>
+<h3>52. Byte Streams and Character Streams</h3>
+<p>Byte streams process raw bytes. Character streams process text using character encoding.</p>
+<div class="j1-example"><pre>// Byte-oriented file copy
+try (InputStream in = Files.newInputStream(Path.of("a.bin"));
+     OutputStream out = Files.newOutputStream(Path.of("b.bin"))) {
+    in.transferTo(out);
+}
+
+// Character-oriented text reading
+try (BufferedReader reader =
+         Files.newBufferedReader(Path.of("notes.txt"))) {
+    System.out.println(reader.readLine());
+}</pre></div>
+<p>Always be deliberate about text encoding, especially when handling multilingual data.</p>
+</article>
+
+<article class="j1-topic" id="j1-t53">
+<div class="j1-kicker">Topic 53</div>
+<h3>53. File Handling</h3>
+<p>File handling includes creating, reading, writing, copying, moving and deleting files and directories.</p>
+<div class="j1-example"><pre>Path file = Path.of("employee.txt");
+
+Files.writeString(file, "Employee information");
+String content = Files.readString(file);
+
+System.out.println(content);</pre></div>
+<p>Use validation and suitable permissions. Never trust a user-supplied path without checking for path traversal and unauthorized access.</p>
+</article>
+
+<article class="j1-topic" id="j1-t54">
+<div class="j1-kicker">Topic 54</div>
+<h3>54. Serialization and Deserialization</h3>
+<p>Serialization converts an object into a representation that can be stored or transmitted. Java's built-in object serialization uses Serializable and ObjectOutputStream/ObjectInputStream.</p>
+<div class="j1-example"><pre>class Employee implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String name;
+}</pre></div>
+<p>Deserialization reconstructs an object from a serialized representation.</p>
+<div class="j1-note">Java native deserialization can be dangerous with untrusted data. Prefer safer, explicit data formats such as JSON or Protocol Buffers for many service integrations.</div>
+</article>
+
+<article class="j1-topic" id="j1-t55">
+<div class="j1-kicker">Topic 55</div>
+<h3>55. Transient Keyword</h3>
+<p>The transient modifier excludes an instance field from default Java serialization.</p>
+<div class="j1-example"><pre>class UserSession implements Serializable {
+    private String username;
+    private transient String temporaryToken;
+}</pre></div>
+<p>Use it for fields that should not be part of the serialized object representation. It is not a substitute for secure secret management.</p>
+</article>
+
+<article class="j1-topic" id="j1-t56">
+<div class="j1-kicker">Topic 56</div>
+<h3>56. Externalization</h3>
+<p>Externalizable provides explicit control over writing and reading an object's serialized representation through writeExternal() and readExternal().</p>
+<p>Implementations must provide a public no-argument constructor. The developer is responsible for writing and restoring the required state.</p>
+<p>It is a specialized, legacy serialization mechanism; consider whether a modern explicit serialization format is more appropriate.</p>
+</article>
+
+<article class="j1-topic" id="j1-t57">
+<div class="j1-kicker">Topic 57</div>
+<h3>57. Java NIO</h3>
+<p>Java NIO introduced buffer-oriented I/O, channels and selectors. It supports scalable I/O designs and is especially relevant to network programming.</p>
+<p>Important concepts include:</p>
+<ul>
+<li>Buffers — containers for data.</li>
+<li>Channels — connections to entities capable of I/O.</li>
+<li>Selectors — monitor multiple selectable channels.</li>
+<li>Non-blocking I/O — operations can return without waiting for all work to complete.</li>
+</ul>
+</article>
+
+<article class="j1-topic" id="j1-t58">
+<div class="j1-kicker">Topic 58</div>
+<h3>58. NIO.2 and Path API</h3>
+<p>NIO.2 introduced improved file-system APIs. Path represents a file-system path, while Files provides operations on files and directories.</p>
+<div class="j1-example"><pre>Path source = Path.of("source.txt");
+Path target = Path.of("backup.txt");
+
+Files.copy(source, target,
+    StandardCopyOption.REPLACE_EXISTING);
+
+boolean exists = Files.exists(target);</pre></div>
+<p>Understand directory traversal, file attributes, symbolic links and file-system providers.</p>
+</article>
+
+<article class="j1-topic" id="j1-t59">
+<div class="j1-kicker">Topic 59</div>
+<h3>59. File Channels and Buffers</h3>
+<p>FileChannel supports operations such as reading, writing, positioning, transferring and mapping file data.</p>
+<div class="j1-example"><pre>try (FileChannel channel =
+         FileChannel.open(Path.of("data.txt"),
+             StandardOpenOption.READ)) {
+
+    ByteBuffer buffer = ByteBuffer.allocate(1024);
+
+    while (channel.read(buffer) > 0) {
+        buffer.flip();
+        // Process buffer contents
+        buffer.clear();
+    }
+}</pre></div>
+<p>Understand buffer position, limit, capacity, flip(), clear() and compact().</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-advanced">
+<h2>10. Additional Java Fundamentals</h2>
+
+<article class="j1-topic" id="j1-t60">
+<div class="j1-kicker">Topic 60</div>
+<h3>60. Regular Expressions</h3>
+<p>Regular expressions describe patterns used to search, validate and extract text.</p>
+<div class="j1-example"><pre>String email = "user@example.com";
+
+boolean valid = email.matches(
+    "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$"
+);
+
+System.out.println(valid);</pre></div>
+<p>Java provides Pattern and Matcher for reusable patterns and advanced matching. Avoid overly complex expressions that are difficult to maintain or vulnerable to catastrophic backtracking.</p>
+</article>
+
+<article class="j1-topic" id="j1-t61">
+<div class="j1-kicker">Topic 61</div>
+<h3>61. Date and Time API (Java 8+)</h3>
+<p>The java.time API provides immutable classes for date, time, duration, period, time zones and formatting.</p>
+<table>
+<tr><th>Class</th><th>Purpose</th></tr>
+<tr><td>LocalDate</td><td>Date without time or zone</td></tr>
+<tr><td>LocalTime</td><td>Time without date or zone</td></tr>
+<tr><td>LocalDateTime</td><td>Date and time without zone</td></tr>
+<tr><td>Instant</td><td>Point on the UTC timeline</td></tr>
+<tr><td>ZonedDateTime</td><td>Date and time with time zone</td></tr>
+<tr><td>Duration</td><td>Time-based amount</td></tr>
+<tr><td>Period</td><td>Date-based amount</td></tr>
+</table>
+<div class="j1-example"><pre>LocalDate today = LocalDate.now();
+LocalDate nextWeek = today.plusDays(7);
+
+ZonedDateTime dubaiTime =
+    ZonedDateTime.now(ZoneId.of("Asia/Dubai"));</pre></div>
+<p>For applications used across countries, understand UTC storage, time-zone conversion and daylight-saving rules.</p>
+</article>
+
+<article class="j1-topic" id="j1-t62">
+<div class="j1-kicker">Topic 62</div>
+<h3>62. Locale and Internationalization</h3>
+<p>Internationalization (i18n) prepares applications to support different languages, countries and regional formats.</p>
+<p>Locale represents language and regional preferences. ResourceBundle supports localized messages. NumberFormat and DateTimeFormatter support locale-sensitive formatting.</p>
+<div class="j1-example"><pre>Locale locale = Locale.forLanguageTag("en-IN");
+
+NumberFormat formatter =
+    NumberFormat.getCurrencyInstance(locale);
+
+System.out.println(formatter.format(15000));</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t63">
+<div class="j1-kicker">Topic 63</div>
+<h3>63. Annotations</h3>
+<p>Annotations provide metadata about program elements. They are used by compilers, frameworks, build tools and runtime libraries.</p>
+<p>Common built-in annotations include:</p>
+<ul>
+<li>@Override</li>
+<li>@Deprecated</li>
+<li>@SuppressWarnings</li>
+<li>@FunctionalInterface</li>
+</ul>
+<div class="j1-example"><pre>@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface Auditable {
+    String action();
+}
+
+class AccountService {
+    @Auditable(action = "ACCOUNT_UPDATE")
+    public void updateAccount() {
+        // Business logic
+    }
+}</pre></div>
+</article>
+
+<article class="j1-topic" id="j1-t64">
+<div class="j1-kicker">Topic 64</div>
+<h3>64. Reflection API</h3>
+<p>Reflection allows a program to inspect classes, constructors, methods, fields and annotations at runtime.</p>
+<div class="j1-example"><pre>Class<?> type = String.class;
+
+System.out.println(type.getName());
+
+for (Method method : type.getDeclaredMethods()) {
+    System.out.println(method.getName());
+}</pre></div>
+<p>Frameworks use reflection for dependency injection, object mapping, testing and annotation processing at runtime.</p>
+<div class="j1-note">Reflection can reduce compile-time safety and may be restricted by module boundaries. Use it only when dynamic inspection or invocation is genuinely required.</div>
+</article>
+
+<article class="j1-topic" id="j1-t65">
+<div class="j1-kicker">Topic 65</div>
+<h3>65. ClassLoader Architecture</h3>
+<p>Class loaders load class definitions into the JVM. The built-in hierarchy commonly includes:</p>
+<ul>
+<li>Bootstrap ClassLoader</li>
+<li>Platform ClassLoader</li>
+<li>Application ClassLoader</li>
+</ul>
+<p>Java commonly uses parent delegation: a class loader delegates loading to its parent before attempting to load a class itself. Custom class loaders can support specialized application loading requirements.</p>
+<p>Class loading, linking and initialization are distinct stages in the JVM lifecycle.</p>
+</article>
+</section>
+
+<section class="j1-card" id="j1-memory">
+<h2>11. JVM Internals and Memory Management</h2>
+
+<article class="j1-topic" id="j1-t66">
+<div class="j1-kicker">Topic 66</div>
+<h3>66. Garbage Collection Fundamentals</h3>
+<p>Garbage collection automatically reclaims heap memory occupied by objects that are no longer reachable through live references from GC roots.</p>
+<p>Developers should understand object reachability, allocation pressure, garbage collection pauses and the difference between memory reclamation and resource cleanup.</p>
+<p>Garbage collection does not automatically close files, database connections or sockets. Use explicit resource management for those resources.</p>
+</article>
+
+<article class="j1-topic" id="j1-t67">
+<div class="j1-kicker">Topic 67</div>
+<h3>67. Java Memory Model</h3>
+<p>The Java Memory Model defines how threads interact through memory and which visibility and ordering guarantees are provided.</p>
+<p>It is essential for understanding data races, synchronization, volatile fields, final-field semantics and happens-before relationships.</p>
+<div class="j1-note">A program can appear correct in single-threaded testing and still fail under concurrency because of visibility or ordering problems.</div>
+</article>
+
+<article class="j1-topic" id="j1-t68">
+<div class="j1-kicker">Topic 68</div>
+<h3>68. JVM Internals</h3>
+<p>The JVM includes several major runtime components:</p>
+<ul>
+<li>Class Loader Subsystem</li>
+<li>Runtime Data Areas</li>
+<li>Execution Engine</li>
+<li>Interpreter</li>
+<li>JIT Compiler</li>
+<li>Garbage Collector</li>
+<li>Native Method Interface</li>
+</ul>
+<p>Understand how bytecode is loaded, verified, prepared, initialized and executed. This knowledge helps investigate class-loading errors, memory problems and runtime performance issues.</p>
+</article>
+
+<article class="j1-topic" id="j1-t69">
+<div class="j1-kicker">Topic 69</div>
+<h3>69. Heap and Stack Memory</h3>
+<p><strong>Heap:</strong> Runtime memory area where objects and arrays are generally allocated. It is managed by the garbage collector.</p>
+<p><strong>Java stacks:</strong> Each thread has its own JVM stack containing frames for method invocations. Frames hold local variables, intermediate results and method execution state.</p>
+<div class="j1-example"><pre>public void process() {
+    int count = 10;                 // Local variable
+    Employee employee = new Employee(); // Object on heap
+}</pre></div>
+<p>The local reference is stored in the method frame, while the referenced object is generally allocated on the heap. JVM optimizations can make physical allocation more complex.</p>
+</article>
+
+<article class="j1-topic" id="j1-t70">
+<div class="j1-kicker">Topic 70</div>
+<h3>70. Metaspace</h3>
+<p>Metaspace stores class metadata in native memory. It replaced the permanent generation in HotSpot beginning with Java 8.</p>
+<p>Metaspace usage can grow when applications load many classes or repeatedly create class loaders that cannot be reclaimed.</p>
+<p>Useful diagnostic topics include class-loader leaks, class unloading and Metaspace-related OutOfMemoryError conditions.</p>
+</article>
+
+<article class="j1-topic" id="j1-t71">
+<div class="j1-kicker">Topic 71</div>
+<h3>71. Garbage Collection Algorithms</h3>
+<p>Garbage collectors use different strategies to identify and reclaim unreachable objects.</p>
+<p>Important concepts include:</p>
+<ul>
+<li>Mark and Sweep</li>
+<li>Mark and Compact</li>
+<li>Copying collection</li>
+<li>Generational collection</li>
+<li>Concurrent collection</li>
+<li>Region-based heap management</li>
+</ul>
+<p>Common HotSpot collectors include Serial, Parallel, G1, ZGC and Shenandoah, with availability and support depending on the JDK distribution and release.</p>
+<p>Learn how to select a collector based on throughput, latency, heap size and operational requirements.</p>
+</article>
+
+<article class="j1-topic" id="j1-t72">
+<div class="j1-kicker">Topic 72</div>
+<h3>72. JVM Tuning and Memory Management</h3>
+<p>JVM tuning involves measuring and adjusting runtime behavior to meet application performance and reliability goals.</p>
+<p>Important areas include:</p>
+<ul>
+<li>Heap sizing using -Xms and -Xmx.</li>
+<li>Garbage collector selection.</li>
+<li>GC log analysis.</li>
+<li>Thread and stack investigation.</li>
+<li>Metaspace monitoring.</li>
+<li>Heap dumps and memory leak analysis.</li>
+<li>CPU profiling and allocation profiling.</li>
+</ul>
+<div class="j1-example"><pre># Example JVM options
+java -Xms512m -Xmx2g \
+     -Xlog:gc* \
+     -jar application.jar</pre></div>
+<p>Use tools such as jcmd, jstack, jmap, Java Flight Recorder and Java Mission Control where appropriate. Tool availability and options depend on the JDK version.</p>
+<div class="j1-note"><strong>Senior developer principle:</strong> Never tune JVM parameters based only on assumptions. Capture metrics, reproduce the workload, identify the bottleneck and validate the improvement.</div>
+</article>
+</section>
+
+<section class="j1-card" id="j1-example">
+<h2>12. Complete Core Java Practical Project</h2>
+<h3>Employee Management Console Application</h3>
+<p>Build a small application that combines the important concepts covered in this chapter.</p>
+<p><strong>Requirements:</strong></p>
+<ul>
+<li>Create an Employee class with private fields.</li>
+<li>Use constructors to initialize employee details.</li>
+<li>Use encapsulation and validation.</li>
+<li>Store employees in an ArrayList.</li>
+<li>Implement add, search, update and delete operations.</li>
+<li>Use interfaces for service contracts.</li>
+<li>Handle invalid input using custom exceptions.</li>
+<li>Save and read employee data from a file.</li>
+<li>Use LocalDate for joining dates.</li>
+<li>Write unit tests for important business operations.</li>
+</ul>
+<div class="j1-example"><pre>public class Employee {
+    private final long id;
+    private String name;
+    private BigDecimal salary;
+
+    public Employee(long id, String name, BigDecimal salary) {
+        if (id <= 0) {
+            throw new IllegalArgumentException("Invalid ID");
+        }
+        this.id = id;
+        this.name = Objects.requireNonNull(name);
+        this.salary = Objects.requireNonNull(salary);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public void updateSalary(BigDecimal salary) {
+        if (salary.signum() < 0) {
+            throw new IllegalArgumentException("Invalid salary");
+        }
+        this.salary = salary;
+    }
+}</pre></div>
+<p><strong>Expected result:</strong> A maintainable console-based application that demonstrates object-oriented design, collections, validation, exception handling and file operations.</p>
+</section>
+
+<section class="j1-card" id="j1-interview">
+<h2>13. Core Java Interview Questions</h2>
+<ol class="j1-questions">
+<li>What is the difference between JDK, JRE and JVM?</li>
+<li>How does Java achieve platform independence?</li>
+<li>Explain the Java compilation and execution process.</li>
+<li>What is the difference between primitive and reference types?</li>
+<li>What is the difference between == and equals()?</li>
+<li>Why is String immutable in Java?</li>
+<li>Compare String, StringBuilder and StringBuffer.</li>
+<li>Explain autoboxing and unboxing.</li>
+<li>What is the difference between method overloading and overriding?</li>
+<li>What is constructor chaining?</li>
+<li>Explain static and instance members.</li>
+<li>What is the difference between this and super?</li>
+<li>Explain final variables, methods and classes.</li>
+<li>Compare abstract classes and interfaces.</li>
+<li>Explain encapsulation, inheritance, polymorphism and abstraction.</li>
+<li>What is the equals() and hashCode() contract?</li>
+<li>Explain checked and unchecked exceptions.</li>
+<li>What is the difference between throw and throws?</li>
+<li>How does try-with-resources work?</li>
+<li>Compare byte streams and character streams.</li>
+<li>What is serialization? What are its security concerns?</li>
+<li>What is reflection and where is it used?</li>
+<li>Explain the Java ClassLoader hierarchy.</li>
+<li>What is the difference between heap and stack memory?</li>
+<li>What is Metaspace?</li>
+<li>How does garbage collection identify unused objects?</li>
+<li>What is the Java Memory Model?</li>
+<li>How would you investigate a Java OutOfMemoryError?</li>
+<li>Which tools can you use to analyze JVM performance?</li>
+<li>How would you investigate high CPU usage in a Java application?</li>
+</ol>
+</section>
+
+<section class="j1-card" id="j1-exercises">
+<h2>14. Hands-on Practice Exercises</h2>
+<ol>
+<li>Write a program to reverse a string without using StringBuilder.reverse().</li>
+<li>Find duplicate elements in an integer array.</li>
+<li>Find the second-largest number in an array.</li>
+<li>Check whether a string is a palindrome.</li>
+<li>Count the frequency of each character in a string.</li>
+<li>Create an Employee class with constructor overloading.</li>
+<li>Demonstrate runtime polymorphism using a Payment interface.</li>
+<li>Create a custom exception for insufficient account balance.</li>
+<li>Read a text file and count the number of lines and words.</li>
+<li>Build an employee search application using ArrayList.</li>
+<li>Sort employees using Comparator.</li>
+<li>Write a class with correctly implemented equals() and hashCode().</li>
+<li>Create an immutable EmployeeId value object.</li>
+<li>Use LocalDate to calculate the number of days between two dates.</li>
+<li>Investigate a memory leak using a heap dump in a sample application.</li>
+</ol>
+</section>
+
+<section class="j1-card" id="j1-checklist">
+<h2>15. Chapter Completion Checklist</h2>
+<ul class="j1-checklist">
+<li>☐ I understand JDK, JRE, JVM and the execution process.</li>
+<li>☐ I can write Java programs using variables, operators and loops.</li>
+<li>☐ I understand arrays, strings and wrapper classes.</li>
+<li>☐ I can design classes and use OOP concepts correctly.</li>
+<li>☐ I understand constructors, access modifiers and interfaces.</li>
+<li>☐ I can handle exceptions and create custom exceptions.</li>
+<li>☐ I can read and write files using Java I/O and NIO.</li>
+<li>☐ I understand annotations, reflection and class loading.</li>
+<li>☐ I understand heap, stack, Metaspace and garbage collection.</li>
+<li>☐ I have completed the Employee Management practical project.</li>
+<li>☐ I can answer the Core Java interview questions confidently.</li>
+</ul>
+<div class="j1-note">
+<strong>Next Chapter:</strong> Advanced Java and Enterprise Java — JDBC, Servlets, JSP, HTTP sessions, web containers and application deployment.
+</div>
+</section>
+
+<div class="j1-footer">
+RBUtech · Java Developer Learning Path · Chapter 1 of 33
+</div>
+
+</main>
+</div>
+
+<script>
+(function(){
+  const menu = document.getElementById("j1-menu");
+  const links = [...menu.querySelectorAll('a')];
+  const sections = links
+    .map(link => document.querySelector(link.getAttribute("href")))
+    .filter(Boolean);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        links.forEach(link => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === "#" + entry.target.id
+          );
+        });
+      }
+    });
+  }, {rootMargin:"-10% 0px -75% 0px"});
+
+  sections.forEach(section => observer.observe(section));
+
+  window.addEventListener("scroll", () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const percentage = max > 0 ? (window.scrollY / max) * 100 : 0;
+    document.getElementById("j1-progress-bar").style.width =
+      percentage + "%";
+  }, {passive:true});
+})();
+</script>
+
+</body>
+</html>
+</main></div>
+<footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="./java-tech-stack.html">Java Tech Stack</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a></nav></div></footer>
+</div><script>(function(){const toggle=document.getElementById('menuToggle');const nav=document.getElementById('mainNav');const icon=document.getElementById('menuIcon');function setOpen(open){nav.classList.toggle('is-open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation menu':'Open navigation menu');icon.textContent=open?'×':'☰'}toggle.addEventListener('click',()=>setOpen(toggle.getAttribute('aria-expanded')!=='true'));nav.addEventListener('click',e=>{if(e.target.closest('a'))setOpen(false)});document.addEventListener('keydown',e=>{if(e.key==='Escape'){setOpen(false)}});window.addEventListener('resize',()=>{if(window.innerWidth>720)setOpen(false)});const path=location.pathname.replace(/\/+$/,'');nav.querySelectorAll('a').forEach(a=>{try{if(new URL(a.href,location.href).pathname.replace(/\/+$/,'')===path)a.setAttribute('aria-current','page')}catch(e){}});document.getElementById('currentYear').textContent=new Date().getFullYear()})();</script>
+</body></html>
