@@ -15,295 +15,1265 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#111827">
-<title>DevForge — Ultimate Developer Toolkit</title>
+<title>Testing Utilities & Converter Toolkit | RBUtech</title>
+
 <style>
-:root{--bg:#f4f6fb;--panel:#fff;--panel2:#f8f9fd;--ink:#172033;--muted:#68738a;--line:#e4e8f0;--accent:#6558e8;--accent2:#8278ff;--good:#138a5b;--bad:#d04444;--shadow:0 10px 30px #18213b0c;--editor:#fbfcff;--code:#20283a}
-[data-theme="dark"]{--bg:#0d1220;--panel:#151c2d;--panel2:#1b2438;--ink:#e9edf7;--muted:#9aa6bd;--line:#2a354c;--accent:#9188ff;--accent2:#aaa3ff;--good:#4bd39a;--bad:#ff7777;--shadow:0 12px 32px #0003;--editor:#101827;--code:#e6ebf5}
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select,textarea{font:inherit}button{cursor:pointer}
-.app{min-height:100vh;display:grid;grid-template-columns:270px minmax(0,1fr)}
-.sidebar{background:var(--panel);border-right:1px solid var(--line);height:100vh;position:sticky;top:0;display:flex;flex-direction:column;z-index:5}
-.brand{height:76px;padding:17px 20px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)}
-.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#7568f5,#3c8edb);display:grid;place-items:center;color:white;font-weight:900;font-size:19px;box-shadow:0 6px 15px #6558e844}
-.brand strong{font-size:17px;letter-spacing:-.4px}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:1.25px;margin-top:2px}
-.side-search{padding:15px 14px 10px}.searchbox{display:flex;gap:8px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:9px;padding:0 10px}.searchbox input{border:0;outline:0;background:transparent;color:var(--ink);height:38px;width:100%;font-size:12px}
-.nav{overflow:auto;padding:2px 10px 20px;flex:1}.group-title{font-size:10px;text-transform:uppercase;letter-spacing:1.2px;color:var(--muted);font-weight:800;padding:15px 10px 7px}
-.tool-link{width:100%;border:0;background:transparent;color:var(--muted);display:flex;align-items:center;gap:10px;text-align:left;padding:9px 10px;border-radius:8px;font-size:12px;transition:.15s}.tool-link:hover{background:var(--panel2);color:var(--ink)}.tool-link.active{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-weight:700}.tool-icon{width:18px;text-align:center;font-size:14px}.side-foot{border-top:1px solid var(--line);padding:12px 16px;color:var(--muted);font-size:10px;line-height:1.6}
-.main{min-width:0}.topbar{height:76px;background:var(--panel);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;position:sticky;top:0;z-index:4}
-.crumb{font-size:11px;color:var(--muted)}.crumb b{color:var(--ink);font-size:14px;margin-left:8px}.top-actions{display:flex;gap:8px;align-items:center}
-.btn{border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:8px 11px;font-size:11px;font-weight:650;display:inline-flex;align-items:center;gap:6px;transition:.15s}.btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px)}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.btn.primary:hover{background:var(--accent2);color:#fff}.btn.ghost{background:transparent}.btn.small{padding:6px 9px;font-size:10px}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
-.content{max-width:1600px;margin:auto;padding:26px 28px 40px}.heading{display:flex;justify-content:space-between;align-items:flex-start;gap:15px;margin-bottom:19px}.heading h1{font-size:23px;letter-spacing:-.8px;margin:0 0 5px}.heading p{margin:0;color:var(--muted);font-size:12px}.heading-right{display:flex;gap:8px;flex-wrap:wrap}
-.workspace{background:var(--panel);border:1px solid var(--line);border-radius:13px;box-shadow:var(--shadow);overflow:hidden}
-.toolbar{padding:12px 14px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.toolbar-left,.toolbar-right{display:flex;gap:7px;align-items:center;flex-wrap:wrap}.mode-label{font-size:10px;color:var(--muted);font-weight:800;text-transform:uppercase;letter-spacing:.8px}
-.option{height:31px;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:7px;padding:0 9px;font-size:11px;outline:none}
-.editors{display:grid;grid-template-columns:1fr 1fr;min-height:440px}.pane{min-width:0;display:flex;flex-direction:column}.pane+ .pane{border-left:1px solid var(--line)}.pane-head{height:43px;display:flex;justify-content:space-between;align-items:center;padding:0 14px;border-bottom:1px solid var(--line);font-size:10px;font-weight:800;letter-spacing:.7px;color:var(--muted)}.pane-head span:last-child{font-weight:500;letter-spacing:0}
-textarea.editor{width:100%;min-height:390px;resize:vertical;flex:1;border:0;outline:0;padding:17px 18px;background:var(--editor);color:var(--code);font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;tab-size:2;white-space:pre;overflow:auto}
-.output-wrap{position:relative;display:flex;flex:1;min-height:390px;background:var(--editor)}pre.output{margin:0;padding:17px 18px;width:100%;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;color:var(--code);font:12px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace}
-.output-html{width:100%;height:390px;border:0;background:white}
-.statusbar{border-top:1px solid var(--line);padding:9px 14px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:10px}.status-left{display:flex;gap:14px;flex-wrap:wrap}.status-dot{display:inline-block;width:6px;height:6px;background:var(--good);border-radius:50%;margin-right:5px}
-.below{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:15px}.info-card{border:1px solid var(--line);background:var(--panel);border-radius:11px;padding:14px 16px}.info-card h3{font-size:11px;margin:0 0 8px}.info-card p,.info-card li{font-size:11px;color:var(--muted);line-height:1.7;margin:0}.info-card ul{padding-left:17px;margin:0}
-.empty{color:var(--muted);font-style:italic}.toast{position:fixed;right:22px;bottom:22px;background:#172033;color:white;padding:11px 15px;border-radius:9px;font-size:12px;box-shadow:0 8px 30px #0003;opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translateY(0)}.toast.error{background:#a83232}
-.mobile-menu{display:none}.favorite{color:#e4a52e}.tool-count{margin-left:auto;font-size:9px;color:var(--muted)}
-#treeOutput{padding:15px 20px;font:12px/1.8 ui-monospace,monospace;overflow:auto;color:var(--code)}.tree-node{margin-left:15px}.tree-toggle{border:0;background:none;color:var(--accent);padding:1px 4px}.tree-key{color:#a45bca}.tree-string{color:#18875a}.tree-number{color:#c47a22}.tree-bool{color:#327cc5}
-@media(max-width:900px){.app{grid-template-columns:230px minmax(0,1fr)}.content{padding:20px 17px}.topbar{padding:0 18px}}
-@media(max-width:680px){.app{display:block}.sidebar{position:fixed;left:-285px;width:270px;transition:left .2s;box-shadow:var(--shadow)}.sidebar.open{left:0}.mobile-menu{display:inline-flex}.topbar{height:62px;padding:0 13px}.content{padding:17px 11px}.heading h1{font-size:19px}.editors{grid-template-columns:1fr}.pane+ .pane{border-left:0;border-top:1px solid var(--line)}textarea.editor,.output-wrap{min-height:270px}.below{grid-template-columns:1fr}.top-actions .hide-mobile{display:none}}
+/* ==========================================
+   RBUTECH TESTING TOOLKIT
+   Unique CSS prefix: qa3-
+========================================== */
+
+.qa3-page{
+ --qa3-bg:#f5f7fc;
+ --qa3-panel:#fff;
+ --qa3-ink:#172039;
+ --qa3-text:#344563;
+ --qa3-muted:#667085;
+ --qa3-line:#dce3ed;
+ --qa3-primary:#2457c5;
+ --qa3-light:#eaf0ff;
+ --qa3-navy:#192f50;
+ --qa3-code:#101a2b;
+ --qa3-green:#087443;
+ --qa3-red:#b42318;
+ --qa3-orange:#b54708;
+ font-family:Arial,Helvetica,sans-serif;
+ color:var(--qa3-text);
+ background:radial-gradient(circle at 100% 0%,#efedff 0,transparent 35%),var(--qa3-bg);
+ padding:25px;
+ line-height:1.65;
+ width:100%;
+ box-sizing:border-box;
+}
+.qa3-page *{box-sizing:border-box}
+.qa3-page h1,.qa3-page h2,.qa3-page h3,.qa3-page h4{color:var(--qa3-ink);line-height:1.25}
+.qa3-page h1{font-size:clamp(30px,4vw,52px);letter-spacing:-1.5px;margin:0 0 20px}
+.qa3-page h2{font-size:27px;margin:0 0 12px}
+.qa3-page h3{font-size:19px;margin:0 0 10px}
+.qa3-page p{margin:9px 0}
+.qa3-banner{
+ background:var(--qa3-navy);color:white;padding:15px 21px;
+ display:flex;justify-content:space-between;align-items:center;
+ gap:12px;flex-wrap:wrap;margin-bottom:18px
+}
+.qa3-banner strong{letter-spacing:1px}
+.qa3-layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:20px;align-items:start}
+.qa3-sidebar{
+ background:#fff;border:1px solid var(--qa3-line);border-radius:12px;
+ padding:15px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto
+}
+.qa3-sidebar h3{font-size:14px;text-transform:uppercase;letter-spacing:1px}
+.qa3-nav{display:flex;flex-direction:column;gap:3px}
+.qa3-nav a{
+ color:#435675;text-decoration:none;font-size:13px;padding:7px 8px;border-radius:6px
+}
+.qa3-nav a:hover,.qa3-nav a.qa3-active{background:var(--qa3-light);color:#1749ad}
+.qa3-sidebar-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+.qa3-sidebar-actions button,.qa3-btn{
+ border:1px solid #cbd5e1;background:#fff;color:#344563;
+ padding:8px 12px;border-radius:7px;cursor:pointer;font-size:13px
+}
+.qa3-sidebar-actions button:hover,.qa3-btn:hover{background:#eef3ff}
+.qa3-content{min-width:0}
+.qa3-card{
+ background:#fff;border:1px solid var(--qa3-line);border-radius:12px;
+ padding:24px;margin-bottom:17px;scroll-margin-top:15px;
+ box-shadow:0 2px 7px rgba(16,24,40,.025)
+}
+.qa3-hero{padding:26px}
+.qa3-kicker{font-size:13px;font-weight:800;letter-spacing:.8px;color:var(--qa3-primary);text-transform:uppercase}
+.qa3-hero h2{font-size:clamp(30px,4vw,52px);letter-spacing:-1.5px;margin:9px 0 18px}
+.qa3-hero p{font-size:17px;line-height:1.8}
+.qa3-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.qa3-tag{background:#f0f3f8;border:1px solid #e0e6f0;border-radius:7px;padding:6px 10px;font-size:12px}
+.qa3-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.qa3-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.qa3-feature{border:1px solid var(--qa3-line);border-radius:9px;padding:14px;background:#fbfcff}
+.qa3-feature strong{display:block;color:var(--qa3-ink);margin-bottom:4px}
+.qa3-tool{
+ border:1px solid var(--qa3-line);border-radius:10px;padding:17px;
+ background:#fff;margin:15px 0
+}
+.qa3-tool h3{margin-bottom:5px}
+.qa3-tool-desc{font-size:13px;color:var(--qa3-muted);margin:4px 0 13px}
+.qa3-label{display:block;font-size:13px;font-weight:700;color:#344563;margin:11px 0 5px}
+.qa3-input,.qa3-textarea,.qa3-select{
+ width:100%;border:1px solid #cbd5e1;border-radius:7px;padding:10px 11px;
+ font:14px Arial,sans-serif;color:#24334b;background:#fff;min-width:0
+}
+.qa3-textarea{
+ min-height:120px;resize:vertical;font-family:Consolas,monospace;
+ line-height:1.55;tab-size:2
+}
+.qa3-textarea.qa3-short{min-height:75px}
+.qa3-textarea.qa3-large{min-height:200px}
+.qa3-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.qa3-primary{
+ background:var(--qa3-primary);color:#fff;border:1px solid var(--qa3-primary);
+ padding:9px 14px;border-radius:7px;cursor:pointer;font-size:13px;font-weight:700
+}
+.qa3-primary:hover{background:#1745a6}
+.qa3-secondary{
+ background:#fff;color:#344563;border:1px solid #cbd5e1;
+ padding:9px 14px;border-radius:7px;cursor:pointer;font-size:13px
+}
+.qa3-danger{
+ background:#fff;color:var(--qa3-red);border:1px solid #e6b9b9;
+ padding:9px 14px;border-radius:7px;cursor:pointer;font-size:13px
+}
+.qa3-result{
+ background:#f5f7fb;border:1px solid #dce3ed;border-radius:8px;
+ padding:12px;margin-top:12px;min-height:42px;white-space:pre-wrap;
+ overflow-wrap:anywhere;font-family:Consolas,monospace;font-size:13px;color:#24334b
+}
+.qa3-result:empty{display:none}
+.qa3-status{font-size:13px;margin-top:8px;font-weight:700}
+.qa3-success{color:var(--qa3-green)}
+.qa3-error{color:var(--qa3-red)}
+.qa3-warning{color:var(--qa3-orange)}
+.qa3-note{
+ background:#fff8eb;border:1px solid #f1dfbd;padding:12px 14px;
+ border-radius:8px;margin:12px 0;font-size:13px
+}
+.qa3-info{
+ background:#eff5ff;border:1px solid #d4e2fb;padding:12px 14px;
+ border-radius:8px;margin:12px 0;font-size:13px
+}
+.qa3-table-wrap{overflow-x:auto}
+.qa3-table{width:100%;border-collapse:collapse;min-width:480px;font-size:13px}
+.qa3-table th,.qa3-table td{padding:10px;border:1px solid var(--qa3-line);text-align:left}
+.qa3-table th{background:#f1f4fa;color:var(--qa3-ink)}
+.qa3-map{
+ background:#f8faff;border:1px solid #d9e2f1;border-radius:10px;padding:16px;margin-top:15px
+}
+.qa3-map-root{
+ background:var(--qa3-navy);color:#fff;text-align:center;padding:12px;
+ max-width:350px;margin:0 auto 15px;border-radius:8px;font-weight:700
+}
+.qa3-map-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.qa3-map-node{background:#fff;border:1px solid #ccd8eb;padding:10px;border-radius:8px;text-align:center;font-size:13px}
+.qa3-map-node strong{display:block;color:var(--qa3-primary)}
+.qa3-footer{background:var(--qa3-navy);color:white;padding:18px;border-radius:10px;text-align:center}
+.qa3-footer p{margin:3px;font-size:13px}
+.qa3-mini{font-size:12px;color:var(--qa3-muted)}
+.qa3-inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.qa3-inline>*{flex:1}
+.qa3-copy{font-size:12px;padding:5px 9px}
+.qa3-page button:focus-visible,.qa3-page input:focus-visible,.qa3-page textarea:focus-visible,.qa3-page select:focus-visible{
+ outline:3px solid #94b5ff;outline-offset:2px
+}
+@media(max-width:900px){
+ .qa3-layout{grid-template-columns:1fr}
+ .qa3-sidebar{position:relative;top:auto;max-height:none}
+ .qa3-nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:600px){
+ .qa3-page{padding:11px}
+ .qa3-card{padding:16px}
+ .qa3-grid,.qa3-three,.qa3-map-grid{grid-template-columns:1fr}
+ .qa3-hero h2{font-size:33px}
+}
 </style>
 </head>
+
 <body>
-<div class="app">
-<aside class="sidebar" id="sidebar">
-  <div class="brand"><div class="logo">D</div><div><strong>DevForge</strong><small>DEVELOPER TOOLKIT</small></div></div>
-  <div class="side-search"><div class="searchbox"><span>⌕</span><input id="toolSearch" placeholder="Search tools..."></div></div>
-  <nav class="nav" id="toolNav"></nav>
-  <div class="side-foot">⚡ Runs locally in your browser<br>DevForge · Format. Convert. Simplify.</div>
+<div class="qa3-page" id="qa3-top">
+
+<h1>Testing-Utilities-and-Converter-Toolkit</h1>
+
+<div class="qa3-banner">
+ <strong>RBUTECH · QA & TESTING TOOLKIT</strong>
+ <span>Daily Testing Utilities · All-in-One Workspace</span>
+</div>
+
+<div class="qa3-layout">
+
+<aside class="qa3-sidebar">
+ <h3>Tool Categories</h3>
+ <nav class="qa3-nav">
+  <a href="#qa3-intro">Introduction</a>
+  <a href="#qa3-json">JSON Tools</a>
+  <a href="#qa3-xml">XML Tools</a>
+  <a href="#qa3-text">Text Utilities</a>
+  <a href="#qa3-encoding">Encoding Converters</a>
+  <a href="#qa3-jwt">JWT Decoder</a>
+  <a href="#qa3-time">Date & Timestamp</a>
+  <a href="#qa3-diff">Text Comparison</a>
+  <a href="#qa3-regex">Regex Tester</a>
+  <a href="#qa3-csv">CSV / JSON Converter</a>
+  <a href="#qa3-sql">SQL Formatter</a>
+  <a href="#qa3-hash">Hash Generator</a>
+  <a href="#qa3-testdata">Test Data Generator</a>
+  <a href="#qa3-http">HTTP Status Reference</a>
+  <a href="#qa3-units">Unit Converters</a>
+  <a href="#qa3-html">HTML Utilities</a>
+  <a href="#qa3-yaml">YAML Validator</a>
+  <a href="#qa3-mindmap">Toolbox Mind Map</a>
+  <a href="#qa3-tips">QA Best Practices</a>
+ </nav>
+ <div class="qa3-sidebar-actions">
+  <button onclick="window.print()">Print / Save PDF</button>
+  <button onclick="document.getElementById('qa3-top').scrollIntoView({behavior:'smooth'})">Top ↑</button>
+ </div>
 </aside>
-<main class="main">
-  <header class="topbar">
-    <div style="display:flex;align-items:center;gap:12px"><button class="btn mobile-menu" id="menuBtn">☰</button><div class="crumb">Developer workspace <b id="crumbName">JSON Formatter</b></div></div>
-    <div class="top-actions"><button class="btn ghost hide-mobile" id="favoriteBtn">☆ Favorite</button><button class="btn" id="themeBtn">☾ Theme</button></div>
-  </header>
-  <section class="content">
-    <div class="heading"><div><h1 id="toolTitle">JSON Formatter</h1><p id="toolDesc">Beautify, validate and transform JSON data.</p></div><div class="heading-right"><button class="btn" id="sampleBtn">↻ Load sample</button><button class="btn" id="clearBtn">✕ Clear</button></div></div>
-    <section class="workspace" id="workspace">
-      <div class="toolbar">
-        <div class="toolbar-left"><span class="mode-label">Workspace</span><select class="option" id="indent"><option value="2">Indent: 2 spaces</option><option value="4">Indent: 4 spaces</option><option value="tab">Indent: Tab</option></select><select class="option" id="dialect"><option>Generic</option><option>MySQL</option><option>PostgreSQL</option><option>SQL Server</option></select></div>
-        <div class="toolbar-right"><button class="btn primary" id="runBtn">▶ Run tool</button><button class="btn" id="validateBtn">✓ Validate</button><button class="btn" id="swapBtn">⇄ Swap</button></div>
-      </div>
-      <div class="editors">
-        <div class="pane"><div class="pane-head"><span>INPUT</span><span id="inputMeta">0 characters</span></div><textarea class="editor" id="input" spellcheck="false" placeholder="Paste or type your content here..."></textarea></div>
-        <div class="pane"><div class="pane-head"><span>OUTPUT</span><div style="display:flex;gap:6px"><button class="btn small" id="copyBtn">▣ Copy</button><button class="btn small" id="downloadBtn">↓ Save</button></div></div><div class="output-wrap" id="outputWrap"><pre class="output" id="output"><span class="empty">Your result will appear here...</span></pre></div></div>
-      </div>
-      <div class="statusbar"><div class="status-left"><span><i class="status-dot"></i><span id="status">Ready</span></span><span id="inputStats">0 lines · 0 chars</span><span id="outputStats">Output: —</span></div><span>Local processing · No data uploaded</span></div>
-    </section>
-    <div class="below"><div class="info-card"><h3>ABOUT THIS TOOL</h3><p id="toolHelp">Choose a tool from the sidebar, enter your content, then select Run tool. Your data stays in this browser.</p></div><div class="info-card"><h3>QUICK SHORTCUTS</h3><ul><li><b>Ctrl + Enter</b> — Run selected tool</li><li><b>Ctrl + Shift + C</b> — Copy output</li><li><b>Ctrl + L</b> — Clear input</li><li><b>Ctrl + /</b> — Toggle theme</li></ul></div></div>
-  </section>
+
+<main class="qa3-content">
+
+<!-- INTRO -->
+<section class="qa3-card qa3-hero" id="qa3-intro">
+ <div class="qa3-kicker">🧪 RBUTECH · QUALITY ENGINEERING TOOLKIT</div>
+ <h2>Testing Utilities & Converter Toolkit</h2>
+ <p>
+  A practical collection of everyday utilities for manual testing,
+  automation testing, API testing, backend validation, integration testing
+  and debugging. Convert data, inspect payloads, compare responses,
+  generate test inputs and validate common formats from one workspace.
+ </p>
+ <div class="qa3-tags">
+  <span class="qa3-tag">JSON / XML</span>
+  <span class="qa3-tag">API Testing</span>
+  <span class="qa3-tag">JWT</span>
+  <span class="qa3-tag">Encoding</span>
+  <span class="qa3-tag">Date / Time</span>
+  <span class="qa3-tag">Regex</span>
+  <span class="qa3-tag">Test Data</span>
+  <span class="qa3-tag">Developer Utilities</span>
+ </div>
+ <div class="qa3-note">
+  <strong>Privacy:</strong> These tools process input in your browser.
+  Avoid pasting production secrets, real customer information, passwords
+  or confidential tokens into any testing utility.
+ </div>
+</section>
+
+<section class="qa3-card">
+ <h2>What can you do with this toolkit?</h2>
+ <div class="qa3-three">
+  <div class="qa3-feature"><strong>API Testers</strong>Format JSON, decode JWTs, inspect timestamps, compare API responses and encode URL parameters.</div>
+  <div class="qa3-feature"><strong>Automation Testers</strong>Generate UUIDs, test data, regex patterns and sample payloads.</div>
+  <div class="qa3-feature"><strong>Manual Testers</strong>Compare text, validate data, convert formats and troubleshoot response values.</div>
+  <div class="qa3-feature"><strong>Backend Developers</strong>Inspect SQL, XML, JSON, Base64, hashes and HTTP status codes.</div>
+  <div class="qa3-feature"><strong>Integration Testers</strong>Convert CSV/JSON, inspect encoded content and validate common payload structures.</div>
+  <div class="qa3-feature"><strong>Performance Testers</strong>Prepare request data, test identifiers and calculate data sizes and time values.</div>
+ </div>
+</section>
+
+<!-- JSON -->
+<section class="qa3-card" id="qa3-json">
+ <div class="qa3-kicker">01 · API AND DATA VALIDATION</div>
+ <h2>JSON Tools</h2>
+ <p>Format, validate, minify and inspect JSON request and response payloads.</p>
+
+ <div class="qa3-tool">
+  <h3>JSON Formatter and Validator</h3>
+  <p class="qa3-tool-desc">Paste JSON to format it, validate syntax or compress it into one line.</p>
+  <label class="qa3-label">Input JSON</label>
+  <textarea id="qa3-json-input" class="qa3-textarea qa3-large">{
+  "employee": {
+    "id": 101,
+    "name": "Ravi",
+    "active": true,
+    "skills": ["Java", "API Testing"]
+  }
+}</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3JsonFormat()">Format JSON</button>
+   <button class="qa3-secondary" onclick="qa3JsonMinify()">Minify</button>
+   <button class="qa3-secondary" onclick="qa3JsonValidate()">Validate</button>
+   <button class="qa3-secondary" onclick="qa3Clear('qa3-json-input','qa3-json-result')">Clear</button>
+   <button class="qa3-secondary" onclick="qa3CopyValue('qa3-json-input')">Copy Input</button>
+  </div>
+  <div id="qa3-json-result" class="qa3-result"></div>
+ </div>
+
+ <div class="qa3-tool">
+  <h3>JSON Key Lookup</h3>
+  <p class="qa3-tool-desc">Find a nested property using a dot path, for example employee.name or items.0.id.</p>
+  <label class="qa3-label">JSON Input</label>
+  <textarea id="qa3-lookup-json" class="qa3-textarea">{"employee":{"id":101,"name":"Ravi","department":"QA"}}</textarea>
+  <label class="qa3-label">Property Path</label>
+  <input id="qa3-lookup-path" class="qa3-input" value="employee.name">
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3JsonLookup()">Find Value</button>
+  </div>
+  <div id="qa3-lookup-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- XML -->
+<section class="qa3-card" id="qa3-xml">
+ <div class="qa3-kicker">02 · XML VALIDATION</div>
+ <h2>XML Formatter and Validator</h2>
+ <p>Format XML payloads and check whether they are well-formed using the browser's XML parser.</p>
+ <div class="qa3-tool">
+  <label class="qa3-label">XML Input</label>
+  <textarea id="qa3-xml-input" class="qa3-textarea qa3-large">&lt;employees&gt;&lt;employee id="101"&gt;&lt;name&gt;Ravi&lt;/name&gt;&lt;department&gt;QA&lt;/department&gt;&lt;/employee&gt;&lt;/employees&gt;</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3XmlFormat()">Format XML</button>
+   <button class="qa3-secondary" onclick="qa3XmlValidate()">Validate XML</button>
+   <button class="qa3-secondary" onclick="qa3CopyValue('qa3-xml-input')">Copy</button>
+   <button class="qa3-secondary" onclick="qa3Clear('qa3-xml-input','qa3-xml-result')">Clear</button>
+  </div>
+  <div id="qa3-xml-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-note">
+  This checks XML well-formedness. It does not validate against an XSD schema.
+ </div>
+</section>
+
+<!-- TEXT -->
+<section class="qa3-card" id="qa3-text">
+ <div class="qa3-kicker">03 · TEXT UTILITIES</div>
+ <h2>Text Case Converter and Utilities</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">Input Text</label>
+  <textarea id="qa3-text-input" class="qa3-textarea">Welcome To RBUtech Testing Toolkit</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3TextCase('upper')">UPPERCASE</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('lower')">lowercase</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('title')">Title Case</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('sentence')">Sentence case</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('trim')">Trim Spaces</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('lines')">Remove Empty Lines</button>
+  </div>
+  <div class="qa3-actions">
+   <button class="qa3-secondary" onclick="qa3TextCase('reverse')">Reverse Text</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('sort')">Sort Lines</button>
+   <button class="qa3-secondary" onclick="qa3TextCase('unique')">Remove Duplicate Lines</button>
+   <button class="qa3-secondary" onclick="qa3CopyValue('qa3-text-input')">Copy Result</button>
+  </div>
+  <div id="qa3-text-stats" class="qa3-info">Text statistics will appear here.</div>
+ </div>
+ <div class="qa3-tool">
+  <h3>Text Statistics</h3>
+  <label class="qa3-label">Text</label>
+  <textarea id="qa3-stats-input" class="qa3-textarea qa3-short" oninput="qa3Stats()">Sample testing text</textarea>
+  <div id="qa3-stats-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- ENCODING -->
+<section class="qa3-card" id="qa3-encoding">
+ <div class="qa3-kicker">04 · ENCODING AND DECODING</div>
+ <h2>Encoding Converters</h2>
+
+ <div class="qa3-tool">
+  <h3>Base64 Encoder / Decoder</h3>
+  <label class="qa3-label">Input Text</label>
+  <textarea id="qa3-base64-input" class="qa3-textarea qa3-short">Hello RBUtech</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Base64('encode')">Encode Base64</button>
+   <button class="qa3-secondary" onclick="qa3Base64('decode')">Decode Base64</button>
+   <button class="qa3-secondary" onclick="qa3CopyValue('qa3-base64-input')">Copy</button>
+  </div>
+  <div id="qa3-base64-result" class="qa3-result"></div>
+ </div>
+
+ <div class="qa3-tool">
+  <h3>URL Encoder / Decoder</h3>
+  <label class="qa3-label">URL or Query Parameter</label>
+  <textarea id="qa3-url-input" class="qa3-textarea qa3-short">name=Ravi Kumar&department=QA Testing</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Url('encode')">Encode Component</button>
+   <button class="qa3-secondary" onclick="qa3Url('decode')">Decode Component</button>
+  </div>
+  <div id="qa3-url-result" class="qa3-result"></div>
+  <div class="qa3-note">Use component encoding for individual query values. It is not a complete URL parser.</div>
+ </div>
+
+ <div class="qa3-tool">
+  <h3>HTML Entity Encoder / Decoder</h3>
+  <label class="qa3-label">Input</label>
+  <textarea id="qa3-entity-input" class="qa3-textarea qa3-short">&lt;div&gt;Test &amp; validate&lt;/div&gt;</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3HtmlEntity('encode')">Escape HTML</button>
+   <button class="qa3-secondary" onclick="qa3HtmlEntity('decode')">Decode Entities</button>
+  </div>
+  <div id="qa3-entity-result" class="qa3-result"></div>
+ </div>
+
+ <div class="qa3-tool">
+  <h3>Hexadecimal / Decimal Converter</h3>
+  <div class="qa3-grid">
+   <div>
+    <label class="qa3-label">Decimal Number</label>
+    <input id="qa3-decimal" class="qa3-input" type="number" value="255">
+    <button class="qa3-primary" style="margin-top:8px" onclick="qa3NumberConvert('hex')">Decimal → Hex</button>
+   </div>
+   <div>
+    <label class="qa3-label">Hexadecimal Number</label>
+    <input id="qa3-hex" class="qa3-input" value="FF">
+    <button class="qa3-primary" style="margin-top:8px" onclick="qa3NumberConvert('decimal')">Hex → Decimal</button>
+   </div>
+  </div>
+  <div id="qa3-number-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- JWT -->
+<section class="qa3-card" id="qa3-jwt">
+ <div class="qa3-kicker">05 · API AUTHENTICATION</div>
+ <h2>JWT Decoder</h2>
+ <p>Decode the header and payload of a JSON Web Token to inspect claims and expiration values.</p>
+ <div class="qa3-tool">
+  <label class="qa3-label">JWT Token</label>
+  <textarea id="qa3-jwt-input" class="qa3-textarea" placeholder="Paste a JWT token here..."></textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3JwtDecode()">Decode JWT</button>
+   <button class="qa3-secondary" onclick="qa3Clear('qa3-jwt-input','qa3-jwt-result')">Clear</button>
+  </div>
+  <div id="qa3-jwt-result" class="qa3-result"></div>
+  <div class="qa3-note">
+   <strong>Security:</strong> This only decodes the token. It does NOT verify
+   the signature, issuer, audience or token authenticity. Never paste a
+   production bearer token into an untrusted website or shared environment.
+  </div>
+ </div>
+</section>
+
+<!-- TIME -->
+<section class="qa3-card" id="qa3-time">
+ <div class="qa3-kicker">06 · DATE AND TIME</div>
+ <h2>Timestamp and Date Converter</h2>
+ <div class="qa3-tool">
+  <h3>Unix Timestamp Converter</h3>
+  <p class="qa3-tool-desc">Convert Unix epoch seconds or milliseconds to a readable date.</p>
+  <label class="qa3-label">Timestamp</label>
+  <input id="qa3-timestamp" class="qa3-input" placeholder="Example: 1735689600">
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Timestamp('auto')">Auto Detect</button>
+   <button class="qa3-secondary" onclick="qa3Timestamp('seconds')">Seconds</button>
+   <button class="qa3-secondary" onclick="qa3Timestamp('milliseconds')">Milliseconds</button>
+   <button class="qa3-secondary" onclick="qa3Now()">Use Current Time</button>
+  </div>
+  <div id="qa3-time-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-tool">
+  <h3>Date to Unix Timestamp</h3>
+  <label class="qa3-label">Date and Time</label>
+  <input id="qa3-date-input" class="qa3-input" type="datetime-local">
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3DateToTimestamp()">Convert Date</button>
+  </div>
+  <div id="qa3-date-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- DIFF -->
+<section class="qa3-card" id="qa3-diff">
+ <div class="qa3-kicker">07 · API RESPONSE COMPARISON</div>
+ <h2>Text and Response Comparison</h2>
+ <p>Compare two API responses, log outputs, configuration files or text blocks line by line.</p>
+ <div class="qa3-tool">
+  <div class="qa3-grid">
+   <div>
+    <label class="qa3-label">Original / Expected</label>
+    <textarea id="qa3-diff-a" class="qa3-textarea qa3-large">{
+  "id": 101,
+  "name": "Ravi",
+  "status": "ACTIVE"
+}</textarea>
+   </div>
+   <div>
+    <label class="qa3-label">Actual / Received</label>
+    <textarea id="qa3-diff-b" class="qa3-textarea qa3-large">{
+  "id": 101,
+  "name": "Ravi Kumar",
+  "status": "ACTIVE"
+}</textarea>
+   </div>
+  </div>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Diff()">Compare Text</button>
+   <button class="qa3-secondary" onclick="qa3JsonDiff()">Compare as JSON</button>
+   <button class="qa3-secondary" onclick="qa3Clear('qa3-diff-a','qa3-diff-result');document.getElementById('qa3-diff-b').value=''">Clear</button>
+  </div>
+  <div id="qa3-diff-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-note">
+  This is a line-based comparison, not a full visual diff engine. JSON comparison
+  checks parsed structure and reports whether the data is equivalent.
+ </div>
+</section>
+
+<!-- REGEX -->
+<section class="qa3-card" id="qa3-regex">
+ <div class="qa3-kicker">08 · INPUT VALIDATION</div>
+ <h2>Regular Expression Tester</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">Regular Expression</label>
+  <input id="qa3-regex-pattern" class="qa3-input" value="^[A-Z]{2}[0-9]{4}$">
+  <label class="qa3-label">Flags</label>
+  <input id="qa3-regex-flags" class="qa3-input" value="g">
+  <label class="qa3-label">Test Text</label>
+  <textarea id="qa3-regex-text" class="qa3-textarea">AB1234
+CD5678
+invalid
+EF9999</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Regex()">Test Regex</button>
+  </div>
+  <div id="qa3-regex-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-info">
+  Common flags: g = global, i = case-insensitive, m = multiline, s = dotAll.
+  Avoid untrusted or extremely complex patterns that could cause excessive processing.
+ </div>
+</section>
+
+<!-- CSV -->
+<section class="qa3-card" id="qa3-csv">
+ <div class="qa3-kicker">09 · TEST DATA CONVERSION</div>
+ <h2>CSV to JSON / JSON to CSV</h2>
+ <div class="qa3-tool">
+  <h3>CSV to JSON</h3>
+  <label class="qa3-label">CSV Input (first row is headers)</label>
+  <textarea id="qa3-csv-input" class="qa3-textarea qa3-large">id,name,department,active
+101,Ravi,QA,true
+102,Priya,Development,true
+103,Arun,Testing,false</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3CsvToJson()">Convert CSV → JSON</button>
+  </div>
+  <div id="qa3-csv-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-tool">
+  <h3>JSON to CSV</h3>
+  <label class="qa3-label">JSON Array</label>
+  <textarea id="qa3-json-csv-input" class="qa3-textarea">[
+  {"id":101,"name":"Ravi","department":"QA"},
+  {"id":102,"name":"Priya","department":"Development"}
+]</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3JsonToCsv()">Convert JSON → CSV</button>
+  </div>
+  <div id="qa3-json-csv-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- SQL -->
+<section class="qa3-card" id="qa3-sql">
+ <div class="qa3-kicker">10 · DATABASE TESTING</div>
+ <h2>SQL Formatter</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">SQL Query</label>
+  <textarea id="qa3-sql-input" class="qa3-textarea qa3-large">select e.id,e.name,d.department_name from employees e join departments d on e.department_id=d.id where e.status='ACTIVE' order by e.name</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3SqlFormat()">Format SQL</button>
+   <button class="qa3-secondary" onclick="qa3SqlUpper()">Uppercase Keywords</button>
+   <button class="qa3-secondary" onclick="qa3CopyValue('qa3-sql-input')">Copy</button>
+  </div>
+  <div id="qa3-sql-result" class="qa3-result"></div>
+  <div class="qa3-note">
+   Lightweight formatter for common SQL statements. It is not a SQL parser,
+   query validator or database execution engine. Review complex queries manually.
+  </div>
+ </div>
+</section>
+
+<!-- HASH -->
+<section class="qa3-card" id="qa3-hash">
+ <div class="qa3-kicker">11 · DATA INTEGRITY</div>
+ <h2>SHA-256 Hash Generator</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">Text Input</label>
+  <textarea id="qa3-hash-input" class="qa3-textarea qa3-short">RBUtech Testing Toolkit</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3Hash()">Generate SHA-256</button>
+  </div>
+  <div id="qa3-hash-result" class="qa3-result"></div>
+  <div class="qa3-note">
+   SHA-256 is a cryptographic hash, not encryption. Do not use a plain SHA-256
+   hash for password storage. Use a dedicated password hashing algorithm such
+   as Argon2id, bcrypt or scrypt in a secure application.
+  </div>
+ </div>
+</section>
+
+<!-- TEST DATA -->
+<section class="qa3-card" id="qa3-testdata">
+ <div class="qa3-kicker">12 · QA TEST DATA GENERATOR</div>
+ <h2>Test Data Generator</h2>
+ <p>Generate sample values for test scenarios. Generated values are synthetic and are not guaranteed to be unique in external systems.</p>
+ <div class="qa3-tool">
+  <div class="qa3-grid">
+   <div>
+    <label class="qa3-label">Number of Records</label>
+    <input id="qa3-record-count" class="qa3-input" type="number" min="1" max="100" value="5">
+   </div>
+   <div>
+    <label class="qa3-label">Data Type</label>
+    <select id="qa3-data-type" class="qa3-select">
+     <option value="employees">Employee Records</option>
+     <option value="users">User Records</option>
+     <option value="products">Product Records</option>
+     <option value="orders">Order Records</option>
+     <option value="emails">Email Addresses</option>
+     <option value="uuids">UUID Values</option>
+     <option value="numbers">Random Numbers</option>
+    </select>
+   </div>
+  </div>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3GenerateData()">Generate Test Data</button>
+   <button class="qa3-secondary" onclick="qa3DownloadData()">Download JSON</button>
+  </div>
+  <div id="qa3-data-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-tool">
+  <h3>UUID Generator</h3>
+  <label class="qa3-label">Number of UUIDs</label>
+  <input id="qa3-uuid-count" class="qa3-input" type="number" min="1" max="100" value="5">
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3GenerateUUID()">Generate UUIDs</button>
+  </div>
+  <div id="qa3-uuid-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- HTTP -->
+<section class="qa3-card" id="qa3-http">
+ <div class="qa3-kicker">13 · API TESTING REFERENCE</div>
+ <h2>HTTP Status Code Reference</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">Search status code or description</label>
+  <input id="qa3-http-search" class="qa3-input" placeholder="Example: 404, unauthorized, server error" oninput="qa3HttpSearch()">
+  <div class="qa3-table-wrap" style="margin-top:12px">
+   <table class="qa3-table">
+    <thead><tr><th>Code</th><th>Meaning</th><th>Testing Interpretation</th></tr></thead>
+    <tbody id="qa3-http-body"></tbody>
+   </table>
+  </div>
+ </div>
+</section>
+
+<!-- UNITS -->
+<section class="qa3-card" id="qa3-units">
+ <div class="qa3-kicker">14 · GENERAL CONVERTERS</div>
+ <h2>Unit and Data Size Converters</h2>
+ <div class="qa3-tool">
+  <h3>Data Size Converter</h3>
+  <div class="qa3-grid">
+   <div>
+    <label class="qa3-label">Value</label>
+    <input id="qa3-size-value" class="qa3-input" type="number" value="1024">
+   </div>
+   <div>
+    <label class="qa3-label">From Unit</label>
+    <select id="qa3-size-from" class="qa3-select">
+     <option value="1">Bytes</option>
+     <option value="1024" selected>KB (1024 bytes)</option>
+     <option value="1048576">MB (1024² bytes)</option>
+     <option value="1073741824">GB (1024³ bytes)</option>
+    </select>
+   </div>
+  </div>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3SizeConvert()">Convert to all units</button>
+  </div>
+  <div id="qa3-size-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-tool">
+  <h3>Temperature Converter</h3>
+  <div class="qa3-grid">
+   <div>
+    <label class="qa3-label">Temperature</label>
+    <input id="qa3-temp-value" class="qa3-input" type="number" value="25">
+   </div>
+   <div>
+    <label class="qa3-label">From</label>
+    <select id="qa3-temp-unit" class="qa3-select">
+     <option value="C">Celsius</option>
+     <option value="F">Fahrenheit</option>
+     <option value="K">Kelvin</option>
+    </select>
+   </div>
+  </div>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3TempConvert()">Convert Temperature</button>
+  </div>
+  <div id="qa3-temp-result" class="qa3-result"></div>
+ </div>
+ <div class="qa3-tool">
+  <h3>Milliseconds / Seconds / Minutes Converter</h3>
+  <label class="qa3-label">Value in milliseconds</label>
+  <input id="qa3-ms-value" class="qa3-input" type="number" value="1500">
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3TimeUnits()">Convert</button>
+  </div>
+  <div id="qa3-ms-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- HTML -->
+<section class="qa3-card" id="qa3-html">
+ <div class="qa3-kicker">15 · WEB TESTING UTILITIES</div>
+ <h2>HTML Escape and Unescape</h2>
+ <div class="qa3-tool">
+  <label class="qa3-label">HTML / Text Input</label>
+  <textarea id="qa3-html-input" class="qa3-textarea qa3-short">&lt;button class="test"&gt;Click &amp; Submit&lt;/button&gt;</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3HtmlEscape()">Escape HTML</button>
+   <button class="qa3-secondary" onclick="qa3HtmlUnescape()">Unescape HTML</button>
+  </div>
+  <div id="qa3-html-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- YAML -->
+<section class="qa3-card" id="qa3-yaml">
+ <div class="qa3-kicker">16 · CONFIGURATION TESTING</div>
+ <h2>YAML Basic Validator</h2>
+ <div class="qa3-tool">
+  <p class="qa3-tool-desc">
+   This basic checker identifies common indentation and formatting issues.
+   It is not a full YAML 1.2 parser or schema validator.
+  </p>
+  <label class="qa3-label">YAML Input</label>
+  <textarea id="qa3-yaml-input" class="qa3-textarea qa3-large">application:
+  name: employee-service
+  port: 8080
+  features:
+    - employee
+    - department</textarea>
+  <div class="qa3-actions">
+   <button class="qa3-primary" onclick="qa3YamlCheck()">Check Common YAML Issues</button>
+  </div>
+  <div id="qa3-yaml-result" class="qa3-result"></div>
+ </div>
+</section>
+
+<!-- MIND MAP -->
+<section class="qa3-card" id="qa3-mindmap">
+ <div class="qa3-kicker">TOOLKIT OVERVIEW</div>
+ <h2>Complete Testing Toolkit Mind Map</h2>
+ <p>Use this map to identify the right tool for your daily testing activity.</p>
+ <div class="qa3-map">
+  <div class="qa3-map-root">RBUtech · QA TESTING TOOLKIT</div>
+  <div class="qa3-map-grid">
+   <div class="qa3-map-node"><strong>API & Data</strong>JSON · XML · CSV · JWT</div>
+   <div class="qa3-map-node"><strong>Encoding</strong>Base64 · URL · HTML · Hex</div>
+   <div class="qa3-map-node"><strong>Debugging</strong>Text Diff · Regex · SQL</div>
+   <div class="qa3-map-node"><strong>Date & Time</strong>Epoch · Timestamp · Date</div>
+   <div class="qa3-map-node"><strong>Test Data</strong>UUID · Users · Employees · Orders</div>
+   <div class="qa3-map-node"><strong>Data Integrity</strong>SHA-256 · Validation</div>
+   <div class="qa3-map-node"><strong>References</strong>HTTP Status · Units</div>
+   <div class="qa3-map-node"><strong>Configuration</strong>YAML · XML · JSON</div>
+  </div>
+ </div>
+</section>
+
+<!-- TIPS -->
+<section class="qa3-card" id="qa3-tips">
+ <div class="qa3-kicker">QUALITY ENGINEERING</div>
+ <h2>QA Best Practices for Daily Testing</h2>
+ <div class="qa3-grid">
+  <div class="qa3-feature"><strong>Validate API Contracts</strong>Check required fields, data types, status codes and error responses.</div>
+  <div class="qa3-feature"><strong>Test Negative Scenarios</strong>Try missing values, nulls, invalid formats, boundary values and unexpected types.</div>
+  <div class="qa3-feature"><strong>Compare Actual and Expected</strong>Use structured JSON comparison where possible, not only visual inspection.</div>
+  <div class="qa3-feature"><strong>Protect Test Data</strong>Use synthetic data and mask sensitive values in logs and screenshots.</div>
+  <div class="qa3-feature"><strong>Check Time Zones</strong>Verify UTC, local time, daylight-saving behaviour and epoch units.</div>
+  <div class="qa3-feature"><strong>Validate Authentication</strong>Test expired tokens, missing credentials, invalid scopes and access restrictions.</div>
+  <div class="qa3-feature"><strong>Automate Repetitive Checks</strong>Move repeatable validations into API automation and CI pipelines.</div>
+  <div class="qa3-feature"><strong>Record Reproducible Defects</strong>Capture request, response, environment, steps and expected versus actual behaviour.</div>
+ </div>
+
+ <div class="qa3-info">
+  <strong>Remember:</strong> A converter or decoder is a testing aid, not
+  proof that an API, token, database or application is correct. Always
+  validate results against the system's actual contract and requirements.
+ </div>
+</section>
+
+<div class="qa3-footer">
+ <strong>RBUtech · QA & Testing Utilities</strong>
+ <p>Everyday converters and validation tools for modern testing teams</p>
+ <p>Ideas. Solutions. Growth.</p>
+ <p>© 2026 RBUtech · All rights reserved.</p>
+</div>
+
 </main>
 </div>
-<div class="toast" id="toast"></div>
+</div>
+
 <script>
-(()=>{
-'use strict';
-const $=id=>document.getElementById(id);
-const tools=[
-['JSON','JSON Formatter','Beautify JSON with configurable indentation.','{"name":"DevForge","version":1,"active":true,"features":["format","convert","validate"]}','jsonFormat'],
-['JSON','JSON Minifier','Remove unnecessary whitespace from JSON.','{\n  "name": "DevForge",\n  "items": [1, 2, 3]\n}','jsonMin'],
-['JSON','JSON Validator','Parse JSON and report syntax errors.','{"valid":true,"count":3}','jsonValidate'],
-['JSON','JSON to XML','Convert JSON objects and arrays to XML.','{"user":{"name":"Alex","role":"Developer"},"active":true}','jsonXml'],
-['JSON','JSON to YAML','Convert JSON into a readable YAML subset.','{"app":"DevForge","port":8080,"enabled":true,"tags":["dev","tools"]}','jsonYaml'],
-['JSON','JSON to CSV','Convert an array of objects into CSV.','[{"name":"Ana","age":28},{"name":"Sam","age":31}]','jsonCsv'],
-['JSON','JSON to HTML Table','Render JSON arrays as an HTML table string.','[{"name":"Ana","role":"Admin"},{"name":"Sam","role":"User"}]','jsonTable'],
-['JSON','JSON Tree Viewer','Explore nested JSON as a collapsible tree.','{"user":{"name":"Alex","skills":["Java","SQL"]},"active":true}','jsonTree'],
-['JSON','JSON Escape / Unescape','Escape JSON text or decode an escaped JSON string.','{"message":"Hello\nDevForge"}','jsonEscape'],
-['JSON','JSON Stringify / Parse','Parse JSON or stringify a JSON value.','{"hello":"world","count":5}','jsonStringify'],
-['JSON','JSON Compare / Diff','Compare two JSON values; provide the second JSON after a line containing --- .','{"a":1,"b":2}\n---\n{"a":1,"b":3,"c":4}','jsonDiff'],
-['JSON','JSON Schema Viewer','Generate a basic inferred JSON schema.','{"name":"Alex","age":30,"active":true}','jsonSchema'],
-['JSON','JSON Path Explorer','Find a value using a simple path such as $.user.name.','{"user":{"name":"Alex","skills":["Java","SQL"]}}\n---\n$.user.name','jsonPath'],
-['XML','XML Formatter','Indent XML using the browser XML parser.','<root><user id="1"><name>Alex</name></user></root>','xmlFormat'],
-['XML','XML Minifier','Compact XML markup.','<root>\n  <name>Alex</name>\n</root>','xmlMin'],
-['XML','XML Validator','Check XML for parser errors.','<root><name>DevForge</name></root>','xmlValidate'],
-['XML','XML to JSON','Convert XML elements and attributes into JSON.','<user id="7"><name>Alex</name><active>true</active></user>','xmlJson'],
-['XML','XML Escape / Unescape','Encode or decode XML special characters.','<tag attr="a&b">Hello</tag>','xmlEscape'],
-['XML','XML Tree Viewer','Display XML as an indented tree.','<catalog><book id="1"><title>Dev Tools</title></book></catalog>','xmlFormat'],
-['HTML','HTML Formatter','Format HTML with readable indentation.','<main><h1>Hello</h1><p>DevForge toolkit</p></main>','htmlFormat'],
-['HTML','HTML Minifier','Remove comments and redundant whitespace (basic).','<div>\n  <h1> Hello </h1>\n  <p> Welcome </p>\n</div>','htmlMin'],
-['HTML','HTML Validator','Check basic tag balance and document structure.','<div><p>Hello</p></div>','htmlValidate'],
-['HTML','HTML Escape / Unescape','Encode or decode HTML entities.','<h1>Hello & welcome</h1>','htmlEscape'],
-['HTML','HTML to Plain Text','Extract readable text from HTML.','<h1>Welcome</h1><p>Build <b>better</b> tools.</p>','htmlText'],
-['HTML','HTML to Markdown','Convert common HTML tags to Markdown.','<h1>Title</h1><p>Hello <strong>world</strong></p><a href="https://example.com">Link</a>','htmlMarkdown'],
-['HTML','HTML Preview / Live Renderer','Preview markup in an isolated sandbox.','<h2>Hello DevForge</h2><p>Edit this HTML and run.</p>','htmlPreview'],
-['HTML','HTML Tag Explorer','List tags and attributes found in the markup.','<section id="intro"><h1 class="title">Hello</h1><p>Text</p></section>','htmlTags'],
-['CSS','CSS Formatter','Format CSS declarations and blocks.','body{margin:0;padding:1rem;color:#333} .card{display:flex;gap:1rem}','cssFormat'],
-['CSS','CSS Minifier','Remove comments and unnecessary whitespace.','/* card */\n.card {\n  color: #333;\n  padding: 12px;\n}','cssMin'],
-['CSS','CSS Color Converter','Convert HEX, RGB and HSL color formats.','#6558e8','colorConvert'],
-['CSS','CSS Gradient Generator','Generate a CSS linear gradient.','135deg, #6558e8, #3c8edb','gradient'],
-['CSS','CSS Box Shadow Generator','Create a CSS box-shadow declaration.','0 8px 24px rgba(0,0,0,.15)','shadow'],
-['CSS','CSS Border Radius Generator','Create border-radius CSS.','12px 12px 4px 4px','radius'],
-['CSS','CSS Flexbox Generator','Generate a flexbox container declaration.','center, space-between, row, 16px','flex'],
-['CSS','CSS Grid Generator','Generate a responsive CSS grid declaration.','3, 16px, 220px','grid'],
-['CSS','CSS Unit Converter','Convert px/rem using a 16px root by default.','24px','unit'],
-['JavaScript','JavaScript Formatter','Basic JavaScript indentation formatter.','function greet(name){\nreturn "Hello "+name;\n}','jsFormat'],
-['JavaScript','JavaScript Minifier','Basic whitespace and comment minifier.','const greeting = (name) => {\n  return "Hello " + name;\n};','jsMin'],
-['JavaScript','JavaScript Validator','Check JavaScript syntax without executing it.','const total = (a, b) => a + b;','jsValidate'],
-['JavaScript','JavaScript Escape / Unescape','Escape or decode JavaScript string content.','Line one\nLine two','jsEscape'],
-['JavaScript','JSON to JavaScript Object','Convert JSON to a JS object literal.','{"name":"Alex","active":true}','jsonJs'],
-['JavaScript','Regex Tester','Test a regular expression against input text.','/dev\w+/gi\n---\nDevForge developer tools','regex'],
-['JavaScript','Timestamp Converter','Convert Unix seconds or milliseconds to date.','1795000000','timestamp'],
-['JavaScript','Array / Object Explorer','Summarize JSON arrays and objects.','{"users":[{"id":1},{"id":2}],"enabled":true}','jsonExplore'],
-['SQL','SQL Formatter','Format SQL keywords and clauses (basic).','select id,name from users where active=1 order by name;','sqlFormat'],
-['SQL','SQL Minifier','Compact SQL whitespace.','SELECT id, name\nFROM users\nWHERE active = 1;','sqlMin'],
-['SQL','SQL Keyword Case','Change common SQL keywords to uppercase.','select id from users where active = 1','sqlFormat'],
-['SQL','SQL Query Validator','Perform basic SQL structure checks (not a database parser).','SELECT id, name FROM users WHERE id = 10;','sqlValidate'],
-['SQL','SQL Query Explanation','Explain common SQL clauses using simple rules.','SELECT name FROM users WHERE active = 1 ORDER BY name;','sqlExplain'],
-['SQL','SQL INSERT Generator','Generate INSERT statements from JSON rows.','[{"name":"Ana","age":28},{"name":"Sam","age":31}]','sqlInsert'],
-['SQL','SQL CREATE TABLE Generator','Generate a basic CREATE TABLE from JSON sample.','{"id":1,"name":"Alex","active":true}','sqlCreate'],
-['YAML / Config','YAML Formatter','Normalize simple YAML indentation.','app:\n  name: DevForge\n  port: 8080','yamlFormat'],
-['YAML / Config','YAML to JSON','Convert a supported simple YAML subset to JSON.','name: DevForge\nport: 8080\nenabled: true','yamlJson'],
-['YAML / Config','JSON to YAML','Convert JSON into a YAML subset.','{"name":"DevForge","port":8080,"enabled":true}','jsonYaml'],
-['YAML / Config','INI to JSON','Convert INI sections and key-value pairs to JSON.','[server]\nhost=localhost\nport=8080','iniJson'],
-['YAML / Config','TOML / INI Viewer','Show parsed INI key/value pairs; TOML advanced syntax is not supported.','[database]\nuser = "app"\nport = 5432','iniJson'],
-['Text','Uppercase / Lowercase','Change text case.','DevForge developer toolkit','upper'],
-['Text','Title Case','Capitalize the start of each word.','the ultimate developer toolkit','titleCase'],
-['Text','Sentence Case','Capitalize the first character of sentences.','hello world. welcome to devforge!','sentence'],
-['Text','Remove Duplicate Lines','Keep the first occurrence of each line.','apple\nbanana\napple\norange','unique'],
-['Text','Remove Extra Spaces','Collapse repeated spaces and trim lines.','  hello     world  \n  devforge   ','spaces'],
-['Text','Remove Empty Lines','Remove blank lines.','one\n\n two\n\nthree','nonempty'],
-['Text','Sort Lines A-Z / Z-A','Sort lines alphabetically.','pear\napple\norange','sort'],
-['Text','Reverse Text','Reverse all characters.','DevForge','reverse'],
-['Text','Word / Character Counter','Count words, characters and lines.','DevForge is a developer toolkit.','count'],
-['Text','Find and Replace','Use find and replace values on separate lines after --- .','hello world hello\n---\nhello\nhi','replace'],
-['Text','Text Compare / Diff','Compare two texts separated by a line containing --- .','line one\nline two\n---\nline one\nline three','textDiff'],
-['Text','Markdown Preview','Render a safe basic Markdown preview as escaped HTML.','## DevForge\n\nA **developer** toolkit.\n- Format\n- Convert','markdown'],
-['Text','Lorem Ipsum Generator','Generate placeholder paragraphs; enter a number of paragraphs.','2','lorem'],
-['Encoding','Base64 Encode / Decode','Prefix input with decode: to decode Base64; otherwise encode.','DevForge toolkit','base64'],
-['Encoding','URL Encode / Decode','Prefix input with decode: to decode URL text.','hello world & tools','url'],
-['Encoding','Unicode Encode / Decode','Prefix input with decode: to decode \\u sequences.','Hello DevForge','unicode'],
-['Encoding','Hex Encode / Decode','Prefix input with decode: to decode hexadecimal UTF-8.','DevForge','hex'],
-['Encoding','Binary Encode / Decode','Prefix input with decode: to decode binary UTF-8.','Hi','binary'],
-['Encoding','Decimal / Binary / Hex','Enter a decimal integer to convert bases.','255','numberBase'],
-['Encoding','ASCII Converter','Convert characters to ASCII/Unicode code points.','ABC','ascii'],
-['Encoding','JWT Decoder','Decode JWT header and payload only; does not verify signatures.','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkRldkZvcmdlIiwiYWRtaW4iOnRydWV9.signature','jwt'],
-['Date & Time','Unix Timestamp to Date','Convert Unix seconds or milliseconds to local and UTC dates.','1795000000','timestamp'],
-['Date & Time','Date to Unix Timestamp','Convert a date string to Unix seconds and milliseconds.','2026-11-18T12:00:00Z','dateUnix'],
-['Date & Time','ISO 8601 Formatter','Parse a date and display ISO 8601.','2026-11-18 12:00:00','iso'],
-['Date & Time','Date Difference Calculator','Enter two dates separated by --- .','2026-01-01\n---\n2026-11-18','dateDiff'],
-['Generators','UUID Generator','Generate a cryptographically random UUID when supported.','1','uuid'],
-['Generators','Random String Generator','Enter desired length (1–256).','24','random'],
-['Generators','Password Generator','Generate a secure random password. Enter length (8–128).','20','password'],
-['Generators','HTML Boilerplate Generator','Generate a responsive HTML5 starter document.','My Developer Page','boiler'],
-['Generators','Java POJO Generator from JSON','Generate a simple Java class from a JSON object.','{"firstName":"Alex","age":30,"active":true}','javaPojo'],
-['Generators','Java Class Generator','Generate a basic Java class from a class name.','Customer','javaClass'],
-['Generators','Sample JSON Generator','Generate sample JSON records. Enter number of records.','3','sampleJson'],
-['Generators','Cron Expression Helper','Explain the five cron fields at a basic level.','0 0 * * *','cron']
+/* ==========================================
+   RBUtech QA Toolkit JavaScript
+========================================== */
+
+(function(){
+"use strict";
+
+const $ = id => document.getElementById(id);
+const val = id => $(id).value;
+const set = (id,text) => { $(id).textContent = text; };
+
+window.qa3Clear = function(inputId,resultId){
+ if($(inputId)) $(inputId).value="";
+ if($(resultId)) $(resultId).textContent="";
+};
+
+window.qa3CopyValue = async function(id){
+ const el=$(id);
+ if(!el) return;
+ try{
+  await navigator.clipboard.writeText(el.value);
+  alert("Copied to clipboard");
+ }catch(e){
+  el.select();
+  try{document.execCommand("copy");alert("Copied to clipboard");}
+  catch(err){alert("Please copy manually");}
+ }
+};
+
+window.qa3JsonFormat = function(){
+ try{
+  const data=JSON.parse(val("qa3-json-input"));
+  $("qa3-json-input").value=JSON.stringify(data,null,2);
+  set("qa3-json-result","Valid JSON. Formatting completed.");
+ }catch(e){set("qa3-json-result","Invalid JSON: "+e.message);}
+};
+
+window.qa3JsonMinify = function(){
+ try{
+  $("qa3-json-input").value=JSON.stringify(JSON.parse(val("qa3-json-input")));
+  set("qa3-json-result","JSON minified successfully.");
+ }catch(e){set("qa3-json-result","Invalid JSON: "+e.message);}
+};
+
+window.qa3JsonValidate = function(){
+ try{
+  const data=JSON.parse(val("qa3-json-input"));
+  set("qa3-json-result","✓ Valid JSON\nRoot type: "+(Array.isArray(data)?"Array":data===null?"Null":typeof data));
+ }catch(e){set("qa3-json-result","✗ Invalid JSON\n"+e.message);}
+};
+
+window.qa3JsonLookup = function(){
+ try{
+  let obj=JSON.parse(val("qa3-lookup-json"));
+  const path=val("qa3-lookup-path").trim();
+  if(!path){set("qa3-lookup-result","Enter a property path.");return;}
+  for(const key of path.split(".")){
+   if(obj===null || obj===undefined || !(key in Object(obj))){
+    set("qa3-lookup-result","Property not found: "+key);return;
+   }
+   obj=obj[key];
+  }
+  set("qa3-lookup-result",JSON.stringify(obj,null,2));
+ }catch(e){set("qa3-lookup-result","Error: "+e.message);}
+};
+
+function xmlPretty(xml){
+ const doc=new DOMParser().parseFromString(xml,"application/xml");
+ const error=doc.querySelector("parsererror");
+ if(error) throw new Error(error.textContent.trim().slice(0,400));
+ const serialized=new XMLSerializer().serializeToString(doc);
+ const tokens=serialized.replace(/>\s*</g,"><").replace(/></g,">\n<").split("\n");
+ let depth=0;
+ const out=[];
+ tokens.forEach(token=>{
+  if(/^<\/[^>]+>/.test(token)) depth=Math.max(0,depth-1);
+  out.push("  ".repeat(depth)+token);
+  if(/^<[^!?/][^>]*[^/]?>$/.test(token) && !/<\/[^>]+>$/.test(token)) depth++;
+ });
+ return out.join("\n");
+}
+
+window.qa3XmlFormat=function(){
+ try{
+  $("qa3-xml-input").value=xmlPretty(val("qa3-xml-input"));
+  set("qa3-xml-result","✓ XML is well-formed and formatted.");
+ }catch(e){set("qa3-xml-result","✗ XML error: "+e.message);}
+};
+window.qa3XmlValidate=function(){
+ try{
+  const doc=new DOMParser().parseFromString(val("qa3-xml-input"),"application/xml");
+  const error=doc.querySelector("parsererror");
+  set("qa3-xml-result",error?"✗ Invalid XML:\n"+error.textContent:"✓ XML is well-formed.");
+ }catch(e){set("qa3-xml-result","Error: "+e.message);}
+};
+
+window.qa3TextCase=function(type){
+ const el=$("qa3-text-input");
+ let t=el.value;
+ switch(type){
+  case "upper":t=t.toUpperCase();break;
+  case "lower":t=t.toLowerCase();break;
+  case "title":t=t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());break;
+  case "sentence":t=t.toLowerCase().replace(/(^\s*\w|[.!?]\s+\w)/g,c=>c.toUpperCase());break;
+  case "trim":t=t.split("\n").map(x=>x.trim()).join("\n").trim();break;
+  case "lines":t=t.split("\n").filter(x=>x.trim()).join("\n");break;
+  case "reverse":t=Array.from(t).reverse().join("");break;
+  case "sort":t=t.split("\n").sort((a,b)=>a.localeCompare(b)).join("\n");break;
+  case "unique":t=[...new Set(t.split("\n"))].join("\n");break;
+ }
+ el.value=t;
+ qa3StatsFor(t);
+};
+
+function qa3StatsFor(t){
+ const words=t.trim()?t.trim().split(/\s+/).length:0;
+ set("qa3-text-stats","Characters: "+t.length+" | Characters without spaces: "+t.replace(/\s/g,"").length+" | Words: "+words+" | Lines: "+(t? t.split(/\n/).length:0));
+}
+window.qa3Stats=function(){qa3StatsFor(val("qa3-stats-input"));};
+
+function utf8ToBase64(s){
+ const bytes=new TextEncoder().encode(s);
+ let binary="";
+ bytes.forEach(b=>binary+=String.fromCharCode(b));
+ return btoa(binary);
+}
+function base64ToUtf8(s){
+ const binary=atob(s.replace(/\s/g,""));
+ const bytes=Uint8Array.from(binary,c=>c.charCodeAt(0));
+ return new TextDecoder("utf-8",{fatal:true}).decode(bytes);
+}
+window.qa3Base64=function(mode){
+ try{
+  const input=val("qa3-base64-input");
+  set("qa3-base64-result",mode==="encode"?utf8ToBase64(input):base64ToUtf8(input));
+ }catch(e){set("qa3-base64-result","Error: "+e.message);}
+};
+window.qa3Url=function(mode){
+ try{
+  const input=val("qa3-url-input");
+  set("qa3-url-result",mode==="encode"?encodeURIComponent(input):decodeURIComponent(input));
+ }catch(e){set("qa3-url-result","Error: "+e.message);}
+};
+
+window.qa3HtmlEntity=function(mode){
+ const input=val("qa3-entity-input");
+ if(mode==="encode"){
+  const d=document.createElement("div");
+  d.textContent=input;
+  set("qa3-entity-result",d.innerHTML);
+ }else{
+  const d=document.createElement("textarea");
+  d.innerHTML=input;
+  set("qa3-entity-result",d.value);
+ }
+};
+window.qa3NumberConvert=function(mode){
+ if(mode==="hex"){
+  const n=Number(val("qa3-decimal"));
+  if(!Number.isSafeInteger(n)){set("qa3-number-result","Enter a safe integer.");return;}
+  set("qa3-number-result","Hexadecimal: "+n.toString(16).toUpperCase());
+ }else{
+  const s=val("qa3-hex").trim().replace(/^0x/i,"");
+  if(!/^[0-9a-f]+$/i.test(s)){set("qa3-number-result","Enter a valid hexadecimal number.");return;}
+  const n=parseInt(s,16);
+  set("qa3-number-result","Decimal: "+n);
+ }
+};
+
+function base64UrlDecode(s){
+ const normalized=s.replace(/-/g,"+").replace(/_/g,"/");
+ const padded=normalized+"=".repeat((4-normalized.length%4)%4);
+ return base64ToUtf8(padded);
+}
+window.qa3JwtDecode=function(){
+ const token=val("qa3-jwt-input").trim();
+ const parts=token.split(".");
+ if(parts.length!==3){set("qa3-jwt-result","Invalid JWT structure. Expected three dot-separated parts.");return;}
+ try{
+  const header=JSON.parse(base64UrlDecode(parts[0]));
+  const payload=JSON.parse(base64UrlDecode(parts[1]));
+  let output="HEADER\n"+JSON.stringify(header,null,2)+"\n\nPAYLOAD\n"+JSON.stringify(payload,null,2);
+  if(payload.exp){
+   const expiry=new Date(payload.exp*1000);
+   output+="\n\nExpiration: "+expiry.toISOString();
+   output+=payload.exp*1000<Date.now()?"\nStatus: Expired (based on exp claim)":"\nStatus: Not expired yet (based on exp claim)";
+  }
+  if(payload.iat) output+="\nIssued at: "+new Date(payload.iat*1000).toISOString();
+  set("qa3-jwt-result",output);
+ }catch(e){set("qa3-jwt-result","Unable to decode JWT: "+e.message);}
+};
+
+window.qa3Timestamp=function(mode){
+ const raw=val("qa3-timestamp").trim();
+ if(!/^-?\d+(\.\d+)?$/.test(raw)){set("qa3-time-result","Enter a numeric Unix timestamp.");return;}
+ const n=Number(raw);
+ const ms=mode==="seconds"?n*1000:mode==="milliseconds"?n:Math.abs(n)<1e11?n*1000:n;
+ const d=new Date(ms);
+ if(!Number.isFinite(d.getTime())){set("qa3-time-result","Timestamp is outside the supported date range.");return;}
+ set("qa3-time-result","UTC: "+d.toISOString()+"\nLocal: "+d.toString()+"\nUnix seconds: "+Math.floor(ms/1000)+"\nUnix milliseconds: "+ms);
+};
+window.qa3Now=function(){
+ const now=Date.now();
+ $("qa3-timestamp").value=now;
+ qa3Timestamp("milliseconds");
+};
+window.qa3DateToTimestamp=function(){
+ const d=new Date(val("qa3-date-input"));
+ if(isNaN(d.getTime())){set("qa3-date-result","Choose a valid date and time.");return;}
+ set("qa3-date-result","Unix seconds: "+Math.floor(d.getTime()/1000)+"\nUnix milliseconds: "+d.getTime()+"\nUTC: "+d.toISOString());
+};
+
+window.qa3Diff=function(){
+ const a=val("qa3-diff-a").split("\n");
+ const b=val("qa3-diff-b").split("\n");
+ const max=Math.max(a.length,b.length);
+ const out=[];
+ let changes=0;
+ for(let i=0;i<max;i++){
+  if(a[i]===b[i]) out.push("  "+(a[i]??""));
+  else{
+   changes++;
+   if(a[i]!==undefined)out.push("- "+a[i]);
+   if(b[i]!==undefined)out.push("+ "+b[i]);
+  }
+ }
+ set("qa3-diff-result","Line differences: "+changes+"\n\n"+out.join("\n"));
+};
+window.qa3JsonDiff=function(){
+ try{
+  const a=JSON.parse(val("qa3-diff-a"));
+  const b=JSON.parse(val("qa3-diff-b"));
+  const same=JSON.stringify(sortObject(a))===JSON.stringify(sortObject(b));
+  set("qa3-diff-result",same?"✓ JSON structures are equivalent (object key order ignored).":"✗ JSON structures are different.\n\nExpected:\n"+JSON.stringify(a,null,2)+"\n\nActual:\n"+JSON.stringify(b,null,2));
+ }catch(e){set("qa3-diff-result","Invalid JSON: "+e.message);}
+};
+function sortObject(value){
+ if(Array.isArray(value))return value.map(sortObject);
+ if(value && typeof value==="object"){
+  return Object.keys(value).sort().reduce((o,k)=>(o[k]=sortObject(value[k]),o),{});
+ }
+ return value;
+}
+
+window.qa3Regex=function(){
+ try{
+  const re=new RegExp(val("qa3-regex-pattern"),val("qa3-regex-flags"));
+  const text=val("qa3-regex-text");
+  const matches=[];
+  if(re.global){
+   let m,count=0;
+   while((m=re.exec(text))!==null && count<500){
+    matches.push("Match: "+m[0]+" | Index: "+m.index);
+    count++;
+    if(m[0]==="")re.lastIndex++;
+   }
+  }else{
+   const m=re.exec(text);
+   if(m)matches.push("Match: "+m[0]+" | Index: "+m.index);
+  }
+  set("qa3-regex-result",matches.length?matches.length+" match(es)\n"+matches.join("\n"):"No matches found.");
+ }catch(e){set("qa3-regex-result","Invalid regular expression: "+e.message);}
+};
+
+function parseCsv(text){
+ const rows=[];
+ let row=[],field="",quoted=false;
+ for(let i=0;i<text.length;i++){
+  const c=text[i],next=text[i+1];
+  if(quoted){
+   if(c==='"' && next==='"'){field+='"';i++;}
+   else if(c==='"')quoted=false;
+   else field+=c;
+  }else{
+   if(c==='"' && field==="")quoted=true;
+   else if(c===","){row.push(field);field="";}
+   else if(c==="\n"){row.push(field.replace(/\r$/,""));rows.push(row);row=[];field="";}
+   else field+=c;
+  }
+ }
+ if(quoted)throw new Error("Unclosed quoted field.");
+ row.push(field.replace(/\r$/,""));
+ if(row.some(x=>x!=="")||rows.length===0)rows.push(row);
+ return rows;
+}
+window.qa3CsvToJson=function(){
+ try{
+  const rows=parseCsv(val("qa3-csv-input").trim());
+  const headers=rows.shift().map(h=>h.trim());
+  if(headers.some(h=>!h))throw new Error("Headers cannot be empty.");
+  const data=rows.filter(r=>r.some(v=>v!=="")).map(r=>{
+   const obj={};
+   headers.forEach((h,i)=>obj[h]=r[i]??"");
+   return obj;
+  });
+  set("qa3-csv-result",JSON.stringify(data,null,2));
+ }catch(e){set("qa3-csv-result","CSV error: "+e.message);}
+};
+function csvEscape(v){
+ const s=v===null||v===undefined?"":typeof v==="object"?JSON.stringify(v):String(v);
+ return /[",\r\n]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s;
+}
+window.qa3JsonToCsv=function(){
+ try{
+  const data=JSON.parse(val("qa3-json-csv-input"));
+  if(!Array.isArray(data)||!data.length)throw new Error("Input must be a non-empty JSON array of objects.");
+  const headers=[...new Set(data.flatMap(o=>Object.keys(o)))];
+  const csv=[headers.map(csvEscape).join(",")];
+  data.forEach(o=>csv.push(headers.map(h=>csvEscape(o[h])).join(",")));
+  set("qa3-json-csv-result",csv.join("\n"));
+ }catch(e){set("qa3-json-csv-result","Error: "+e.message);}
+};
+
+const sqlKeywords=["select","from","where","and","or","order by","group by","having","join","left join","right join","inner join","outer join","on","as","insert into","values","update","set","delete from","limit","offset","union","distinct","case","when","then","else","end"];
+window.qa3SqlUpper=function(){
+ let s=val("qa3-sql-input");
+ sqlKeywords.sort((a,b)=>b.length-a.length).forEach(k=>{
+  s=s.replace(new RegExp("\\b"+k.replace(/ /g,"\\s+")+"\\b","gi"),k.toUpperCase());
+ });
+ $("qa3-sql-input").value=s;
+ set("qa3-sql-result","SQL keywords converted to uppercase.");
+};
+window.qa3SqlFormat=function(){
+ let s=val("qa3-sql-input").trim().replace(/\s+/g," ");
+ sqlKeywords.sort((a,b)=>b.length-a.length).forEach(k=>{
+  s=s.replace(new RegExp("\\b"+k.replace(/ /g,"\\s+")+"\\b","gi"),k.toUpperCase());
+ });
+ ["SELECT","FROM","WHERE","AND","OR","ORDER BY","GROUP BY","HAVING","LEFT JOIN","RIGHT JOIN","INNER JOIN","JOIN","ON","VALUES","SET","UNION","LIMIT","OFFSET"].forEach(k=>{
+  s=s.replace(new RegExp("\\s+"+k+"\\b","g"),"\n"+k);
+ });
+ s=s.replace(/,\s*/g,",\n       ");
+ $("qa3-sql-input").value=s;
+ set("qa3-sql-result","SQL formatted. Review nested queries and dialect-specific syntax manually.");
+};
+
+window.qa3Hash=async function(){
+ try{
+  if(!crypto.subtle)throw new Error("Web Crypto is unavailable. Use a secure HTTPS page.");
+  const data=new TextEncoder().encode(val("qa3-hash-input"));
+  const hash=await crypto.subtle.digest("SHA-256",data);
+  const hex=Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
+  set("qa3-hash-result","SHA-256:\n"+hex);
+ }catch(e){set("qa3-hash-result","Unable to generate hash: "+e.message);}
+};
+
+function randomInt(max){return Math.floor(Math.random()*max);}
+function uuid(){
+ if(crypto.randomUUID)return crypto.randomUUID();
+ const b=crypto.getRandomValues(new Uint8Array(16));
+ b[6]=(b[6]&15)|64;b[8]=(b[8]&63)|128;
+ const h=Array.from(b,x=>x.toString(16).padStart(2,"0")).join("");
+ return h.slice(0,8)+"-"+h.slice(8,12)+"-"+h.slice(12,16)+"-"+h.slice(16,20)+"-"+h.slice(20);
+}
+let lastGenerated=[];
+window.qa3GenerateData=function(){
+ const count=Math.min(100,Math.max(1,Number(val("qa3-record-count"))||1));
+ const type=val("qa3-data-type");
+ const first=["Aarav","Ravi","Priya","Ananya","Arun","Meera","Kiran","Neha"];
+ const last=["Kumar","Sharma","Reddy","Patel","Rao","Singh"];
+ const departments=["QA","Development","DevOps","Finance","Support"];
+ const products=["Laptop","Monitor","Keyboard","Mouse","Headset"];
+ lastGenerated=Array.from({length:count},(_,i)=>{
+  const name=first[randomInt(first.length)]+" "+last[randomInt(last.length)];
+  switch(type){
+   case "employees":return {id:1001+i,name,department:departments[randomInt(departments.length)],active:Math.random()>.2,email:"user"+(1001+i)+"@example.test"};
+   case "users":return {id:uuid(),username:"testuser"+(i+1),email:"tester"+(i+1)+"@example.test",active:Math.random()>.2};
+   case "products":return {productId:"P-"+(1001+i),name:products[randomInt(products.length)],price:Number((10+Math.random()*990).toFixed(2)),available:Math.random()>.2};
+   case "orders":return {orderId:"ORD-"+(1001+i),customerId:100+randomInt(900),amount:Number((20+Math.random()*980).toFixed(2)),status:["NEW","PROCESSING","COMPLETED","CANCELLED"][randomInt(4)]};
+   case "emails":return {email:"test"+(i+1)+"@example.test"};
+   case "uuids":return {uuid:uuid()};
+   case "numbers":return {value:randomInt(1000000)};
+  }
+ });
+ set("qa3-data-result",JSON.stringify(lastGenerated,null,2));
+};
+window.qa3DownloadData=function(){
+ if(!lastGenerated.length){set("qa3-data-result","Generate data first.");return;}
+ const blob=new Blob([JSON.stringify(lastGenerated,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;a.download="qa-test-data.json";a.click();
+ URL.revokeObjectURL(url);
+};
+window.qa3GenerateUUID=function(){
+ const count=Math.min(100,Math.max(1,Number(val("qa3-uuid-count"))||1));
+ set("qa3-uuid-result",Array.from({length:count},uuid).join("\n"));
+};
+
+const statuses=[
+ [100,"Continue","Informational response"],
+ [101,"Switching Protocols","Protocol switch"],
+ [200,"OK","Request succeeded"],
+ [201,"Created","Resource created"],
+ [202,"Accepted","Accepted for processing"],
+ [204,"No Content","Success without response body"],
+ [301,"Moved Permanently","Permanent redirect"],
+ [302,"Found","Temporary redirect"],
+ [304,"Not Modified","Cached resource unchanged"],
+ [400,"Bad Request","Invalid request"],
+ [401,"Unauthorized","Authentication required or invalid"],
+ [403,"Forbidden","Authenticated but not allowed"],
+ [404,"Not Found","Resource not found"],
+ [405,"Method Not Allowed","HTTP method not supported"],
+ [408,"Request Timeout","Request timed out"],
+ [409,"Conflict","Conflict with current resource state"],
+ [415,"Unsupported Media Type","Unsupported content type"],
+ [422,"Unprocessable Content","Request content cannot be processed"],
+ [429,"Too Many Requests","Rate limit exceeded"],
+ [500,"Internal Server Error","Unexpected server error"],
+ [501,"Not Implemented","Functionality not supported"],
+ [502,"Bad Gateway","Invalid upstream response"],
+ [503,"Service Unavailable","Service temporarily unavailable"],
+ [504,"Gateway Timeout","Upstream service timed out"]
 ];
-let current=tools[0], outputText='', outputHtml=false, favorites=JSON.parse(localStorage.getItem('df-favs')||'[]'), recent=[];
-const nav=$('toolNav'), input=$('input'), out=$('output');
-function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function toast(msg,error=false){let t=$('toast');t.textContent=msg;t.className='toast show'+(error?' error':'');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.className='toast',2500)}
-function renderNav(filter=''){nav.innerHTML='';let groups={};tools.forEach(t=>{if((t[1]+' '+t[0]).toLowerCase().includes(filter.toLowerCase()))(groups[t[0]]??=[]).push(t)});Object.entries(groups).forEach(([g,list])=>{let h=document.createElement('div');h.className='group-title';h.textContent=g;nav.append(h);list.forEach(t=>{let b=document.createElement('button');b.className='tool-link'+(current===t?' active':'');b.innerHTML='<span class="tool-icon">'+icon(g)+'</span><span>'+esc(t[1])+'</span>'+(favorites.includes(t[1])?'<span class="tool-count favorite">★</span>':'');b.onclick=()=>selectTool(t);nav.append(b)})})}
-function icon(g){return ({JSON:'{ }',XML:'◇',HTML:'⌘',CSS:'▧',JavaScript:'JS',SQL:'▤','YAML / Config':'⚙',Text:'T','Encoding':'⇄','Date & Time':'◷',Generators:'✦'})[g]||'•'}
-function selectTool(t){current=t;outputText='';outputHtml=false;$('outputWrap').innerHTML='<pre class="output" id="output"><span class="empty">Your result will appear here...</span></pre>'; $('toolTitle').textContent=t[1];$('crumbName').textContent=t[1];$('toolDesc').textContent=t[2];$('toolHelp').textContent=t[2]+' Processing runs locally in your browser. Some conversions intentionally support a documented practical subset rather than the full language specification.';input.value=t[3];$('status').textContent='Ready';$('favoriteBtn').textContent=favorites.includes(t[1])?'★ Favorited':'☆ Favorite';$('favoriteBtn').classList.toggle('favorite',favorites.includes(t[1]));renderNav($('toolSearch').value);updateStats();$('sidebar').classList.remove('open');recent.unshift(t[1]);recent=recent.slice(0,8)}
-function updateStats(){let v=input.value;$('inputMeta').textContent=v.length+' characters';$('inputStats').textContent=v.split(/\n/).length+' lines · '+v.length+' chars';$('outputStats').textContent='Output: '+(outputText?outputText.length+' chars':'—')}
-function parseJSON(s){return JSON.parse(s)}
-function xmlDoc(s){let d=new DOMParser().parseFromString(s,'application/xml');if(d.getElementsByTagName('parsererror').length)throw Error('XML parse error: '+d.getElementsByTagName('parsererror')[0].textContent);return d}
-function xmlNode(n){if(n.nodeType===3)return n.nodeValue.trim();if(n.nodeType!==1)return null;let o={};if(n.attributes.length){o['@attributes']={};[...n.attributes].forEach(a=>o['@attributes'][a.name]=a.value)}[...n.children].forEach(c=>{let v=xmlNode(c);if(o[c.tagName]!==undefined){if(!Array.isArray(o[c.tagName]))o[c.tagName]=[o[c.tagName]];o[c.tagName].push(v)}else o[c.tagName]=v});let txt=[...n.childNodes].filter(x=>x.nodeType===3).map(x=>x.nodeValue.trim()).filter(Boolean).join(' ');if(txt)o['#text']=txt;return Object.keys(o).length?o:txt}
-function jsonToXml(v,root='root'){if(v===null)return `<${root}/>`;if(Array.isArray(v))return v.map(x=>jsonToXml(x,'item')).join('');if(typeof v==='object')return `<${root}>`+Object.entries(v).map(([k,x])=>jsonToXml(x,k.replace(/[^\w.-]/g,'_'))).join('')+`</${root}>`;return `<${root}>${esc(v)}</${root}>`}
-function jsonYaml(v,level=0){let pad='  '.repeat(level);if(Array.isArray(v))return v.map(x=>pad+'- '+(x&&typeof x==='object'?'\n'+jsonYaml(x,level+1):yamlScalar(x))).join('\n');if(v&&typeof v==='object')return Object.entries(v).map(([k,x])=>pad+k+':'+(x&&typeof x==='object'?'\n'+jsonYaml(x,level+1):' '+yamlScalar(x))).join('\n');return pad+yamlScalar(v)}
-function yamlScalar(v){if(v===null)return 'null';if(typeof v==='string')return /^[\w./-]+$/.test(v)?v:JSON.stringify(v);return String(v)}
-function simpleYaml(s){let root={},stack=[{indent:-1,obj:root}];s.split(/\r?\n/).forEach((line,i)=>{if(!line.trim()||/^\s*#/.test(line))return;let m=line.match(/^(\s*)([^:]+):\s*(.*)$/);if(!m)throw Error('Unsupported YAML syntax at line '+(i+1));let ind=m[1].length,key=m[2].trim(),val=m[3].trim();while(stack.length>1&&ind<=stack[stack.length-1].indent)stack.pop();let obj=stack[stack.length-1].obj;if(!val){obj[key]={};stack.push({indent:ind,obj:obj[key]})}else{try{obj[key]=JSON.parse(val)}catch{obj[key]=val.replace(/^['"]|['"]$/g,'')}}});return root}
-function csv(v){if(!Array.isArray(v)||!v.length||typeof v[0]!=='object')throw Error('Expected a non-empty JSON array of objects.');let keys=[...new Set(v.flatMap(x=>Object.keys(x)))];return [keys.join(','),...v.map(o=>keys.map(k=>'"'+String(o[k]??'').replace(/"/g,'""')+'"').join(','))].join('\n')}
-function cssFormat(s){return s.replace(/\s*\{\s*/g,' {\n  ').replace(/;\s*/g,';\n  ').replace(/\s*}\s*/g,'\n}\n').replace(/,\s*/g,', ').replace(/\n  \n/g,'\n').trim()}
-function sqlFormat(s){let x=s.replace(/\s+/g,' ').trim();['SELECT','FROM','WHERE','LEFT JOIN','RIGHT JOIN','INNER JOIN','JOIN','ON','GROUP BY','ORDER BY','HAVING','LIMIT','VALUES','SET','UNION'].sort((a,b)=>b.length-a.length).forEach(k=>{x=x.replace(new RegExp('\\b'+k.replace(/ /g,'\\s+')+'\\b','gi'),'\n'+k)});return x.replace(/^\n/,'').replace(/,\s*/g,',\n  ').replace(/\n(SELECT|FROM|WHERE|LEFT JOIN|RIGHT JOIN|INNER JOIN|JOIN|ON|GROUP BY|ORDER BY|HAVING|LIMIT|VALUES|SET|UNION)/g,'\n$1')+';'}
-function htmlFormat(s){return s.replace(/>\s*</g,'>\n<').split('\n').map(line=>line.trim()).filter(Boolean).map((line,i,a)=>line).join('\n').replace(/(<\/(?:div|main|section|article|ul|ol|table|form|header|footer|body|html)>)/gi,'\n$1')}
-function toMarkdown(s){return s.replace(/<h1[^>]*>(.*?)<\/h1>/gi,'# $1\n').replace(/<h2[^>]*>(.*?)<\/h2>/gi,'## $1\n').replace(/<strong[^>]*>(.*?)<\/strong>/gi,'**$1**').replace(/<b[^>]*>(.*?)<\/b>/gi,'**$1**').replace(/<em[^>]*>(.*?)<\/em>/gi,'*$1*').replace(/<a[^>]*href=["']([^"']+)["'][^>]*>(.*?)<\/a>/gi,'[$2]($1)').replace(/<br\s*\/?>/gi,'\n').replace(/<\/p>/gi,'\n\n').replace(/<[^>]+>/g,'').trim()}
-function javaType(v){if(v===null)return 'Object';if(Array.isArray(v))return 'List<Object>';if(typeof v==='string')return 'String';if(typeof v==='boolean')return 'boolean';if(Number.isInteger(v))return 'long';if(typeof v==='number')return 'double';if(typeof v==='object')return 'Object';return 'Object'}
-function run(){let s=input.value,op=current[4],result='';try{
-if(!s.trim()&&!['uuid','random','password','lorem','boiler','dateUnix'].includes(op))throw Error('Please enter input data first.');
-switch(op){
-case'jsonFormat':result=JSON.stringify(parseJSON(s),null,$('indent').value==='tab'?'\t':Number($('indent').value));break;
-case'jsonMin':result=JSON.stringify(parseJSON(s));break;
-case'jsonValidate':parseJSON(s);result='✓ Valid JSON\n\nThe input is syntactically valid JSON.';break;
-case'jsonXml':result='<?xml version="1.0"?>\n'+jsonToXml(parseJSON(s));break;
-case'jsonYaml':result=jsonYaml(parseJSON(s));break;
-case'jsonCsv':result=csv(parseJSON(s));break;
-case'jsonTable':{let a=parseJSON(s);if(!Array.isArray(a))throw Error('Expected a JSON array.');let keys=[...new Set(a.flatMap(x=>Object.keys(x)))];result='<table border="1" cellpadding="8" style="border-collapse:collapse;font-family:Arial"><thead><tr>'+keys.map(k=>'<th>'+esc(k)+'</th>').join('')+'</tr></thead><tbody>'+a.map(o=>'<tr>'+keys.map(k=>'<td>'+esc(JSON.stringify(o[k]??''))+'</td>').join('')+'</tr>').join('')+'</tbody></table>';break}
-case'jsonTree':{let v=parseJSON(s);result=JSON.stringify(v,null,2);break}
-case'jsonEscape':result=JSON.stringify(s);break;
-case'jsonStringify':{let v=parseJSON(s);result=JSON.stringify(v);break}
-case'jsonDiff':{let [a,b]=s.split(/\n---\s*\n/);if(b===undefined)throw Error('Separate the two JSON documents with a line containing --- .');let x=JSON.stringify(parseJSON(a),null,2).split('\n'),y=JSON.stringify(parseJSON(b),null,2).split('\n');result='FIRST JSON:\n'+x.join('\n')+'\n\nSECOND JSON:\n'+y.join('\n')+'\n\n'+(JSON.stringify(parseJSON(a))===JSON.stringify(parseJSON(b))?'No structural text difference (key order included).':'The documents differ. Review the two formatted versions above.');break}
-case'jsonSchema':{let v=parseJSON(s);function schema(x){if(x===null)return{type:'null'};if(Array.isArray(x))return{type:'array',items:x.length?schema(x[0]):{type:'object'}};if(typeof x==='object')return{type:'object',properties:Object.fromEntries(Object.entries(x).map(([k,z])=>[k,schema(z)])),required:Object.keys(x)};return{type:typeof x==='number'?(Number.isInteger(x)?'integer':'number'):typeof x}}result=JSON.stringify({$schema:'https://json-schema.org/draft/2020-12/schema',...schema(v)},null,2);break}
-case'jsonPath':{let [j,p]=s.split(/\n---\s*\n/);if(!p)throw Error('Add path after --- , for example $.user.name');let v=parseJSON(j);let path=p.trim().replace(/^\$\.?/,'');for(let part of path.split(/\.(?![^[]*\])/).filter(Boolean)){let m=part.match(/^([^[]+)?(?:\[(\d+)\])?$/);if(m[1])v=v[m[1]];if(m[2])v=v[Number(m[2])]}result=JSON.stringify(v,null,2);break}
-case'xmlFormat':{let d=xmlDoc(s),ser=new XMLSerializer().serializeToString(d);result=ser.replace(/></g,'>\n<').split('\n').map(l=>l.trim()).filter(Boolean).map((l,i,a)=>{let depth=0;for(let j=0;j<i;j++){if(/^<[^!?/][^>]*[^/]?>$/.test(a[j])&&!a[j].includes('</'))depth++;if(/^<\//.test(a[j]))depth=Math.max(0,depth-1)}if(/^<\//.test(l))depth=Math.max(0,depth-1);return '  '.repeat(depth)+l}).join('\n');break}
-case'xmlMin':result=new XMLSerializer().serializeToString(xmlDoc(s)).replace(/>\s+</g,'><').trim();break;
-case'xmlValidate':xmlDoc(s);result='✓ Valid XML\n\nThe XML parser found no syntax errors.';break;
-case'xmlJson':{let d=xmlDoc(s);result=JSON.stringify({[d.documentElement.tagName]:xmlNode(d.documentElement)},null,2);break}
-case'xmlEscape':result=s.includes('&lt;')?s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&amp;/g,'&'):s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');break;
-case'htmlFormat':result=htmlFormat(s);break;
-case'htmlMin':result=s.replace(/<!--.*?-->/gs,'').replace(/>\s+</g,'><').replace(/\s{2,}/g,' ').trim();break;
-case'htmlValidate':{let stack=[],voids='area base br col embed hr img input link meta param source track wbr'.split(' '),tokens=s.match(/<!--[\s\S]*?-->|<![^>]*>|<\/?[a-zA-Z][^>]*>/g)||[];tokens.forEach(t=>{if(t.startsWith('<!'))return;let m=t.match(/^<\s*(\/)?\s*([\w-]+)/);if(!m)return;let tag=m[2].toLowerCase();if(m[1]){if(stack.pop()!==tag)throw Error('Mismatched closing tag: '+tag)}else if(!voids.includes(tag)&&!t.endsWith('/>'))stack.push(tag)});if(stack.length)throw Error('Unclosed tags: '+stack.join(', '));result='✓ Basic HTML tag balance check passed.';break}
-case'htmlEscape':result=s.includes('&lt;')?s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&').replace(/&quot;/g,'"').replace(/&#39;/g,"'"):esc(s);break;
-case'htmlText':{let d=new DOMParser().parseFromString(s,'text/html');result=d.body.textContent.trim();break}
-case'htmlMarkdown':result=toMarkdown(s);break;
-case'htmlPreview':outputHtml=true;result=s;break;
-case'htmlTags':{let d=new DOMParser().parseFromString(s,'text/html');result=[...d.querySelectorAll('*')].map(e=>'<'+e.tagName.toLowerCase()+'> '+[...e.attributes].map(a=>a.name+'="'+a.value+'"').join(' ')).join('\n')||'No tags found';break}
-case'cssFormat':result=cssFormat(s);break;
-case'cssMin':result=s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\s*([{}:;,])\s*/g,'$1').replace(/;}/g,'}').trim();break;
-case'colorConvert':{let c=s.trim(),hex=c.match(/^#?([\da-f]{3}|[\da-f]{6})$/i);let rgb;if(hex){let h=hex[1];if(h.length===3)h=h.split('').map(x=>x+x).join('');rgb=[0,2,4].map(i=>parseInt(h.slice(i,i+2),16))}else{let m=c.match(/(\d{1,3})\s*,\s*(\d{1,3})\s*,\s*(\d{1,3})/);if(!m)throw Error('Enter HEX (#RRGGBB) or RGB values.');rgb=m.slice(1).map(Number)}let [r,g,b]=rgb.map(x=>Math.max(0,Math.min(255,x)));let max=Math.max(r,g,b)/255,min=Math.min(r,g,b)/255,d=max-min,h=0,l=(max+min)/2,ss=0;if(d){ss=d/(1-Math.abs(2*l-1));switch(max){case r/255:h=60*(((g-b)/255)/d%6);break;case g/255:h=60*((b-r)/255/d+2);break;default:h=60*((r-g)/255/d+4)}}result=`HEX: #${rgb.map(x=>x.toString(16).padStart(2,'0')).join('').toUpperCase()}\nRGB: rgb(${r}, ${g}, ${b})\nHSL: hsl(${Math.round((h+360)%360)}, ${Math.round(ss*100)}%, ${Math.round(l*100)}%)`;break}
-case'gradient':result='background: linear-gradient('+s+');';break;
-case'shadow':result='box-shadow: '+s+';';break;
-case'radius':result='border-radius: '+s+';';break;
-case'flex':{let [align='center',justify='space-between',direction='row',gap='16px']=s.split(',').map(x=>x.trim());result=`display: flex;\nflex-direction: ${direction};\nalign-items: ${align};\njustify-content: ${justify};\ngap: ${gap};`;break}
-case'grid':{let [cols='3',gap='16px',min='220px']=s.split(',').map(x=>x.trim());result=`display: grid;\ngrid-template-columns: repeat(${cols}, minmax(0, 1fr));\ngap: ${gap};\n/* Responsive alternative */\ngrid-template-columns: repeat(auto-fit, minmax(${min}, 1fr));`;break}
-case'unit':{let n=parseFloat(s),unit=s.trim().replace(/^[\d.\s-]+/,'')||'px';if(!Number.isFinite(n))throw Error('Enter a numeric CSS length such as 24px.');result=`${n}px = ${(n/16).toFixed(4)}rem (16px root)\n${n}rem = ${(n*16).toFixed(2)}px (if input unit is rem)`;break}
-case'jsFormat':result=s.replace(/\s*([{}])\s*/g,'$1\n').replace(/;\s*/g,';\n').split('\n').map(x=>x.trim()).filter(Boolean).join('\n');break;
-case'jsMin':result=s.replace(/\/\*[\s\S]*?\*\//g,'').replace(/(^|[^:])\/\/.*$/gm,'$1').replace(/\s+/g,' ').replace(/\s*([=+{};,])\s*/g,'$1').trim();break;
-case'jsValidate':{new Function(s);result='✓ JavaScript syntax check passed.\nNote: code was compiled for syntax checking only; it was not executed.';break}
-case'jsEscape':result=s.replace(/\\/g,'\\\\').replace(/\n/g,'\\n').replace(/\r/g,'\\r').replace(/"/g,'\\"').replace(/'/g,"\\'");break;
-case'jsonJs':result='const data = '+JSON.stringify(parseJSON(s),null,2)+';';break;
-case'regex':{let [pattern,txt]=s.split(/\n---\s*\n/);if(txt===undefined)throw Error('Provide /pattern/flags then --- then test text.');let m=pattern.match(/^\/(.*)\/([dgimsuvy]*)$/);if(!m)throw Error('Regex format must be /pattern/flags');let re=new RegExp(m[1],m[2].replace('g','')+'g'),matches=[...txt.matchAll(re)];result=matches.length?matches.map(x=>`Match "${x[0]}" at index ${x.index}`).join('\n'):`No matches found.`;break}
-case'timestamp':{let n=Number(s.trim());if(!Number.isFinite(n))throw Error('Enter a Unix timestamp.');let d=new Date(Math.abs(n)<1e12?n*1000:n);if(isNaN(d))throw Error('Timestamp is outside supported date range.');result='Local: '+d.toString()+'\nUTC: '+d.toISOString()+'\nMilliseconds: '+d.getTime();break}
-case'jsonExplore':{let v=parseJSON(s);result='Type: '+(Array.isArray(v)?'Array':typeof v)+'\nTop-level entries: '+(v&&typeof v==='object'?Object.keys(v).length:1)+'\n\n'+JSON.stringify(v,null,2);break}
-case'sqlFormat':result=sqlFormat(s).replace(/\b(select|from|where|and|or|join|on|group by|order by|having|insert into|values|update|set|delete|limit)\b/gi,m=>m.toUpperCase());break;
-case'sqlMin':result=s.replace(/--.*$/gm,'').replace(/\s+/g,' ').trim();break;
-case'sqlValidate':if(!/\b(select|insert|update|delete|create|alter|drop)\b/i.test(s))throw Error('No recognized SQL statement keyword found.');if((s.match(/\(/g)||[]).length!==(s.match(/\)/g)||[]).length)throw Error('Unbalanced parentheses.');result='✓ Basic SQL checks passed. This is not a database-specific validation.';break;
-case'sqlExplain':result=['Statement type: '+((s.match(/^\s*(\w+)/)||[])[1]||'Unknown').toUpperCase(),/\bSELECT\b/i.test(s)?'SELECT: chooses columns or expressions.':'',/\bFROM\b/i.test(s)?'FROM: identifies source tables.':'',/\bWHERE\b/i.test(s)?'WHERE: filters rows before grouping.':'',/\bJOIN\b/i.test(s)?'JOIN: combines rows from related tables.':'',/\bGROUP BY\b/i.test(s)?'GROUP BY: groups rows for aggregation.':'',/\bORDER BY\b/i.test(s)?'ORDER BY: sorts the result.':''].filter(Boolean).join('\n');break;
-case'sqlInsert':{let a=parseJSON(s);if(!Array.isArray(a)||!a.length)throw Error('Provide a non-empty JSON array of objects.');let keys=Object.keys(a[0]);let q=v=>v===null?'NULL':typeof v==='number'?v:typeof v==='boolean'?(v?'TRUE':'FALSE'):"'"+String(v).replace(/'/g,"''")+"'";result=a.map(o=>'INSERT INTO table_name ('+keys.join(', ')+') VALUES ('+keys.map(k=>q(o[k])).join(', ')+');').join('\n');break}
-case'sqlCreate':{let o=parseJSON(s),cols=Object.entries(o).map(([k,v])=>k+' '+(k.toLowerCase()==='id'?'INTEGER':typeof v==='number'?(Number.isInteger(v)?'INTEGER':'DECIMAL(12,2)'):typeof v==='boolean'?'BOOLEAN':'VARCHAR(255)'));result='CREATE TABLE table_name (\n  '+cols.join(',\n  ')+'\n);';break}
-case'yamlFormat':result=s.split('\n').map(x=>x.trimEnd()).join('\n').trim();break;
-case'yamlJson':result=JSON.stringify(simpleYaml(s),null,2);break;
-case'iniJson':{let o={},section=o;s.split(/\r?\n/).forEach(line=>{let x=line.trim();if(!x||x.startsWith(';')||x.startsWith('#'))return;if(/^\[.+\]$/.test(x)){let k=x.slice(1,-1);section=o[k]={};return}let i=x.indexOf('=');if(i<0)throw Error('Unsupported config line: '+x);let k=x.slice(0,i).trim(),v=x.slice(i+1).trim();section[k]=v});result=JSON.stringify(o,null,2);break}
-case'upper':result=s.toUpperCase()+'\n\n---\nLowercase:\n'+s.toLowerCase();break;
-case'titleCase':result=s.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());break;
-case'sentence':result=s.toLowerCase().replace(/(^\s*|[.!?]\s+)([a-z])/g,(m,a,b)=>a+b.toUpperCase());break;
-case'unique':result=[...new Set(s.split(/\r?\n/))].join('\n');break;
-case'spaces':result=s.split('\n').map(x=>x.trim().replace(/\s+/g,' ')).join('\n');break;
-case'nonempty':result=s.split(/\r?\n/).filter(x=>x.trim()).join('\n');break;
-case'sort':result=s.split(/\r?\n/).sort((a,b)=>a.localeCompare(b)).join('\n');break;
-case'reverse':result=[...s].reverse().join('');break;
-case'count':result=`Words: ${(s.trim().match(/\S+/g)||[]).length}\nCharacters (with spaces): ${s.length}\nCharacters (without spaces): ${s.replace(/\s/g,'').length}\nLines: ${s? s.split(/\r?\n/).length:0}\nBytes (UTF-8): ${new TextEncoder().encode(s).length}`;break;
-case'replace':{let [txt,find,repl]=s.split(/\n---\s*\n/);if(repl===undefined)throw Error('Use text, then --- , then find text, then --- , then replacement.');result=txt.split(find).join(repl);break}
-case'textDiff':{let [a,b]=s.split(/\n---\s*\n/);if(b===undefined)throw Error('Separate texts with --- on its own line.');let x=a.split('\n'),y=b.split('\n'),n=Math.max(x.length,y.length);result=Array.from({length:n},(_,i)=>(x[i]===y[i]?'  ':x[i]===undefined?'+ ':'- ')+(x[i]===undefined?y[i]:y[i]===undefined?x[i]:x[i]===y[i]?x[i]:x[i]+'  →  '+y[i])).join('\n');break}
-case'markdown':{let h=esc(s).replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/^- (.*)$/gm,'• $1').replace(/\n/g,'<br>');result=h;outputHtml=true;break}
-case'lorem':{let n=Math.max(1,Math.min(10,Number(s)||1)),p='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec sed odio dui. Cras mattis consectetur purus sit amet fermentum.';result=Array.from({length:n},()=>p).join('\n\n');break}
-case'base64':result=s.startsWith('decode:')?decodeURIComponent(escape(atob(s.slice(7).trim()))):btoa(unescape(encodeURIComponent(s)));break;
-case'url':result=s.startsWith('decode:')?decodeURIComponent(s.slice(7).trim()):encodeURIComponent(s);break;
-case'unicode':result=s.startsWith('decode:')?s.slice(7).replace(/\\u([\da-f]{4})/gi,(_,h)=>String.fromCharCode(parseInt(h,16))):[...s].map(c=>'\\u'+c.charCodeAt(0).toString(16).padStart(4,'0')).join('');break;
-case'hex':result=s.startsWith('decode:')?new TextDecoder().decode(new Uint8Array((s.slice(7).match(/[\da-f]{2}/gi)||[]).map(x=>parseInt(x,16)))):[...new TextEncoder().encode(s)].map(x=>x.toString(16).padStart(2,'0')).join(' ');break;
-case'binary':result=s.startsWith('decode:')?new TextDecoder().decode(new Uint8Array(s.slice(7).trim().split(/\s+/).map(x=>parseInt(x,2)))):[...new TextEncoder().encode(s)].map(x=>x.toString(2).padStart(8,'0')).join(' ');break;
-case'numberBase':{let n=BigInt(s.trim());result=`Decimal: ${n}\nBinary: ${n.toString(2)}\nHexadecimal: 0x${n.toString(16).toUpperCase()}`;break}
-case'ascii':result=[...s].map(c=>c+'  →  U+'+c.codePointAt(0).toString(16).toUpperCase().padStart(4,'0')+' ('+c.codePointAt(0)+')').join('\n');break;
-case'jwt':{let p=s.trim().split('.');if(p.length<2)throw Error('JWT must contain at least header and payload segments.');let dec=x=>JSON.stringify(JSON.parse(decodeURIComponent(escape(atob(x.replace(/-/g,'+').replace(/_/g,'/'))))),null,2);result='HEADER\n'+dec(p[0])+'\n\nPAYLOAD\n'+dec(p[1])+'\n\n⚠ Signature is NOT verified.';break}
-case'dateUnix':{let d=new Date(s.trim());if(isNaN(d))throw Error('Enter a valid date.');result=`Unix seconds: ${Math.floor(d.getTime()/1000)}\nUnix milliseconds: ${d.getTime()}\nISO: ${d.toISOString()}`;break}
-case'iso':{let d=new Date(s);if(isNaN(d))throw Error('Invalid date.');result=d.toISOString();break}
-case'dateDiff':{let [a,b]=s.split(/\n---\s*\n/),d1=new Date(a),d2=new Date(b);if(isNaN(d1)||isNaN(d2))throw Error('Enter two valid dates separated by --- .');let ms=Math.abs(d2-d1);result=`Difference: ${Math.floor(ms/86400000)} days\nHours: ${(ms/3600000).toFixed(2)}\nMinutes: ${(ms/60000).toFixed(0)}`;break}
-case'uuid':result=Array.from({length:Math.max(1,Math.min(20,Number(s)||1))},()=>crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>{let r=Math.random()*16|0;return(c==='x'?r:(r&3|8)).toString(16)})).join('\n');break;
-case'random':{let n=Math.max(1,Math.min(256,Number(s)||24)),chars='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';let a=new Uint32Array(n);crypto.getRandomValues(a);result=[...a].map(x=>chars[x%chars.length]).join('');break}
-case'password':{let n=Math.max(8,Math.min(128,Number(s)||20)),chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*_-+=';let a=new Uint32Array(n);crypto.getRandomValues(a);result=[...a].map(x=>chars[x%chars.length]).join('');break}
-case'boiler':result='<!DOCTYPE html>\n<html lang="en">\n<head>\n  <meta charset="UTF-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1.0">\n  <title>'+esc(s)+'</title>\n  <style>body{font-family:Arial,sans-serif;margin:2rem;line-height:1.6}</style>\n</head>\n<body>\n  <h1>'+esc(s)+'</h1>\n</body>\n</html>';break;
-case'javaPojo':{let o=parseJSON(s);if(!o||Array.isArray(o)||typeof o!=='object')throw Error('Provide a JSON object.');let cls='GeneratedModel';let fields=Object.entries(o).map(([k,v])=>'    private '+javaType(v)+' '+k+';').join('\n');let methods=Object.entries(o).map(([k,v])=>{let cap=k[0].toUpperCase()+k.slice(1),t=javaType(v);return `    public ${t} get${cap}() { return ${k}; }\n    public void set${cap}(${t} ${k}) { this.${k} = ${k}; }`}).join('\n\n');result=`public class ${cls} {\n${fields}\n\n${methods}\n}`;break}
-case'javaClass':{let name=s.trim().replace(/[^\w]/g,'')||'GeneratedClass';name=name[0].toUpperCase()+name.slice(1);result=`public class ${name} {\n\n    public ${name}() {\n    }\n\n}`;break}
-case'sampleJson':{let n=Math.max(1,Math.min(100,Number(s)||3));result=JSON.stringify(Array.from({length:n},(_,i)=>({id:i+1,name:'User '+(i+1),email:'user'+(i+1)+'@example.com',active:i%2===0})),null,2);break}
-case'cron':{let f=s.trim().split(/\s+/);if(f.length!==5)throw Error('A standard cron expression has five fields: minute hour day-of-month month day-of-week.');result='Minute: '+f[0]+'\nHour: '+f[1]+'\nDay of month: '+f[2]+'\nMonth: '+f[3]+'\nDay of week: '+f[4]+'\n\nThis is a field-level explanation only; advanced cron dialects may differ.';break}
-default:throw Error('This operation is not available in this build.');
+window.qa3HttpSearch=function(){
+ const q=val("qa3-http-search").toLowerCase();
+ $("qa3-http-body").innerHTML=statuses.filter(s=>s.join(" ").toLowerCase().includes(q)).map(s=>
+  "<tr><td>"+s[0]+"</td><td>"+s[1]+"</td><td>"+s[2]+"</td></tr>"
+ ).join("")||'<tr><td colspan="3">No matching status codes.</td></tr>';
+};
+
+window.qa3SizeConvert=function(){
+ const n=Number(val("qa3-size-value"));
+ const unit=Number(val("qa3-size-from"));
+ if(!Number.isFinite(n)||n<0){set("qa3-size-result","Enter a non-negative number.");return;}
+ const bytes=n*unit;
+ set("qa3-size-result","Bytes: "+bytes+"\nKB: "+(bytes/1024)+"\nMB: "+(bytes/1048576)+"\nGB: "+(bytes/1073741824));
+};
+window.qa3TempConvert=function(){
+ const n=Number(val("qa3-temp-value")),u=val("qa3-temp-unit");
+ if(!Number.isFinite(n)){set("qa3-temp-result","Enter a valid temperature.");return;}
+ const c=u==="C"?n:u==="F"?(n-32)*5/9:n-273.15;
+ set("qa3-temp-result","Celsius: "+c.toFixed(3)+" °C\nFahrenheit: "+(c*9/5+32).toFixed(3)+" °F\nKelvin: "+(c+273.15).toFixed(3)+" K");
+};
+window.qa3TimeUnits=function(){
+ const n=Number(val("qa3-ms-value"));
+ if(!Number.isFinite(n)){set("qa3-ms-result","Enter a valid number.");return;}
+ set("qa3-ms-result","Milliseconds: "+n+"\nSeconds: "+n/1000+"\nMinutes: "+n/60000+"\nHours: "+n/3600000);
+};
+
+window.qa3HtmlEscape=function(){
+ const d=document.createElement("div");d.textContent=val("qa3-html-input");
+ set("qa3-html-result",d.innerHTML);
+};
+window.qa3HtmlUnescape=function(){
+ const d=document.createElement("textarea");d.innerHTML=val("qa3-html-input");
+ set("qa3-html-result",d.value);
+};
+
+window.qa3YamlCheck=function(){
+ const lines=val("qa3-yaml-input").split(/\r?\n/);
+ const issues=[];
+ lines.forEach((line,i)=>{
+  if(/\t/.test(line))issues.push("Line "+(i+1)+": Tab indentation found; YAML indentation should use spaces.");
+  if(/:\s*[^#\s][^#]*:\s/.test(line))issues.push("Line "+(i+1)+": Check whether a colon inside an unquoted value needs quoting.");
+  if(/^\s*-\S/.test(line))issues.push("Line "+(i+1)+": List marker should be followed by a space.");
+  if(/^\s*[^#\s][^:]*\s+#/.test(line))issues.push("Line "+(i+1)+": Review spacing and inline comments.");
+ });
+ set("qa3-yaml-result",issues.length?"Potential issues:\n"+issues.join("\n"):"No common indentation issues detected. This is not a full YAML validation.");
+};
+
+// Sidebar active link
+const navLinks=document.querySelectorAll(".qa3-nav a");
+if("IntersectionObserver" in window){
+ const sections=Array.from(navLinks).map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting)navLinks.forEach(a=>a.classList.toggle("qa3-active",a.hash==="#"+entry.target.id));
+  });
+ },{rootMargin:"-15% 0px -70% 0px"});
+ sections.forEach(s=>observer.observe(s));
 }
-outputText=result;renderOutput(result,outputHtml);$('status').textContent='Completed successfully';updateStats();toast('Tool executed successfully');
-}catch(e){outputText='Error: '+(e.message||String(e));outputHtml=false;renderOutput(outputText,false);$('status').textContent='Error';updateStats();toast(e.message||'Unable to process input',true)}
-}
-function renderOutput(text,isHtml){let wrap=$('outputWrap');wrap.innerHTML='';if(isHtml){let f=document.createElement('iframe');f.className='output-html';f.setAttribute('sandbox','');f.title='Safe HTML preview';f.srcdoc=text;wrap.append(f)}else{let p=document.createElement('pre');p.className='output';p.id='output';p.textContent=text||'No output';wrap.append(p)}}
-function copy(){if(!outputText)return toast('Nothing to copy',true);navigator.clipboard?.writeText(outputText).then(()=>toast('Output copied')).catch(()=>{let t=document.createElement('textarea');t.value=outputText;document.body.append(t);t.select();document.execCommand('copy');t.remove();toast('Output copied')})}
-function download(){if(!outputText)return toast('Nothing to download',true);let ext=current[0]==='JSON'?'json':current[0]==='XML'?'xml':current[0]==='HTML'?'html':current[0]==='CSS'?'css':current[0]==='SQL'?'sql':current[0]==='YAML / Config'?'txt':'txt';let blob=new Blob([outputText],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=current[1].toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.'+ext;a.click();URL.revokeObjectURL(url);toast('Download started')}
-function validate(){let op=current[4];let old=current;let map={jsonFormat:'jsonValidate',jsonMin:'jsonValidate',jsonXml:'jsonValidate',jsonYaml:'jsonValidate',jsonCsv:'jsonValidate',xmlFormat:'xmlValidate',xmlMin:'xmlValidate',htmlFormat:'htmlValidate',htmlMin:'htmlValidate',jsFormat:'jsValidate',jsMin:'jsValidate',sqlFormat:'sqlValidate',sqlMin:'sqlValidate'};if(map[op]){let t=tools.find(x=>x[4]===map[op]);current=t;run();current=old}else run()}
-$('runBtn').onclick=run;$('validateBtn').onclick=validate;$('copyBtn').onclick=copy;$('downloadBtn').onclick=download;$('clearBtn').onclick=()=>{input.value='';outputText='';renderOutput('',false);$('status').textContent='Cleared';updateStats()};$('sampleBtn').onclick=()=>{input.value=current[3];updateStats();toast('Sample loaded')};$('swapBtn').onclick=()=>{if(outputHtml)return toast('Preview output cannot be swapped as text.',true);let x=input.value;input.value=outputText;outputText=x;renderOutput(outputText,false);updateStats();toast('Input and output swapped')};input.addEventListener('input',updateStats);$('toolSearch').addEventListener('input',e=>renderNav(e.target.value));
-$('favoriteBtn').onclick=()=>{let n=current[1];favorites=favorites.includes(n)?favorites.filter(x=>x!==n):[...favorites,n];localStorage.setItem('df-favs',JSON.stringify(favorites));$('favoriteBtn').textContent=favorites.includes(n)?'★ Favorited':'☆ Favorite';renderNav($('toolSearch').value)};
-$('themeBtn').onclick=()=>{let dark=document.documentElement.dataset.theme!=='dark';document.documentElement.dataset.theme=dark?'dark':'light';localStorage.setItem('df-theme',dark?'dark':'light');$('themeBtn').textContent=dark?'☀ Theme':'☾ Theme'};
-if(localStorage.getItem('df-theme')==='dark'){$('themeBtn').click()}
-$('menuBtn').onclick=()=>$('sidebar').classList.toggle('open');
-input.addEventListener('dragover',e=>{e.preventDefault();input.style.outline='2px dashed var(--accent)'});
-input.addEventListener('dragleave',()=>input.style.outline='');
-input.addEventListener('drop',e=>{e.preventDefault();input.style.outline='';let f=e.dataTransfer.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{input.value=r.result;updateStats();toast('Loaded '+f.name)};r.readAsText(f)});
-document.addEventListener('keydown',e=>{if(e.ctrlKey&&e.key==='Enter'){e.preventDefault();run()}if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='c'){e.preventDefault();copy()}if(e.ctrlKey&&e.key.toLowerCase()==='l'){e.preventDefault();$('clearBtn').click()}if(e.ctrlKey&&e.key==='/'){e.preventDefault();$('themeBtn').click()}});
-renderNav();selectTool(tools[0]);
+qa3HttpSearch();
+qa3Stats();
 })();
 </script>
+
 </body>
 </html></main></div>
 <footer class="site-footer"><div class="footer-inner"><div><div class="footer-brand">same as all ways</div><div class="footer-copy">© <span id="currentYear"></span> All rights reserved.</div></div><nav class="footer-links" aria-label="Footer navigation"><a href="./python.html">Python</a><a href="./java-tech-stack.html">Java Tech Stack</a><a href="../index.html">Home</a><a href="./about.html">About</a><a href="./services.html">Services</a><a href="./contact.html">Contact</a><a href="./converter-tools.html">converter-tools</a></nav></div></footer>
